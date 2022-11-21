@@ -1,10 +1,5 @@
 <template>
   <div class="home">
-    <img class="logo" width="100" src="logo.png" alt="">
-    <h1>
-      {{ count }}
-    </h1>
-    <button class="btn" @click="$store.commit('INCREMENT')">INCREMENT</button>
     <div class="car-box" v-for="car in cars" :key="car.id">
     {{ car }}
     </div>
