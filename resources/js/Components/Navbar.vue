@@ -10,16 +10,28 @@
         <h1>Check car sales and damage history. <span>It’s free!</span></h1>
       </div>
       <div class="navBar__search">
-        <input type="text" class="base-input" placeholder="Lot or VIN number">
-        <button class="base-btn">SEARCH HERE</button>
+        <input v-model="vin" type="text" class="base-input" placeholder="Lot or VIN number">
+        <button @click="search" class="base-btn">SEARCH HERE</button>
       </div>
     </div>
   </nav>
 </template>
 
 <script>
+import store from '../Store';
 export default {
-  name: 'navbar'
+  name: 'navbar',
+  data() {
+    return {
+      vin:null,
+    }
+  },
+  methods: {
+    search(){
+      const filter = {key : 'vin', value : this.vin}
+      store.commit('SET_FILTER',filter)
+    }
+  },
 }
 </script>
 <style lang="scss">

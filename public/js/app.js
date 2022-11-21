@@ -2037,7 +2037,7 @@ __webpack_require__.r(__webpack_exports__);
   name: 'app',
   components: {
     Navbar: function Navbar() {
-      return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./Components/Navbar.vue */ "./resources/js/Components/Navbar.vue"));
+      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./Components/Navbar.vue */ "./resources/js/Components/Navbar.vue"));
     }
   }
 });
@@ -37007,7 +37007,7 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [{
   path: '',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../Pages/Home.vue */ "./resources/js/Pages/Home.vue"));
+    return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ../Pages/Home.vue */ "./resources/js/Pages/Home.vue"));
   },
   name: 'home'
 }, {
@@ -37033,16 +37033,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
 var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
-    count: 0
+    count: 0,
+    cars: null,
+    filters: {
+      vin: null
+    }
   },
   mutations: {
     INCREMENT: function INCREMENT(state) {
       state.count++;
+    },
+    GET_CARS: function GET_CARS(state) {
+      var filtersString = "";
+
+      for (var property in state.filters) {
+        if (state.filters[property]) {
+          filtersString += "".concat(property, "=").concat(state.filters[property]);
+        }
+      }
+
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/cars?".concat(filtersString)).then(function (res) {
+        state.cars = res.data;
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
+    SET_FILTER: function SET_FILTER(state, filter) {
+      state.filters[filter.key] = filter.value;
+      this.commit('GET_CARS');
     }
   },
   actions: {}
