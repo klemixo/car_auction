@@ -14,6 +14,6 @@ class getCars extends Controller
         foreach ($data as $key => $value) {
             $query->where($key,"=",$value);
         }
-        return $query->limit(5)->get();
+        return $query->limit(15)->get();
     }
 }

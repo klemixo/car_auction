@@ -1,9 +1,10 @@
 <template>
-  <div class="cars__container">
+  <div class="cars__container container">
     <h2>Latest Lots</h2>
     <div class="grid">
         <CarBox v-for="car in cars" :key="car.id" :carData="car"/>
     </div>
+    <Error v-if="cars.length == 0 "/>
 
   </div>
 </template>
@@ -12,10 +13,12 @@
 import { mapState } from 'vuex';
 import store from '../Store';
 import CarBox from './CarBox.vue';
+import Error from './Error.vue';
 export default {
   name: 'home',
   components:{
-    CarBox
+    CarBox,
+    Error
   },
   mounted() {
     store.commit('GET_CARS');
@@ -42,7 +45,7 @@ export default {
         display:grid;
         grid-template-columns: 1fr;
         gap:24px;
-        @media(min-width:768px){
+        @media(min-width:576px){
         grid-template-columns: 1fr 1fr;
         }
         @media(min-width:1200px){

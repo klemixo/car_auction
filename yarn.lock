@@ -246,10 +246,10 @@
     "chalk" "^2.0.0"
     "js-tokens" "^4.0.0"
 
-"@babel/parser@^7.12.10", "@babel/parser@^7.12.7":
-  "integrity" "sha512-N3UxG+uuF4CMYoNj8AhnbAcJF0PiuJ9KHuy1lQmkYsxTer/MAH9UBNHsBoAX/4s6NvlDD047No8mYVGGzLL4hg=="
-  "resolved" "https://registry.npmjs.org/@babel/parser/-/parser-7.12.11.tgz"
-  "version" "7.12.11"
+"@babel/parser@^7.12.10", "@babel/parser@^7.12.7", "@babel/parser@^7.18.4":
+  "integrity" "sha512-OP/s5a94frIPXwjzEcv5S/tpQfc6XhxYUnmWpgdqMWGgYCuErA3SzozaRAMQgSZWKeTJxht9aWAkUY+0UzvOFg=="
+  "resolved" "https://registry.npmjs.org/@babel/parser/-/parser-7.20.3.tgz"
+  "version" "7.20.3"
 
 "@babel/plugin-proposal-async-generator-functions@^7.12.1":
   "integrity" "sha512-d+/o30tJxFxrA1lhzJqiUcEJdI6jKlNregCv5bASeGf2Q4MXmnwH7viDo7nhx1/ohf09oaH8j1GVYG/e3Yqk6A=="
@@ -823,6 +823,62 @@
     "lodash" "^4.17.19"
     "to-fast-properties" "^2.0.0"
 
+"@cfcs/core@^0.0.4":
+  "integrity" "sha512-Y/BD2l+XpGtx2LT/ehdqUyvJ6OpI3F6yAQMNKj1t57WhzQX1AS6uEQRLmgPWd75fzsyV7u4Aia/+5KeCqgHuNg=="
+  "resolved" "https://registry.npmjs.org/@cfcs/core/-/core-0.0.4.tgz"
+  "version" "0.0.4"
+  dependencies:
+    "@egjs/component" "^3.0.2"
+
+"@egjs/agent@^2.2.1":
+  "integrity" "sha512-XvksSENe8wPeFlEVouvrOhKdx8HMniJ3by7sro2uPF3M6QqWwjzVcmvwoPtdjiX8O1lfRoLhQMp1a7NGlVTdIA=="
+  "resolved" "https://registry.npmjs.org/@egjs/agent/-/agent-2.4.3.tgz"
+  "version" "2.4.3"
+
+"@egjs/axes@^3.8.1":
+  "integrity" "sha512-aaB3R91Ljx+gf4qZIzf+VCZsv2J//Yftj8goekwxDnD5Mc56gsZxHyHlxXCEZ4BgD7+BsRELR0O5sozWtG4r+Q=="
+  "resolved" "https://registry.npmjs.org/@egjs/axes/-/axes-3.8.1.tgz"
+  "version" "3.8.1"
+  dependencies:
+    "@cfcs/core" "^0.0.4"
+    "@egjs/agent" "^2.2.1"
+    "@egjs/component" "^3.0.1"
+
+"@egjs/component@^3.0.1", "@egjs/component@^3.0.2":
+  "integrity" "sha512-Mze3mwEE19+dERrimg0JVLtpOHG4AC+LOuKqvF4qGZjn0k23ZbNI7b/gy1LFR63LigC2b8k70aDjy8xoT+WNPA=="
+  "resolved" "https://registry.npmjs.org/@egjs/component/-/component-3.0.2.tgz"
+  "version" "3.0.2"
+
+"@egjs/flicking@~4.10.2":
+  "integrity" "sha512-zGPohW8Q2LzXajSqra0A+2DmXOb9igVF47Ap1nn+IZz7Ahau+vLdZ16QasV31fUbItUSCx8NmQYN38mcqYieoA=="
+  "resolved" "https://registry.npmjs.org/@egjs/flicking/-/flicking-4.10.2.tgz"
+  "version" "4.10.2"
+  dependencies:
+    "@egjs/axes" "^3.8.1"
+    "@egjs/component" "^3.0.1"
+    "@egjs/imready" "^1.1.3"
+    "@egjs/list-differ" "^1.0.0"
+
+"@egjs/imready@^1.1.3":
+  "integrity" "sha512-h6qxQup/ZJxEJkDMuyR6yuJ9jsuVan7EyQ8Xa0WkTWAr3HtUYjtDHOCjJvhFg50Xv3C+TkfYj4Mxmkz7zNePSA=="
+  "resolved" "https://registry.npmjs.org/@egjs/imready/-/imready-1.3.0.tgz"
+  "version" "1.3.0"
+  dependencies:
+    "@egjs/component" "^3.0.1"
+
+"@egjs/list-differ@^1.0.0":
+  "integrity" "sha512-HsbMKc0ZAQH+EUeCmI/2PvTYSybmkaWwakU8QGDYYgMVIg9BQ5sM0A0Nnombjxo2+JzXHxmH+jw//yGX+y6GYw=="
+  "resolved" "https://registry.npmjs.org/@egjs/list-differ/-/list-differ-1.0.0.tgz"
+  "version" "1.0.0"
+
+"@egjs/vue-flicking@^4.10.2":
+  "integrity" "sha512-DTvuA0bvVPGVad6ZV6uyNaXK/o8PFJkKsjDR4E4xGSo4378m8x588QTVySl4s3thq0vTVlDPy3Z1IV/Ok7ecZQ=="
+  "resolved" "https://registry.npmjs.org/@egjs/vue-flicking/-/vue-flicking-4.10.2.tgz"
+  "version" "4.10.2"
+  dependencies:
+    "@egjs/flicking" "~4.10.2"
+    "@egjs/list-differ" "^1.0.0"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   "integrity" "sha512-bPHp6Ji8b41szTOcaP63VlnbbO5Ny6dwAATtY6JTjh5N2OLrb5Qk/Th5cRkRQhkWCt+EJsYrNB0MiL+Gpn6e3g=="
   "resolved" "https://registry.npmjs.org/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz"
@@ -863,6 +919,15 @@
   "integrity" "sha512-1HcDas8SEj4z1Wc696tH56G8OlRaH/sqZOynNNB+HF0WOeXPaxTtbYzJY2oEfiUxjSKjhCKr+MvR7dCHcEelug=="
   "resolved" "https://registry.npmjs.org/@types/q/-/q-1.5.4.tgz"
   "version" "1.5.4"
+
+"@vue/compiler-sfc@2.7.14":
+  "integrity" "sha512-aNmNHyLPsw+sVvlQFQ2/8sjNuLtK54TC6cuKnVzAY93ks4ZBrvwQSnkkIh7bsbNhum5hJBS00wSDipQ937f5DA=="
+  "resolved" "https://registry.npmjs.org/@vue/compiler-sfc/-/compiler-sfc-2.7.14.tgz"
+  "version" "2.7.14"
+  dependencies:
+    "@babel/parser" "^7.18.4"
+    "postcss" "^8.4.14"
+    "source-map" "^0.6.1"
 
 "@vue/component-compiler-utils@^3.1.0":
   "integrity" "sha512-lejBLa7xAMsfiZfNp7Kv51zOzifnb29FwdnMLa96z26kXErPFioSf9BMcePVIQ6/Gc6/mC0UrPpxAWIHyae0vw=="
@@ -2307,6 +2372,11 @@
   dependencies:
     "css-tree" "^1.1.2"
 
+"csstype@^3.1.0":
+  "integrity" "sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw=="
+  "resolved" "https://registry.npmjs.org/csstype/-/csstype-3.1.1.tgz"
+  "version" "3.1.1"
+
 "cyclist@^1.0.1":
   "integrity" "sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk="
   "resolved" "https://registry.npmjs.org/cyclist/-/cyclist-1.0.1.tgz"
@@ -2630,6 +2700,11 @@
     "graceful-fs" "^4.1.2"
     "memory-fs" "^0.5.0"
     "tapable" "^1.0.0"
+
+"enquire.js@2.1.6":
+  "integrity" "sha512-/KujNpO+PT63F7Hlpu4h3pE3TokKRHN26JYmQpPyjkRD/N57R7bPDNojMXdi7uveAKjYB7yQnartCxZnFWr0Xw=="
+  "resolved" "https://registry.npmjs.org/enquire.js/-/enquire.js-2.1.6.tgz"
+  "version" "2.1.6"
 
 "entities@^2.0.0":
   "integrity" "sha512-hCx1oky9PFrJ611mf0ifBLBRW8lUUVRlFolb5gWRfIELabBlbp9xZvrqZLZAs+NxFnbfQoeGd8wDkygjg7U85w=="
@@ -4031,6 +4106,13 @@
   "resolved" "https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-0.4.1.tgz"
   "version" "0.4.1"
 
+"json2mq@0.2.0":
+  "integrity" "sha512-SzoRg7ux5DWTII9J2qkrZrqV1gt+rTaoufMxEzXbS26Uid0NwaJd123HcoB80TgubEppxxIGdNxCx50fEoEWQA=="
+  "resolved" "https://registry.npmjs.org/json2mq/-/json2mq-0.2.0.tgz"
+  "version" "0.2.0"
+  dependencies:
+    "string-convert" "^0.2.0"
+
 "json3@^3.3.2":
   "integrity" "sha512-c7/8mbUsKigAbLkD5B010BK4D9LZm7A1pNItkEwiUZRpIN66exu/e7YQWysGun+TRKaJp8MhemM+VkfWv42aCA=="
   "resolved" "https://registry.npmjs.org/json3/-/json3-3.3.3.tgz"
@@ -4204,10 +4286,30 @@
   dependencies:
     "p-locate" "^4.1.0"
 
+"lodash.assign@^4.2.0":
+  "integrity" "sha512-hFuH8TY+Yji7Eja3mGiuAxBqLagejScbG8GbG0j6o9vzn0YL14My+ktnqtZgFTosKymC9/44wP6s7xyuLfnClw=="
+  "resolved" "https://registry.npmjs.org/lodash.assign/-/lodash.assign-4.2.0.tgz"
+  "version" "4.2.0"
+
+"lodash.debounce@^4.0.8":
+  "integrity" "sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow=="
+  "resolved" "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
+  "version" "4.0.8"
+
+"lodash.get@^4.4.2":
+  "integrity" "sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ=="
+  "resolved" "https://registry.npmjs.org/lodash.get/-/lodash.get-4.4.2.tgz"
+  "version" "4.4.2"
+
 "lodash.memoize@^4.1.2":
   "integrity" "sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4="
   "resolved" "https://registry.npmjs.org/lodash.memoize/-/lodash.memoize-4.1.2.tgz"
   "version" "4.1.2"
+
+"lodash.pick@^4.4.0":
+  "integrity" "sha512-hXt6Ul/5yWjfklSGvLQl8vM//l3FtyHZeuelpzK6mm99pNvN9yTDruNZPEJZD1oWrqo+izBmB7oUfWgcCX7s4Q=="
+  "resolved" "https://registry.npmjs.org/lodash.pick/-/lodash.pick-4.4.0.tgz"
+  "version" "4.4.0"
 
 "lodash.uniq@^4.5.0":
   "integrity" "sha1-0CJTc662Uq3BvILklFM5qEJ1R3M="
@@ -4535,6 +4637,11 @@
   dependencies:
     "dns-packet" "^1.3.1"
     "thunky" "^1.0.2"
+
+"nanoid@^3.3.4":
+  "integrity" "sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw=="
+  "resolved" "https://registry.npmjs.org/nanoid/-/nanoid-3.3.4.tgz"
+  "version" "3.3.4"
 
 "nanomatch@^1.2.9":
   "integrity" "sha512-fpoe2T0RbHwBTBUOftAfBPaDEi06ufaUai0mE6Yn1kacc3SnTErfb/h+X94VXzI64rKFHYImXSvdwGGCmwOqCA=="
@@ -4978,6 +5085,11 @@
     "safe-buffer" "^5.0.1"
     "sha.js" "^2.4.8"
 
+"picocolors@^1.0.0":
+  "integrity" "sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ=="
+  "resolved" "https://registry.npmjs.org/picocolors/-/picocolors-1.0.0.tgz"
+  "version" "1.0.0"
+
 "picomatch@^2.0.4", "picomatch@^2.2.1":
   "integrity" "sha512-q0M/9eZHzmr0AulXyPwNfZjtwZ/RBZlbN3K3CErVrk50T2ASYI7Bye0EvekFY3IP1Nt2DHu0re+V2ZHIpMkuWg=="
   "resolved" "https://registry.npmjs.org/picomatch/-/picomatch-2.2.2.tgz"
@@ -5395,6 +5507,15 @@
     "source-map" "^0.6.1"
     "supports-color" "^6.1.0"
 
+"postcss@^8.4.14":
+  "integrity" "sha512-h+pbPsyhlYj6N2ozBmHhHrs9DzGmbaarbLvWipMRO7RLS+v4onj26MPFXA5OBYFxyqYhUJK456SwDcY9H2/zsA=="
+  "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.4.19.tgz"
+  "version" "8.4.19"
+  dependencies:
+    "nanoid" "^3.3.4"
+    "picocolors" "^1.0.0"
+    "source-map-js" "^1.0.2"
+
 "postcss@7.0.21":
   "integrity" "sha512-uIFtJElxJo29QC753JzhidoAhvp/e/Exezkdhfmt8AymWT6/5B7W1WmponYWkHk2eg6sONyTch0A3nkMPun3SQ=="
   "resolved" "https://registry.npmjs.org/postcss/-/postcss-7.0.21.tgz"
@@ -5719,6 +5840,11 @@
   "integrity" "sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8="
   "resolved" "https://registry.npmjs.org/requires-port/-/requires-port-1.0.0.tgz"
   "version" "1.0.0"
+
+"resize-observer-polyfill@1.5.1":
+  "integrity" "sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg=="
+  "resolved" "https://registry.npmjs.org/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz"
+  "version" "1.5.1"
 
 "resolve-cwd@^2.0.0":
   "integrity" "sha1-AKn3OHVW4nA46uIyyqNypqWbZlo="
@@ -6124,6 +6250,11 @@
   "resolved" "https://registry.npmjs.org/source-list-map/-/source-list-map-2.0.1.tgz"
   "version" "2.0.1"
 
+"source-map-js@^1.0.2":
+  "integrity" "sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw=="
+  "resolved" "https://registry.npmjs.org/source-map-js/-/source-map-js-1.0.2.tgz"
+  "version" "1.0.2"
+
 "source-map-resolve@^0.5.0", "source-map-resolve@^0.5.2":
   "integrity" "sha512-Htz+RnsXWk5+P2slx5Jh3Q66vhQj1Cllm0zvnaY98+NFx+Dv2CF/f5O/t8x+KaNdrdIAsruNzoh/KpialbqAnw=="
   "resolved" "https://registry.npmjs.org/source-map-resolve/-/source-map-resolve-0.5.3.tgz"
@@ -6279,6 +6410,11 @@
   "version" "1.1.1"
   dependencies:
     "safe-buffer" "~5.1.0"
+
+"string-convert@^0.2.0":
+  "integrity" "sha512-u/1tdPl4yQnPBjnVrmdLo9gtuLvELKsAoRapekWggdiQNvvvum+jYF329d84NAa660KQw7pB2n36KrIKVoXa3A=="
+  "resolved" "https://registry.npmjs.org/string-convert/-/string-convert-0.2.1.tgz"
+  "version" "0.2.1"
 
 "string-width@^2.0.0":
   "integrity" "sha512-nOqH59deCq9SRHlxq1Aw85Jnt4w6KvLKqWVik6oA9ZklXLNIOlqg4F2yrT1MVaTjAqvVwdfeZ7w7aCvJD7ugkw=="
@@ -6816,10 +6952,29 @@
     "vue-hot-reload-api" "^2.3.0"
     "vue-style-loader" "^4.1.0"
 
+"vue-multiselect@^2.1.6":
+  "integrity" "sha512-s7jmZPlm9FeueJg1RwJtnE9KNPtME/7C8uRWSfp9/yEN4M8XcS/d+bddoyVwVnvFyRh9msFo0HWeW0vTL8Qv+w=="
+  "resolved" "https://registry.npmjs.org/vue-multiselect/-/vue-multiselect-2.1.6.tgz"
+  "version" "2.1.6"
+
 "vue-router@^3.4.9":
   "integrity" "sha512-CGAKWN44RqXW06oC+u4mPgHLQQi2t6vLD/JbGRDAXm0YpMv0bgpKuU5bBd7AvMgfTz9kXVRIWKHqRwGEb8xFkA=="
   "resolved" "https://registry.npmjs.org/vue-router/-/vue-router-3.4.9.tgz"
   "version" "3.4.9"
+
+"vue-slick-carousel@^1.0.6":
+  "integrity" "sha512-1CN/hpWC8m1U/eO7Kuc71jntJqdg6Z/ieLji21OPfQUhs8ZYnnGhQSu1covpa3IyuovM9T5puPCVgexs3DDF5A=="
+  "resolved" "https://registry.npmjs.org/vue-slick-carousel/-/vue-slick-carousel-1.0.6.tgz"
+  "version" "1.0.6"
+  dependencies:
+    "enquire.js" "2.1.6"
+    "json2mq" "0.2.0"
+    "lodash.assign" "^4.2.0"
+    "lodash.debounce" "^4.0.8"
+    "lodash.get" "^4.4.2"
+    "lodash.pick" "^4.4.0"
+    "resize-observer-polyfill" "1.5.1"
+    "vue" "^2.6.10"
 
 "vue-style-loader@^4.1.0":
   "integrity" "sha512-0ip8ge6Gzz/Bk0iHovU9XAUQaFt/G2B61bnWa2tCcqqdgfHs1lF9xXorFbE55Gmy92okFT+8bfmySuUOu13vxQ=="
@@ -6842,10 +6997,18 @@
   "resolved" "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
-"vue@^2.0.0", "vue@^2.6.12":
-  "integrity" "sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg=="
-  "resolved" "https://registry.npmjs.org/vue/-/vue-2.6.12.tgz"
-  "version" "2.6.12"
+"vue@^2.0.0", "vue@^2.6.10", "vue@^2.6.12", "vue@^2.6.14 || ^3.2.0":
+  "integrity" "sha512-b2qkFyOM0kwqWFuQmgd4o+uHGU7T+2z3T+WQp8UBjADfEv2n4FEMffzBmCKNP0IGzOEEfYjvtcC62xaSKeQDrQ=="
+  "resolved" "https://registry.npmjs.org/vue/-/vue-2.7.14.tgz"
+  "version" "2.7.14"
+  dependencies:
+    "@vue/compiler-sfc" "2.7.14"
+    "csstype" "^3.1.0"
+
+"vueperslides@^2.16.0":
+  "integrity" "sha512-HosQXtbFr7qexeLTb6k7H+2Q7iODELGRalRDmPviMulSLDUBub8lmeVjda8TK3IcKpD0wma0A7bg085HtwDiRg=="
+  "resolved" "https://registry.npmjs.org/vueperslides/-/vueperslides-2.16.0.tgz"
+  "version" "2.16.0"
 
 "vuex@^3.6.0":
   "integrity" "sha512-W74OO2vCJPs9/YjNjW8lLbj+jzT24waTo2KShI8jLvJW8OaIkgb3wuAMA7D+ZiUxDOx3ubwSZTaJBip9G8a3aQ=="

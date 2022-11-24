@@ -15,6 +15,7 @@ export default {
   }
 }
 </script>
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 body{
