@@ -1,10 +1,14 @@
 <template>
   <div class="cars__container container">
     <h2>Latest Lots</h2>
+    <div class="cars__container__filters">
     <div class="grid">
         <CarBox v-for="car in cars" :key="car.id" :carData="car"/>
     </div>
-    <Error v-if="cars.length == 0 "/>
+    <FiltersRight/>
+    </div>
+
+    <Error v-if="cars && cars.length === 0"/>
 
   </div>
 </template>
@@ -14,11 +18,13 @@ import { mapState } from 'vuex';
 import store from '../Store';
 import CarBox from './CarBox.vue';
 import Error from './Error.vue';
+import FiltersRight from './FiltersRight.vue';
 export default {
   name: 'home',
   components:{
     CarBox,
-    Error
+    Error,
+    FiltersRight
   },
   mounted() {
     store.commit('GET_CARS');
@@ -34,6 +40,14 @@ export default {
 <style lang="scss">
 .cars__container{
     padding:0 10px;
+    &__filters{
+      display: flex;
+      gap:20px;
+      flex-direction: column-reverse;
+      @media(min-width:992px){
+        flex-direction: row;
+      }
+    }
     h2{
         font-family: 'PT Sans';
         font-weight: 700;

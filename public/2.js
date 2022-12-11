@@ -17,18 +17,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'about',
   data: function data() {
-    return {
-      value: '',
-      options: ['Select option', 'options', 'selected', 'multiple', 'label', 'searchable', 'clearOnSelect', 'hideSelected', 'maxHeight', 'allowEmpty', 'showLabels', 'onChange', 'touched']
-    };
+    return {};
   }
 });
 
@@ -49,43 +41,18 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "about" }, [
-    _c("h2", [
-      _vm._v("\n      About Page\n      "),
-      _c(
-        "div",
-        [
-          _c("label", { staticClass: "typo__label" }, [
-            _vm._v("Single select")
-          ]),
-          _vm._v(" "),
-          _c("multiselect", {
-            attrs: {
-              options: _vm.options,
-              searchable: false,
-              "close-on-select": false,
-              "show-labels": false,
-              placeholder: "Pick a value"
-            },
-            model: {
-              value: _vm.value,
-              callback: function($$v) {
-                _vm.value = $$v
-              },
-              expression: "value"
-            }
-          }),
-          _vm._v(" "),
-          _c("pre", { staticClass: "language-json" }, [
-            _c("code", [_vm._v(_vm._s(_vm.value))])
-          ])
-        ],
-        1
-      )
-    ])
-  ])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "about" }, [
+      _c("h2", [_vm._v("\n    About Page\n  ")])
+    ])
+  }
+]
 render._withStripped = true
 
 

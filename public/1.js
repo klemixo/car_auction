@@ -29,6 +29,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'navbar',
@@ -62,7 +64,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".navBar {\n  background: url(\"/img/navbar-bg-2.png\");\n  padding: 71px 0;\n}\n.navBar__link {\n  justify-content: flex-end;\n  margin-bottom: 40px;\n}\n.navBar__link li a {\n  color: white;\n}\n.navBar__hero {\n  display: flex;\n  gap: 36px;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 40px;\n  flex-direction: column;\n}\n@media (min-width: 768px) {\n.navBar__hero {\n    flex-direction: row;\n}\n}\n.navBar__hero h1 {\n  font-weight: 700;\n  font-size: 47px;\n  line-height: 61px;\n  text-align: center;\n  color: #FFFFFF;\n}\n.navBar__hero h1 span {\n  color: #f9d620;\n}\n.navBar__search {\n  display: flex;\n  gap: 24px;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n@media (min-width: 576px) {\n.navBar__search {\n    flex-direction: row;\n}\n}\n.navBar__search .base-input {\n  flex: 1;\n  width: 90%;\n}", ""]);
+exports.push([module.i, ".navBar {\n  background: url(\"/img/navbar-bg-2.png\");\n  padding: 71px 0;\n}\n.navBar__link {\n  justify-content: flex-end;\n  margin-bottom: 40px;\n  display: flex;\n}\n@media (min-width: 768px) {\n.navBar__link {\n    gap: 62px;\n}\n}\n.navBar__link li a {\n  color: white;\n}\n.navBar__hero {\n  display: flex;\n  gap: 36px;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 40px;\n  flex-direction: column;\n}\n@media (min-width: 768px) {\n.navBar__hero {\n    flex-direction: row;\n}\n}\n.navBar__hero h1 {\n  font-weight: 700;\n  font-size: 47px;\n  line-height: 61px;\n  text-align: center;\n  color: #FFFFFF;\n}\n.navBar__hero h1 span {\n  color: #f9d620;\n}\n.navBar__search {\n  display: flex;\n  gap: 24px;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n@media (min-width: 576px) {\n.navBar__search {\n    flex-direction: row;\n}\n}\n.navBar__search .base-input {\n  flex: 1;\n  width: 90%;\n}", ""]);
 
 // exports
 
@@ -121,7 +123,7 @@ var render = function() {
           "li",
           [
             _c("router-link", { attrs: { to: { name: "home" } } }, [
-              _vm._v("Home")
+              _vm._v("Main")
             ])
           ],
           1
@@ -132,6 +134,26 @@ var render = function() {
           [
             _c("router-link", { attrs: { to: { name: "about" } } }, [
               _vm._v("About")
+            ])
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c("router-link", { attrs: { to: { name: "Terms" } } }, [
+              _vm._v("Terms&Conditions")
+            ])
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c("router-link", { attrs: { to: { name: "Contact" } } }, [
+              _vm._v("Contact")
             ])
           ],
           1
