@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('cars',[getCars::class,'getCars']);
+Route::get('cars/{id}',[getCars::class,'getCar']);

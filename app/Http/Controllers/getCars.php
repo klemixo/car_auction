@@ -8,6 +8,11 @@ use App\Models\car;
 class getCars extends Controller
 {
 
+    public function getCar($id){
+        $query = car::where('id', $id);
+        return $query->get();
+    }
+    
     public function getCars(Request $req){
         $query = car::orderBy('id', 'desc');
         $data = $req->all();

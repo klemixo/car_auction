@@ -24,6 +24,7 @@
     },
     "dependencies": {
         "@egjs/vue-flicking": "^4.10.2",
+        "multi-range-slider-vue": "^1.1.4",
         "vue-multiselect": "^2.1.6",
         "vue-range-component": "^1.0.3",
         "vue-slick-carousel": "^1.0.6",

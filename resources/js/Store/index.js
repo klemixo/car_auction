@@ -23,7 +23,7 @@ const store = new Vuex.Store({
                     filtersString += `${property}=${state.filters[property]}`
                 }
             }
-            axios.get(`http://54.36.172.231/api/cars?${filtersString}`).then(res => {
+            axios.get(`/api/cars?${filtersString}`).then(res => {
                 state.cars = res.data
             }).catch(err => {
                 console.log(err)

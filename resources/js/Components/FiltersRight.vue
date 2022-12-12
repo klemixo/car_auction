@@ -14,7 +14,18 @@
             </div>
             <div class="filters__right__filter">
                 <label for="">Przebieg(mile)</label>
-                <vue-range-slider :min="filters.runMin"  :tooltip-merge="false" width="100%" :max="filters.runMax" ref="slider" v-model="filters.runValueStart"></vue-range-slider>
+                <MultiRangeSlider
+                :min="filters.runMin"
+                :max="filters.runMax"
+                :step="500"
+                :ruler="false"
+                :label="false"
+                :minValue="filters.runValueStart"
+                :maxValue="filters.runValueEnd"
+                @input="UpdateValues"
+            />
+            <label for="">{{ filters.runValueStart }} -  {{ filters.runValueEnd }}</label>
+
             </div>
             <div class="filters__right__filter">
                 <label for="">Dom aukcyjny</label>
@@ -48,11 +59,10 @@
 </template>
 
 <script>
-import 'vue-range-component/dist/vue-range-slider.css'
-import VueRangeSlider from 'vue-range-component'
+import MultiRangeSlider from "multi-range-slider-vue";
     export default {
         components:{
-            VueRangeSlider
+            MultiRangeSlider
         },
         data() {
             return {
@@ -76,16 +86,22 @@ import VueRangeSlider from 'vue-range-component'
                     fastPurchase:false,
                     runMin:0,
                     runMax:250000,
-                    runValueStart:1,
-                    runValueEnd:0,
+                    runValueStart:0,
+                    runValueEnd:250000,
                 }, 
             }
         },
- 
+        methods: {
+            UpdateValues(e) {
+                console.log(e)
+      this.filters.runValueStart = e.minValue;
+      this.filters.runValueEnd = e.maxValue;
+    }
+        },
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 .filters__right{
     h4{
         text-align: left;
@@ -138,4 +154,35 @@ import VueRangeSlider from 'vue-range-component'
         }
     }
 }
+
+.multi-range-slider{
+    width:90%;
+    box-shadow: none;
+    border:none;
+
+    .thumb{
+        &::before{
+        background: #243E97;
+        width:15px;
+        height:15px;
+        box-shadow:none;
+        border:none;
+        }
+    }
+}
+.bar{
+    height:3px;
+    border:none;
+    box-shadow:none;
+
+}
+.bar-inner{
+        background: #243E97 !important;
+        border:none !important;
+    box-shadow:none !important;
+    }
+    .bar-left,.bar-right{
+        padding:0 !important;
+        background-color: #93c5ff !important;
+    }
 </style>

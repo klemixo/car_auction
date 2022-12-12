@@ -7,6 +7,7 @@
     </div>
     <FiltersRight/>
     </div>
+    <button class="base-btn more-results-btn">More results</button>
 
     <Error v-if="cars && cars.length === 0"/>
 
@@ -40,6 +41,9 @@ export default {
 <style lang="scss">
 .cars__container{
     padding:0 10px;
+    .more-results-btn{
+      margin-top:32px;
+    }
     &__filters{
       display: flex;
       gap:20px;

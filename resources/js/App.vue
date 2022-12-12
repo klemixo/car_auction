@@ -2,6 +2,7 @@
   <div class="app">
     <Navbar></Navbar>
     <router-view></router-view>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -11,7 +12,8 @@ import './Styles/app.scss'
 export default {
   name: 'app',
   components: {
-    Navbar: () => import('./Components/Navbar.vue')
+    Navbar: () => import('./Components/Navbar.vue'),
+    Footer: () => import('./Components/Footer.vue'),
   }
 }
 </script>

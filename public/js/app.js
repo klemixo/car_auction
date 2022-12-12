@@ -18913,12 +18913,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'app',
   components: {
     Navbar: function Navbar() {
       return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./Components/Navbar.vue */ "./resources/js/Components/Navbar.vue"));
+    },
+    Footer: function Footer() {
+      return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ./Components/Footer.vue */ "./resources/js/Components/Footer.vue"));
     }
   }
 });
@@ -37327,7 +37331,7 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "app" },
-    [_c("Navbar"), _vm._v(" "), _c("router-view")],
+    [_c("Navbar"), _vm._v(" "), _c("router-view"), _vm._v(" "), _c("Footer")],
     1
   )
 }
@@ -53844,27 +53848,34 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [{
   path: '',
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(3), __webpack_require__.e(0)]).then(__webpack_require__.bind(null, /*! ../Pages/Home.vue */ "./resources/js/Pages/Home.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(2), __webpack_require__.e(0)]).then(__webpack_require__.bind(null, /*! ../Pages/Home.vue */ "./resources/js/Pages/Home.vue"));
   },
   name: 'home'
 }, {
   path: 'about',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ../Pages/About.vue */ "./resources/js/Pages/About.vue"));
+    return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ../Pages/About.vue */ "./resources/js/Pages/About.vue"));
   },
   name: 'about'
 }, {
-  path: 'Terms',
+  path: 'terms',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ../Pages/Terms.vue */ "./resources/js/Pages/Terms.vue"));
+    return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ../Pages/Terms.vue */ "./resources/js/Pages/Terms.vue"));
   },
   name: 'Terms'
 }, {
-  path: 'Contact',
+  path: 'contact',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ../Pages/Contact.vue */ "./resources/js/Pages/Contact.vue"));
+    return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ../Pages/Contact.vue */ "./resources/js/Pages/Contact.vue"));
   },
   name: 'Contact'
+}, {
+  path: '/car/:id',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ../Pages/Car.vue */ "./resources/js/Pages/Car.vue"));
+  },
+  name: 'Car',
+  props: true
 }];
 /* harmony default export */ __webpack_exports__["default"] = (routes);
 
@@ -53909,7 +53920,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         }
       }
 
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://54.36.172.231/api/cars?".concat(filtersString)).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/cars?".concat(filtersString)).then(function (res) {
         state.cars = res.data;
       })["catch"](function (err) {
         console.log(err);

@@ -15,7 +15,7 @@
             <p><span>Location:</span> no data</p>
             <div class="flex">
                 <h3>{{ carData.final_bid }} $</h3>
-                <router-link to="">More details <img src="img/arrow.svg" alt=""></router-link>
+                <router-link :to="'/car/' + carData.id">More details <img src="img/arrow.svg" alt=""></router-link> 
             </div>
         </div>
     </div>

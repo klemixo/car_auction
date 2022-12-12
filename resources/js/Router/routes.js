@@ -11,16 +11,23 @@ const routes = [{
         name: 'about'
     },
     {
-        path: 'Terms',
+        path: 'terms',
         component: () =>
             import ('../Pages/Terms.vue'),
         name: 'Terms'
     },
     {
-        path: 'Contact',
+        path: 'contact',
         component: () =>
             import ('../Pages/Contact.vue'),
         name: 'Contact'
+    },
+    {
+        path: '/car/:id',
+        component: () =>
+            import ('../Pages/Car.vue'),
+        name: 'Car',
+        props: true
     },
 ]
 
