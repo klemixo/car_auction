@@ -27,6 +27,9 @@ body{
 #app{
   overflow-x: hidden;
 }
+.flex{
+  display:flex;
+}
 *{
   font-family: 'PT Sans', sans-serif;
 }

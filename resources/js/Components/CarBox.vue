@@ -35,7 +35,28 @@ import 'vueperslides/dist/vueperslides.css'
     }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+        .badge{
+            background: #1882FF;
+            border-radius: 3px;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 21px;
+            padding:4px;
+            color:white;
+            text-align: center;
+            height: fit-content;
+            &--outline{
+                background: white;
+                color:#1882FF;
+                border:1px solid #597BD5;
+            }
+            &--gray{
+                background: white;
+                color:#818181;
+                border: 1px solid #818181;
+            }
+        }
 .car__box{
     background: #FFFFFF;
 box-shadow: 0px 9px 39px #ECF3F8;
@@ -70,16 +91,7 @@ padding:20px;
             font-size: 27px;
             line-height: 35px;
         }
-        .badge{
-            background: #1882FF;
-            border-radius: 3px;
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 21px;
-            padding:4px;
-            color:white;
-            text-align: center;
-        }
+
         a{
             font-size: 16px;
             line-height: 21px;

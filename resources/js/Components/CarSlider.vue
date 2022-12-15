@@ -1,0 +1,69 @@
+<template>
+    <div>
+        <vueper-slides
+  ref="vueperslides1"
+  :touchable="false"
+  fade
+  :autoplay="false"
+  :bullets="false"
+  :arrows="false"
+  @slide="$refs.vueperslides2.goToSlide($event.currentSlide.index, { emit: false })"
+  fixed-height="400px">
+  <vueper-slide
+    v-for="(slide, i) in slides"
+    :key="i"
+    image="http://54.36.172.231/img/base-img.png">
+  </vueper-slide>
+</vueper-slides>
+
+<vueper-slides
+  class="no-shadow thumbnails"
+  ref="vueperslides2"
+  @slide="$refs.vueperslides1.goToSlide($event.currentSlide.index, { emit: false })"
+  :visible-slides="slides.length"
+  fixed-height="75px"
+  :bullets="false"
+  :touchable="false"
+  :gap="2.5"
+  :arrows="false">
+  <vueper-slide
+    v-for="(slide, i) in slides"
+    :key="i"
+    image="http://54.36.172.231/img/base-img.png"
+    @click.native="$refs.vueperslides2.goToSlide(i)">
+  </vueper-slide>
+</vueper-slides>
+  <img v-for="img in slides" :src="img" alt="">
+    </div>
+</template>
+
+<script>
+import { VueperSlides, VueperSlide } from 'vueperslides'
+import 'vueperslides/dist/vueperslides.css'
+    export default {
+        components: { VueperSlides, VueperSlide },
+        props:['slides'],
+    }
+</script>
+
+<style lang="scss" scoped>
+.thumbnails {
+  margin: auto;
+  max-width: 100%;
+}
+
+.thumbnails .vueperslide {
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  transition: 0.3s ease-in-out;
+  opacity: 0.7;
+  cursor: pointer;
+  width:158px;
+}
+
+.thumbnails .vueperslide--active {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  border-color: #000;
+}
+</style>

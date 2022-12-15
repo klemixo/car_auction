@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[2],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[9],{
 
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/CarSlider.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************************************************!*\
@@ -13,8 +13,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vueperslides__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vueperslides_dist_vueperslides_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vueperslides/dist/vueperslides.css */ "./node_modules/vueperslides/dist/vueperslides.css");
 /* harmony import */ var vueperslides_dist_vueperslides_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vueperslides_dist_vueperslides_css__WEBPACK_IMPORTED_MODULE_1__);
-//
-//
 //
 //
 //
@@ -115,85 +113,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -242,7 +161,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".thumbnails[data-v-49c6dccc] {\n  margin: auto;\n  max-width: 100%;\n}\n.thumbnails .vueperslide[data-v-49c6dccc] {\n  box-sizing: border-box;\n  border: 1px solid #fff;\n  transition: 0.3s ease-in-out;\n  opacity: 0.7;\n  cursor: pointer;\n  width: 158px;\n}\n.thumbnails .vueperslide--active[data-v-49c6dccc] {\n  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);\n  opacity: 1;\n  border-color: #000;\n}", ""]);
+exports.push([module.i, ".thumbnails[data-v-49c6dccc] {\n  margin: auto;\n  max-width: 300px;\n}\n.thumbnails .vueperslide[data-v-49c6dccc] {\n  box-sizing: border-box;\n  border: 1px solid #fff;\n  transition: 0.3s ease-in-out;\n  opacity: 0.7;\n  cursor: pointer;\n}\n.thumbnails .vueperslide--active[data-v-49c6dccc] {\n  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);\n  opacity: 1;\n  border-color: #000;\n}", ""]);
 
 // exports
 
@@ -261,7 +180,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".car__container__heading[data-v-5f190dbb] {\n  width: 100%;\n  margin: 20px 0;\n}\n.car__container__content[data-v-5f190dbb] {\n  display: flex;\n  flex-direction: column;\n  gap: 29px;\n}\n@media (min-width: 992px) {\n.car__container__content[data-v-5f190dbb] {\n    flex-direction: row;\n}\n}\n.car__container__content__images[data-v-5f190dbb] {\n  flex: 1;\n}\n@media (min-width: 992px) {\n.car__container__content__images[data-v-5f190dbb] {\n    flex: 3;\n}\n}\n.car__container__content__data[data-v-5f190dbb] {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 21px;\n}\n@media (min-width: 992px) {\n.car__container__content__data[data-v-5f190dbb] {\n    width: unset;\n    min-width: 410px;\n}\n}\n.car__container__content__data .data__box[data-v-5f190dbb] {\n  padding: 20px !important;\n}\n.car__container__content__data .data__box__heading[data-v-5f190dbb] {\n  background: #F8F8F8;\n  display: flex;\n  gap: 16px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__heading img[data-v-5f190dbb] {\n  width: 27px;\n  height: 27px;\n}\n.car__container__content__data .data__box__heading p[data-v-5f190dbb] {\n  font-weight: 700;\n  font-size: 25px;\n  margin: 0;\n}\n.car__container__content__data .data__box__content h3[data-v-5f190dbb] {\n  font-weight: 700;\n  font-size: 33px;\n  line-height: 43px;\n  text-align: left;\n}\n.car__container__content__data .data__box__content .highlight[data-v-5f190dbb] {\n  background: #FFEBB7;\n  border-radius: 3px;\n  width: fit-content;\n}\n.car__container__content__data .data__box__content .flex[data-v-5f190dbb] {\n  display: flex;\n  gap: 11px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__content .flex-base[data-v-5f190dbb] {\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);\n}\n.car__container__content__data .data__box__content .flex-base .light[data-v-5f190dbb] {\n  color: #818181;\n}\n.car__container__content__data .data__box__content .flex-base .strong[data-v-5f190dbb] {\n  color: black;\n}\n.car__container .card[data-v-5f190dbb] {\n  background: #FFFFFF;\n  border: 1px solid #ECF1F9;\n  padding: 10px;\n  border-radius: 8px;\n}\n.car__container .card .flex-main[data-v-5f190dbb] {\n  justify-content: space-between;\n  flex-wrap: wrap;\n}\n.car__container .card .flex-main button[data-v-5f190dbb] {\n  background: #FFCD1E;\n  border-radius: 5px;\n  color: white;\n  width: fit-content;\n  height: fit-content;\n  border: none;\n  outline: none;\n  margin: auto 0;\n}\n.car__container .card h1[data-v-5f190dbb] {\n  font-size: 25px;\n  line-height: 32px;\n  color: #000000;\n  margin-right: 24px;\n}\n.car__container .card h2[data-v-5f190dbb] {\n  font-size: 16px;\n  line-height: 21px;\n}\n.car__container .card h2[data-v-5f190dbb]:first-of-type {\n  margin-right: 65px;\n}\n.car__container .card h2 span[data-v-5f190dbb] {\n  color: #818181;\n}", ""]);
+exports.push([module.i, ".car__container__heading[data-v-5f190dbb] {\n  width: 100%;\n  margin: 20px 0;\n}\n.car__container__content[data-v-5f190dbb] {\n  display: flex;\n  flex-direction: column;\n}\n.car__container__content__images[data-v-5f190dbb] {\n  flex: 1;\n}\n@media (min-width: 992px) {\n.car__container__content__images[data-v-5f190dbb] {\n    flex: 3;\n}\n}\n.car__container__content__data[data-v-5f190dbb] {\n  flex: 1;\n}\n.car__container .card[data-v-5f190dbb] {\n  background: #FFFFFF;\n  border: 1px solid #ECF1F9;\n  padding: 10px;\n  border-radius: 8px;\n}\n.car__container .card .flex-main[data-v-5f190dbb] {\n  justify-content: space-between;\n  flex-wrap: wrap;\n}\n.car__container .card .flex-main button[data-v-5f190dbb] {\n  background: #FFCD1E;\n  border-radius: 5px;\n  color: white;\n  width: fit-content;\n  height: fit-content;\n  border: none;\n  outline: none;\n  margin: auto 0;\n}\n.car__container .card h1[data-v-5f190dbb] {\n  font-size: 25px;\n  line-height: 32px;\n  color: #000000;\n  margin-right: 24px;\n}\n.car__container .card h2[data-v-5f190dbb] {\n  font-size: 16px;\n  line-height: 21px;\n}\n.car__container .card h2[data-v-5f190dbb]:first-of-type {\n  margin-right: 65px;\n}\n.car__container .card h2 span[data-v-5f190dbb] {\n  color: #818181;\n}", ""]);
 
 // exports
 
@@ -355,7 +274,6 @@ var render = function() {
             fade: "",
             autoplay: false,
             bullets: false,
-            arrows: false,
             "fixed-height": "400px"
           },
           on: {
@@ -368,10 +286,7 @@ var render = function() {
           }
         },
         _vm._l(_vm.slides, function(slide, i) {
-          return _c("vueper-slide", {
-            key: i,
-            attrs: { image: "http://54.36.172.231/img/base-img.png" }
-          })
+          return _c("vueper-slide", { key: i, attrs: { image: slide } })
         }),
         1
       ),
@@ -401,7 +316,7 @@ var render = function() {
         _vm._l(_vm.slides, function(slide, i) {
           return _c("vueper-slide", {
             key: i,
-            attrs: { image: "http://54.36.172.231/img/base-img.png" },
+            attrs: { image: slide },
             nativeOn: {
               click: function($event) {
                 return _vm.$refs.vueperslides2.goToSlide(i)
@@ -410,13 +325,9 @@ var render = function() {
           })
         }),
         1
-      ),
-      _vm._v(" "),
-      _vm._l(_vm.slides, function(img) {
-        return _c("img", { attrs: { src: img, alt: "" } })
-      })
+      )
     ],
-    2
+    1
   )
 }
 var staticRenderFns = []
@@ -499,211 +410,13 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "car__container__content__data" }, [
-            _c("div", { staticClass: "data__box card" }, [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("div", { staticClass: "data__box__content" }, [
-                _c("h3", [_vm._v("Final bid: $13.456.00")]),
-                _vm._v(" "),
-                _vm._m(1),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex" }, [
-                  _c("p", [_vm._v("Auction: ")]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "badge" }, [
-                    _vm._v(_vm._s(_vm.carData.selling_branch))
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "badge badge--outline" }, [
-                    _vm._v("Not Sold")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex-base" }, [
-                  _c("p", { staticClass: "light" }, [_vm._v("Lot number")]),
-                  _c("p", { staticClass: "strong" }, [
-                    _vm._v(_vm._s(_vm.carData.run_number))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex-base" }, [
-                  _c("p", { staticClass: "light" }, [_vm._v("Date of sell")]),
-                  _c("p", { staticClass: "strong" }, [
-                    _vm._v(_vm._s(_vm.carData.sold_date))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex-base" }, [
-                  _c("p", { staticClass: "light" }, [_vm._v("Documents")]),
-                  _c("p", { staticClass: "strong" }, [
-                    _vm._v(_vm._s(_vm.carData.sold_date))
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "data__box card" }, [
-              _vm._m(2),
-              _vm._v(" "),
-              _c("div", { staticClass: "data__box__content" }, [
-                _c("div", { staticClass: "flex-base" }, [
-                  _c("p", { staticClass: "light" }, [_vm._v("VIN")]),
-                  _c("p", { staticClass: "strong" }, [
-                    _vm._v(_vm._s(_vm.carData.vin))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex-base" }, [
-                  _c("p", { staticClass: "light" }, [_vm._v("Year")]),
-                  _c("p", { staticClass: "strong" }, [
-                    _vm._v(_vm._s(_vm.carData.production_year))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex-base" }, [
-                  _c("p", { staticClass: "light" }, [_vm._v("Mileage")]),
-                  _c("p", { staticClass: "strong" }, [
-                    _vm._v(_vm._s(_vm.carData.odometer))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex-base" }, [
-                  _c("p", { staticClass: "light" }, [_vm._v("Engine")]),
-                  _c("p", { staticClass: "strong" }, [
-                    _vm._v(_vm._s(_vm.carData.engine))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex-base" }, [
-                  _c("p", { staticClass: "light" }, [_vm._v("Transmission")]),
-                  _c("p", { staticClass: "strong" }, [
-                    _vm._v(_vm._s(_vm.carData.transmission))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex-base" }, [
-                  _c("p", { staticClass: "light" }, [_vm._v("Run and drive")]),
-                  _c("p", { staticClass: "strong" }, [
-                    _vm._v(_vm._s(_vm.carData.drive_line_type))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex-base" }, [
-                  _c("p", { staticClass: "light" }, [_vm._v("Body color")]),
-                  _c("p", { staticClass: "strong" }, [
-                    _vm._v(_vm._s(_vm.carData.odometer))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex-base" }, [
-                  _c("p", { staticClass: "light" }, [_vm._v("Drive")]),
-                  _c("p", { staticClass: "strong" }, [
-                    _vm._v(_vm._s(_vm.carData.drive_line_type))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex-base" }, [
-                  _c("p", { staticClass: "light" }, [_vm._v("Fuel")]),
-                  _c("p", { staticClass: "strong" }, [
-                    _vm._v(_vm._s(_vm.carData.odometer))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex-base" }, [
-                  _c("p", { staticClass: "light" }, [_vm._v("Keys")]),
-                  _c("p", { staticClass: "strong" }, [
-                    _vm._v(_vm._s(_vm.carData.key))
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "data__box card" }, [
-              _vm._m(3),
-              _vm._v(" "),
-              _c("div", { staticClass: "data__box__content" }, [
-                _c("div", { staticClass: "flex-base" }, [
-                  _c("p", { staticClass: "light" }, [_vm._v("Primary damage")]),
-                  _c("p", { staticClass: "strong" }, [
-                    _vm._v(_vm._s(_vm.carData.loss))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex-base" }, [
-                  _c("p", { staticClass: "light" }, [
-                    _vm._v("Secondary damage")
-                  ]),
-                  _c("p", { staticClass: "strong" }, [
-                    _vm._v(_vm._s(_vm.carData.primary_damage))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex-base" }, [
-                  _c("p", { staticClass: "light" }, [
-                    _vm._v("Estimated Retail value")
-                  ]),
-                  _c("p", { staticClass: "strong" }, [
-                    _vm._v(_vm._s(_vm.carData.odometer))
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex-base" }, [
-                  _c("p", { staticClass: "light" }, [
-                    _vm._v("Estimated repair cost")
-                  ]),
-                  _c("p", { staticClass: "strong" }, [
-                    _vm._v(_vm._s(_vm.carData.engine))
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
+          _c("div", { staticClass: "car__container__content__data" })
+        ]),
+        _vm._v("\n    " + _vm._s(_vm.carData) + "\n")
       ])
     : _vm._e()
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "data__box__heading" }, [
-      _c("img", { attrs: { src: "/img/Sale-details.svg", alt: "" } }),
-      _vm._v(" "),
-      _c("p", [_vm._v("Sale Details")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "highlight" }, [
-      _vm._v("Seller:  "),
-      _c("b", [_vm._v("Non-Insurence Company")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "data__box__heading" }, [
-      _c("img", { attrs: { src: "/img/Vehicle-details.svg", alt: "" } }),
-      _vm._v(" "),
-      _c("p", [_vm._v("Vehicle Details")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "data__box__heading" }, [
-      _c("img", { attrs: { src: "/img/Condition-details.svg", alt: "" } }),
-      _vm._v(" "),
-      _c("p", [_vm._v("Condition Details")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
