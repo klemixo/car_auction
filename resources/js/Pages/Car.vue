@@ -25,8 +25,10 @@
                 </button>
             </div>
         </div>
-        <div class="car__container__content">
+        <!--
+                    <div class="car__container__content">
             <div class="car__container__content__images">
+                <CarSlider :slides="slides"/>
             </div>
             <div class="car__container__content__data">
                 <div class="data__box card">
@@ -112,6 +114,8 @@
                 </div>
             </div>
         </div>
+        -->
+
     </div>
 </template>
 
