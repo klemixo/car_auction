@@ -197,6 +197,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -444,57 +446,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.carData
-    ? _c("div", { staticClass: "car__container container" }, [
-        _c("div", { staticClass: "car__container__heading card" }, [
-          _c("div", { staticClass: "flex flex-main" }, [
-            _c("div", [
-              _c("div", { staticClass: "flex" }, [
-                _c("h1", [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(_vm.carData.production_year) +
-                      " " +
-                      _vm._s(_vm.carData.marka) +
-                      " " +
-                      _vm._s(_vm.carData.model) +
-                      "\n                    "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "badge" }, [
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(_vm.carData.selling_branch) +
-                      "\n                    "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "flex" }, [
-                _c("h2", [
-                  _c("span", [_vm._v("Lot number:")]),
-                  _vm._v(
-                    "  " +
-                      _vm._s(_vm.carData.run_number) +
-                      "\n                    "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("h2", [
-                  _c("span", [_vm._v("VIN: ")]),
-                  _vm._v(
-                    " " + _vm._s(_vm.carData.vin) + "\n                    "
-                  )
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("button", [_vm._v("\n                CLAIM LOT\n            ")])
-          ])
-        ])
-      ])
-    : _vm._e()
+  return _c("div", { staticClass: "car__container container" }, [
+    _vm._v("\n     ałto " + _vm._s(_vm.carData) + "\n    ")
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

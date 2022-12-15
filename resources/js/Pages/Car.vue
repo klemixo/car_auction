@@ -1,5 +1,8 @@
 <template>
-    <div class="car__container container" v-if="carData">
+    <div class="car__container container" >
+         ałto {{ carData }}
+        <!--
+
         <div class="car__container__heading card">
             <div class="flex flex-main">
                 <div>
@@ -25,7 +28,6 @@
                 </button>
             </div>
         </div>
-        <!--
                     <div class="car__container__content">
             <div class="car__container__content__images">
                 <CarSlider :slides="slides"/>
