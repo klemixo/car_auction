@@ -132,7 +132,7 @@ var render = function() {
         _c(
           "li",
           [
-            _c("router-link", { attrs: { to: { name: "about" } } }, [
+            _c("router-link", { attrs: { to: { name: "About" } } }, [
               _vm._v("About")
             ])
           ],

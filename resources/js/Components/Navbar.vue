@@ -3,7 +3,7 @@
     <div class="navBar__content container">
       <ul class="navBar__link">
         <li><router-link :to="{ name: 'home' }">Main</router-link></li>
-        <li><router-link :to="{ name: 'about' }">About</router-link> </li>
+        <li><router-link :to="{ name: 'About' }">About</router-link> </li>
         <li><router-link :to="{ name: 'Terms' }">Terms&Conditions</router-link> </li>
         <li><router-link :to="{ name: 'Contact' }">Contact</router-link> </li>
       </ul>

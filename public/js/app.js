@@ -53856,7 +53856,7 @@ var routes = [{
   component: function component() {
     return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ../Pages/About.vue */ "./resources/js/Pages/About.vue"));
   },
-  name: 'about'
+  name: 'About'
 }, {
   path: 'terms',
   component: function component() {
