@@ -193,7 +193,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -492,12 +491,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "car__container__content" }, [
-          _c(
-            "div",
-            { staticClass: "car__container__content__images" },
-            [_c("CarSlider", { attrs: { slides: _vm.slides } })],
-            1
-          ),
+          _c("div", { staticClass: "car__container__content__images" }),
           _vm._v(" "),
           _c("div", { staticClass: "car__container__content__data" }, [
             _c("div", { staticClass: "data__box card" }, [
