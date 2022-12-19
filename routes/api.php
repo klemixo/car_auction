@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FiltersController;
 use App\Http\Controllers\getCars;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('cars',[getCars::class,'getCars']);
 Route::get('cars/{id}',[getCars::class,'getCar']);
+Route::get('filters',[FiltersController::class,'getFilters']);

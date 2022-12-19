@@ -2,7 +2,7 @@
     <div class="footer">
         <p class="footer__heading">History of sales insurance cars - Prices and damage insurance cars at Copart and insurance auctions IAAI</p>
         <div class="footer__content">
-            <div class="container">
+            <div class="container container__flex">
                 <div class="footer__section">
                     <img src="img/hero.png" alt="">
                 </div>
@@ -18,6 +18,9 @@
                 <div class="footer__section">
                     <router-link :to="{ name: 'Terms' }">Terms&Conditions</router-link>
                 </div>
+            </div>
+            <div class="container container__bottom">
+                Ⓒ 2021 VINFAX. All rights reserved
             </div>
         </div>
     </div>
@@ -50,7 +53,16 @@
         background: linear-gradient(180deg, rgba(19, 47, 148, 0.84) 0%, #102672 100%);
         padding:10px 40px 5px 40px;
         width:100%;
-        .container{
+        .container__bottom{
+            padding:29px 0;
+            font-weight: 400;
+font-size: 16px;
+line-height: 21px;
+text-align: left;
+color:white;
+border-top: 1px solid white;
+        }
+        .container__flex{
             display:flex;
             flex-direction: column;
             justify-content: space-between;

@@ -52,6 +52,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -59,7 +60,12 @@ __webpack_require__.r(__webpack_exports__);
     VueperSlides: vueperslides__WEBPACK_IMPORTED_MODULE_0__["VueperSlides"],
     VueperSlide: vueperslides__WEBPACK_IMPORTED_MODULE_0__["VueperSlide"]
   },
-  props: ['slides']
+  props: ['slides'],
+  computed: {
+    mobileView: function mobileView() {
+      return window.innerWidth < 768 ? true : false;
+    }
+  }
 });
 
 /***/ }),
@@ -208,7 +214,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     slides: function slides() {
-      return ["img/base-img.png", "img/base-img-2.png", "img/base-img-3.png"];
+      return ["img/base-img.png", "img/base-img-2.png", "img/base-img-3.png", "img/base-img-3.png", "img/base-img-3.png", "img/base-img-3.png"];
     }
   },
   mounted: function mounted() {
@@ -242,7 +248,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".thumbnails[data-v-49c6dccc] {\n  margin: auto;\n  max-width: 100%;\n}\n.thumbnails .vueperslide[data-v-49c6dccc] {\n  box-sizing: border-box;\n  border: 1px solid #fff;\n  transition: 0.3s ease-in-out;\n  opacity: 0.7;\n  cursor: pointer;\n  width: 158px;\n}\n.thumbnails .vueperslide--active[data-v-49c6dccc] {\n  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);\n  opacity: 1;\n  border-color: #000;\n}", ""]);
+exports.push([module.i, ".thumbnails[data-v-49c6dccc] {\n  margin: auto;\n  max-width: 100%;\n  margin-top: 12px;\n}\n.thumbnails .vueperslide[data-v-49c6dccc] {\n  box-sizing: border-box;\n  border: 1px solid #fff;\n  transition: 0.3s ease-in-out;\n  opacity: 0.7;\n  cursor: pointer;\n  width: 158px !important;\n  height: 108px !important;\n}\n.vueperslides__arrow--prev[data-v-49c6dccc] {\n  left: -3rem !important;\n}\n.vueperslides__arrow--next[data-v-49c6dccc] {\n  right: -3rem !important;\n}\n.thumbnails .vueperslide--active[data-v-49c6dccc] {\n  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);\n  opacity: 1;\n  border-color: #000;\n}", ""]);
 
 // exports
 
@@ -351,11 +357,11 @@ var render = function() {
         {
           ref: "vueperslides1",
           attrs: {
-            touchable: false,
+            touchable: true,
             fade: "",
             autoplay: false,
             bullets: false,
-            arrows: false,
+            arrows: _vm.mobileView,
             "fixed-height": "400px"
           },
           on: {
@@ -376,41 +382,43 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c(
-        "vueper-slides",
-        {
-          ref: "vueperslides2",
-          staticClass: "no-shadow thumbnails",
-          attrs: {
-            "visible-slides": _vm.slides.length,
-            "fixed-height": "75px",
-            bullets: false,
-            touchable: false,
-            gap: 2.5,
-            arrows: false
-          },
-          on: {
-            slide: function($event) {
-              return _vm.$refs.vueperslides1.goToSlide(
-                $event.currentSlide.index,
-                { emit: false }
-              )
-            }
-          }
-        },
-        _vm._l(_vm.slides, function(slide, i) {
-          return _c("vueper-slide", {
-            key: i,
-            attrs: { image: "http://54.36.172.231/img/base-img.png" },
-            nativeOn: {
-              click: function($event) {
-                return _vm.$refs.vueperslides2.goToSlide(i)
+      !_vm.mobileView
+        ? _c(
+            "vueper-slides",
+            {
+              ref: "vueperslides2",
+              staticClass: "no-shadow thumbnails",
+              attrs: {
+                "visible-slides": _vm.slides.length,
+                "fixed-height": "75px",
+                bullets: false,
+                touchable: false,
+                gap: 2.5,
+                arrows: false
+              },
+              on: {
+                slide: function($event) {
+                  return _vm.$refs.vueperslides1.goToSlide(
+                    $event.currentSlide.index,
+                    { emit: false }
+                  )
+                }
               }
-            }
-          })
-        }),
-        1
-      ),
+            },
+            _vm._l(_vm.slides, function(slide, i) {
+              return _c("vueper-slide", {
+                key: i,
+                attrs: { image: "http://54.36.172.231/img/base-img.png" },
+                nativeOn: {
+                  click: function($event) {
+                    return _vm.$refs.vueperslides2.goToSlide(i)
+                  }
+                }
+              })
+            }),
+            1
+          )
+        : _vm._e(),
       _vm._v(" "),
       _vm._l(_vm.slides, function(img) {
         return _c("img", { attrs: { src: img, alt: "" } })

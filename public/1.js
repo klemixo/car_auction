@@ -274,7 +274,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       filters: {
-        mark: {
+        marka: {
           options: [],
           value: '',
           label: 'Select mark',

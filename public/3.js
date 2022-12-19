@@ -34,6 +34,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -50,7 +53,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".footer[data-v-3c0d6e26] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  margin-top: 51px;\n}\n.footer__heading[data-v-3c0d6e26] {\n  font-weight: 400;\n  font-size: 17px;\n  line-height: 22px;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  letter-spacing: 0.1em;\n  color: rgba(0, 0, 0, 0.2);\n}\n.footer__content[data-v-3c0d6e26] {\n  background: linear-gradient(180deg, rgba(19, 47, 148, 0.84) 0%, #102672 100%);\n  padding: 10px 40px 5px 40px;\n  width: 100%;\n}\n.footer__content .container[data-v-3c0d6e26] {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n  gap: 16px;\n}\n@media (min-width: 992px) {\n.footer__content .container[data-v-3c0d6e26] {\n    flex-direction: row;\n    padding: 30px 0;\n}\n}\n.footer__content .container p[data-v-3c0d6e26], .footer__content .container a[data-v-3c0d6e26] {\n  font-weight: 400;\n  font-size: 20px;\n  line-height: 33px;\n  color: #FFFFFF;\n  text-decoration: none;\n}\n.footer__content .container p span[data-v-3c0d6e26], .footer__content .container a span[data-v-3c0d6e26] {\n  font-weight: 700;\n}", ""]);
+exports.push([module.i, ".footer[data-v-3c0d6e26] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  margin-top: 51px;\n}\n.footer__heading[data-v-3c0d6e26] {\n  font-weight: 400;\n  font-size: 17px;\n  line-height: 22px;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  letter-spacing: 0.1em;\n  color: rgba(0, 0, 0, 0.2);\n}\n.footer__content[data-v-3c0d6e26] {\n  background: linear-gradient(180deg, rgba(19, 47, 148, 0.84) 0%, #102672 100%);\n  padding: 10px 40px 5px 40px;\n  width: 100%;\n}\n.footer__content .container__bottom[data-v-3c0d6e26] {\n  padding: 29px 0;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 21px;\n  text-align: left;\n  color: white;\n  border-top: 1px solid white;\n}\n.footer__content .container__flex[data-v-3c0d6e26] {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n  gap: 16px;\n}\n@media (min-width: 992px) {\n.footer__content .container__flex[data-v-3c0d6e26] {\n    flex-direction: row;\n    padding: 30px 0;\n}\n}\n.footer__content .container__flex p[data-v-3c0d6e26], .footer__content .container__flex a[data-v-3c0d6e26] {\n  font-weight: 400;\n  font-size: 20px;\n  line-height: 33px;\n  color: #FFFFFF;\n  text-decoration: none;\n}\n.footer__content .container__flex p span[data-v-3c0d6e26], .footer__content .container__flex a span[data-v-3c0d6e26] {\n  font-weight: 700;\n}", ""]);
 
 // exports
 
@@ -110,7 +113,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "footer__content" }, [
-      _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "container container__flex" }, [
         _vm._m(0),
         _vm._v(" "),
         _vm._m(1),
@@ -127,6 +130,10 @@ var render = function() {
           ],
           1
         )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "container container__bottom" }, [
+        _vm._v("\n            Ⓒ 2021 VINFAX. All rights reserved\n        ")
       ])
     ])
   ])

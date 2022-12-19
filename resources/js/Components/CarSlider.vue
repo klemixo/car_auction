@@ -2,11 +2,11 @@
     <div>
         <vueper-slides
   ref="vueperslides1"
-  :touchable="false"
+  :touchable="true"
   fade
   :autoplay="false"
   :bullets="false"
-  :arrows="false"
+  :arrows="mobileView"
   @slide="$refs.vueperslides2.goToSlide($event.currentSlide.index, { emit: false })"
   fixed-height="400px">
   <vueper-slide
@@ -17,6 +17,7 @@
 </vueper-slides>
 
 <vueper-slides
+v-if="!mobileView"
   class="no-shadow thumbnails"
   ref="vueperslides2"
   @slide="$refs.vueperslides1.goToSlide($event.currentSlide.index, { emit: false })"
@@ -43,6 +44,11 @@ import 'vueperslides/dist/vueperslides.css'
     export default {
         components: { VueperSlides, VueperSlide },
         props:['slides'],
+        computed:{
+          mobileView(){
+            return window.innerWidth < 768 ? true :false;
+          }
+        }
     }
 </script>
 
@@ -50,6 +56,7 @@ import 'vueperslides/dist/vueperslides.css'
 .thumbnails {
   margin: auto;
   max-width: 100%;
+  margin-top:12px;
 }
 
 .thumbnails .vueperslide {
@@ -58,9 +65,17 @@ import 'vueperslides/dist/vueperslides.css'
   transition: 0.3s ease-in-out;
   opacity: 0.7;
   cursor: pointer;
-  width:158px;
+  width:158px !important;
+  height:108px !important;
 }
-
+.vueperslides__arrow {
+  &--prev{
+    left:-3rem !important;
+  }
+  &--next{
+    right:-3rem !important;
+  }
+}
 .thumbnails .vueperslide--active {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   opacity: 1;

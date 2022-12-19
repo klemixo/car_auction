@@ -132,7 +132,7 @@ import CarSlider from '../Components/CarSlider.vue';
      },
      computed: {
         slides(){
-            return ["img/base-img.png","img/base-img-2.png","img/base-img-3.png"]
+            return ["img/base-img.png","img/base-img-2.png","img/base-img-3.png","img/base-img-3.png","img/base-img-3.png","img/base-img-3.png"]
         }
      },
      mounted() {

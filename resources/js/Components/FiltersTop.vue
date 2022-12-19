@@ -14,7 +14,7 @@
         data() {
             return {
                 filters:{
-                    mark:{
+                    marka:{
                         options:[],
                         value:'',
                         label:'Select mark',
