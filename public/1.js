@@ -147,6 +147,13 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var multi_range_slider_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! multi-range-slider-vue */ "./node_modules/multi-range-slider-vue/MultiRangeSlider.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -207,6 +214,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -233,12 +241,17 @@ __webpack_require__.r(__webpack_exports__);
         closedAuctions: false,
         fastPurchase: false,
         runMin: 0,
-        runMax: 250000,
+        runMax: 999999,
         runValueStart: 0,
         runValueEnd: 250000
       }
     };
   },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
+    filtersOptions: function filtersOptions(state) {
+      return state.filtersOptions;
+    }
+  })),
   methods: {
     UpdateValues: function UpdateValues(e) {
       console.log(e);
@@ -259,6 +272,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _Store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Store */ "./resources/js/Store/index.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -270,36 +291,42 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       filters: {
         marka: {
-          options: [],
           value: '',
           label: 'Select mark',
           placeholder: 'All marks'
         },
         model: {
-          options: [],
           value: '',
           label: 'Select model',
           placeholder: 'All models'
         },
         yearFrom: {
-          options: [],
           value: '',
           label: 'Year',
           placeholder: 'From'
         },
         yearTo: {
-          options: [],
           value: '',
           label: '',
           placeholder: 'To'
         }
       }
     };
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
+    filtersOptions: function filtersOptions(state) {
+      return state.filtersOptions;
+    }
+  })),
+  mounted: function mounted() {
+    _Store__WEBPACK_IMPORTED_MODULE_1__["default"].commit('GET_FILTERS');
   },
   methods: {
     search: function search() {
@@ -851,9 +878,11 @@ var render = function() {
           [
             _c("multiselect", {
               attrs: {
-                options: _vm.filters.yearFrom.options,
-                searchable: false,
-                "close-on-select": false,
+                options: _vm.filtersOptions.production_year,
+                "track-by": "production_year",
+                label: "production_year",
+                searchable: true,
+                "close-on-select": true,
                 "show-labels": false,
                 placeholder: _vm.filters.yearFrom.placeholder
               },
@@ -868,9 +897,11 @@ var render = function() {
             _vm._v(" "),
             _c("multiselect", {
               attrs: {
-                options: _vm.filters.yearTo.options,
-                searchable: false,
-                "close-on-select": false,
+                options: _vm.filtersOptions.production_year,
+                "track-by": "production_year",
+                label: "production_year",
+                searchable: true,
+                "close-on-select": true,
                 "show-labels": false,
                 placeholder: _vm.filters.yearTo.placeholder
               },
@@ -923,7 +954,7 @@ var render = function() {
         [
           _c("label", { attrs: { for: "" } }, [_vm._v("Dom aukcyjny")]),
           _vm._v(" "),
-          _vm._l(_vm.filters.auctionHouses.options, function(house, index) {
+          _vm._l(_vm.filtersOptions.selling_branch, function(house, index) {
             return _c("div", { key: index, staticClass: "base-checkbox" }, [
               _c("input", {
                 directives: [
@@ -935,11 +966,14 @@ var render = function() {
                   }
                 ],
                 staticClass: "inp-cbx",
-                attrs: { id: house, type: "checkbox" },
+                attrs: { id: house["selling_branch"], type: "checkbox" },
                 domProps: {
-                  value: house,
+                  value: house["selling_branch"],
                   checked: Array.isArray(_vm.filters.auctionHouses.value)
-                    ? _vm._i(_vm.filters.auctionHouses.value, house) > -1
+                    ? _vm._i(
+                        _vm.filters.auctionHouses.value,
+                        house["selling_branch"]
+                      ) > -1
                     : _vm.filters.auctionHouses.value
                 },
                 on: {
@@ -948,7 +982,7 @@ var render = function() {
                       $$el = $event.target,
                       $$c = $$el.checked ? true : false
                     if (Array.isArray($$a)) {
-                      var $$v = house,
+                      var $$v = house["selling_branch"],
                         $$i = _vm._i($$a, $$v)
                       if ($$el.checked) {
                         $$i < 0 &&
@@ -972,26 +1006,30 @@ var render = function() {
                 }
               }),
               _vm._v(" "),
-              _c("label", { staticClass: "cbx", attrs: { for: house } }, [
-                _c("span", [
-                  _c(
-                    "svg",
-                    {
-                      attrs: {
-                        width: "12px",
-                        height: "10px",
-                        viewbox: "0 0 12 10"
-                      }
-                    },
-                    [
-                      _c("polyline", {
-                        attrs: { points: "1.5 6 4.5 9 10.5 1" }
-                      })
-                    ]
-                  )
-                ]),
-                _c("span", [_vm._v(_vm._s(house))])
-              ])
+              _c(
+                "label",
+                { staticClass: "cbx", attrs: { for: house["selling_branch"] } },
+                [
+                  _c("span", [
+                    _c(
+                      "svg",
+                      {
+                        attrs: {
+                          width: "12px",
+                          height: "10px",
+                          viewbox: "0 0 12 10"
+                        }
+                      },
+                      [
+                        _c("polyline", {
+                          attrs: { points: "1.5 6 4.5 9 10.5 1" }
+                        })
+                      ]
+                    )
+                  ]),
+                  _c("span", [_vm._v(_vm._s(house["selling_branch"]))])
+                ]
+              )
             ])
           }),
           _vm._v(" "),
@@ -1180,18 +1218,29 @@ var render = function() {
     "div",
     { staticClass: "filters__top container" },
     [
-      _vm._l(_vm.filters, function(filter, index) {
+      _vm._l(_vm.filters, function(filter, key) {
         return _c(
           "div",
-          { key: index, staticClass: "filters__top__filter" },
+          { key: key, staticClass: "filters__top__filter" },
           [
             _c("label", { attrs: { for: "" } }, [_vm._v(_vm._s(filter.label))]),
             _vm._v(" "),
             _c("multiselect", {
               attrs: {
-                options: filter.options,
-                searchable: false,
-                "close-on-select": false,
+                options:
+                  key === "yearFrom" || key === "yearTo"
+                    ? _vm.filtersOptions["production_year"]
+                    : _vm.filtersOptions[key],
+                "track-by":
+                  key === "yearFrom" || key === "yearTo"
+                    ? "production_year"
+                    : key,
+                label:
+                  key === "yearFrom" || key === "yearTo"
+                    ? "production_year"
+                    : key,
+                searchable: true,
+                "close-on-select": true,
                 "show-labels": false,
                 placeholder: filter.placeholder
               },

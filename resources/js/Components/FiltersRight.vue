@@ -8,8 +8,8 @@
             <div class="filters__right__filter">
                 <label for="">Year</label>
                 <div class="filters__right__filter__flex">
-                 <multiselect v-model="filters.yearFrom.value" :options="filters.yearFrom.options" :searchable="false" :close-on-select="false" :show-labels="false" :placeholder="filters.yearFrom.placeholder"></multiselect>
-                 <multiselect v-model="filters.yearTo.value" :options="filters.yearTo.options" :searchable="false" :close-on-select="false" :show-labels="false" :placeholder="filters.yearTo.placeholder"></multiselect>
+                 <multiselect v-model="filters.yearFrom.value" :options="filtersOptions.production_year" track-by="production_year" label="production_year" :searchable="true" :close-on-select="true" :show-labels="false" :placeholder="filters.yearFrom.placeholder"></multiselect>
+                 <multiselect v-model="filters.yearTo.value" :options="filtersOptions.production_year" track-by="production_year" label="production_year" :searchable="true" :close-on-select="true" :show-labels="false" :placeholder="filters.yearTo.placeholder"></multiselect>
                 </div>
             </div>
             <div class="filters__right__filter">
@@ -29,12 +29,12 @@
             </div>
             <div class="filters__right__filter">
                 <label for="">Dom aukcyjny</label>
-                <div class="base-checkbox" v-for="(house,index) in filters.auctionHouses.options" :key="index">
-                <input :value="house" v-model="filters.auctionHouses.value" class="inp-cbx" :id="house" type="checkbox" />
-                <label class="cbx" :for="house"><span>
+                <div class="base-checkbox" v-for="(house,index) in filtersOptions.selling_branch" :key="index">
+                <input :value="house['selling_branch']" v-model="filters.auctionHouses.value" class="inp-cbx" :id="house['selling_branch']" type="checkbox" />
+                <label class="cbx" :for="house['selling_branch']"><span>
                     <svg width="12px" height="10px" viewbox="0 0 12 10">
                     <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                    </svg></span><span>{{ house }}</span>
+                    </svg></span><span>{{ house['selling_branch'] }}</span>
                 </label>
                 </div>
                 <div class="base-checkbox others-checkboxes" >
@@ -60,6 +60,8 @@
 
 <script>
 import MultiRangeSlider from "multi-range-slider-vue";
+import { mapState } from 'vuex';
+
     export default {
         components:{
             MultiRangeSlider
@@ -85,11 +87,16 @@ import MultiRangeSlider from "multi-range-slider-vue";
                     closedAuctions:false,
                     fastPurchase:false,
                     runMin:0,
-                    runMax:250000,
+                    runMax:999999,
                     runValueStart:0,
                     runValueEnd:250000,
                 }, 
             }
+        },
+        computed: {
+            ...mapState({
+            filtersOptions: state => state.filtersOptions
+            }),
         },
         methods: {
             UpdateValues(e) {

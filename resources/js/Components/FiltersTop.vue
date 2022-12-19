@@ -1,8 +1,8 @@
 <template>
     <div class="filters__top container">
-        <div class="filters__top__filter" v-for="(filter,index) in filters" :key="index">
+        <div class="filters__top__filter" v-for="(filter,key) in filters" :key="key">
             <label for="">{{ filter.label }}</label>
-            <multiselect v-model="filter.value" :options="filter.options" :searchable="false" :close-on-select="false" :show-labels="false" :placeholder="filter.placeholder"></multiselect>
+            <multiselect v-model="filter.value" :options="key === 'yearFrom' || key === 'yearTo' ? filtersOptions['production_year'] : filtersOptions[key]" :track-by="key === 'yearFrom' || key === 'yearTo' ? 'production_year' : key" :label="key === 'yearFrom' || key === 'yearTo' ? 'production_year' : key" :searchable="true" :close-on-select="true" :show-labels="false" :placeholder="filter.placeholder"></multiselect>
         </div>
         <button @click="search" class="base-btn">SEARCH HERE</button>
 
@@ -10,36 +10,43 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+import store from '../Store';
+
     export default {
         data() {
             return {
                 filters:{
                     marka:{
-                        options:[],
                         value:'',
                         label:'Select mark',
                         placeholder:'All marks',
                     },
                     model:{
-                        options:[],
                         value:'',
                         label:'Select model',
                         placeholder:'All models',
                     },
                     yearFrom:{
-                        options:[],
                         value:'',
                         label:'Year',
                         placeholder:'From',
                     },
                     yearTo:{
-                        options:[],
                         value:'',
                         label:'',
                         placeholder:'To',
                     },
                 }, 
             }
+        },
+        computed: {
+            ...mapState({
+            filtersOptions: state => state.filtersOptions
+            }),
+        },
+        mounted() {
+            store.commit('GET_FILTERS');
         },
         methods: {
             search(){

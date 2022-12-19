@@ -8,6 +8,7 @@ const store = new Vuex.Store({
     state: {
         count: 0,
         cars: null,
+        filtersOptions: null,
         filters: {
             vin: null,
         }
@@ -25,6 +26,13 @@ const store = new Vuex.Store({
             }
             axios.get(`http://54.36.172.231/api/cars?${filtersString}`).then(res => {
                 state.cars = res.data
+            }).catch(err => {
+                console.log(err)
+            })
+        },
+        GET_FILTERS(state) {
+            axios.get(`http://54.36.172.231/api/filters`).then(res => {
+                state.filtersOptions = res.data
             }).catch(err => {
                 console.log(err)
             })

@@ -53903,6 +53903,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
     count: 0,
     cars: null,
+    filtersOptions: null,
     filters: {
       vin: null
     }
@@ -53922,6 +53923,13 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://54.36.172.231/api/cars?".concat(filtersString)).then(function (res) {
         state.cars = res.data;
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
+    GET_FILTERS: function GET_FILTERS(state) {
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://54.36.172.231/api/filters").then(function (res) {
+        state.filtersOptions = res.data;
       })["catch"](function (err) {
         console.log(err);
       });
