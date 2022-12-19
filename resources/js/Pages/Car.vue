@@ -1,7 +1,5 @@
 <template>
     <div class="car__container container" >
-         ałto {{ carData }}
-
         <div class="car__container__heading card">
             <div class="flex flex-main">
                 <div>

@@ -194,8 +194,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -444,7 +442,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "car__container container" }, [
-    _vm._v("\n     ałto " + _vm._s(_vm.carData) + "\n\n    "),
     _c("div", { staticClass: "car__container__heading card" }, [
       _c("div", { staticClass: "flex flex-main" }, [
         _c("div", [
