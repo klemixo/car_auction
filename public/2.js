@@ -225,7 +225,6 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("http://54.36.172.231/api/cars/".concat(this.id)).then(function (res) {
-        console.log(res);
         _this.carData = res.data[0];
       })["catch"](function (err) {
         console.log(err);

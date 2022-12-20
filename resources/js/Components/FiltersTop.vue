@@ -2,7 +2,7 @@
     <div class="filters__top container">
         <div class="filters__top__filter" v-for="(filter,key) in filters" :key="key">
             <label for="">{{ filter.label }}</label>
-            <multiselect v-model="filter.value" :options="key === 'yearFrom' || key === 'yearTo' ? filtersOptions['production_year'] : filtersOptions[key]" :track-by="key === 'yearFrom' || key === 'yearTo' ? 'production_year' : key" :label="key === 'yearFrom' || key === 'yearTo' ? 'production_year' : key" :searchable="true" :close-on-select="true" :show-labels="false" :placeholder="filter.placeholder"></multiselect>
+            <multiselect :id="key" @select="setFilter" @remove="removeFilter"  v-model="filter.value" :options="key === 'yearFrom' || key === 'yearTo' ? filtersOptions['production_year'] : filtersOptions[key]" :track-by="key === 'yearFrom' || key === 'yearTo' ? 'production_year' : key" :label="key === 'yearFrom' || key === 'yearTo' ? 'production_year' : key" :searchable="true" :close-on-select="true" :show-labels="false" :placeholder="filter.placeholder"></multiselect>
         </div>
         <button @click="search" class="base-btn">SEARCH HERE</button>
 
@@ -51,6 +51,15 @@ import store from '../Store';
         methods: {
             search(){
                 console.log("ok")
+            },
+            setFilter(filter,id){
+                console.log(id)
+                const filterObj = {key : id !== 'yearTo' && id !== 'yearFrom' ? Object.keys(filter)[0] : id, value : Object.values(filter)[0]}
+                store.commit('SET_FILTER',filterObj)
+            },
+            removeFilter(filter,id){
+                const filterObj = {key : id !== 'yearTo' && id !== 'yearFrom' ? Object.keys(filter)[0] : id, value : null}
+                store.commit('SET_FILTER',filterObj)
             }
         },
  

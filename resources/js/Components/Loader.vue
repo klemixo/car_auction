@@ -1,0 +1,90 @@
+<template>
+    <div class="rel">
+        <span class="loader"></span>
+    </div>
+</template>
+
+<script>
+    export default {
+        
+    }
+</script>
+
+<style lang="scss" scoped>
+.rel{
+    position:relative;
+    width:100%;
+    display:grid;
+    place-content: center;
+}
+.loader {
+  width: 96px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+  background: #FFF;
+  border-radius: 48px 48px 0 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  transform: scale(3.5);
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  width: 24px;
+  height: 12px;
+  border-radius: 24px 24px 0 0;
+  background: #243E97;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+.loader::before {
+  content: '';  
+  position: absolute;
+  width: 4px;
+  height: 32px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 0;
+  background: #243E97;
+  transform-origin: 50% 100%;
+  box-sizing: border-box;
+  animation: animloader 2s linear infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    transform: rotate(-70deg);
+  }
+  10% {
+    transform: rotate(-40deg);
+  }
+  20%, 45%, 35% {
+    transform: rotate(-10deg);
+  }
+  40%, 30% {
+    transform: rotate(-30deg);
+  }
+  50%, 60% {
+    transform: rotate(20deg);
+  }
+  55%, 65%, 75% {
+    transform: rotate(40deg);
+  }
+  70% {
+    transform: rotate(45deg);
+  }
+  85%, 90% {
+    transform: rotate(50deg);
+  }
+  95% {
+    transform: rotate(75deg);
+  }
+  100%, 93% {
+    transform: rotate(70deg);
+  }
+}
+</style>

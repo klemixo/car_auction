@@ -1,15 +1,16 @@
 <template>
   <div class="cars__container container">
-    <h2>Latest Lots</h2>
+    <h2 v-if="cars && cars.length > 0">Latest Lots</h2>
     <div class="cars__container__filters">
-    <div class="grid">
+    <div class="grid" v-if="!dataLoading">
         <CarBox v-for="car in cars" :key="car.id" :carData="car"/>
     </div>
+    <Loader v-if="dataLoading"/>
+    <Error v-if="cars && cars.length === 0"/>
+
     <FiltersRight/>
     </div>
-    <button class="base-btn more-results-btn">More results</button>
-
-    <Error v-if="cars && cars.length === 0"/>
+    <button  v-if="cars && cars.length > 0" class="base-btn more-results-btn">More results</button>
 
   </div>
 </template>
@@ -19,12 +20,14 @@ import { mapState } from 'vuex';
 import store from '../Store';
 import CarBox from './CarBox.vue';
 import Error from './Error.vue';
+import Loader from './Loader.vue';
 import FiltersRight from './FiltersRight.vue';
 export default {
   name: 'home',
   components:{
     CarBox,
     Error,
+    Loader,
     FiltersRight
   },
   mounted() {
@@ -33,7 +36,8 @@ export default {
   computed: {
     ...mapState({
       count: state => state.count,
-      cars: state => state.cars
+      cars: state => state.cars,
+      dataLoading: state => state.dataLoading
     }),
   }
 }

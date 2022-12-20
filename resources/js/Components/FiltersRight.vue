@@ -6,13 +6,6 @@
                 <input type="text" placeholder="Wyszukaj za pomocą nazwy" class="base-input">
             </div>
             <div class="filters__right__filter">
-                <label for="">Year</label>
-                <div class="filters__right__filter__flex">
-                 <multiselect v-model="filters.yearFrom.value" :options="filtersOptions.production_year" track-by="production_year" label="production_year" :searchable="true" :close-on-select="true" :show-labels="false" :placeholder="filters.yearFrom.placeholder"></multiselect>
-                 <multiselect v-model="filters.yearTo.value" :options="filtersOptions.production_year" track-by="production_year" label="production_year" :searchable="true" :close-on-select="true" :show-labels="false" :placeholder="filters.yearTo.placeholder"></multiselect>
-                </div>
-            </div>
-            <div class="filters__right__filter">
                 <label for="">Przebieg(mile)</label>
                 <MultiRangeSlider
                 :min="filters.runMin"
@@ -29,14 +22,9 @@
             </div>
             <div class="filters__right__filter">
                 <label for="">Dom aukcyjny</label>
-                <div class="base-checkbox" v-for="(house,index) in filtersOptions.selling_branch" :key="index">
-                <input :value="house['selling_branch']" v-model="filters.auctionHouses.value" class="inp-cbx" :id="house['selling_branch']" type="checkbox" />
-                <label class="cbx" :for="house['selling_branch']"><span>
-                    <svg width="12px" height="10px" viewbox="0 0 12 10">
-                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                    </svg></span><span>{{ house['selling_branch'] }}</span>
-                </label>
-                </div>
+                 <multiselect v-model="filters.auctionHouses.valu" :options="filtersOptions.selling_branch" track-by="selling_branch" label="selling_branch" :searchable="true" :close-on-select="true" :show-labels="false" placeholder="All"></multiselect>
+
+
                 <div class="base-checkbox others-checkboxes" >
                 <input v-model="filters.closedAuctions" class="inp-cbx" id="closed-auctions" type="checkbox" />
                 <label class="cbx" for="closed-auctions"><span>
@@ -82,7 +70,7 @@ import { mapState } from 'vuex';
                     },
                     auctionHouses:{
                         options:['IAAI','Copart','Test'],
-                        value:[],
+                        value:'',
                     },
                     closedAuctions:false,
                     fastPurchase:false,
@@ -110,7 +98,11 @@ import { mapState } from 'vuex';
 
 <style lang="scss" >
 .filters__right{
+    .base-input{
+        padding:10px;
+    }
     h4{
+        margin:10px 0;
         text-align: left;
         font-weight: 700;
         font-size: 25px;

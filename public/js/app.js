@@ -18960,7 +18960,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap);", ""]);
 
 // module
-exports.push([module.i, "body {\n  font-size: 17px;\n  overflow-x: hidden;\n}\n#app {\n  overflow-x: hidden;\n}\n.flex {\n  display: flex;\n}\n* {\n  font-family: \"PT Sans\", sans-serif;\n}\n.base-input {\n  background: #F8F8F8;\n  border-radius: 5px;\n  border: none;\n  outline: none;\n  padding: 20px;\n  font-family: \"PT Sans\";\n  font-size: 18px;\n  line-height: 23px;\n  color: #818181;\n}\n.base-btn {\n  background: #243E97;\n  border-radius: 5px;\n  padding: 20px;\n  font-family: \"PT Sans\";\n  font-weight: 700;\n  font-size: 17px;\n  line-height: 22px;\n  letter-spacing: 0.1em;\n  border: none;\n  outline: none;\n  transition: 0.2s;\n  color: #FFFFFF;\n}\n.base-btn:hover {\n  background: #0c1f5e;\n}\n.container {\n  width: 95%;\n  margin: 0 auto;\n}\n@media (min-width: 768px) {\n.container {\n    width: 90%;\n}\n}\n@media (min-width: 1300px) {\n.container {\n    width: 70%;\n}\n}\n@media (min-width: 1400px) {\n.container {\n    max-width: 1300px;\n}\n}\n.base-checkbox input[type=checkbox] {\n  display: none;\n  visibility: hidden;\n}\n.base-checkbox .cbx {\n  margin: auto;\n  -webkit-user-select: none;\n  user-select: none;\n  cursor: pointer;\n  font-weight: 400 !important;\n}\n.base-checkbox .cbx span {\n  display: inline-block;\n  vertical-align: middle;\n  transform: translate3d(0, 0, 0);\n}\n.base-checkbox .cbx span:first-child {\n  position: relative;\n  width: 18px;\n  height: 18px;\n  border-radius: 3px;\n  transform: scale(1);\n  vertical-align: middle;\n  border: 1px solid #9098A9;\n  transition: all 0.2s ease;\n}\n.base-checkbox .cbx span:first-child svg {\n  position: absolute;\n  top: 3px;\n  left: 2px;\n  fill: none;\n  stroke: #FFFFFF;\n  stroke-width: 2;\n  stroke-linecap: round;\n  stroke-linejoin: round;\n  stroke-dasharray: 16px;\n  stroke-dashoffset: 16px;\n  transition: all 0.3s ease;\n  transition-delay: 0.1s;\n  transform: translate3d(0, 0, 0);\n}\n.base-checkbox .cbx span:first-child:before {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  background: #506EEC;\n  display: block;\n  transform: scale(0);\n  opacity: 1;\n  border-radius: 50%;\n}\n.base-checkbox .cbx span:last-child {\n  padding-left: 8px;\n}\n.base-checkbox .cbx:hover span:first-child {\n  border-color: #506EEC;\n}\n.base-checkbox .inp-cbx:checked + .cbx span:first-child {\n  background: #506EEC;\n  border-color: #506EEC;\n  animation: wave-46 0.4s ease;\n}\n.base-checkbox .inp-cbx:checked + .cbx span:first-child svg {\n  stroke-dashoffset: 0;\n}\n.base-checkbox .inp-cbx:checked + .cbx span:first-child:before {\n  transform: scale(3.5);\n  opacity: 0;\n  transition: all 0.6s ease;\n}\n@keyframes wave-46 {\n50% {\n    transform: scale(0.9);\n}\n}", ""]);
+exports.push([module.i, "body {\n  font-size: 17px;\n  overflow-x: hidden;\n}\n#app {\n  overflow-x: hidden;\n}\n.flex {\n  display: flex;\n}\n* {\n  font-family: \"PT Sans\", sans-serif;\n}\n.base-input {\n  background: #F8F8F8;\n  border-radius: 5px;\n  border: none;\n  outline: none;\n  padding: 20px;\n  font-family: \"PT Sans\";\n  font-size: 18px;\n  line-height: 23px;\n  color: #818181;\n}\n.base-btn {\n  background: #243E97;\n  border-radius: 5px;\n  padding: 20px;\n  font-family: \"PT Sans\";\n  font-weight: 700;\n  font-size: 17px;\n  line-height: 22px;\n  letter-spacing: 0.1em;\n  border: none;\n  outline: none;\n  transition: 0.2s;\n  color: #FFFFFF;\n}\n.base-btn:hover {\n  background: #0c1f5e;\n}\n.container {\n  width: 95%;\n  margin: 0 auto;\n}\n@media (min-width: 768px) {\n.container {\n    width: 90%;\n}\n}\n@media (min-width: 1300px) {\n.container {\n    width: 70%;\n}\n}\n@media (min-width: 1400px) {\n.container {\n    max-width: 1300px;\n}\n}\n.base-checkbox input[type=checkbox] {\n  display: none;\n  visibility: hidden;\n}\n.base-checkbox .cbx {\n  margin: auto;\n  -webkit-user-select: none;\n  user-select: none;\n  cursor: pointer;\n  font-weight: 400 !important;\n}\n.base-checkbox .cbx span {\n  display: inline-block;\n  vertical-align: middle;\n  transform: translate3d(0, 0, 0);\n}\n.base-checkbox .cbx span:first-child {\n  position: relative;\n  width: 18px;\n  height: 18px;\n  border-radius: 3px;\n  transform: scale(1);\n  vertical-align: middle;\n  border: 1px solid #9098A9;\n  transition: all 0.2s ease;\n}\n.base-checkbox .cbx span:first-child svg {\n  position: absolute;\n  top: 3px;\n  left: 2px;\n  fill: none;\n  stroke: #FFFFFF;\n  stroke-width: 2;\n  stroke-linecap: round;\n  stroke-linejoin: round;\n  stroke-dasharray: 16px;\n  stroke-dashoffset: 16px;\n  transition: all 0.3s ease;\n  transition-delay: 0.1s;\n  transform: translate3d(0, 0, 0);\n}\n.base-checkbox .cbx span:first-child:before {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  background: #506EEC;\n  display: block;\n  transform: scale(0);\n  opacity: 1;\n  border-radius: 50%;\n}\n.base-checkbox .cbx span:last-child {\n  padding-left: 8px;\n}\n.base-checkbox .cbx:hover span:first-child {\n  border-color: #506EEC;\n}\n.base-checkbox .inp-cbx:checked + .cbx span:first-child {\n  background: #506EEC;\n  border-color: #506EEC;\n  animation: wave-46 0.4s ease;\n}\n.base-checkbox .inp-cbx:checked + .cbx span:first-child svg {\n  stroke-dashoffset: 0;\n}\n.base-checkbox .inp-cbx:checked + .cbx span:first-child:before {\n  transform: scale(3.5);\n  opacity: 0;\n  transition: all 0.6s ease;\n}\n@keyframes wave-46 {\n50% {\n    transform: scale(0.9);\n}\n}\n.multiselect__option--highlight {\n  background: #506EEC !important;\n}", ""]);
 
 // exports
 
@@ -53904,8 +53904,33 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     count: 0,
     cars: null,
     filtersOptions: null,
+    dataLoading: false,
     filters: {
-      vin: null
+      vin: {
+        field: 'vin',
+        operator: "=",
+        value: null
+      },
+      marka: {
+        field: 'marka',
+        operator: "=",
+        value: null
+      },
+      model: {
+        field: 'model',
+        operator: "=",
+        value: null
+      },
+      yearFrom: {
+        field: 'yearFrom',
+        operator: "=",
+        value: null
+      },
+      yearTo: {
+        field: 'yearTo',
+        operator: "=",
+        value: null
+      }
     }
   },
   mutations: {
@@ -53913,17 +53938,21 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       state.count++;
     },
     GET_CARS: function GET_CARS(state) {
+      state.dataLoading = true;
       var filtersString = "";
 
       for (var property in state.filters) {
-        if (state.filters[property]) {
-          filtersString += "".concat(property, "=").concat(state.filters[property]);
+        if (state.filters[property].value) {
+          filtersString += "".concat(state.filters[property].field).concat(state.filters[property].operator).concat(state.filters[property].value, "&");
         }
       }
 
+      console.log("http://54.36.172.231/api/cars?".concat(filtersString));
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://54.36.172.231/api/cars?".concat(filtersString)).then(function (res) {
         state.cars = res.data;
+        state.dataLoading = false;
       })["catch"](function (err) {
+        state.dataLoading = false;
         console.log(err);
       });
     },
@@ -53935,7 +53964,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       });
     },
     SET_FILTER: function SET_FILTER(state, filter) {
-      state.filters[filter.key] = filter.value;
+      state.filters[filter.key].value = filter.value;
       this.commit('GET_CARS');
     }
   },

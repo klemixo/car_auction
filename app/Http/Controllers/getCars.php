@@ -17,6 +17,15 @@ class getCars extends Controller
         $query = car::orderBy('id', 'desc');
         $data = $req->all();
         foreach ($data as $key => $value) {
+            if($key === 'yearFrom'){
+                $query->where('production_year',">=",$value);
+                continue;
+            }
+            if($key === 'yearTo'){
+                $query->where('production_year',"<=",$value);
+                continue;
+
+            }
             $query->where($key,"=",$value);
         }
         return $query->limit(15)->get();

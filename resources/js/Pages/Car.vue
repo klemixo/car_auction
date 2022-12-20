@@ -141,7 +141,6 @@ import CarSlider from '../Components/CarSlider.vue';
      methods: {
         getCarData(){
             axios.get(`http://54.36.172.231/api/cars/${this.id}`).then(res=>{
-                console.log(res)
                 this.carData = res.data[0]
             }).catch(err=>{
                 console.log(err)

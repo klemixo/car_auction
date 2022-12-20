@@ -153,5 +153,7 @@ body{
       transform: scale(0.9);
     }
   }
-
+.multiselect__option--highlight{
+  background: #506EEC !important;
+}
 </style>
