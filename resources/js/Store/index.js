@@ -7,6 +7,8 @@ import axios from 'axios'
 const store = new Vuex.Store({
     state: {
         count: 0,
+        foundCars: 0,
+        currentPage: 1,
         cars: null,
         filtersOptions: null,
         dataLoading: false,
@@ -45,9 +47,11 @@ const store = new Vuex.Store({
                     filtersString += `${state.filters[property].field}${state.filters[property].operator}${state.filters[property].value}&`
                 }
             }
+            filtersString += `page=${state.currentPage}`
             console.log(`http://54.36.172.231/api/cars?${filtersString}`)
             axios.get(`http://54.36.172.231/api/cars?${filtersString}`).then(res => {
-                state.cars = res.data
+                state.cars = res.data.data
+                state.foundCars = res.data.count
                 state.dataLoading = false;
 
             }).catch(err => {

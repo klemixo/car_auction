@@ -92,6 +92,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 
 
@@ -111,12 +113,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   mounted: function mounted() {
     _Store__WEBPACK_IMPORTED_MODULE_1__["default"].commit('GET_CARS');
   },
+  methods: {
+    showMore: function showMore() {
+      ++this.$store.state.currentPage;
+    }
+  },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
     count: function count(state) {
       return state.count;
     },
     cars: function cars(state) {
       return state.cars;
+    },
+    foundCars: function foundCars(state) {
+      return state.foundCars;
+    },
+    currentPage: function currentPage(state) {
+      return state.currentPage;
     },
     dataLoading: function dataLoading(state) {
       return state.dataLoading;
@@ -971,7 +984,13 @@ var render = function() {
       _vm.cars && _vm.cars.length > 0
         ? _c("h2", [_vm._v("Latest Lots")])
         : _vm._e(),
-      _vm._v(" "),
+      _vm._v(
+        "\n  " +
+          _vm._s(_vm.foundCars) +
+          "\n  page -- " +
+          _vm._s(_vm.currentPage) +
+          "\n  "
+      ),
       _c("CurrentFilters"),
       _vm._v(" "),
       _c(
@@ -997,9 +1016,14 @@ var render = function() {
       ),
       _vm._v(" "),
       _vm.cars && _vm.cars.length > 0
-        ? _c("button", { staticClass: "base-btn more-results-btn" }, [
-            _vm._v("More results")
-          ])
+        ? _c(
+            "button",
+            {
+              staticClass: "base-btn more-results-btn",
+              on: { click: _vm.showMore }
+            },
+            [_vm._v("More results")]
+          )
         : _vm._e()
     ],
     1

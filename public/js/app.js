@@ -53902,6 +53902,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
     count: 0,
+    foundCars: 0,
+    currentPage: 1,
     cars: null,
     filtersOptions: null,
     dataLoading: false,
@@ -53989,9 +53991,11 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         }
       }
 
+      filtersString += "page=".concat(state.currentPage);
       console.log("http://54.36.172.231/api/cars?".concat(filtersString));
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://54.36.172.231/api/cars?".concat(filtersString)).then(function (res) {
-        state.cars = res.data;
+        state.cars = res.data.data;
+        state.foundCars = res.data.count;
         state.dataLoading = false;
       })["catch"](function (err) {
         state.dataLoading = false;

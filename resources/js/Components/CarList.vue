@@ -1,6 +1,8 @@
 <template>
   <div class="cars__container container">
     <h2 v-if="cars && cars.length > 0">Latest Lots</h2>
+    {{ foundCars }}
+    page -- {{ currentPage }}
     <CurrentFilters/>
     <div class="cars__container__filters">
     <div class="grid" >
@@ -10,7 +12,7 @@
     <Error v-if="cars && cars.length === 0"/>
     <FiltersRight/>
     </div>
-    <button  v-if="cars && cars.length > 0" class="base-btn more-results-btn">More results</button>
+    <button @click="showMore"  v-if="cars && cars.length > 0" class="base-btn more-results-btn">More results</button>
 
   </div>
 </template>
@@ -35,10 +37,17 @@ export default {
   mounted() {
     store.commit('GET_CARS');
   },
+  methods: {
+    showMore(){
+      ++this.$store.state.currentPage 
+    }
+  },
   computed: {
     ...mapState({
       count: state => state.count,
       cars: state => state.cars,
+      foundCars: state => state.foundCars,
+      currentPage: state => state.currentPage,
       dataLoading: state => state.dataLoading
     }),
   }

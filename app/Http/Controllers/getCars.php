@@ -16,6 +16,7 @@ class getCars extends Controller
     public function getCars(Request $req){
         $query = car::orderBy('id', 'desc');
         $data = $req->all();
+        $limit = 0;
         foreach ($data as $key => $value) {
             if($key === 'yearFrom'){
                 $query->where('production_year',">=",$value);
@@ -29,11 +30,15 @@ class getCars extends Controller
                 $query->where('marka',"LIKE",'%'.$value.'%')->orWhere('model',"LIKE",'%'.$value.'%');
                 continue;
             }
+            if($key === 'page'){
+                $limit = $value*15;
+                continue;
+            }
             $query->where($key,"=",$value);
         }
         $allRes = $query->count();
         return [
-            'data'=>$query->limit(15)->get(),
+            'data'=>$query->limit($limit)->get(),
             'count'=>$allRes
         ];
     }
