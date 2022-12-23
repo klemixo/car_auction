@@ -12,79 +12,47 @@
 
 <style lang="scss" scoped>
 .rel{
-    position:relative;
+    position:fixed;
     width:100%;
     display:grid;
     place-content: center;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.3);
 }
 .loader {
-  width: 96px;
+  width: 48px;
   height: 48px;
+  border-radius: 50%;
   display: inline-block;
-  position: relative;
-  background: #FFF;
-  border-radius: 48px 48px 0 0;
+  border-top: 4px solid #FFF;
+  border-right: 4px solid transparent;
   box-sizing: border-box;
-  overflow: hidden;
-  transform: scale(3.5);
+  animation: rotation 1s linear infinite;
 }
 .loader::after {
   content: '';  
   box-sizing: border-box;
   position: absolute;
-  width: 24px;
-  height: 12px;
-  border-radius: 24px 24px 0 0;
-  background: #243E97;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-}
-.loader::before {
-  content: '';  
-  position: absolute;
-  width: 4px;
-  height: 32px;
   left: 0;
-  right: 0;
-  margin: auto;
-  bottom: 0;
-  background: #243E97;
-  transform-origin: 50% 100%;
-  box-sizing: border-box;
-  animation: animloader 2s linear infinite alternate;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-left: 4px solid #243E97;
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
 }
-
-@keyframes animloader {
+@keyframes rotation {
   0% {
-    transform: rotate(-70deg);
+    transform: rotate(0deg);
   }
-  10% {
-    transform: rotate(-40deg);
+  100% {
+    transform: rotate(360deg);
   }
-  20%, 45%, 35% {
-    transform: rotate(-10deg);
-  }
-  40%, 30% {
-    transform: rotate(-30deg);
-  }
-  50%, 60% {
-    transform: rotate(20deg);
-  }
-  55%, 65%, 75% {
-    transform: rotate(40deg);
-  }
-  70% {
-    transform: rotate(45deg);
-  }
-  85%, 90% {
-    transform: rotate(50deg);
-  }
-  95% {
-    transform: rotate(75deg);
-  }
-  100%, 93% {
-    transform: rotate(70deg);
-  }
-}
+} 
 </style>

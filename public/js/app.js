@@ -53909,48 +53909,70 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       vin: {
         field: 'vin',
         operator: "=",
-        value: null
+        value: null,
+        label: 'VIN'
       },
       marka: {
         field: 'marka',
         operator: "=",
-        value: null
+        value: null,
+        label: 'Make'
       },
       model: {
         field: 'model',
         operator: "=",
-        value: null
+        value: null,
+        label: 'Model'
       },
       yearFrom: {
         field: 'yearFrom',
         operator: "=",
-        value: null
+        value: null,
+        label: 'Year from'
       },
       yearTo: {
         field: 'yearTo',
         operator: "=",
-        value: null
+        value: null,
+        label: 'Year to'
       },
       selling_branch: {
         field: 'selling_branch',
         operator: "=",
-        value: null
+        value: null,
+        label: 'Selling branch'
       },
       runMin: {
         field: 'runMin',
         operator: "=",
-        value: null
+        value: null,
+        label: 'Run min'
       },
       runMax: {
         field: 'runMax',
         operator: "=",
-        value: null
+        value: null,
+        label: 'Run Max'
       },
       search: {
         field: 'search',
         operator: "=",
-        value: null
+        value: null,
+        label: 'Search'
       }
+    }
+  },
+  getters: {
+    filledFilters: function filledFilters(state) {
+      var filledFilters = [];
+
+      for (var property in state.filters) {
+        if (state.filters[property].value !== null) {
+          filledFilters.push(state.filters[property]);
+        }
+      }
+
+      return filledFilters;
     }
   },
   mutations: {

@@ -1,8 +1,9 @@
 <template>
   <div class="cars__container container">
     <h2 v-if="cars && cars.length > 0">Latest Lots</h2>
+    <CurrentFilters/>
     <div class="cars__container__filters">
-    <div class="grid" v-if="!dataLoading">
+    <div class="grid" >
         <CarBox v-for="car in cars" :key="car.id" :carData="car"/>
     </div>
     <Loader v-if="dataLoading"/>
@@ -21,13 +22,15 @@ import CarBox from './CarBox.vue';
 import Error from './Error.vue';
 import Loader from './Loader.vue';
 import FiltersRight from './FiltersRight.vue';
+import CurrentFilters from './CurrentFilters.vue';
 export default {
   name: 'home',
   components:{
     CarBox,
     Error,
     Loader,
-    FiltersRight
+    FiltersRight,
+    CurrentFilters
   },
   mounted() {
     store.commit('GET_CARS');

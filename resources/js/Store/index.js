@@ -11,15 +11,26 @@ const store = new Vuex.Store({
         filtersOptions: null,
         dataLoading: false,
         filters: {
-            vin: { field: 'vin', operator: "=", value: null },
-            marka: { field: 'marka', operator: "=", value: null },
-            model: { field: 'model', operator: "=", value: null },
-            yearFrom: { field: 'yearFrom', operator: "=", value: null },
-            yearTo: { field: 'yearTo', operator: "=", value: null },
-            selling_branch: { field: 'selling_branch', operator: "=", value: null },
-            runMin: { field: 'runMin', operator: "=", value: null },
-            runMax: { field: 'runMax', operator: "=", value: null },
-            search: { field: 'search', operator: "=", value: null },
+            vin: { field: 'vin', operator: "=", value: null, label: 'VIN' },
+            marka: { field: 'marka', operator: "=", value: null, label: 'Make' },
+            model: { field: 'model', operator: "=", value: null, label: 'Model' },
+            yearFrom: { field: 'yearFrom', operator: "=", value: null, label: 'Year from' },
+            yearTo: { field: 'yearTo', operator: "=", value: null, label: 'Year to' },
+            selling_branch: { field: 'selling_branch', operator: "=", value: null, label: 'Selling branch' },
+            runMin: { field: 'runMin', operator: "=", value: null, label: 'Run min' },
+            runMax: { field: 'runMax', operator: "=", value: null, label: 'Run Max' },
+            search: { field: 'search', operator: "=", value: null, label: 'Search' },
+        }
+    },
+    getters: {
+        filledFilters: state => {
+            let filledFilters = [];
+            for (const property in state.filters) {
+                if (state.filters[property].value !== null) {
+                    filledFilters.push(state.filters[property])
+                }
+            }
+            return filledFilters;
         }
     },
     mutations: {
