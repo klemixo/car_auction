@@ -24,7 +24,10 @@ class getCars extends Controller
             if($key === 'yearTo'){
                 $query->where('production_year',"<=",$value);
                 continue;
-
+            }
+            if($key === 'search'){
+                $query->where('marka',"LIKE",'%'.$value.'%')->orWhere('model',"LIKE",'%'.$value.'%');
+                continue;
             }
             $query->where($key,"=",$value);
         }

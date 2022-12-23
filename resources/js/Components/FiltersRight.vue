@@ -3,7 +3,7 @@
         <h4>Filters</h4>
             <div class="filters__right__flex">
                 <div class="filters__right__filter">
-                <input type="text" placeholder="Wyszukaj za pomocą nazwy" class="base-input">
+                <input v-model="search" @keyup="nameSearch" type="text" placeholder="Wyszukaj za pomocą nazwy" class="base-input">
             </div>
             <div class="filters__right__filter">
                 <label for="">Przebieg(mile)</label>
@@ -22,7 +22,7 @@
             </div>
             <div class="filters__right__filter">
                 <label for="">Dom aukcyjny</label>
-                 <multiselect v-model="filters.auctionHouses.valu" :options="filtersOptions.selling_branch" track-by="selling_branch" label="selling_branch" :searchable="true" :close-on-select="true" :show-labels="false" placeholder="All"></multiselect>
+                 <multiselect @select="setFilter" @remove="removeFilter"  v-model="filters.auctionHouses.value" :options="filtersOptions.selling_branch" track-by="selling_branch" label="selling_branch" :searchable="true" :close-on-select="true" :show-labels="false" placeholder="All"></multiselect>
 
 
                 <div class="base-checkbox others-checkboxes" >
@@ -49,7 +49,7 @@
 <script>
 import MultiRangeSlider from "multi-range-slider-vue";
 import { mapState } from 'vuex';
-
+import store from '../Store';
     export default {
         components:{
             MultiRangeSlider
@@ -58,16 +58,6 @@ import { mapState } from 'vuex';
             return {
                 filters:{
                     search:'',
-                    yearFrom:{
-                        options:[],
-                        value:'',
-                        placeholder:'From',
-                    },
-                    yearTo:{
-                        options:[],
-                        value:'',
-                        placeholder:'To',
-                    },
                     auctionHouses:{
                         options:['IAAI','Copart','Test'],
                         value:'',
@@ -88,10 +78,25 @@ import { mapState } from 'vuex';
         },
         methods: {
             UpdateValues(e) {
-                console.log(e)
       this.filters.runValueStart = e.minValue;
       this.filters.runValueEnd = e.maxValue;
-    }
+      const filterObjMin = {key:'runMin',value:this.filters.runValueStart};
+      const filterObjMax = {key:'runMax',value:this.filters.runValueEnd};
+    //   store.commit('SET_FILTER',filterObjMin)
+    //   store.commit('SET_FILTER',filterObjMax)
+    },
+    nameSearch(){
+        const filterObj = {key : 'search', value : this.search}
+    store.commit('SET_FILTER',filterObj)
+    },
+    setFilter(filter,id){
+                const filterObj = {key : id !== 'yearTo' && id !== 'yearFrom' ? Object.keys(filter)[0] : id, value : Object.values(filter)[0]}
+                store.commit('SET_FILTER',filterObj)
+            },
+            removeFilter(filter,id){
+                const filterObj = {key : id !== 'yearTo' && id !== 'yearFrom' ? Object.keys(filter)[0] : id, value : null}
+                store.commit('SET_FILTER',filterObj)
+            }
         },
     }
 </script>

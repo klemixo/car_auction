@@ -7,7 +7,6 @@
     </div>
     <Loader v-if="dataLoading"/>
     <Error v-if="cars && cars.length === 0"/>
-
     <FiltersRight/>
     </div>
     <button  v-if="cars && cars.length > 0" class="base-btn more-results-btn">More results</button>

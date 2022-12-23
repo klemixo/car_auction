@@ -53930,6 +53930,26 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         field: 'yearTo',
         operator: "=",
         value: null
+      },
+      selling_branch: {
+        field: 'selling_branch',
+        operator: "=",
+        value: null
+      },
+      runMin: {
+        field: 'runMin',
+        operator: "=",
+        value: null
+      },
+      runMax: {
+        field: 'runMax',
+        operator: "=",
+        value: null
+      },
+      search: {
+        field: 'search',
+        operator: "=",
+        value: null
       }
     }
   },

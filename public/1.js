@@ -90,7 +90,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 
 
@@ -155,6 +154,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var multi_range_slider_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! multi-range-slider-vue */ "./node_modules/multi-range-slider-vue/MultiRangeSlider.vue");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _Store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Store */ "./resources/js/Store/index.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -211,6 +211,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     MultiRangeSlider: multi_range_slider_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
@@ -219,16 +220,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       filters: {
         search: '',
-        yearFrom: {
-          options: [],
-          value: '',
-          placeholder: 'From'
-        },
-        yearTo: {
-          options: [],
-          value: '',
-          placeholder: 'To'
-        },
         auctionHouses: {
           options: ['IAAI', 'Copart', 'Test'],
           value: ''
@@ -249,9 +240,38 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   })),
   methods: {
     UpdateValues: function UpdateValues(e) {
-      console.log(e);
       this.filters.runValueStart = e.minValue;
       this.filters.runValueEnd = e.maxValue;
+      var filterObjMin = {
+        key: 'runMin',
+        value: this.filters.runValueStart
+      };
+      var filterObjMax = {
+        key: 'runMax',
+        value: this.filters.runValueEnd
+      }; //   store.commit('SET_FILTER',filterObjMin)
+      //   store.commit('SET_FILTER',filterObjMax)
+    },
+    nameSearch: function nameSearch() {
+      var filterObj = {
+        key: 'search',
+        value: this.search
+      };
+      _Store__WEBPACK_IMPORTED_MODULE_2__["default"].commit('SET_FILTER', filterObj);
+    },
+    setFilter: function setFilter(filter, id) {
+      var filterObj = {
+        key: id !== 'yearTo' && id !== 'yearFrom' ? Object.keys(filter)[0] : id,
+        value: Object.values(filter)[0]
+      };
+      _Store__WEBPACK_IMPORTED_MODULE_2__["default"].commit('SET_FILTER', filterObj);
+    },
+    removeFilter: function removeFilter(filter, id) {
+      var filterObj = {
+        key: id !== 'yearTo' && id !== 'yearFrom' ? Object.keys(filter)[0] : id,
+        value: null
+      };
+      _Store__WEBPACK_IMPORTED_MODULE_2__["default"].commit('SET_FILTER', filterObj);
     }
   }
 });
@@ -948,7 +968,30 @@ var render = function() {
     _c("h4", [_vm._v("Filters")]),
     _vm._v(" "),
     _c("div", { staticClass: "filters__right__flex" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "filters__right__filter" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.search,
+              expression: "search"
+            }
+          ],
+          staticClass: "base-input",
+          attrs: { type: "text", placeholder: "Wyszukaj za pomocą nazwy" },
+          domProps: { value: _vm.search },
+          on: {
+            keyup: _vm.nameSearch,
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.search = $event.target.value
+            }
+          }
+        })
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -996,12 +1039,13 @@ var render = function() {
               "show-labels": false,
               placeholder: "All"
             },
+            on: { select: _vm.setFilter, remove: _vm.removeFilter },
             model: {
-              value: _vm.filters.auctionHouses.valu,
+              value: _vm.filters.auctionHouses.value,
               callback: function($$v) {
-                _vm.$set(_vm.filters.auctionHouses, "valu", $$v)
+                _vm.$set(_vm.filters.auctionHouses, "value", $$v)
               },
-              expression: "filters.auctionHouses.valu"
+              expression: "filters.auctionHouses.value"
             }
           }),
           _vm._v(" "),
@@ -1152,19 +1196,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "filters__right__filter" }, [
-      _c("input", {
-        staticClass: "base-input",
-        attrs: { type: "text", placeholder: "Wyszukaj za pomocą nazwy" }
-      })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
