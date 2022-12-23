@@ -92,8 +92,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 
 
 
@@ -116,6 +114,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   methods: {
     showMore: function showMore() {
       ++this.$store.state.currentPage;
+      _Store__WEBPACK_IMPORTED_MODULE_1__["default"].commit('GET_CARS');
     }
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
@@ -984,13 +983,7 @@ var render = function() {
       _vm.cars && _vm.cars.length > 0
         ? _c("h2", [_vm._v("Latest Lots")])
         : _vm._e(),
-      _vm._v(
-        "\n  " +
-          _vm._s(_vm.foundCars) +
-          "\n  page -- " +
-          _vm._s(_vm.currentPage) +
-          "\n  "
-      ),
+      _vm._v(" "),
       _c("CurrentFilters"),
       _vm._v(" "),
       _c(
@@ -1015,7 +1008,7 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _vm.cars && _vm.cars.length > 0
+      _vm.cars && _vm.cars.length > 0 && _vm.foundCars > _vm.currentPage * 15
         ? _c(
             "button",
             {
