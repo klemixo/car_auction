@@ -46,7 +46,7 @@ import store from '../Store';
             }),
         },
         mounted() {
-            store.commit('GET_FILTERS');
+            store.commit('GET_FILTERS', false);
         },
         methods: {
             search(){
@@ -54,10 +54,16 @@ import store from '../Store';
             },
             setFilter(filter,id){
                 console.log(id)
+                if(id === 'marka'){
+                    store.commit('GET_FILTERS',Object.values(filter)[0]);
+                }
                 const filterObj = {key : id !== 'yearTo' && id !== 'yearFrom' ? Object.keys(filter)[0] : id, value : Object.values(filter)[0]}
                 store.commit('SET_FILTER',filterObj)
             },
             removeFilter(filter,id){
+                if(id === 'marka'){
+                    store.commit('GET_FILTERS',false);
+                }
                 const filterObj = {key : id !== 'yearTo' && id !== 'yearFrom' ? Object.keys(filter)[0] : id, value : null}
                 store.commit('SET_FILTER',filterObj)
             }
@@ -78,8 +84,13 @@ import store from '../Store';
     gap:24px;
     @media(min-width:768px){
     margin-top: 68px;
-    padding: 90px 34px;
+    padding: 40px 34px;
     flex-direction: row;
+    }
+    button{
+        height:fit-content;
+        padding:10px;
+        margin-top: auto;
     }
     &__filter{
         display:flex;

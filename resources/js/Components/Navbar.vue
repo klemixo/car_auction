@@ -38,7 +38,7 @@ export default {
 </script>
 <style lang="scss">
 .navBar{
-  background: url('/img/navbar-bg-2.png');
+  background: url('/img/navbar-bg-1.png');
   padding:71px 0;
   &__link{
     justify-content: flex-end;

@@ -59,8 +59,10 @@ const store = new Vuex.Store({
                 console.log(err)
             })
         },
-        GET_FILTERS(state) {
-            axios.get(`http://54.36.172.231/api/filters`).then(res => {
+        GET_FILTERS(state, newMarka) {
+            console.log(newMarka)
+            const reqUrl = newMarka ? `http://54.36.172.231/api/filters?newMarka=true` : `http://54.36.172.231/api/filters`;
+            axios.get(reqUrl).then(res => {
                 state.filtersOptions = res.data
             }).catch(err => {
                 console.log(err)
