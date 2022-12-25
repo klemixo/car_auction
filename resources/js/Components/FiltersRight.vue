@@ -80,10 +80,9 @@ import store from '../Store';
             UpdateValues(e) {
       this.filters.runValueStart = e.minValue;
       this.filters.runValueEnd = e.maxValue;
-      const filterObjMin = {key:'runMin',value:this.filters.runValueStart};
-      const filterObjMax = {key:'runMax',value:this.filters.runValueEnd};
-    //   store.commit('SET_FILTER',filterObjMin)
-    //   store.commit('SET_FILTER',filterObjMax)
+      this.$store.state.filters.runMin.value = e.minValue
+      this.$store.state.filters.runMax.value = e.maxValue
+      console.log( this.$store.state.filters)
     },
     nameSearch(){
         const filterObj = {key : 'search', value : this.search}

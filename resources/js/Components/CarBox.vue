@@ -62,7 +62,25 @@ import 'vueperslides/dist/vueperslides.css'
 box-shadow: 0px 9px 39px #ECF3F8;
 gap:24px;
 max-width: 425px;
-
+.vueperslides__arrow {
+  &--prev,&--next{
+    width: 50px  !important;
+    height: 100%  !important;
+    background: rgba(0,0,0,.4);
+    svg{
+      width:2.9rem  !important;
+      path{
+        stroke:white  !important;
+      }
+    }
+  }
+  &--prev{
+    left:0rem !important;
+  }
+  &--next{
+    right:0rem !important;
+  }
+}
 &__img{
 width:100%;
 }

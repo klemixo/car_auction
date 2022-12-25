@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState,  mapGetters } from 'vuex';
 import store from '../Store';
 import CarBox from './CarBox.vue';
 import Error from './Error.vue';
@@ -45,11 +45,13 @@ export default {
   computed: {
     ...mapState({
       count: state => state.count,
-      cars: state => state.cars,
       foundCars: state => state.foundCars,
       currentPage: state => state.currentPage,
       dataLoading: state => state.dataLoading
     }),
+    ...mapGetters({
+      cars: 'getCarsList'
+    })
   }
 }
 </script>
@@ -78,10 +80,10 @@ export default {
         display:grid;
         grid-template-columns: 1fr;
         gap:24px;
-        @media(min-width:576px){
+        @media(min-width:768px){
         grid-template-columns: 1fr 1fr;
         }
-        @media(min-width:1200px){
+        @media(min-width:1300px){
         grid-template-columns: 1fr 1fr 1fr;
         }
     }

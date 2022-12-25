@@ -33,7 +33,25 @@ const store = new Vuex.Store({
                 }
             }
             return filledFilters;
-        }
+        },
+        getCarsList: state => {
+            if (state.cars) {
+                let newCars = [];
+                state.cars.forEach(car => {
+                    if (state.filters.runMax.value) {
+                        const mileAge = parseInt(car['odometer'].replace(/\,/g, ''), 10);
+                        if (mileAge > state.filters.runMin.value && mileAge < state.filters.runMax.value) {
+                            newCars.push(car)
+                        }
+                    } else {
+                        newCars.push(car)
+                    }
+
+                })
+                return newCars;
+            }
+
+        },
     },
     mutations: {
         INCREMENT(state) {
@@ -61,7 +79,7 @@ const store = new Vuex.Store({
         },
         GET_FILTERS(state, newMarka) {
             console.log(newMarka)
-            const reqUrl = newMarka ? `http://54.36.172.231/api/filters?newMarka=true` : `http://54.36.172.231/api/filters`;
+            const reqUrl = newMarka ? `http://54.36.172.231/api/filters?newMarka=${newMarka}` : `http://54.36.172.231/api/filters`;
             axios.get(reqUrl).then(res => {
                 state.filtersOptions = res.data
             }).catch(err => {

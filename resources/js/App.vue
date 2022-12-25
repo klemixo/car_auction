@@ -67,11 +67,8 @@ body{
   @media(min-width:768px){
     width:90%;
   }
-  @media(min-width:1300px){
-    width:70%;
-  }
   @media(min-width:1400px){
-    max-width: 1300px;
+    max-width: 1400px;
   }
 }
 

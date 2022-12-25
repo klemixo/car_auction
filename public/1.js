@@ -117,12 +117,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       _Store__WEBPACK_IMPORTED_MODULE_1__["default"].commit('GET_CARS');
     }
   },
-  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
     count: function count(state) {
       return state.count;
-    },
-    cars: function cars(state) {
-      return state.cars;
     },
     foundCars: function foundCars(state) {
       return state.foundCars;
@@ -133,6 +130,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     dataLoading: function dataLoading(state) {
       return state.dataLoading;
     }
+  })), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
+    cars: 'getCarsList'
   }))
 });
 
@@ -300,15 +299,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     UpdateValues: function UpdateValues(e) {
       this.filters.runValueStart = e.minValue;
       this.filters.runValueEnd = e.maxValue;
-      var filterObjMin = {
-        key: 'runMin',
-        value: this.filters.runValueStart
-      };
-      var filterObjMax = {
-        key: 'runMax',
-        value: this.filters.runValueEnd
-      }; //   store.commit('SET_FILTER',filterObjMin)
-      //   store.commit('SET_FILTER',filterObjMax)
+      this.$store.state.filters.runMin.value = e.minValue;
+      this.$store.state.filters.runMax.value = e.maxValue;
+      console.log(this.$store.state.filters);
     },
     nameSearch: function nameSearch() {
       var filterObj = {
@@ -495,7 +488,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".badge {\n  background: #1882FF;\n  border-radius: 3px;\n  font-weight: 700;\n  font-size: 16px;\n  line-height: 21px;\n  padding: 4px;\n  color: white;\n  text-align: center;\n  height: fit-content;\n}\n.badge--outline {\n  background: white;\n  color: #1882FF;\n  border: 1px solid #597BD5;\n}\n.badge--gray {\n  background: white;\n  color: #818181;\n  border: 1px solid #818181;\n}\n.car__box {\n  background: #FFFFFF;\n  box-shadow: 0px 9px 39px #ECF3F8;\n  gap: 24px;\n  max-width: 425px;\n}\n.car__box__img {\n  width: 100%;\n}\n.car__box__content {\n  padding: 20px;\n}\n.car__box__content p {\n  font-size: 16px;\n  line-height: 21px;\n  text-align: left;\n  margin: 0;\n}\n.car__box__content p span {\n  color: #818181;\n}\n.car__box__content .flex {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.car__box__content .flex h2 {\n  font-weight: 700;\n  font-size: 20px;\n  line-height: 26px;\n}\n.car__box__content .flex h3 {\n  font-weight: 700;\n  font-size: 27px;\n  line-height: 35px;\n}\n.car__box__content .flex a {\n  font-size: 16px;\n  line-height: 21px;\n  color: #243E97;\n  display: flex;\n  gap: 6px;\n  align-items: center;\n  text-decoration: none;\n}", ""]);
+exports.push([module.i, ".badge {\n  background: #1882FF;\n  border-radius: 3px;\n  font-weight: 700;\n  font-size: 16px;\n  line-height: 21px;\n  padding: 4px;\n  color: white;\n  text-align: center;\n  height: fit-content;\n}\n.badge--outline {\n  background: white;\n  color: #1882FF;\n  border: 1px solid #597BD5;\n}\n.badge--gray {\n  background: white;\n  color: #818181;\n  border: 1px solid #818181;\n}\n.car__box {\n  background: #FFFFFF;\n  box-shadow: 0px 9px 39px #ECF3F8;\n  gap: 24px;\n  max-width: 425px;\n}\n.car__box .vueperslides__arrow--prev, .car__box .vueperslides__arrow--next {\n  width: 50px !important;\n  height: 100% !important;\n  background: rgba(0, 0, 0, 0.4);\n}\n.car__box .vueperslides__arrow--prev svg, .car__box .vueperslides__arrow--next svg {\n  width: 2.9rem !important;\n}\n.car__box .vueperslides__arrow--prev svg path, .car__box .vueperslides__arrow--next svg path {\n  stroke: white !important;\n}\n.car__box .vueperslides__arrow--prev {\n  left: 0rem !important;\n}\n.car__box .vueperslides__arrow--next {\n  right: 0rem !important;\n}\n.car__box__img {\n  width: 100%;\n}\n.car__box__content {\n  padding: 20px;\n}\n.car__box__content p {\n  font-size: 16px;\n  line-height: 21px;\n  text-align: left;\n  margin: 0;\n}\n.car__box__content p span {\n  color: #818181;\n}\n.car__box__content .flex {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.car__box__content .flex h2 {\n  font-weight: 700;\n  font-size: 20px;\n  line-height: 26px;\n}\n.car__box__content .flex h3 {\n  font-weight: 700;\n  font-size: 27px;\n  line-height: 35px;\n}\n.car__box__content .flex a {\n  font-size: 16px;\n  line-height: 21px;\n  color: #243E97;\n  display: flex;\n  gap: 6px;\n  align-items: center;\n  text-decoration: none;\n}", ""]);
 
 // exports
 
@@ -514,7 +507,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".cars__container {\n  padding: 0 10px;\n}\n.cars__container .more-results-btn {\n  margin-top: 32px;\n}\n.cars__container__filters {\n  display: flex;\n  gap: 20px;\n  flex-direction: column-reverse;\n}\n@media (min-width: 992px) {\n.cars__container__filters {\n    flex-direction: row;\n}\n}\n.cars__container h2 {\n  font-family: \"PT Sans\";\n  font-weight: 700;\n  font-size: 36px;\n  line-height: 47px;\n  text-align: left;\n}\n.cars__container .grid {\n  display: grid;\n  grid-template-columns: 1fr;\n  gap: 24px;\n}\n@media (min-width: 576px) {\n.cars__container .grid {\n    grid-template-columns: 1fr 1fr;\n}\n}\n@media (min-width: 1200px) {\n.cars__container .grid {\n    grid-template-columns: 1fr 1fr 1fr;\n}\n}", ""]);
+exports.push([module.i, ".cars__container {\n  padding: 0 10px;\n}\n.cars__container .more-results-btn {\n  margin-top: 32px;\n}\n.cars__container__filters {\n  display: flex;\n  gap: 20px;\n  flex-direction: column-reverse;\n}\n@media (min-width: 992px) {\n.cars__container__filters {\n    flex-direction: row;\n}\n}\n.cars__container h2 {\n  font-family: \"PT Sans\";\n  font-weight: 700;\n  font-size: 36px;\n  line-height: 47px;\n  text-align: left;\n}\n.cars__container .grid {\n  display: grid;\n  grid-template-columns: 1fr;\n  gap: 24px;\n}\n@media (min-width: 768px) {\n.cars__container .grid {\n    grid-template-columns: 1fr 1fr;\n}\n}\n@media (min-width: 1300px) {\n.cars__container .grid {\n    grid-template-columns: 1fr 1fr 1fr;\n}\n}", ""]);
 
 // exports
 
