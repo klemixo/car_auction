@@ -1,5 +1,6 @@
 <template>
   <div class="cars__container container">
+    <BreadCrumb/>
     <h2 v-if="cars && cars.length > 0">Latest Lots</h2>
     <CurrentFilters/>
     <div class="cars__container__filters">
@@ -8,7 +9,9 @@
     </div>
     <Loader v-if="dataLoading"/>
     <Error v-if="cars && cars.length === 0"/>
+    <!--
     <FiltersRight/>
+    -->
     </div>
     <button  @click="showMore"  v-if="cars && cars.length > 0 && foundCars > currentPage * 15" class="base-btn more-results-btn">More results</button>
 
@@ -22,6 +25,7 @@ import CarBox from './CarBox.vue';
 import Error from './Error.vue';
 import Loader from './Loader.vue';
 import FiltersRight from './FiltersRight.vue';
+import BreadCrumb from './BreadCrumb.vue';
 import CurrentFilters from './CurrentFilters.vue';
 export default {
   name: 'home',
@@ -30,6 +34,7 @@ export default {
     Error,
     Loader,
     FiltersRight,
+    BreadCrumb,
     CurrentFilters
   },
   mounted() {
@@ -57,7 +62,7 @@ export default {
 </script>
 <style lang="scss">
 .cars__container{
-    padding:0 10px;
+  max-width:1300px !important;
     .more-results-btn{
       margin-top:32px;
     }

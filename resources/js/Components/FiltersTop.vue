@@ -19,12 +19,12 @@ import store from '../Store';
                 filters:{
                     marka:{
                         value:'',
-                        label:'Select mark',
+                        label:'Select Make',
                         placeholder:'All marks',
                     },
                     model:{
                         value:'',
-                        label:'Select model',
+                        label:'Select Model',
                         placeholder:'All models',
                     },
                     yearFrom:{
@@ -88,9 +88,9 @@ import store from '../Store';
     flex-direction: row;
     }
     button{
-        height:fit-content;
         padding:10px;
         margin-top: auto;
+        height:65px;
     }
     &__filter{
         display:flex;

@@ -64,11 +64,9 @@ body{
 .container{
   width:95%;
   margin:0 auto;
+  max-width: 1232px !important;
   @media(min-width:768px){
     width:90%;
-  }
-  @media(min-width:1400px){
-    max-width: 1400px;
   }
 }
 
@@ -151,6 +149,17 @@ body{
     }
   }
 .multiselect__option--highlight{
-  background: #506EEC !important;
+  background: #243E97 !important;
+}
+.multiselect__tags{
+  min-height:65px !important;
+  padding: 18px 0px 0 22px !important;
+}
+.multiselect__placeholder{
+  font-size:18px !important;
+}
+.multiselect__select {
+  top:50%;
+  transform: translate(0,-50%);
 }
 </style>

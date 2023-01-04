@@ -38,8 +38,11 @@ export default {
 </script>
 <style lang="scss">
 .navBar{
-  background: url('/img/navbar-bg-1.png');
-  padding:71px 0;
+  background: linear-gradient(180deg, rgb(0 40 179 / 90%) 0%, rgb(0 57 255 / 28%) 225.36%), url(/img/navbar-bg.png);
+    background-blend-mode: multiply;
+    padding: 61px 0 71px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
   &__link{
     justify-content: flex-end;
     margin-bottom: 40px;
@@ -70,7 +73,7 @@ export default {
       text-align: center;
       color: #FFFFFF;
       span{
-        color:rgb(249, 214, 32)
+        color: rgba(255, 205, 30, 1);
       }
     }
   }
@@ -82,6 +85,10 @@ export default {
     flex-direction: column;
     @media(min-width:576px){
       flex-direction: row;
+    }
+    @media(min-width:1200px){
+      width:77%;
+      margin:0 auto;
     }
     .base-input{
       flex:1;
