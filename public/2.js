@@ -200,6 +200,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -266,7 +284,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".car__container__heading[data-v-5f190dbb] {\n  width: 100%;\n  margin: 20px 0;\n}\n.car__container__content[data-v-5f190dbb] {\n  display: flex;\n  flex-direction: column;\n  gap: 29px;\n}\n@media (min-width: 992px) {\n.car__container__content[data-v-5f190dbb] {\n    flex-direction: row;\n}\n}\n.car__container__content__images[data-v-5f190dbb] {\n  flex: 1;\n}\n@media (min-width: 992px) {\n.car__container__content__images[data-v-5f190dbb] {\n    flex: 3;\n}\n}\n.car__container__content__data[data-v-5f190dbb] {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 21px;\n}\n@media (min-width: 992px) {\n.car__container__content__data[data-v-5f190dbb] {\n    width: unset;\n    min-width: 410px;\n}\n}\n.car__container__content__data .data__box[data-v-5f190dbb] {\n  padding: 20px !important;\n}\n.car__container__content__data .data__box__heading[data-v-5f190dbb] {\n  background: #F8F8F8;\n  display: flex;\n  gap: 16px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__heading img[data-v-5f190dbb] {\n  width: 27px;\n  height: 27px;\n}\n.car__container__content__data .data__box__heading p[data-v-5f190dbb] {\n  font-weight: 700;\n  font-size: 25px;\n  margin: 0;\n}\n.car__container__content__data .data__box__content h3[data-v-5f190dbb] {\n  font-weight: 700;\n  font-size: 33px;\n  line-height: 43px;\n  text-align: left;\n}\n.car__container__content__data .data__box__content .highlight[data-v-5f190dbb] {\n  background: #FFEBB7;\n  border-radius: 3px;\n  width: fit-content;\n}\n.car__container__content__data .data__box__content .flex[data-v-5f190dbb] {\n  display: flex;\n  gap: 11px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__content .flex-base[data-v-5f190dbb] {\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);\n}\n.car__container__content__data .data__box__content .flex-base .light[data-v-5f190dbb] {\n  color: #818181;\n}\n.car__container__content__data .data__box__content .flex-base .strong[data-v-5f190dbb] {\n  color: black;\n}\n.car__container .card[data-v-5f190dbb] {\n  background: #FFFFFF;\n  border: 1px solid #ECF1F9;\n  padding: 10px;\n  border-radius: 8px;\n}\n.car__container .card .flex-main[data-v-5f190dbb] {\n  justify-content: space-between;\n  flex-wrap: wrap;\n}\n.car__container .card .flex-main button[data-v-5f190dbb] {\n  background: #FFCD1E;\n  border-radius: 5px;\n  color: white;\n  width: fit-content;\n  height: fit-content;\n  border: none;\n  outline: none;\n  margin: auto 0;\n}\n.car__container .card h1[data-v-5f190dbb] {\n  font-size: 25px;\n  line-height: 32px;\n  color: #000000;\n  margin-right: 24px;\n}\n.car__container .card h2[data-v-5f190dbb] {\n  font-size: 16px;\n  line-height: 21px;\n}\n.car__container .card h2[data-v-5f190dbb]:first-of-type {\n  margin-right: 65px;\n}\n.car__container .card h2 span[data-v-5f190dbb] {\n  color: #818181;\n}", ""]);
+exports.push([module.i, ".car__container__heading[data-v-5f190dbb] {\n  width: 100%;\n  margin: 20px 0;\n}\n.car__container__content[data-v-5f190dbb] {\n  display: flex;\n  flex-direction: column;\n  gap: 29px;\n}\n@media (min-width: 992px) {\n.car__container__content[data-v-5f190dbb] {\n    flex-direction: row;\n}\n}\n.car__container__content__images[data-v-5f190dbb] {\n  flex: 1;\n}\n@media (min-width: 992px) {\n.car__container__content__images[data-v-5f190dbb] {\n    flex: 3;\n}\n}\n.car__container__content__data[data-v-5f190dbb] {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 21px;\n}\n@media (min-width: 992px) {\n.car__container__content__data[data-v-5f190dbb] {\n    width: unset;\n    min-width: 410px;\n}\n}\n.car__container__content__data .data__box[data-v-5f190dbb] {\n  padding: 20px !important;\n}\n.car__container__content__data .data__box__heading[data-v-5f190dbb] {\n  background: #F8F8F8;\n  display: flex;\n  gap: 16px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__heading img[data-v-5f190dbb] {\n  width: 27px;\n  height: 27px;\n}\n.car__container__content__data .data__box__heading p[data-v-5f190dbb] {\n  font-weight: 700;\n  font-size: 25px;\n  margin: 0;\n}\n.car__container__content__data .data__box__content h3[data-v-5f190dbb] {\n  font-weight: 700;\n  font-size: 33px;\n  line-height: 43px;\n  text-align: left;\n}\n.car__container__content__data .data__box__content .highlight[data-v-5f190dbb] {\n  background: #FFEBB7;\n  border-radius: 3px;\n  width: fit-content;\n}\n.car__container__content__data .data__box__content .flex[data-v-5f190dbb] {\n  display: flex;\n  gap: 11px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__content .flex-base[data-v-5f190dbb] {\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);\n}\n.car__container__content__data .data__box__content .flex-base .light[data-v-5f190dbb] {\n  color: #818181;\n}\n.car__container__content__data .data__box__content .flex-base .strong[data-v-5f190dbb] {\n  color: black;\n}\n.car__container .card[data-v-5f190dbb] {\n  background: #FFFFFF;\n  border: 1px solid #ECF1F9;\n  padding: 10px;\n  border-radius: 8px;\n}\n.car__container .card .flex-main[data-v-5f190dbb] {\n  justify-content: space-between;\n  flex-wrap: wrap;\n}\n.car__container .card .flex-main a[data-v-5f190dbb] {\n  background: #FFCD1E;\n  border-radius: 5px;\n  color: white;\n  width: fit-content;\n  height: fit-content;\n  border: none;\n  outline: none;\n  margin: auto 0;\n  padding: 5px;\n  text-decoration: none;\n}\n.car__container .card h1[data-v-5f190dbb] {\n  font-size: 25px;\n  line-height: 32px;\n  color: #000000;\n  margin-right: 24px;\n}\n.car__container .card h2[data-v-5f190dbb] {\n  font-size: 16px;\n  line-height: 21px;\n}\n.car__container .card h2[data-v-5f190dbb]:first-of-type {\n  margin-right: 65px;\n}\n.car__container .card h2 span[data-v-5f190dbb] {\n  color: #818181;\n}", ""]);
 
 // exports
 
@@ -450,47 +468,58 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "car__container container" }, [
     _c("div", { staticClass: "car__container__heading card" }, [
-      _c("div", { staticClass: "flex flex-main" }, [
-        _c("div", [
-          _c("div", { staticClass: "flex" }, [
-            _c("h1", [
-              _vm._v(
-                "\n                        " +
-                  _vm._s(_vm.carData.production_year) +
-                  " " +
-                  _vm._s(_vm.carData.marka) +
-                  " " +
-                  _vm._s(_vm.carData.model) +
-                  "\n                    "
-              )
+      _c(
+        "div",
+        { staticClass: "flex flex-main" },
+        [
+          _c("div", [
+            _c("div", { staticClass: "flex" }, [
+              _c("h1", [
+                _vm._v(
+                  "\n                        " +
+                    _vm._s(_vm.carData.production_year) +
+                    " " +
+                    _vm._s(_vm.carData.marka) +
+                    " " +
+                    _vm._s(_vm.carData.model) +
+                    "\n                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "badge" }, [
+                _vm._v(
+                  "\n                        " +
+                    _vm._s(_vm.carData.selling_branch) +
+                    "\n                    "
+                )
+              ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "badge" }, [
-              _vm._v(
-                "\n                        " +
-                  _vm._s(_vm.carData.selling_branch) +
-                  "\n                    "
-              )
+            _c("div", { staticClass: "flex" }, [
+              _c("h2", [
+                _c("span", [_vm._v("Lot number:")]),
+                _vm._v(
+                  " " +
+                    _vm._s(_vm.carData.run_number) +
+                    "\n                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c("h2", [
+                _c("span", [_vm._v("VIN: ")]),
+                _vm._v(" " + _vm._s(_vm.carData.vin) + "\n                    ")
+              ])
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "flex" }, [
-            _c("h2", [
-              _c("span", [_vm._v("Lot number:")]),
-              _vm._v(
-                "  " + _vm._s(_vm.carData.run_number) + "\n                    "
-              )
-            ]),
-            _vm._v(" "),
-            _c("h2", [
-              _c("span", [_vm._v("VIN: ")]),
-              _vm._v(" " + _vm._s(_vm.carData.vin) + "\n                    ")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("button", [_vm._v("\n                CLAIM LOT\n            ")])
-      ])
+          _c(
+            "router-link",
+            { attrs: { to: { name: "Claim", props: { id: _vm.carData.id } } } },
+            [_vm._v("\n                CLAIM LOT\n            ")]
+          )
+        ],
+        1
+      )
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "car__container__content" }, [
@@ -524,6 +553,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "flex-base" }, [
               _c("p", { staticClass: "light" }, [_vm._v("Lot number")]),
+              _vm._v(" "),
               _c("p", { staticClass: "strong" }, [
                 _vm._v(_vm._s(_vm.carData.run_number))
               ])
@@ -531,6 +561,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "flex-base" }, [
               _c("p", { staticClass: "light" }, [_vm._v("Date of sell")]),
+              _vm._v(" "),
               _c("p", { staticClass: "strong" }, [
                 _vm._v(_vm._s(_vm.carData.sold_date))
               ])
@@ -538,6 +569,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "flex-base" }, [
               _c("p", { staticClass: "light" }, [_vm._v("Documents")]),
+              _vm._v(" "),
               _c("p", { staticClass: "strong" }, [
                 _vm._v(_vm._s(_vm.carData.sold_date))
               ])
@@ -551,6 +583,7 @@ var render = function() {
           _c("div", { staticClass: "data__box__content" }, [
             _c("div", { staticClass: "flex-base" }, [
               _c("p", { staticClass: "light" }, [_vm._v("VIN")]),
+              _vm._v(" "),
               _c("p", { staticClass: "strong" }, [
                 _vm._v(_vm._s(_vm.carData.vin))
               ])
@@ -558,6 +591,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "flex-base" }, [
               _c("p", { staticClass: "light" }, [_vm._v("Year")]),
+              _vm._v(" "),
               _c("p", { staticClass: "strong" }, [
                 _vm._v(_vm._s(_vm.carData.production_year))
               ])
@@ -565,6 +599,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "flex-base" }, [
               _c("p", { staticClass: "light" }, [_vm._v("Mileage")]),
+              _vm._v(" "),
               _c("p", { staticClass: "strong" }, [
                 _vm._v(_vm._s(_vm.carData.odometer))
               ])
@@ -572,6 +607,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "flex-base" }, [
               _c("p", { staticClass: "light" }, [_vm._v("Engine")]),
+              _vm._v(" "),
               _c("p", { staticClass: "strong" }, [
                 _vm._v(_vm._s(_vm.carData.engine))
               ])
@@ -579,6 +615,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "flex-base" }, [
               _c("p", { staticClass: "light" }, [_vm._v("Transmission")]),
+              _vm._v(" "),
               _c("p", { staticClass: "strong" }, [
                 _vm._v(_vm._s(_vm.carData.transmission))
               ])
@@ -586,6 +623,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "flex-base" }, [
               _c("p", { staticClass: "light" }, [_vm._v("Run and drive")]),
+              _vm._v(" "),
               _c("p", { staticClass: "strong" }, [
                 _vm._v(_vm._s(_vm.carData.drive_line_type))
               ])
@@ -593,6 +631,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "flex-base" }, [
               _c("p", { staticClass: "light" }, [_vm._v("Body color")]),
+              _vm._v(" "),
               _c("p", { staticClass: "strong" }, [
                 _vm._v(_vm._s(_vm.carData.odometer))
               ])
@@ -600,6 +639,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "flex-base" }, [
               _c("p", { staticClass: "light" }, [_vm._v("Drive")]),
+              _vm._v(" "),
               _c("p", { staticClass: "strong" }, [
                 _vm._v(_vm._s(_vm.carData.drive_line_type))
               ])
@@ -607,6 +647,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "flex-base" }, [
               _c("p", { staticClass: "light" }, [_vm._v("Fuel")]),
+              _vm._v(" "),
               _c("p", { staticClass: "strong" }, [
                 _vm._v(_vm._s(_vm.carData.odometer))
               ])
@@ -614,6 +655,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "flex-base" }, [
               _c("p", { staticClass: "light" }, [_vm._v("Keys")]),
+              _vm._v(" "),
               _c("p", { staticClass: "strong" }, [
                 _vm._v(_vm._s(_vm.carData.key))
               ])
@@ -627,6 +669,7 @@ var render = function() {
           _c("div", { staticClass: "data__box__content" }, [
             _c("div", { staticClass: "flex-base" }, [
               _c("p", { staticClass: "light" }, [_vm._v("Primary damage")]),
+              _vm._v(" "),
               _c("p", { staticClass: "strong" }, [
                 _vm._v(_vm._s(_vm.carData.loss))
               ])
@@ -634,6 +677,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "flex-base" }, [
               _c("p", { staticClass: "light" }, [_vm._v("Secondary damage")]),
+              _vm._v(" "),
               _c("p", { staticClass: "strong" }, [
                 _vm._v(_vm._s(_vm.carData.primary_damage))
               ])
@@ -643,6 +687,7 @@ var render = function() {
               _c("p", { staticClass: "light" }, [
                 _vm._v("Estimated Retail value")
               ]),
+              _vm._v(" "),
               _c("p", { staticClass: "strong" }, [
                 _vm._v(_vm._s(_vm.carData.odometer))
               ])
@@ -652,6 +697,7 @@ var render = function() {
               _c("p", { staticClass: "light" }, [
                 _vm._v("Estimated repair cost")
               ]),
+              _vm._v(" "),
               _c("p", { staticClass: "strong" }, [
                 _vm._v(_vm._s(_vm.carData.engine))
               ])
@@ -678,7 +724,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "highlight" }, [
-      _vm._v("Seller:  "),
+      _vm._v("Seller: "),
       _c("b", [_vm._v("Non-Insurence Company")])
     ])
   },

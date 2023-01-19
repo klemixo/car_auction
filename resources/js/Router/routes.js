@@ -29,6 +29,13 @@ const routes = [{
         name: 'Car',
         props: true
     },
+    {
+        path: '/claim/:id',
+        component: () =>
+            import ('../Pages/Claim.vue'),
+        name: 'Claim',
+        props: true
+    },
 ]
 
 export default routes;

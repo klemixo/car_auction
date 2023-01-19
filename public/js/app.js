@@ -53876,6 +53876,13 @@ var routes = [{
   },
   name: 'Car',
   props: true
+}, {
+  path: '/claim/:id',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ../Pages/Claim.vue */ "./resources/js/Pages/Claim.vue"));
+  },
+  name: 'Claim',
+  props: true
 }];
 /* harmony default export */ __webpack_exports__["default"] = (routes);
 
