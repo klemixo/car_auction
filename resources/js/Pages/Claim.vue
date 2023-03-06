@@ -1,6 +1,8 @@
 <template>
-    <div class="car__container container">
+    <div class="car__container container" v-if="carData">
         <div class="car__container__heading card">
+            <stripe-checkout ref="checkoutRef" mode="payment" :pk="publishableKey" :line-items="lineItems"
+                :success-url="successURL" :cancel-url="cancelURL" @loading="v => loading = v" />
             <div class="flex flex-main">
                 <div class="flex">
                     <img src="/img/base-img-3.png" alt="">
@@ -8,6 +10,7 @@
                 <div>
                     <div class="flex-middle">
                         <div class="badge">
+
                             {{ carData.selling_branch }}
                         </div>
                         <h1>
@@ -31,7 +34,7 @@
                     {{ carData.createdate }}
                     <h3>Final bid</h3>
                     {{ carData.final_bid }}
-                    <button>
+                    <button @click="payNow">
                         CLAIM LOT
                     </button>
                 </div>
@@ -42,18 +45,40 @@
 
 <script>
 import axios from 'axios'
-
+import { StripeCheckout } from '@vue-stripe/vue-stripe';
 export default {
     props: ["id"],
+    components: {
+        StripeCheckout,
+    },
     data() {
         return {
             carData: null,
+            publishableKey: 'pk_test_51L6Y73EIV3WPLa2S77VyiRjJYhLg60WrlK30R8ZDRn9X5hTnp6V6NGTwyyU7F4Eua9WNtIo4ExYvBRnZjojbG7J100NMpo5Hpb',
+            loading: false,
+            lineItems: [
+                {
+                    price: 'price_1LG2JvEIV3WPLa2ScLQYEIvk', // The id of the one-time price you created in your Stripe dashboard
+                    quantity: 1,
+                },
+            ],
+        }
+    },
+    computed: {
+        successURL() {
+            return `${window.location.origin}/#/success/${this.carData.vin}-${this.carData.stock}`
+        },
+        cancelURL() {
+            return `${window.location.origin}/#/error`
         }
     },
     mounted() {
         this.getCarData()
     },
     methods: {
+        payNow() {
+            this.$refs.checkoutRef.redirectToCheckout();
+        },
         getCarData() {
             axios.get(`http://54.36.172.231/api/cars/${this.id}`).then(res => {
                 this.carData = res.data[0]

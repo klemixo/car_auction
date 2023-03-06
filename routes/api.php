@@ -20,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('cars',[getCars::class,'getCars']);
-Route::get('cars/{id}',[getCars::class,'getCar']);
-Route::get('filters',[FiltersController::class,'getFilters']);
+Route::get('cars', [getCars::class, 'getCars']);
+Route::get('cars/{id}', [getCars::class, 'getCar']);
+Route::get('filters', [FiltersController::class, 'getFilters']);
+Route::post('claim', [getCars::class, 'claimLot']);

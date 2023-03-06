@@ -36,6 +36,20 @@ const routes = [{
         name: 'Claim',
         props: true
     },
+    {
+        path: '/error',
+        component: () =>
+            import ('../Pages/Error.vue'),
+        name: 'Error',
+        props: true
+    },
+    {
+        path: '/success/:id',
+        component: () =>
+            import ('../Pages/Success.vue'),
+        name: 'Success',
+        props: true
+    },
 ]
 
 export default routes;

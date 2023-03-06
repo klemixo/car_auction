@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[5],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[12],{
 
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Claim.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************************************************************************!*\
@@ -170,106 +170,100 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.carData
-    ? _c("div", { staticClass: "car__container container" }, [
-        _c(
-          "div",
-          { staticClass: "car__container__heading card" },
-          [
-            _c("stripe-checkout", {
-              ref: "checkoutRef",
-              attrs: {
-                mode: "payment",
-                pk: _vm.publishableKey,
-                "line-items": _vm.lineItems,
-                "success-url": _vm.successURL,
-                "cancel-url": _vm.cancelURL
-              },
-              on: {
-                loading: function(v) {
-                  return (_vm.loading = v)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex flex-main" }, [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("div", [
-                _c("div", { staticClass: "flex-middle" }, [
-                  _c("div", { staticClass: "badge" }, [
-                    _vm._v(
-                      "\n\n                        " +
-                        _vm._s(_vm.carData.selling_branch) +
-                        "\n                    "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("h1", [
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(_vm.carData.production_year) +
-                        " " +
-                        _vm._s(_vm.carData.marka) +
-                        " " +
-                        _vm._s(_vm.carData.model) +
-                        "\n                    "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("h2", [_vm._v("VIN: " + _vm._s(_vm.carData.vin))])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "flex" }, [
-                  _c("h2", [
-                    _c("span", [_vm._v("Lot number:")]),
-                    _vm._v(
-                      " " +
-                        _vm._s(_vm.carData.run_number) +
-                        "\n                    "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("h2", [
-                    _c("span", [_vm._v("Location: ")]),
-                    _vm._v(
-                      " " + _vm._s(_vm.carData.vin) + "\n                    "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("h2", [
-                    _c("span", [_vm._v("Mileage: ")]),
-                    _vm._v(
-                      " " +
-                        _vm._s(_vm.carData.odometer) +
-                        "\n                    "
-                    )
-                  ])
-                ])
+  return _c("div", { staticClass: "car__container container" }, [
+    _c(
+      "div",
+      { staticClass: "car__container__heading card" },
+      [
+        _c("stripe-checkout", {
+          ref: "checkoutRef",
+          attrs: {
+            mode: "payment",
+            pk: _vm.publishableKey,
+            "line-items": _vm.lineItems,
+            "success-url": _vm.successURL,
+            "cancel-url": _vm.cancelURL
+          },
+          on: {
+            loading: function(v) {
+              return (_vm.loading = v)
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex flex-main" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", [
+            _c("div", { staticClass: "flex-middle" }, [
+              _c("div", { staticClass: "badge" }, [
+                _vm._v(
+                  "\n\n                        " +
+                    _vm._s(_vm.carData.selling_branch) +
+                    "\n                    "
+                )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "flex-last" }, [
+              _c("h1", [
                 _vm._v(
-                  "\n                " +
-                    _vm._s(_vm.carData.createdate) +
-                    "\n                "
-                ),
-                _c("h3", [_vm._v("Final bid")]),
+                  "\n                        " +
+                    _vm._s(_vm.carData.production_year) +
+                    " " +
+                    _vm._s(_vm.carData.marka) +
+                    " " +
+                    _vm._s(_vm.carData.model) +
+                    "\n                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c("h2", [_vm._v("VIN: " + _vm._s(_vm.carData.vin))])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "flex" }, [
+              _c("h2", [
+                _c("span", [_vm._v("Lot number:")]),
                 _vm._v(
-                  "\n                " +
-                    _vm._s(_vm.carData.final_bid) +
-                    "\n                "
-                ),
-                _c("button", { on: { click: _vm.payNow } }, [
-                  _vm._v("\n                    CLAIM LOT\n                ")
-                ])
+                  " " +
+                    _vm._s(_vm.carData.run_number) +
+                    "\n                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c("h2", [
+                _c("span", [_vm._v("Location: ")]),
+                _vm._v(" " + _vm._s(_vm.carData.vin) + "\n                    ")
+              ]),
+              _vm._v(" "),
+              _c("h2", [
+                _c("span", [_vm._v("Mileage: ")]),
+                _vm._v(
+                  " " + _vm._s(_vm.carData.odometer) + "\n                    "
+                )
               ])
             ])
-          ],
-          1
-        )
-      ])
-    : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex-last" }, [
+            _vm._v(
+              "\n                " +
+                _vm._s(_vm.carData.createdate) +
+                "\n                "
+            ),
+            _c("h3", [_vm._v("Final bid")]),
+            _vm._v(
+              "\n                " +
+                _vm._s(_vm.carData.final_bid) +
+                "\n                "
+            ),
+            _c("button", { on: { click: _vm.payNow } }, [
+              _vm._v("\n                    CLAIM LOT\n                ")
+            ])
+          ])
+        ])
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
