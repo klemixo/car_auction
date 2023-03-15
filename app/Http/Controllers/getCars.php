@@ -19,7 +19,7 @@ class getCars extends Controller
         $query = car::orderBy('id', 'desc');
         $data = $req->all();
         $limit = 0;
-        $query->where('claimed', "=", 1);
+        $query->where('claimed', "=", 0);
         foreach ($data as $key => $value) {
             if ($key === 'yearFrom') {
                 $query->where('production_year', ">=", $value);
