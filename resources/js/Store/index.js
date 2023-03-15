@@ -67,7 +67,7 @@ const store = new Vuex.Store({
             }
             filtersString += `page=${state.currentPage}`
             console.log(`http://54.36.172.231/api/cars?${filtersString}`)
-            axios.get(`http://54.36.172.231/api/cars?${filtersString}`).then(res => {
+            axios.get(`/api/cars?${filtersString}`).then(res => {
                 state.cars = res.data.data
                 state.foundCars = res.data.count
                 state.dataLoading = false;
@@ -79,7 +79,7 @@ const store = new Vuex.Store({
         },
         GET_FILTERS(state, newMarka) {
             console.log(newMarka)
-            const reqUrl = newMarka ? `http://54.36.172.231/api/filters?newMarka=${newMarka}` : `http://54.36.172.231/api/filters`;
+            const reqUrl = newMarka ? `/api/filters?newMarka=${newMarka}` : `/api/filters`;
             axios.get(reqUrl).then(res => {
                 state.filtersOptions = res.data
             }).catch(err => {

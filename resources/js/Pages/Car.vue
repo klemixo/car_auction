@@ -158,7 +158,7 @@ export default {
     },
     methods: {
         getCarData() {
-            axios.get(`http://54.36.172.231/api/cars/${this.id}`).then(res => {
+            axios.get(`/api/cars/${this.id}`).then(res => {
                 this.carData = res.data[0]
             }).catch(err => {
                 console.log(err)
