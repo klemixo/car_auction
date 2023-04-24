@@ -54059,8 +54059,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       }
 
       filtersString += "page=".concat(state.currentPage);
-      console.log("http://54.36.172.231/api/cars?".concat(filtersString));
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/cars?".concat(filtersString)).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://vinfax.info/api/cars?".concat(filtersString)).then(function (res) {
         state.cars = res.data.data;
         state.foundCars = res.data.count;
         state.dataLoading = false;
