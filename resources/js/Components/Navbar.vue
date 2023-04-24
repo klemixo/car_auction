@@ -1,19 +1,34 @@
 <template>
-  <nav class="navBar">
+  <nav class="navBar" :class="{ small: searched }">
     <div class="navBar__content container">
-      <ul class="navBar__link">
-        <li><router-link :to="{ name: 'home' }">Main</router-link></li>
-        <li><router-link :to="{ name: 'About' }">About</router-link></li>
-        <li>
-          <router-link :to="{ name: 'Terms' }">Terms&Conditions</router-link>
-        </li>
-        <li><router-link :to="{ name: 'Contact' }">Contact</router-link></li>
+      <ul class="navBar__link" :class="{ small: searched }">
+        <div class="img">
+          <router-link :to="{ name: 'home' }">
+            <img
+              v-if="searched"
+              src="img/logo-new-2.png"
+              alt=""
+              width="116"
+              height="102"
+            />
+          </router-link>
+        </div>
+        <div class="links">
+          <li><router-link :to="{ name: 'home' }">Main</router-link></li>
+          <li><router-link :to="{ name: 'About' }">About</router-link></li>
+          <li>
+            <router-link :to="{ name: 'Terms' }">Terms&Conditions</router-link>
+          </li>
+          <li><router-link :to="{ name: 'Contact' }">Contact</router-link></li>
+        </div>
       </ul>
-      <div class="navBar__hero">
-        <img src="img/logo-new-2.png" alt="" width="167" height="147" />
+      <div class="navBar__hero" v-if="!searched">
+        <router-link :to="{ name: 'home' }">
+          <img src="img/logo-new-2.png" alt="" width="167" height="147" />
+        </router-link>
         <h1>Check car sales and damage history. <span>It’s free!</span></h1>
       </div>
-      <div class="navBar__search">
+      <div class="navBar__search" v-if="!searched">
         <input
           v-model="vin"
           type="text"
@@ -27,6 +42,7 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from "vuex";
 import store from "../Store";
 export default {
   name: "navbar",
@@ -40,6 +56,11 @@ export default {
       const filter = { key: "vin", value: this.vin };
       store.commit("SET_FILTER", filter);
     },
+  },
+  computed: {
+    ...mapState({
+      searched: (state) => state.searched,
+    }),
   },
 };
 </script>
@@ -55,12 +76,37 @@ export default {
   padding: 61px 0 71px 0;
   background-size: cover;
   background-repeat: no-repeat;
+  &.small {
+    background: linear-gradient(89.98deg, #102672 0.01%, #384e9b 99.98%);
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      margin-right: auto;
+    }
+  }
   &__link {
     justify-content: flex-end;
     margin-bottom: 40px;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (min-width: 576px) {
+      flex-direction: row;
+    }
+    .links {
+      display: flex;
+      @media (min-width: 768px) {
+        gap: 62px;
+      }
+    }
     @media (min-width: 768px) {
       gap: 62px;
+    }
+    &.small {
+      margin: 0;
+      align-items: center;
     }
     li {
       a {

@@ -9,7 +9,29 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Store */ "./resources/js/Store/index.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _Store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Store */ "./resources/js/Store/index.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -39,6 +61,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "navbar",
   data: function data() {
@@ -52,9 +75,14 @@ __webpack_require__.r(__webpack_exports__);
         key: "vin",
         value: this.vin
       };
-      _Store__WEBPACK_IMPORTED_MODULE_0__["default"].commit("SET_FILTER", filter);
+      _Store__WEBPACK_IMPORTED_MODULE_1__["default"].commit("SET_FILTER", filter);
     }
-  }
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
+    searched: function searched(state) {
+      return state.searched;
+    }
+  }))
 });
 
 /***/ }),
@@ -71,7 +99,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".navBar {\n  background: linear-gradient(180deg, rgba(0, 40, 179, 0.9) 0%, rgba(0, 57, 255, 0.28) 225.36%), url(/img/navbar-bg.png);\n  background-blend-mode: multiply;\n  padding: 61px 0 71px 0;\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n.navBar__link {\n  justify-content: flex-end;\n  margin-bottom: 40px;\n  display: flex;\n}\n@media (min-width: 768px) {\n.navBar__link {\n    gap: 62px;\n}\n}\n.navBar__link li a {\n  color: white;\n}\n.navBar__hero {\n  display: flex;\n  gap: 36px;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 40px;\n  flex-direction: column;\n}\n@media (min-width: 768px) {\n.navBar__hero {\n    flex-direction: row;\n}\n}\n.navBar__hero h1 {\n  font-weight: 700;\n  font-size: 47px;\n  line-height: 61px;\n  text-align: center;\n  color: #ffffff;\n}\n.navBar__hero h1 span {\n  color: #ffcd1e;\n}\n.navBar__search {\n  display: flex;\n  gap: 24px;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n@media (min-width: 576px) {\n.navBar__search {\n    flex-direction: row;\n}\n}\n@media (min-width: 1200px) {\n.navBar__search {\n    width: 77%;\n    margin: 0 auto;\n}\n}\n.navBar__search .base-input {\n  flex: 1;\n  width: 90%;\n}", ""]);
+exports.push([module.i, ".navBar {\n  background: linear-gradient(180deg, rgba(0, 40, 179, 0.9) 0%, rgba(0, 57, 255, 0.28) 225.36%), url(/img/navbar-bg.png);\n  background-blend-mode: multiply;\n  padding: 61px 0 71px 0;\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n.navBar.small {\n  background: linear-gradient(89.98deg, #102672 0.01%, #384e9b 99.98%);\n  padding: 15px 0;\n  display: flex;\n  justify-content: space-between;\n}\n.navBar.small img {\n  margin-right: auto;\n}\n.navBar__link {\n  justify-content: flex-end;\n  margin-bottom: 40px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n@media (min-width: 576px) {\n.navBar__link {\n    flex-direction: row;\n}\n}\n.navBar__link .links {\n  display: flex;\n}\n@media (min-width: 768px) {\n.navBar__link .links {\n    gap: 62px;\n}\n}\n@media (min-width: 768px) {\n.navBar__link {\n    gap: 62px;\n}\n}\n.navBar__link.small {\n  margin: 0;\n  align-items: center;\n}\n.navBar__link li a {\n  color: white;\n}\n.navBar__hero {\n  display: flex;\n  gap: 36px;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 40px;\n  flex-direction: column;\n}\n@media (min-width: 768px) {\n.navBar__hero {\n    flex-direction: row;\n}\n}\n.navBar__hero h1 {\n  font-weight: 700;\n  font-size: 47px;\n  line-height: 61px;\n  text-align: center;\n  color: #ffffff;\n}\n.navBar__hero h1 span {\n  color: #ffcd1e;\n}\n.navBar__search {\n  display: flex;\n  gap: 24px;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n@media (min-width: 576px) {\n.navBar__search {\n    flex-direction: row;\n}\n}\n@media (min-width: 1200px) {\n.navBar__search {\n    width: 77%;\n    margin: 0 auto;\n}\n}\n.navBar__search .base-input {\n  flex: 1;\n  width: 90%;\n}", ""]);
 
 // exports
 
@@ -123,79 +151,129 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("nav", { staticClass: "navBar" }, [
+  return _c("nav", { staticClass: "navBar", class: { small: _vm.searched } }, [
     _c("div", { staticClass: "navBar__content container" }, [
-      _c("ul", { staticClass: "navBar__link" }, [
-        _c(
-          "li",
-          [
-            _c("router-link", { attrs: { to: { name: "home" } } }, [
-              _vm._v("Main")
-            ])
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          [
-            _c("router-link", { attrs: { to: { name: "About" } } }, [
-              _vm._v("About")
-            ])
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          [
-            _c("router-link", { attrs: { to: { name: "Terms" } } }, [
-              _vm._v("Terms&Conditions")
-            ])
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          [
-            _c("router-link", { attrs: { to: { name: "Contact" } } }, [
-              _vm._v("Contact")
-            ])
-          ],
-          1
-        )
-      ]),
+      _c(
+        "ul",
+        { staticClass: "navBar__link", class: { small: _vm.searched } },
+        [
+          _c(
+            "div",
+            { staticClass: "img" },
+            [
+              _c("router-link", { attrs: { to: { name: "home" } } }, [
+                _vm.searched
+                  ? _c("img", {
+                      attrs: {
+                        src: "img/logo-new-2.png",
+                        alt: "",
+                        width: "116",
+                        height: "102"
+                      }
+                    })
+                  : _vm._e()
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "links" }, [
+            _c(
+              "li",
+              [
+                _c("router-link", { attrs: { to: { name: "home" } } }, [
+                  _vm._v("Main")
+                ])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              [
+                _c("router-link", { attrs: { to: { name: "About" } } }, [
+                  _vm._v("About")
+                ])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              [
+                _c("router-link", { attrs: { to: { name: "Terms" } } }, [
+                  _vm._v("Terms&Conditions")
+                ])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              [
+                _c("router-link", { attrs: { to: { name: "Contact" } } }, [
+                  _vm._v("Contact")
+                ])
+              ],
+              1
+            )
+          ])
+        ]
+      ),
       _vm._v(" "),
-      _vm._m(0),
+      !_vm.searched
+        ? _c(
+            "div",
+            { staticClass: "navBar__hero" },
+            [
+              _c("router-link", { attrs: { to: { name: "home" } } }, [
+                _c("img", {
+                  attrs: {
+                    src: "img/logo-new-2.png",
+                    alt: "",
+                    width: "167",
+                    height: "147"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _vm._m(0)
+            ],
+            1
+          )
+        : _vm._e(),
       _vm._v(" "),
-      _c("div", { staticClass: "navBar__search" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.vin,
-              expression: "vin"
-            }
-          ],
-          staticClass: "base-input",
-          attrs: { type: "text", placeholder: "Lot or VIN number" },
-          domProps: { value: _vm.vin },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
+      !_vm.searched
+        ? _c("div", { staticClass: "navBar__search" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.vin,
+                  expression: "vin"
+                }
+              ],
+              staticClass: "base-input",
+              attrs: { type: "text", placeholder: "Lot or VIN number" },
+              domProps: { value: _vm.vin },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.vin = $event.target.value
+                }
               }
-              _vm.vin = $event.target.value
-            }
-          }
-        }),
-        _vm._v(" "),
-        _c("button", { staticClass: "base-btn", on: { click: _vm.search } }, [
-          _vm._v("SEARCH HERE")
-        ])
-      ])
+            }),
+            _vm._v(" "),
+            _c(
+              "button",
+              { staticClass: "base-btn", on: { click: _vm.search } },
+              [_vm._v("SEARCH HERE")]
+            )
+          ])
+        : _vm._e()
     ])
   ])
 }
@@ -204,20 +282,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navBar__hero" }, [
-      _c("img", {
-        attrs: {
-          src: "img/logo-new-2.png",
-          alt: "",
-          width: "167",
-          height: "147"
-        }
-      }),
-      _vm._v(" "),
-      _c("h1", [
-        _vm._v("Check car sales and damage history. "),
-        _c("span", [_vm._v("It’s free!")])
-      ])
+    return _c("h1", [
+      _vm._v("Check car sales and damage history. "),
+      _c("span", [_vm._v("It’s free!")])
     ])
   }
 ]

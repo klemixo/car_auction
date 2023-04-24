@@ -1,5 +1,22 @@
 <template>
   <div class="car__container container" v-if="carData">
+    <div class="breadcrumbs">
+      <div class="breadcrumb">Search</div>
+      <div class="breadcrumb breadcrumb--blue">></div>
+      <div class="breadcrumb">Cars</div>
+      <div class="breadcrumb breadcrumb--blue">></div>
+      <div class="breadcrumb">{{ carData.marka }}</div>
+      <div class="breadcrumb breadcrumb--blue">></div>
+      <div class="breadcrumb">{{ carData.model }}</div>
+      <div class="breadcrumb breadcrumb--blue">></div>
+      <div class="breadcrumb">{{ carData.model }}</div>
+      <div class="breadcrumb breadcrumb--blue">></div>
+      <div class="breadcrumb breadcrumb--bold">
+        <span>{{ carData.production_year }}</span
+        ><span>{{ carData.marka }}</span
+        ><span>{{ carData.model }}</span>
+      </div>
+    </div>
     <div class="car__container__heading card">
       <div class="flex flex-main">
         <div>
@@ -201,6 +218,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.breadcrumbs {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 83px;
+  flex-wrap: wrap;
+  width: 100%;
+  .breadcrumb {
+    font-family: "PT Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    display: flex;
+    gap: 4px;
+    color: #818181;
+
+    &--blue {
+      color: #243e97;
+    }
+    &--bold {
+      font-weight: bold;
+    }
+  }
+}
 .thumbnails {
   margin: auto;
   max-width: 100%;

@@ -1,23 +1,23 @@
 <template>
   <div class="home">
-    <FiltersTop/>
-    <CarList/>
+    <FiltersTop />
+    <CarList />
   </div>
 </template>
 
 <script>
-import CarList from '../Components/CarList.vue';
-import FiltersTop from '../Components/FiltersTop.vue';
+import CarList from "../Components/CarList.vue";
+import FiltersTop from "../Components/FiltersTop.vue";
 export default {
-  name: 'home',
-  components:{
+  name: "home",
+  components: {
     CarList,
-    FiltersTop
-  }
-}
+    FiltersTop,
+  },
+};
 </script>
 <style>
-.car-box{
-  margin:20px;
+.car-box {
+  margin: 20px;
 }
 </style>

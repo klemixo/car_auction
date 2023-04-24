@@ -53856,10 +53856,27 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes */ "./resources/js/Router/routes.js");
+/* harmony import */ var _Store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Store */ "./resources/js/Store/index.js");
+
 
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   routes: _routes__WEBPACK_IMPORTED_MODULE_1__["default"]
+});
+router.beforeEach(function (to, from, next) {
+  if (to.name !== 'home') {
+    _Store__WEBPACK_IMPORTED_MODULE_2__["default"].commit("SET_FILTER", {
+      key: 'vin',
+      value: "x"
+    });
+  } else {
+    _Store__WEBPACK_IMPORTED_MODULE_2__["default"].commit("SET_FILTER", {
+      key: 'vin',
+      value: null
+    });
+  }
+
+  next();
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
 
@@ -53955,6 +53972,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     foundCars: 0,
     currentPage: 1,
     cars: null,
+    searched: false,
     filtersOptions: null,
     dataLoading: false,
     filters: {
@@ -54058,6 +54076,13 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         }
       }
 
+      if (filtersString !== "") {
+        state.searched = true;
+      } else {
+        state.searched = false;
+      }
+
+      console.log(state.searched);
       filtersString += "page=".concat(state.currentPage);
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://vinfax.info/api/cars?".concat(filtersString)).then(function (res) {
         state.cars = res.data.data;
@@ -54070,7 +54095,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     },
     GET_FILTERS: function GET_FILTERS(state, newMarka) {
       console.log(newMarka);
-      var reqUrl = newMarka ? "/api/filters?newMarka=".concat(newMarka) : "/api/filters";
+      var reqUrl = newMarka ? "https://vinfax.info/api/filters?newMarka=".concat(newMarka) : "https://vinfax.info/api/filters";
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(reqUrl).then(function (res) {
         state.filtersOptions = res.data;
       })["catch"](function (err) {

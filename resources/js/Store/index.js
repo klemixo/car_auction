@@ -10,6 +10,7 @@ const store = new Vuex.Store({
         foundCars: 0,
         currentPage: 1,
         cars: null,
+        searched: false,
         filtersOptions: null,
         dataLoading: false,
         filters: {
@@ -60,11 +61,18 @@ const store = new Vuex.Store({
         GET_CARS(state) {
             state.dataLoading = true;
             let filtersString = "";
+
             for (const property in state.filters) {
                 if (state.filters[property].value) {
                     filtersString += `${state.filters[property].field}${state.filters[property].operator}${state.filters[property].value}&`
                 }
             }
+            if (filtersString !== "") {
+                state.searched = true;
+            } else {
+                state.searched = false;
+            }
+            console.log(state.searched)
             filtersString += `page=${state.currentPage}`
             axios.get(`https://vinfax.info/api/cars?${filtersString}`).then(res => {
                 state.cars = res.data.data
@@ -78,7 +86,7 @@ const store = new Vuex.Store({
         },
         GET_FILTERS(state, newMarka) {
             console.log(newMarka)
-            const reqUrl = newMarka ? `/api/filters?newMarka=${newMarka}` : `/api/filters`;
+            const reqUrl = newMarka ? `https://vinfax.info/api/filters?newMarka=${newMarka}` : `https://vinfax.info/api/filters`;
             axios.get(reqUrl).then(res => {
                 state.filtersOptions = res.data
             }).catch(err => {
