@@ -46,6 +46,11 @@ class getCars extends Controller
         ];
     }
 
+    public function getRandomCars()
+    {
+        return car::inRandomOrder()->limit(6)->where('claimed', "=", 0)->get();
+    }
+
     public function claimLot(Request $req)
     {
         if ($req->vin && $req->stock) {

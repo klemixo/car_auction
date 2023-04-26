@@ -53894,7 +53894,7 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [{
   path: '',
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(8), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ../Pages/Home.vue */ "./resources/js/Pages/Home.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(8), __webpack_require__.e(1), __webpack_require__.e(12)]).then(__webpack_require__.bind(null, /*! ../Pages/Home.vue */ "./resources/js/Pages/Home.vue"));
   },
   name: 'home'
 }, {
@@ -53918,7 +53918,7 @@ var routes = [{
 }, {
   path: '/car/:id',
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ../Pages/Car.vue */ "./resources/js/Pages/Car.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(13)]).then(__webpack_require__.bind(null, /*! ../Pages/Car.vue */ "./resources/js/Pages/Car.vue"));
   },
   name: 'Car',
   props: true

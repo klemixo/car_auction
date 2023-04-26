@@ -21,6 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('cars', [getCars::class, 'getCars']);
+Route::get('similiar-cars', [getCars::class, 'getRandomCars']);
 Route::get('cars/{id}', [getCars::class, 'getCar']);
 Route::get('filters', [FiltersController::class, 'getFilters']);
 Route::post('claim', [getCars::class, 'claimLot']);

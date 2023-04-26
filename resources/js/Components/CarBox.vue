@@ -1,5 +1,5 @@
 <template>
-  <div class="car__box" :class="{ searched: searched }">
+  <div class="car__box" :class="{ searched: searched, small: small }">
     <vueper-slides
       :touchable="true"
       :bullets="false"
@@ -82,7 +82,7 @@ import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
 export default {
   components: { VueperSlides, VueperSlide },
-  props: ["carData", "searched"],
+  props: ["carData", "searched", "small"],
   data() {
     return {
       images: ["img/base-img.png", "img/base-img-2.png", "img/base-img-3.png"],
@@ -129,6 +129,10 @@ export default {
   max-width: 425px;
   @media (min-width: 1200px) {
     min-width: 417px;
+  }
+  &.small {
+    width: 295px;
+    min-width: unset;
   }
   .vueperslides__arrow {
     &--prev,

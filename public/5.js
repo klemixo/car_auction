@@ -57,6 +57,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -67,6 +94,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       carData: null,
+      privacy: false,
       publishableKey: "pk_test_51L6Y73EIV3WPLa2S77VyiRjJYhLg60WrlK30R8ZDRn9X5hTnp6V6NGTwyyU7F4Eua9WNtIo4ExYvBRnZjojbG7J100NMpo5Hpb",
       loading: false,
       lineItems: [{
@@ -94,7 +122,7 @@ __webpack_require__.r(__webpack_exports__);
     getCarData: function getCarData() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/cars/".concat(this.id)).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("https://vinfax.info/api/cars/".concat(this.id)).then(function (res) {
         _this.carData = res.data[0];
       })["catch"](function (err) {
         console.log(err);
@@ -117,7 +145,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".car__container__heading[data-v-547eaa63] {\n  width: 100%;\n  margin: 20px 0;\n}\n.car__container__content[data-v-547eaa63] {\n  display: flex;\n  flex-direction: column;\n  gap: 29px;\n}\n@media (min-width: 992px) {\n.car__container__content[data-v-547eaa63] {\n    flex-direction: row;\n}\n}\n.car__container__content__images[data-v-547eaa63] {\n  flex: 1;\n}\n@media (min-width: 992px) {\n.car__container__content__images[data-v-547eaa63] {\n    flex: 3;\n}\n}\n.car__container__content__data[data-v-547eaa63] {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 21px;\n}\n@media (min-width: 992px) {\n.car__container__content__data[data-v-547eaa63] {\n    width: unset;\n    min-width: 410px;\n}\n}\n.car__container__content__data .data__box[data-v-547eaa63] {\n  padding: 20px !important;\n}\n.car__container__content__data .data__box__heading[data-v-547eaa63] {\n  background: #f8f8f8;\n  display: flex;\n  gap: 16px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__heading img[data-v-547eaa63] {\n  width: 27px;\n  height: 27px;\n}\n.car__container__content__data .data__box__heading p[data-v-547eaa63] {\n  font-weight: 700;\n  font-size: 25px;\n  margin: 0;\n}\n.car__container__content__data .data__box__content h3[data-v-547eaa63] {\n  font-weight: 700;\n  font-size: 33px;\n  line-height: 43px;\n  text-align: left;\n}\n.car__container__content__data .data__box__content .highlight[data-v-547eaa63] {\n  background: #ffebb7;\n  border-radius: 3px;\n  width: fit-content;\n}\n.car__container__content__data .data__box__content .flex[data-v-547eaa63] {\n  display: flex;\n  gap: 11px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__content .flex-base[data-v-547eaa63] {\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);\n}\n.car__container__content__data .data__box__content .flex-base .light[data-v-547eaa63] {\n  color: #818181;\n}\n.car__container__content__data .data__box__content .flex-base .strong[data-v-547eaa63] {\n  color: black;\n}\n.car__container .card[data-v-547eaa63] {\n  background: #ffffff;\n  border: 1px solid #ecf1f9;\n  padding: 10px;\n  border-radius: 8px;\n}\n.car__container .card .badge[data-v-547eaa63] {\n  width: fit-content;\n}\n.car__container .card .flex-middle[data-v-547eaa63] {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: flex-start;\n}\n.car__container .card .flex-last[data-v-547eaa63] {\n  padding: 30px;\n  background: #ecf1f9;\n}\n.car__container .card .flex-main[data-v-547eaa63] {\n  justify-content: space-between;\n  gap: 8px;\n  flex-wrap: wrap;\n  align-items: center;\n}\n.car__container .card .flex-main h2[data-v-547eaa63] {\n  margin: 4px 0;\n  margin-right: 0;\n}\n.car__container .card .flex-main img[data-v-547eaa63] {\n  width: 320px;\n}\n.car__container .card .flex-main button[data-v-547eaa63] {\n  background: #ffcd1e;\n  border-radius: 5px;\n  color: white;\n  width: fit-content;\n  height: fit-content;\n  border: none;\n  outline: none;\n  margin: auto 0;\n}\n.car__container .card h1[data-v-547eaa63] {\n  font-size: 25px;\n  line-height: 32px;\n  color: #000000;\n  margin-right: 24px;\n}\n.car__container .card h2[data-v-547eaa63] {\n  font-size: 16px;\n  line-height: 21px;\n}\n.car__container .card h2[data-v-547eaa63]:first-of-type {\n  margin-right: 65px;\n}\n.car__container .card h2 span[data-v-547eaa63] {\n  color: #818181;\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n.car__container__heading[data-v-547eaa63] {\n  width: 100%;\n  margin: 20px 0;\n}\n.car__container__content[data-v-547eaa63] {\n  display: flex;\n  flex-direction: column;\n  gap: 29px;\n}\n@media (min-width: 992px) {\n.car__container__content[data-v-547eaa63] {\n    flex-direction: row;\n}\n}\n.car__container__content__images[data-v-547eaa63] {\n  flex: 1;\n}\n@media (min-width: 992px) {\n.car__container__content__images[data-v-547eaa63] {\n    flex: 3;\n}\n}\n.car__container__content__data[data-v-547eaa63] {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 21px;\n}\n@media (min-width: 992px) {\n.car__container__content__data[data-v-547eaa63] {\n    width: unset;\n    min-width: 410px;\n}\n}\n.car__container__content__data .data__box[data-v-547eaa63] {\n  padding: 20px !important;\n}\n.car__container__content__data .data__box__heading[data-v-547eaa63] {\n  background: #f8f8f8;\n  display: flex;\n  gap: 16px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__heading img[data-v-547eaa63] {\n  width: 27px;\n  height: 27px;\n}\n.car__container__content__data .data__box__heading p[data-v-547eaa63] {\n  font-weight: 700;\n  font-size: 25px;\n  margin: 0;\n}\n.car__container__content__data .data__box__content h3[data-v-547eaa63] {\n  font-weight: 700;\n  font-size: 33px;\n  line-height: 43px;\n  text-align: left;\n}\n.car__container__content__data .data__box__content .highlight[data-v-547eaa63] {\n  background: #ffebb7;\n  border-radius: 3px;\n  width: fit-content;\n}\n.car__container__content__data .data__box__content .flex[data-v-547eaa63] {\n  display: flex;\n  gap: 11px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__content .flex-base[data-v-547eaa63] {\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);\n}\n.car__container__content__data .data__box__content .flex-base .light[data-v-547eaa63] {\n  color: #818181;\n}\n.car__container__content__data .data__box__content .flex-base .strong[data-v-547eaa63] {\n  color: black;\n}\n.car__container .card[data-v-547eaa63] {\n  background: #ffffff;\n  border: 1px solid #ecf1f9;\n  padding: 10px;\n  border-radius: 8px;\n}\n.car__container .card .badge[data-v-547eaa63] {\n  width: fit-content;\n  background: #1882ff;\n  border-radius: 3px;\n  font-size: 16px;\n  line-height: 21px;\n  text-align: center;\n  color: #ffffff;\n  padding: 4px 5px;\n  margin-bottom: 20pxgfhngh;\n}\n.car__container .card .flex-middle[data-v-547eaa63] {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: flex-start;\n}\n.car__container .card .flex-last[data-v-547eaa63] {\n  padding: 30px;\n  background: #ecf1f9;\n  width: 207px;\n}\n.car__container .card .flex-main[data-v-547eaa63] {\n  justify-content: space-between;\n  gap: 8px;\n  flex-wrap: wrap;\n  align-items: center;\n}\n.car__container .card .flex-main h2[data-v-547eaa63] {\n  margin: 4px 0;\n  margin-right: 0;\n}\n.car__container .card .flex-main img[data-v-547eaa63] {\n  width: 320px;\n}\n.car__container .card .flex-main button[data-v-547eaa63] {\n  background: #ffcd1e;\n  border-radius: 5px;\n  color: white;\n  width: fit-content;\n  height: fit-content;\n  border: none;\n  outline: none;\n  margin: auto 0;\n}\n.car__container .card .flex-main button[data-v-547eaa63]:disabled {\n  opacity: 0.7;\n}\n.car__container .card h1[data-v-547eaa63] {\n  font-size: 25px;\n  line-height: 32px;\n  color: #000000;\n  margin-right: 24px;\n}\n.car__container .card h2[data-v-547eaa63] {\n  font-size: 16px;\n  line-height: 21px;\n}\n.car__container .card h2[data-v-547eaa63]:first-of-type {\n  margin-right: 65px;\n}\n.car__container .card h2 span[data-v-547eaa63] {\n  color: #818181;\n}\n.card-top--no-padding[data-v-547eaa63] {\n  padding: 0;\n}\n.card-top ul[data-v-547eaa63] {\n  list-style: none;\n  /* Remove default bullets */\n}\n.card-top p[data-v-547eaa63],\n.card-top h2[data-v-547eaa63],\n.card-top h3[data-v-547eaa63],\n.card-top ul[data-v-547eaa63] {\n  text-align: left;\n}\n@media (min-width: 992px) {\n.card-top p[data-v-547eaa63],\n.card-top h2[data-v-547eaa63],\n.card-top h3[data-v-547eaa63],\n.card-top ul[data-v-547eaa63] {\n    padding-left: 90px;\n}\n}\n.card-top .flex[data-v-547eaa63] {\n  display: flex;\n  gap: 13px;\n}\n@media (min-width: 992px) {\n.card-top .flex[data-v-547eaa63] {\n    padding-left: 90px;\n}\n}\n.card-top input[data-v-547eaa63] {\n  background: #ffffff;\n  /* szary napisy */\n  border: 1px solid #818181;\n  border-radius: 2px;\n}\n.card-top ul li[data-v-547eaa63]::before {\n  content: \"\\2022\";\n  /* Add content: \\2022 is the CSS Code/unicode for a bullet */\n  color: #243e97;\n  font-weight: bold;\n  /* If you want it to be bold */\n  display: inline-block;\n  /* Needed to add space between the bullet and the text */\n  width: 1em;\n  /* Also needed for space (tweak if needed) */\n  margin-left: -1em;\n  /* Also needed for space (tweak if needed) */\n}\n.card-top .heading[data-v-547eaa63] {\n  background: #f8f8f8;\n  padding: 22px 90px;\n}\n.card-top .heading h2[data-v-547eaa63] {\n  font-family: \"PT Sans\";\n  font-style: normal;\n  font-weight: 700;\n  font-size: 25px;\n  line-height: 32px;\n  text-align: left;\n  color: #000000;\n}", ""]);
 
 // exports
 
@@ -171,6 +199,64 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _vm.carData
     ? _c("div", { staticClass: "car__container container" }, [
+        _c("div", { staticClass: "card-top card-top--no-padding" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n      We do respect privacy rights of every person. Therefore if you do not\n      want to show the lot you have purchased on our website, you can hide it.\n    "
+            )
+          ]),
+          _vm._v(" "),
+          _c("h3", [_vm._v("PLEASE BE AWARE THAT IT IS PROHIBITED TO:")]),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.privacy,
+                  expression: "privacy"
+                }
+              ],
+              attrs: { id: "privacy", type: "checkbox" },
+              domProps: {
+                checked: Array.isArray(_vm.privacy)
+                  ? _vm._i(_vm.privacy, null) > -1
+                  : _vm.privacy
+              },
+              on: {
+                change: function($event) {
+                  var $$a = _vm.privacy,
+                    $$el = $event.target,
+                    $$c = $$el.checked ? true : false
+                  if (Array.isArray($$a)) {
+                    var $$v = null,
+                      $$i = _vm._i($$a, $$v)
+                    if ($$el.checked) {
+                      $$i < 0 && (_vm.privacy = $$a.concat([$$v]))
+                    } else {
+                      $$i > -1 &&
+                        (_vm.privacy = $$a
+                          .slice(0, $$i)
+                          .concat($$a.slice($$i + 1)))
+                    }
+                  } else {
+                    _vm.privacy = $$c
+                  }
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("label", { attrs: { for: "privacy" } }, [
+              _vm._v("I have read and accept the limitations stated above")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
         _c(
           "div",
           { staticClass: "car__container__heading card" },
@@ -192,7 +278,7 @@ var render = function() {
             }),
             _vm._v(" "),
             _c("div", { staticClass: "flex flex-main" }, [
-              _vm._m(0),
+              _vm._m(2),
               _vm._v(" "),
               _c("div", [
                 _c("div", { staticClass: "flex-middle" }, [
@@ -245,9 +331,14 @@ var render = function() {
                 _vm._v(
                   "\n        " + _vm._s(_vm.carData.final_bid) + "\n        "
                 ),
-                _c("button", { on: { click: _vm.payNow } }, [
-                  _vm._v("CLAIM LOT")
-                ])
+                _c(
+                  "button",
+                  {
+                    attrs: { disabled: !_vm.privacy },
+                    on: { click: _vm.payNow }
+                  },
+                  [_vm._v("CLAIM LOT")]
+                )
               ])
             ])
           ],
@@ -257,6 +348,36 @@ var render = function() {
     : _vm._e()
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "heading" }, [
+      _c("h2", [_vm._v("CLAIM LOT")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", [
+      _c("li", [
+        _vm._v("Hide lot if you want to avoid the right tax calculation;")
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "\n        Hide lot for hiding damage and odometer infromation from the future\n        buyers;\n      "
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", [
+        _vm._v(
+          "\n        Hide lot for misinformation, misrepresentation, fraud or other illegal\n        activity;\n      "
+        )
+      ])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

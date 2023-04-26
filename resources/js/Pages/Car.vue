@@ -160,12 +160,17 @@
         </div>
       </div>
     </div>
+    <div class="similiar__lots">
+      <SimiliarLots />
+      xxx
+    </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import CarSlider from "../Components/CarSlider.vue";
+import SimiliarLots from "../Components/SimiliarLots.vue";
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
 export default {
@@ -174,6 +179,7 @@ export default {
     CarSlider,
     VueperSlides,
     VueperSlide,
+    SimiliarLots,
   },
   data() {
     return {

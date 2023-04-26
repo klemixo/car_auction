@@ -1,5 +1,32 @@
 <template>
   <div class="car__container container" v-if="carData">
+    <div class="card-top card-top--no-padding">
+      <div class="heading">
+        <h2>CLAIM LOT</h2>
+      </div>
+      <p>
+        We do respect privacy rights of every person. Therefore if you do not
+        want to show the lot you have purchased on our website, you can hide it.
+      </p>
+      <h3>PLEASE BE AWARE THAT IT IS PROHIBITED TO:</h3>
+      <ul>
+        <li>Hide lot if you want to avoid the right tax calculation;</li>
+        <li>
+          Hide lot for hiding damage and odometer infromation from the future
+          buyers;
+        </li>
+        <li>
+          Hide lot for misinformation, misrepresentation, fraud or other illegal
+          activity;
+        </li>
+      </ul>
+      <div class="flex">
+        <input id="privacy" type="checkbox" v-model="privacy" />
+        <label for="privacy"
+          >I have read and accept the limitations stated above</label
+        >
+      </div>
+    </div>
     <div class="car__container__heading card">
       <stripe-checkout
         ref="checkoutRef"
@@ -35,7 +62,7 @@
           {{ carData.createdate }}
           <h3>Final bid</h3>
           {{ carData.final_bid }}
-          <button @click="payNow">CLAIM LOT</button>
+          <button :disabled="!privacy" @click="payNow">CLAIM LOT</button>
         </div>
       </div>
     </div>
@@ -53,6 +80,7 @@ export default {
   data() {
     return {
       carData: null,
+      privacy: false,
       publishableKey:
         "pk_test_51L6Y73EIV3WPLa2S77VyiRjJYhLg60WrlK30R8ZDRn9X5hTnp6V6NGTwyyU7F4Eua9WNtIo4ExYvBRnZjojbG7J100NMpo5Hpb",
       loading: false,
@@ -81,7 +109,7 @@ export default {
     },
     getCarData() {
       axios
-        .get(`/api/cars/${this.id}`)
+        .get(`https://vinfax.info/api/cars/${this.id}`)
         .then((res) => {
           this.carData = res.data[0];
         })
@@ -199,6 +227,14 @@ export default {
 
     .badge {
       width: fit-content;
+      background: #1882ff;
+      border-radius: 3px;
+      font-size: 16px;
+      line-height: 21px;
+      text-align: center;
+      color: #ffffff;
+      padding: 4px 5px;
+      margin-bottom: 20pxgfhngh;
     }
 
     .flex-middle {
@@ -211,6 +247,7 @@ export default {
     .flex-last {
       padding: 30px;
       background: #ecf1f9;
+      width: 207px;
     }
 
     .flex-main {
@@ -237,6 +274,9 @@ export default {
         border: none;
         outline: none;
         margin: auto 0;
+        &:disabled {
+          opacity: 0.7;
+        }
       }
     }
 
@@ -258,6 +298,58 @@ export default {
       span {
         color: #818181;
       }
+    }
+  }
+}
+.card-top {
+  &--no-padding {
+    padding: 0;
+  }
+  ul {
+    list-style: none; /* Remove default bullets */
+  }
+  p,
+  h2,
+  h3,
+  ul {
+    text-align: left;
+    @media (min-width: 992px) {
+      padding-left: 90px;
+    }
+  }
+  .flex {
+    display: flex;
+    gap: 13px;
+    @media (min-width: 992px) {
+      padding-left: 90px;
+    }
+  }
+  input {
+    background: #ffffff;
+    /* szary napisy */
+
+    border: 1px solid #818181;
+    border-radius: 2px;
+  }
+  ul li::before {
+    content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #243e97;
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+  }
+  .heading {
+    background: #f8f8f8;
+    padding: 22px 90px;
+    h2 {
+      font-family: "PT Sans";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 32px;
+      text-align: left;
+      color: #000000;
     }
   }
 }
