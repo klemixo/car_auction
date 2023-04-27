@@ -1,5 +1,6 @@
 <template>
   <div class="car__container container" v-if="carData">
+    <FiltersTop />
     <div class="breadcrumbs">
       <div class="breadcrumb">Search</div>
       <div class="breadcrumb breadcrumb--blue">></div>
@@ -162,7 +163,6 @@
     </div>
     <div class="similiar__lots">
       <SimiliarLots />
-      xxx
     </div>
   </div>
 </template>
@@ -171,6 +171,7 @@
 import axios from "axios";
 import CarSlider from "../Components/CarSlider.vue";
 import SimiliarLots from "../Components/SimiliarLots.vue";
+import FiltersTop from "../Components/FiltersTop.vue";
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
 export default {
@@ -179,6 +180,7 @@ export default {
     CarSlider,
     VueperSlides,
     VueperSlide,
+    FiltersTop,
     SimiliarLots,
   },
   data() {

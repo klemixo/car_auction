@@ -133,6 +133,7 @@ export default {
   &.small {
     width: 295px;
     min-width: unset;
+    height: 100%;
   }
   .vueperslides__arrow {
     &--prev,
@@ -223,6 +224,13 @@ export default {
   }
   .searched-data {
     gap: 35px;
+  }
+  .searched-data-right {
+    margin-left: auto;
+    width: 100%;
+    @media (min-width: 576px) {
+      width: unset;
+    }
   }
   .flex-searched {
     display: flex;

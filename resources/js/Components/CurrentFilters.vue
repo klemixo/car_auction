@@ -22,7 +22,6 @@ export default {
   },
   methods: {
     removeFilter(field) {
-      console.log(this.$refs.field);
       const filterObj = { key: field, value: null };
       store.commit("SET_FILTER", filterObj);
     },

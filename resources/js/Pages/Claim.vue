@@ -4,30 +4,33 @@
       <div class="heading">
         <h2>CLAIM LOT</h2>
       </div>
-      <p>
-        We do respect privacy rights of every person. Therefore if you do not
-        want to show the lot you have purchased on our website, you can hide it.
-      </p>
-      <h3>PLEASE BE AWARE THAT IT IS PROHIBITED TO:</h3>
-      <ul>
-        <li>Hide lot if you want to avoid the right tax calculation;</li>
-        <li>
-          Hide lot for hiding damage and odometer infromation from the future
-          buyers;
-        </li>
-        <li>
-          Hide lot for misinformation, misrepresentation, fraud or other illegal
-          activity;
-        </li>
-      </ul>
-      <div class="flex">
-        <input id="privacy" type="checkbox" v-model="privacy" />
-        <label for="privacy"
-          >I have read and accept the limitations stated above</label
-        >
+      <div v-if="!privacy">
+        <p>
+          We do respect privacy rights of every person. Therefore if you do not
+          want to show the lot you have purchased on our website, you can hide
+          it.
+        </p>
+        <h3>PLEASE BE AWARE THAT IT IS PROHIBITED TO:</h3>
+        <ul>
+          <li>Hide lot if you want to avoid the right tax calculation;</li>
+          <li>
+            Hide lot for hiding damage and odometer infromation from the future
+            buyers;
+          </li>
+          <li>
+            Hide lot for misinformation, misrepresentation, fraud or other
+            illegal activity;
+          </li>
+        </ul>
+        <div class="flex">
+          <input id="privacy" type="checkbox" v-model="privacy" />
+          <label for="privacy"
+            >I have read and accept the limitations stated above</label
+          >
+        </div>
       </div>
     </div>
-    <div class="car__container__heading card">
+    <div class="car__container__heading card" v-if="privacy">
       <stripe-checkout
         ref="checkoutRef"
         mode="payment"
@@ -247,7 +250,7 @@ export default {
     .flex-last {
       padding: 30px;
       background: #ecf1f9;
-      width: 207px;
+      width: unset;
     }
 
     .flex-main {

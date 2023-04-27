@@ -28,7 +28,9 @@
         :placeholder="filter.placeholder"
       ></multiselect>
     </div>
-    <button @click="search" class="base-btn">SEARCH HERE</button>
+    <router-link :to="{ name: 'home' }" class="base-btn base-btn--filters"
+      >SEARCH HERE</router-link
+    >
   </div>
 </template>
 
@@ -72,11 +74,8 @@ export default {
     store.commit("GET_FILTERS", false);
   },
   methods: {
-    search() {
-      console.log("ok");
-    },
+    search() {},
     setFilter(filter, id) {
-      console.log(id);
       if (id === "marka") {
         store.commit("GET_FILTERS", Object.values(filter)[0]);
       }

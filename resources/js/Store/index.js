@@ -72,7 +72,6 @@ const store = new Vuex.Store({
             } else {
                 state.searched = false;
             }
-            console.log(state.searched)
             filtersString += `page=${state.currentPage}`
             axios.get(`https://vinfax.info/api/cars?${filtersString}`).then(res => {
                 state.cars = res.data.data
@@ -85,7 +84,6 @@ const store = new Vuex.Store({
             })
         },
         GET_FILTERS(state, newMarka) {
-            console.log(newMarka)
             const reqUrl = newMarka ? `https://vinfax.info/api/filters?newMarka=${newMarka}` : `https://vinfax.info/api/filters`;
             axios.get(reqUrl).then(res => {
                 state.filtersOptions = res.data

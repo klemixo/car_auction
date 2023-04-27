@@ -18946,13 +18946,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'app',
+  name: "app",
   components: {
     Navbar: function Navbar() {
-      return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ./Components/Navbar.vue */ "./resources/js/Components/Navbar.vue"));
+      return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ./Components/Navbar.vue */ "./resources/js/Components/Navbar.vue"));
     },
     Footer: function Footer() {
-      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ./Components/Footer.vue */ "./resources/js/Components/Footer.vue"));
+      return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ./Components/Footer.vue */ "./resources/js/Components/Footer.vue"));
     }
   }
 });
@@ -18990,7 +18990,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap);", ""]);
 
 // module
-exports.push([module.i, "body {\n  font-size: 17px;\n  overflow-x: hidden;\n}\n#app {\n  overflow-x: hidden;\n}\n.flex {\n  display: flex;\n}\n* {\n  font-family: \"PT Sans\", sans-serif;\n}\n.base-input {\n  background: #F8F8F8;\n  border-radius: 5px;\n  border: none;\n  outline: none;\n  padding: 20px;\n  font-family: \"PT Sans\";\n  font-size: 18px;\n  line-height: 23px;\n  color: #818181;\n}\n.base-btn {\n  background: #243E97;\n  border-radius: 5px;\n  padding: 20px;\n  font-family: \"PT Sans\";\n  font-weight: 700;\n  font-size: 17px;\n  line-height: 22px;\n  letter-spacing: 0.1em;\n  border: none;\n  outline: none;\n  transition: 0.2s;\n  color: #FFFFFF;\n}\n.base-btn:hover {\n  background: #0c1f5e;\n}\n.container {\n  width: 95%;\n  margin: 0 auto;\n  max-width: 1232px !important;\n}\n@media (min-width: 768px) {\n.container {\n    width: 90%;\n}\n}\n.base-checkbox input[type=checkbox] {\n  display: none;\n  visibility: hidden;\n}\n.base-checkbox .cbx {\n  margin: auto;\n  -webkit-user-select: none;\n  user-select: none;\n  cursor: pointer;\n  font-weight: 400 !important;\n}\n.base-checkbox .cbx span {\n  display: inline-block;\n  vertical-align: middle;\n  transform: translate3d(0, 0, 0);\n}\n.base-checkbox .cbx span:first-child {\n  position: relative;\n  width: 18px;\n  height: 18px;\n  border-radius: 3px;\n  transform: scale(1);\n  vertical-align: middle;\n  border: 1px solid #9098A9;\n  transition: all 0.2s ease;\n}\n.base-checkbox .cbx span:first-child svg {\n  position: absolute;\n  top: 3px;\n  left: 2px;\n  fill: none;\n  stroke: #FFFFFF;\n  stroke-width: 2;\n  stroke-linecap: round;\n  stroke-linejoin: round;\n  stroke-dasharray: 16px;\n  stroke-dashoffset: 16px;\n  transition: all 0.3s ease;\n  transition-delay: 0.1s;\n  transform: translate3d(0, 0, 0);\n}\n.base-checkbox .cbx span:first-child:before {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  background: #506EEC;\n  display: block;\n  transform: scale(0);\n  opacity: 1;\n  border-radius: 50%;\n}\n.base-checkbox .cbx span:last-child {\n  padding-left: 8px;\n}\n.base-checkbox .cbx:hover span:first-child {\n  border-color: #506EEC;\n}\n.base-checkbox .inp-cbx:checked + .cbx span:first-child {\n  background: #506EEC;\n  border-color: #506EEC;\n  animation: wave-46 0.4s ease;\n}\n.base-checkbox .inp-cbx:checked + .cbx span:first-child svg {\n  stroke-dashoffset: 0;\n}\n.base-checkbox .inp-cbx:checked + .cbx span:first-child:before {\n  transform: scale(3.5);\n  opacity: 0;\n  transition: all 0.6s ease;\n}\n@keyframes wave-46 {\n50% {\n    transform: scale(0.9);\n}\n}\n.multiselect__option--highlight {\n  background: #243E97 !important;\n}\n.multiselect__tags {\n  min-height: 65px !important;\n  padding: 18px 0px 0 22px !important;\n}\n.multiselect__placeholder {\n  font-size: 18px !important;\n}\n.multiselect__select {\n  top: 50%;\n  transform: translate(0, -50%);\n}", ""]);
+exports.push([module.i, "body {\n  font-size: 17px;\n  overflow-x: hidden;\n}\n#app {\n  overflow-x: hidden;\n}\n.flex {\n  display: flex;\n}\n* {\n  font-family: \"PT Sans\", sans-serif;\n}\n.base-input {\n  background: #f8f8f8;\n  border-radius: 5px;\n  border: none;\n  outline: none;\n  padding: 20px;\n  font-family: \"PT Sans\";\n  font-size: 18px;\n  line-height: 23px;\n  color: #818181;\n}\n.base-btn {\n  background: #243e97;\n  border-radius: 5px;\n  padding: 20px;\n  font-family: \"PT Sans\";\n  font-weight: 700;\n  font-size: 17px;\n  line-height: 22px;\n  letter-spacing: 0.1em;\n  border: none;\n  outline: none;\n  transition: 0.2s;\n  color: #ffffff;\n}\n.base-btn--filters {\n  margin-top: 32px;\n  text-decoration: none;\n  height: fit-content;\n}\n.base-btn:hover {\n  background: #0c1f5e;\n}\n.container {\n  width: 95%;\n  margin: 0 auto;\n  max-width: 1232px !important;\n}\n@media (min-width: 768px) {\n.container {\n    width: 90%;\n}\n}\n.base-checkbox input[type=checkbox] {\n  display: none;\n  visibility: hidden;\n}\n.base-checkbox .cbx {\n  margin: auto;\n  -webkit-user-select: none;\n  user-select: none;\n  cursor: pointer;\n  font-weight: 400 !important;\n}\n.base-checkbox .cbx span {\n  display: inline-block;\n  vertical-align: middle;\n  transform: translate3d(0, 0, 0);\n}\n.base-checkbox .cbx span:first-child {\n  position: relative;\n  width: 18px;\n  height: 18px;\n  border-radius: 3px;\n  transform: scale(1);\n  vertical-align: middle;\n  border: 1px solid #9098a9;\n  transition: all 0.2s ease;\n}\n.base-checkbox .cbx span:first-child svg {\n  position: absolute;\n  top: 3px;\n  left: 2px;\n  fill: none;\n  stroke: #ffffff;\n  stroke-width: 2;\n  stroke-linecap: round;\n  stroke-linejoin: round;\n  stroke-dasharray: 16px;\n  stroke-dashoffset: 16px;\n  transition: all 0.3s ease;\n  transition-delay: 0.1s;\n  transform: translate3d(0, 0, 0);\n}\n.base-checkbox .cbx span:first-child:before {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  background: #506eec;\n  display: block;\n  transform: scale(0);\n  opacity: 1;\n  border-radius: 50%;\n}\n.base-checkbox .cbx span:last-child {\n  padding-left: 8px;\n}\n.base-checkbox .cbx:hover span:first-child {\n  border-color: #506eec;\n}\n.base-checkbox .inp-cbx:checked + .cbx span:first-child {\n  background: #506eec;\n  border-color: #506eec;\n  animation: wave-46 0.4s ease;\n}\n.base-checkbox .inp-cbx:checked + .cbx span:first-child svg {\n  stroke-dashoffset: 0;\n}\n.base-checkbox .inp-cbx:checked + .cbx span:first-child:before {\n  transform: scale(3.5);\n  opacity: 0;\n  transition: all 0.6s ease;\n}\n@keyframes wave-46 {\n50% {\n    transform: scale(0.9);\n}\n}\n.multiselect__option--highlight {\n  background: #243e97 !important;\n}\n.multiselect__tags {\n  min-height: 65px !important;\n  padding: 18px 0px 0 22px !important;\n}\n.multiselect__placeholder {\n  font-size: 18px !important;\n}\n.multiselect__select {\n  top: 50%;\n  transform: translate(0, -50%);\n}", ""]);
 
 // exports
 
@@ -53894,52 +53894,52 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [{
   path: '',
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(8), __webpack_require__.e(1), __webpack_require__.e(12)]).then(__webpack_require__.bind(null, /*! ../Pages/Home.vue */ "./resources/js/Pages/Home.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(9), __webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ../Pages/Home.vue */ "./resources/js/Pages/Home.vue"));
   },
   name: 'home'
 }, {
   path: 'about',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ../Pages/About.vue */ "./resources/js/Pages/About.vue"));
+    return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ../Pages/About.vue */ "./resources/js/Pages/About.vue"));
   },
   name: 'About'
 }, {
   path: 'terms',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ../Pages/Terms.vue */ "./resources/js/Pages/Terms.vue"));
+    return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ../Pages/Terms.vue */ "./resources/js/Pages/Terms.vue"));
   },
   name: 'Terms'
 }, {
   path: 'contact',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ../Pages/Contact.vue */ "./resources/js/Pages/Contact.vue"));
+    return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ../Pages/Contact.vue */ "./resources/js/Pages/Contact.vue"));
   },
   name: 'Contact'
 }, {
   path: '/car/:id',
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(13)]).then(__webpack_require__.bind(null, /*! ../Pages/Car.vue */ "./resources/js/Pages/Car.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(0), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, /*! ../Pages/Car.vue */ "./resources/js/Pages/Car.vue"));
   },
   name: 'Car',
   props: true
 }, {
   path: '/claim/:id',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ../Pages/Claim.vue */ "./resources/js/Pages/Claim.vue"));
+    return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ../Pages/Claim.vue */ "./resources/js/Pages/Claim.vue"));
   },
   name: 'Claim',
   props: true
 }, {
   path: '/error',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ../Pages/Error.vue */ "./resources/js/Pages/Error.vue"));
+    return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ../Pages/Error.vue */ "./resources/js/Pages/Error.vue"));
   },
   name: 'Error',
   props: true
 }, {
   path: '/success/:id',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ../Pages/Success.vue */ "./resources/js/Pages/Success.vue"));
+    return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ../Pages/Success.vue */ "./resources/js/Pages/Success.vue"));
   },
   name: 'Success',
   props: true
@@ -54082,7 +54082,6 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         state.searched = false;
       }
 
-      console.log(state.searched);
       filtersString += "page=".concat(state.currentPage);
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://vinfax.info/api/cars?".concat(filtersString)).then(function (res) {
         state.cars = res.data.data;
@@ -54094,7 +54093,6 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       });
     },
     GET_FILTERS: function GET_FILTERS(state, newMarka) {
-      console.log(newMarka);
       var reqUrl = newMarka ? "https://vinfax.info/api/filters?newMarka=".concat(newMarka) : "https://vinfax.info/api/filters";
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(reqUrl).then(function (res) {
         state.filtersOptions = res.data;
