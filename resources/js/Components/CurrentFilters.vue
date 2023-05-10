@@ -42,12 +42,14 @@ export default {
     justify-content: space-around;
     min-width: 82px;
     padding: 8px;
+    width: unset !important;
     align-items: center;
     background: #d9d9d9;
     border-radius: 50px;
+    gap: 16px;
     span {
       font-weight: 400;
-      font-size: 23px;
+      font-size: 13px;
       line-height: 17px;
       color: #000000;
     }

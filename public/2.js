@@ -74,6 +74,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -444,7 +445,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".current__filters[data-v-cbde0366] {\n  display: flex;\n  gap: 14px;\n  margin: 22px 0;\n  flex-wrap: wrap;\n}\n.current__filters button[data-v-cbde0366] {\n  border: none;\n  outline: none;\n  display: flex;\n  justify-content: space-around;\n  min-width: 82px;\n  padding: 8px;\n  align-items: center;\n  background: #d9d9d9;\n  border-radius: 50px;\n}\n.current__filters button span[data-v-cbde0366] {\n  font-weight: 400;\n  font-size: 23px;\n  line-height: 17px;\n  color: #000000;\n}\n.current__filters button img[data-v-cbde0366] {\n  background: black;\n  border-radius: 50%;\n  transform: scale(1.5);\n}", ""]);
+exports.push([module.i, ".current__filters[data-v-cbde0366] {\n  display: flex;\n  gap: 14px;\n  margin: 22px 0;\n  flex-wrap: wrap;\n}\n.current__filters button[data-v-cbde0366] {\n  border: none;\n  outline: none;\n  display: flex;\n  justify-content: space-around;\n  min-width: 82px;\n  padding: 8px;\n  width: unset !important;\n  align-items: center;\n  background: #d9d9d9;\n  border-radius: 50px;\n  gap: 16px;\n}\n.current__filters button span[data-v-cbde0366] {\n  font-weight: 400;\n  font-size: 13px;\n  line-height: 17px;\n  color: #000000;\n}\n.current__filters button img[data-v-cbde0366] {\n  background: black;\n  border-radius: 50%;\n  transform: scale(1.5);\n}", ""]);
 
 // exports
 
@@ -801,11 +802,15 @@ var render = function() {
     [
       _c("BreadCrumb"),
       _vm._v(" "),
-      _vm.cars && _vm.cars.length > 0
+      _c("CurrentFilters"),
+      _vm._v(" "),
+      _vm.cars && _vm.cars.length > 0 && !_vm.searched
         ? _c("h2", [_vm._v("Latest Lots")])
         : _vm._e(),
       _vm._v(" "),
-      _c("CurrentFilters"),
+      _vm.cars && _vm.cars.length > 0 && _vm.searched
+        ? _c("h2", [_vm._v("Search results")])
+        : _vm._e(),
       _vm._v(" "),
       _c(
         "div",
@@ -973,7 +978,7 @@ var render = function() {
             }
           ],
           staticClass: "base-input",
-          attrs: { type: "text", placeholder: "Wyszukaj za pomocą nazwy" },
+          attrs: { type: "text", placeholder: "Search by name" },
           domProps: { value: _vm.search },
           on: {
             keyup: _vm.nameSearch,
@@ -991,7 +996,7 @@ var render = function() {
         "div",
         { staticClass: "filters__right__filter" },
         [
-          _c("label", { attrs: { for: "" } }, [_vm._v("Przebieg(mile)")]),
+          _c("label", { attrs: { for: "" } }, [_vm._v("Odometer(miles)")]),
           _vm._v(" "),
           _c("MultiRangeSlider", {
             attrs: {
@@ -1021,7 +1026,7 @@ var render = function() {
         "div",
         { staticClass: "filters__right__filter" },
         [
-          _c("label", { attrs: { for: "" } }, [_vm._v("Dom aukcyjny")]),
+          _c("label", { attrs: { for: "" } }, [_vm._v("Auction")]),
           _vm._v(" "),
           _c("multiselect", {
             attrs: {

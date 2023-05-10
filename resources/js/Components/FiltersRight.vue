@@ -7,12 +7,12 @@
           v-model="search"
           @keyup="nameSearch"
           type="text"
-          placeholder="Wyszukaj za pomocą nazwy"
+          placeholder="Search by name"
           class="base-input"
         />
       </div>
       <div class="filters__right__filter">
-        <label for="">Przebieg(mile)</label>
+        <label for="">Odometer(miles)</label>
         <MultiRangeSlider
           :min="filters.runMin"
           :max="filters.runMax"
@@ -28,7 +28,7 @@
         >
       </div>
       <div class="filters__right__filter">
-        <label for="">Dom aukcyjny</label>
+        <label for="">Auction</label>
         <multiselect
           @select="setFilter"
           @remove="removeFilter"

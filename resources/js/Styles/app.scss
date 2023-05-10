@@ -20,7 +20,7 @@ h1 {
 
 .navBar {
     padding: 5px;
-    background-color: #FFF;
+    background-color: #fff;
     &__link {
         display: flex;
         margin: 0;
@@ -37,15 +37,17 @@ h1 {
 }
 
 button {
-    padding: 10px;
-    background-color: #FFF;
-    border: 1px solid $font-color;
-    color: $font-color;
-    cursor: pointer;
-    outline: none;
-    width: 200px;
+    &:not(.vueperslides__bullet) {
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid $font-color;
+        color: $font-color;
+        cursor: pointer;
+        outline: none;
+        width: 200px;
+    }
 }
 
 button {
-    color: #FFF;
+    color: #fff;
 }

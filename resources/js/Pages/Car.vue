@@ -299,7 +299,8 @@ export default {
       .main {
         img {
           width: 100%;
-          max-width: 773px;
+          max-width: 863px;
+          height: 579px;
         }
       }
       .thumbnails {

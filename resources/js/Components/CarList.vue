@@ -1,8 +1,9 @@
 <template>
   <div class="cars__container container">
     <BreadCrumb />
-    <h2 v-if="cars && cars.length > 0">Latest Lots</h2>
     <CurrentFilters />
+    <h2 v-if="cars && cars.length > 0 && !searched">Latest Lots</h2>
+    <h2 v-if="cars && cars.length > 0 && searched">Search results</h2>
     <div class="cars__container__filters">
       <div class="grid" :class="{ 'grid-small': searched }">
         <CarBox

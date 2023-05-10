@@ -78,7 +78,7 @@ export default {
   background-repeat: no-repeat;
   &.small {
     background: linear-gradient(89.98deg, #102672 0.01%, #384e9b 99.98%);
-    padding: 15px 0;
+    padding: 5px 0;
     display: flex;
     justify-content: space-between;
 

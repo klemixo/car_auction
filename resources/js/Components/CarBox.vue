@@ -2,7 +2,7 @@
   <div class="car__box" :class="{ searched: searched, small: small }">
     <vueper-slides
       :touchable="true"
-      :bullets="false"
+      :bullets="true"
       :fixedHeight="'217px'"
       :arrows-outside="true"
     >
@@ -25,7 +25,7 @@
         <p><span>VIN:</span> {{ carData.vin }}</p>
         <p><span>Location:</span> no data</p>
         <div class="flex flex--line">
-          <h3>{{ carData.final_bid }} $</h3>
+          <h3>${{ carData.final_bid }}</h3>
           <router-link class="black" :to="'/car/' + carData.id"
             >More details <img src="img/arrow.svg" alt=""
           /></router-link>
@@ -140,7 +140,6 @@ export default {
     &--next {
       width: 50px !important;
       height: 100% !important;
-      background: rgba(0, 0, 0, 0.4);
 
       svg {
         width: 2.9rem !important;
@@ -150,13 +149,27 @@ export default {
         }
       }
     }
-
+    border: none !important;
     &--prev {
+      background: linear-gradient(
+        90.88deg,
+        #000000 0.72%,
+        rgba(0, 0, 0, 0) 99.21%
+      );
       left: 0rem !important;
     }
 
     &--next {
       right: 0rem !important;
+      background: linear-gradient(
+        90.88deg,
+        #000000 0.72%,
+        rgba(0, 0, 0, 0) 99.21%
+      );
+      transform: rotate(180deg) translateY(50%);
+      svg {
+        transform: rotate(-180deg);
+      }
     }
   }
 

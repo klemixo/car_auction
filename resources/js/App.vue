@@ -69,7 +69,7 @@ body {
 .container {
   width: 95%;
   margin: 0 auto;
-  max-width: 1232px !important;
+  max-width: 1300px !important;
   @media (min-width: 768px) {
     width: 90%;
   }
