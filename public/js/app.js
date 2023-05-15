@@ -18971,7 +18971,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "body,\nhtml,\n#app,\n.app {\n  padding: 0;\n  margin: 0;\n  background-color: white;\n  text-align: center;\n}\n\nh1 {\n  font-size: 10em;\n  margin-top: 0;\n}\n\n.logo {\n  margin-top: 5px;\n}\n\n.navBar {\n  padding: 5px;\n  background-color: #fff;\n}\n.navBar__link {\n  display: flex;\n  margin: 0;\n}\n.navBar__link li {\n  margin: 10px;\n  list-style-type: none;\n  font-size: 17px;\n}\n.navBar__link li a {\n  text-decoration: none;\n  color: #555555;\n}\n\nbutton:not(.vueperslides__bullet) {\n  padding: 10px;\n  background-color: #fff;\n  border: 1px solid #555555;\n  color: #555555;\n  cursor: pointer;\n  outline: none;\n  width: 200px;\n}\n\nbutton {\n  color: #fff;\n}", ""]);
+exports.push([module.i, "body,\nhtml,\n#app,\n.app {\n  padding: 0;\n  margin: 0;\n  background-color: white;\n  text-align: center;\n}\n\nh1 {\n  font-size: 10em;\n  margin-top: 0;\n}\n\n.logo {\n  margin-top: 5px;\n}\n\n.navBar {\n  padding: 5px;\n  background-color: #fff;\n}\n.navBar__link {\n  display: flex;\n  margin: 0;\n}\n.navBar__link li {\n  margin: 10px;\n  list-style-type: none;\n  font-size: 17px;\n}\n.navBar__link li a {\n  text-decoration: none;\n  color: #555555;\n}\n\nbutton {\n  color: #fff;\n}", ""]);
 
 // exports
 

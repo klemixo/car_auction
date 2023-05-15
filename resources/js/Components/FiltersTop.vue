@@ -45,7 +45,7 @@ export default {
         marka: {
           value: "",
           label: "Select Make",
-          placeholder: "All marks",
+          placeholder: "All makes",
         },
         model: {
           value: "",

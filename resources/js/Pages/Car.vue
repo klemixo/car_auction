@@ -161,6 +161,9 @@
         </div>
       </div>
     </div>
+    <div class="sales__history">
+      <SalesHistory :cars="cars" />
+    </div>
     <div class="similiar__lots">
       <SimiliarLots />
     </div>
@@ -171,6 +174,7 @@
 import axios from "axios";
 import CarSlider from "../Components/CarSlider.vue";
 import SimiliarLots from "../Components/SimiliarLots.vue";
+import SalesHistory from "../Components/SalesHistory.vue";
 import FiltersTop from "../Components/FiltersTop.vue";
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
@@ -181,11 +185,13 @@ export default {
     VueperSlides,
     VueperSlide,
     FiltersTop,
+    SalesHistory,
     SimiliarLots,
   },
   data() {
     return {
       carData: null,
+      cars: null,
       currentImage: 0,
     };
   },
@@ -215,6 +221,7 @@ export default {
       axios
         .get(`https://vinfax.info/api/cars/${this.id}`)
         .then((res) => {
+          this.cars = res.data;
           this.carData = res.data[0];
         })
         .catch((err) => {
@@ -331,8 +338,6 @@ export default {
       gap: 21px;
 
       .data__box {
-        padding: 20px !important;
-
         &__heading {
           background: #f8f8f8;
           display: flex;
@@ -377,6 +382,9 @@ export default {
             display: flex;
             justify-content: space-between;
             border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+            p {
+              margin: 10px 0;
+            }
 
             .light {
               color: #818181;

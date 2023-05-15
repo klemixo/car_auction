@@ -177,7 +177,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         marka: {
           value: "",
           label: "Select Make",
-          placeholder: "All marks"
+          placeholder: "All makes"
         },
         model: {
           value: "",
