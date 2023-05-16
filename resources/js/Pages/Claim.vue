@@ -46,8 +46,8 @@
         </div>
         <div>
           <div class="flex-middle">
-            <div class="badge">
-              {{ carData.selling_branch }}
+            <div class="badge" :class="{ red: branch }">
+              {{ branch ? "IAAI" : "Coopart" }}
             </div>
             <h1>
               {{ carData.production_year }} {{ carData.marka }}
@@ -96,6 +96,9 @@ export default {
     };
   },
   computed: {
+    branch() {
+      return +this.carData.production_year % 2 === 0;
+    },
     successURL() {
       return `${window.location.origin}/#/success/${this.carData.vin}-${this.carData.stock}`;
     },

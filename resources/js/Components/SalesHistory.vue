@@ -18,7 +18,12 @@
           <template v-for="car in cars">
             <tr>
               <td class="branch">
-                <span>{{ car.selling_branch }}</span>
+                <span
+                  class="badge"
+                  :class="{ red: branch(car.production_year) }"
+                >
+                  {{ branch(car.production_year) ? "IAAI" : "Coopart" }}
+                </span>
               </td>
               <td>
                 {{ car.createdate }}
@@ -45,6 +50,11 @@
 <script>
 export default {
   props: ["cars"],
+  methods: {
+    branch(year) {
+      return +year % 2 === 0;
+    },
+  },
 };
 </script>
 
@@ -76,6 +86,9 @@ div {
           border-radius: 3px;
           color: white;
           padding: 5px;
+          &.red {
+            background: red;
+          }
         }
       }
       &.status {

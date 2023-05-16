@@ -135,8 +135,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["cars"]
+  props: ["cars"],
+  methods: {
+    branch: function branch(year) {
+      return +year % 2 === 0;
+    }
+  }
 });
 
 /***/ }),
@@ -387,6 +397,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -414,6 +426,9 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     slides: function slides() {
       return ["img/base-img.png", "img/base-img-2.png", "img/base-img-3.png", "img/base-img-3.png", "img/base-img-3.png", "img/base-img-3.png"];
+    },
+    branch: function branch() {
+      return +this.carData.production_year % 2 === 0;
     },
     mobileView: function mobileView() {
       return window.innerWidth < 768 ? true : false;
@@ -472,7 +487,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "div h2[data-v-1c6f549a] {\n  text-align: left;\n}\n.sales-history[data-v-1c6f549a] {\n  margin-bottom: 65px;\n}\n.sales-history table[data-v-1c6f549a] {\n  width: 100%;\n  text-align: left;\n}\n.sales-history table th[data-v-1c6f549a],\n.sales-history table td[data-v-1c6f549a] {\n  padding: 7px;\n}\n.sales-history table tr[data-v-1c6f549a] {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n}\n.sales-history table td.bold[data-v-1c6f549a] {\n  font-weight: bold;\n}\n.sales-history table td.branch span[data-v-1c6f549a] {\n  background: #1882ff;\n  border-radius: 3px;\n  color: white;\n  padding: 5px;\n}\n.sales-history table td.status span[data-v-1c6f549a] {\n  width: 89px;\n  height: 25px;\n  border: 1px solid #597bd5;\n  color: #597bd5;\n  border-radius: 3px;\n  padding: 5px;\n}\n.sales-history table th[data-v-1c6f549a] {\n  background: #f8f8f8;\n}\n.sales-history table th td[data-v-1c6f549a] {\n  font-weight: bold;\n}", ""]);
+exports.push([module.i, "div h2[data-v-1c6f549a] {\n  text-align: left;\n}\n.sales-history[data-v-1c6f549a] {\n  margin-bottom: 65px;\n}\n.sales-history table[data-v-1c6f549a] {\n  width: 100%;\n  text-align: left;\n}\n.sales-history table th[data-v-1c6f549a],\n.sales-history table td[data-v-1c6f549a] {\n  padding: 7px;\n}\n.sales-history table tr[data-v-1c6f549a] {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n}\n.sales-history table td.bold[data-v-1c6f549a] {\n  font-weight: bold;\n}\n.sales-history table td.branch span[data-v-1c6f549a] {\n  background: #1882ff;\n  border-radius: 3px;\n  color: white;\n  padding: 5px;\n}\n.sales-history table td.branch span.red[data-v-1c6f549a] {\n  background: red;\n}\n.sales-history table td.status span[data-v-1c6f549a] {\n  width: 89px;\n  height: 25px;\n  border: 1px solid #597bd5;\n  color: #597bd5;\n  border-radius: 3px;\n  padding: 5px;\n}\n.sales-history table th[data-v-1c6f549a] {\n  background: #f8f8f8;\n}\n.sales-history table th td[data-v-1c6f549a] {\n  font-weight: bold;\n}", ""]);
 
 // exports
 
@@ -770,7 +785,24 @@ var render = function() {
               return [
                 _c("tr", [
                   _c("td", { staticClass: "branch" }, [
-                    _c("span", [_vm._v(_vm._s(car.selling_branch))])
+                    _c(
+                      "span",
+                      {
+                        staticClass: "badge",
+                        class: { red: _vm.branch(car.production_year) }
+                      },
+                      [
+                        _vm._v(
+                          "\n                " +
+                            _vm._s(
+                              _vm.branch(car.production_year)
+                                ? "IAAI"
+                                : "Coopart"
+                            ) +
+                            "\n              "
+                        )
+                      ]
+                    )
                   ]),
                   _vm._v(" "),
                   _c("td", [
@@ -982,13 +1014,17 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "badge" }, [
-                      _vm._v(
-                        "\n            " +
-                          _vm._s(_vm.carData.selling_branch) +
-                          "\n          "
-                      )
-                    ])
+                    _c(
+                      "div",
+                      { staticClass: "badge", class: { red: _vm.branch } },
+                      [
+                        _vm._v(
+                          "\n            " +
+                            _vm._s(_vm.branch ? "IAAI" : "Coopart") +
+                            "\n          "
+                        )
+                      ]
+                    )
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "flex" }, [
@@ -1058,9 +1094,17 @@ var render = function() {
                   _c("div", { staticClass: "flex" }, [
                     _c("p", [_vm._v("Auction:")]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "badge" }, [
-                      _vm._v(_vm._s(_vm.carData.selling_branch))
-                    ]),
+                    _c(
+                      "div",
+                      { staticClass: "badge", class: { red: _vm.branch } },
+                      [
+                        _vm._v(
+                          "\n              " +
+                            _vm._s(_vm.branch ? "IAAI" : "Coopart") +
+                            "\n            "
+                        )
+                      ]
+                    ),
                     _vm._v(" "),
                     _c("div", { staticClass: "badge badge--outline" }, [
                       _vm._v("Not Sold")

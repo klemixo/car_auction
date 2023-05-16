@@ -108,6 +108,9 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   computed: {
+    branch: function branch() {
+      return +this.carData.production_year % 2 === 0;
+    },
     successURL: function successURL() {
       return "".concat(window.location.origin, "/#/success/").concat(this.carData.vin, "-").concat(this.carData.stock);
     },
@@ -292,13 +295,17 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", [
                     _c("div", { staticClass: "flex-middle" }, [
-                      _c("div", { staticClass: "badge" }, [
-                        _vm._v(
-                          "\n            " +
-                            _vm._s(_vm.carData.selling_branch) +
-                            "\n          "
-                        )
-                      ]),
+                      _c(
+                        "div",
+                        { staticClass: "badge", class: { red: _vm.branch } },
+                        [
+                          _vm._v(
+                            "\n            " +
+                              _vm._s(_vm.branch ? "IAAI" : "Coopart") +
+                              "\n          "
+                          )
+                        ]
+                      ),
                       _vm._v(" "),
                       _c("h1", [
                         _vm._v(

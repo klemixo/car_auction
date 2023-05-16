@@ -29,8 +29,8 @@
               {{ carData.marka }}
               {{ carData.model }}
             </h1>
-            <div class="badge">
-              {{ carData.selling_branch }}
+            <div class="badge" :class="{ red: branch }">
+              {{ branch ? "IAAI" : "Coopart" }}
             </div>
           </div>
           <div class="flex">
@@ -68,7 +68,9 @@
             <p class="highlight">Seller: <b>Non-Insurence Company</b></p>
             <div class="flex">
               <p>Auction:</p>
-              <div class="badge">{{ carData.selling_branch }}</div>
+              <div class="badge" :class="{ red: branch }">
+                {{ branch ? "IAAI" : "Coopart" }}
+              </div>
               <div class="badge badge--outline">Not Sold</div>
             </div>
             <div class="flex-base">
@@ -205,6 +207,9 @@ export default {
         "img/base-img-3.png",
         "img/base-img-3.png",
       ];
+    },
+    branch() {
+      return +this.carData.production_year % 2 === 0;
     },
     mobileView() {
       return window.innerWidth < 768 ? true : false;

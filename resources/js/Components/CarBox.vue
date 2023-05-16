@@ -1,5 +1,9 @@
 <template>
-  <div class="car__box" :class="{ searched: searched, small: small }">
+  <div
+    class="car__box"
+    :class="{ searched: searched, small: small }"
+    v-if="carData"
+  >
     <vueper-slides
       :touchable="true"
       :bullets="true"
@@ -18,8 +22,8 @@
               {{ toCapital(carData.model) }}
             </h2>
           </router-link>
-          <div class="badge">
-            {{ carData.selling_branch }}
+          <div class="badge" :class="{ red: branch }">
+            {{ branch ? "IAAI" : "Coopart" }}
           </div>
         </div>
         <p><span>VIN:</span> {{ carData.vin }}</p>
@@ -35,8 +39,8 @@
         <div class="searched-data">
           <div class="searched-data-left">
             <div class="flex-searched">
-              <div class="badge">
-                {{ carData.selling_branch }}
+              <div class="badge" :class="{ red: branch }">
+                {{ branch ? "IAAI" : "Coopart" }}
               </div>
               <router-link class="black" :to="'/car/' + carData.id">
                 <h2>
@@ -88,6 +92,11 @@ export default {
       images: ["img/base-img.png", "img/base-img-2.png", "img/base-img-3.png"],
     };
   },
+  computed: {
+    branch() {
+      return +this.carData.production_year % 2 === 0;
+    },
+  },
   methods: {
     toCapital(str) {
       let str2 = str.toLowerCase();
@@ -108,7 +117,9 @@ export default {
   color: white;
   text-align: center;
   height: fit-content;
-
+  &.red {
+    background: #e30202;
+  }
   &--outline {
     background: white;
     color: #1882ff;
@@ -179,7 +190,9 @@ export default {
 
   &__content {
     padding: 20px;
-
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 240px);
     p {
       font-size: 16px;
       line-height: 21px;
@@ -197,7 +210,7 @@ export default {
       align-items: center;
       &--line {
         border-top: 1px solid rgba(0, 0, 0, 0.1);
-        margin-top: 12px;
+        margin-top: auto;
       }
       a {
         &.black {
