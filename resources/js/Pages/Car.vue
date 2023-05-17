@@ -34,7 +34,7 @@
             </div>
           </div>
           <div class="flex">
-            <h2><span>Lot number:</span> {{ carData.run_number }}</h2>
+            <h2><span>Lot number:</span> No data</h2>
             <h2><span>VIN: </span> {{ carData.vin }}</h2>
           </div>
         </div>
@@ -75,7 +75,7 @@
             </div>
             <div class="flex-base">
               <p class="light">Lot number</p>
-              <p class="strong">{{ carData.run_number }}</p>
+              <p class="strong">No data</p>
             </div>
             <div class="flex-base">
               <p class="light">Date of sell</p>
@@ -166,6 +166,8 @@
     <div class="sales__history">
       <SalesHistory :cars="cars" />
     </div>
+    <router-link class="img-box-link" :to="'/car/3685'"> teette</router-link>
+
     <div class="similiar__lots">
       <SimiliarLots />
     </div>
@@ -216,6 +218,7 @@ export default {
     },
   },
   mounted() {
+    console.log("teraz");
     this.getCarData();
   },
   methods: {
@@ -312,7 +315,9 @@ export default {
         img {
           width: 100%;
           max-width: 863px;
-          height: 579px;
+          @media (min-width: 1200px) {
+            height: 579px;
+          }
         }
       }
       .thumbnails {
@@ -368,12 +373,15 @@ export default {
             font-size: 33px;
             line-height: 43px;
             text-align: left;
+            margin: 16px 0;
           }
 
           .highlight {
             background: #ffebb7;
             border-radius: 3px;
             width: fit-content;
+            margin: 4px 0;
+            padding: 3px;
           }
 
           .flex {
@@ -388,7 +396,7 @@ export default {
             justify-content: space-between;
             border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
             p {
-              margin: 10px 0;
+              margin: 6px 0;
             }
 
             .light {

@@ -96,6 +96,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -255,7 +268,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".badge {\n  background: #1882ff;\n  border-radius: 3px;\n  font-weight: 700;\n  font-size: 16px;\n  line-height: 21px;\n  padding: 4px;\n  color: white;\n  text-align: center;\n  height: fit-content;\n}\n.badge.red {\n  background: #e30202;\n}\n.badge--outline {\n  background: white;\n  color: #1882ff;\n  border: 1px solid #597bd5;\n}\n.badge--gray {\n  background: white;\n  color: #818181;\n  border: 1px solid #818181;\n}\n.car__box {\n  background: #ffffff;\n  box-shadow: 0px 9px 39px #ecf3f8;\n  gap: 24px;\n  max-width: 425px;\n}\n@media (min-width: 1200px) {\n.car__box {\n    min-width: 417px;\n}\n}\n.car__box.small {\n  width: 295px;\n  min-width: unset;\n  height: 100%;\n}\n.car__box .vueperslides__arrow {\n  border: none !important;\n}\n.car__box .vueperslides__arrow--prev, .car__box .vueperslides__arrow--next {\n  width: 50px !important;\n  height: 100% !important;\n}\n.car__box .vueperslides__arrow--prev svg, .car__box .vueperslides__arrow--next svg {\n  width: 2.9rem !important;\n}\n.car__box .vueperslides__arrow--prev svg path, .car__box .vueperslides__arrow--next svg path {\n  stroke: white !important;\n}\n.car__box .vueperslides__arrow--prev {\n  background: linear-gradient(90.88deg, #000000 0.72%, rgba(0, 0, 0, 0) 99.21%);\n  left: 0rem !important;\n}\n.car__box .vueperslides__arrow--next {\n  right: 0rem !important;\n  background: linear-gradient(90.88deg, #000000 0.72%, rgba(0, 0, 0, 0) 99.21%);\n  transform: rotate(180deg) translateY(50%);\n}\n.car__box .vueperslides__arrow--next svg {\n  transform: rotate(-180deg);\n}\n.car__box__img {\n  width: 100%;\n}\n.car__box__content {\n  padding: 20px;\n  display: flex;\n  flex-direction: column;\n  height: calc(100% - 240px);\n}\n.car__box__content p {\n  font-size: 16px;\n  line-height: 21px;\n  text-align: left;\n  margin: 0;\n}\n.car__box__content p span {\n  color: #818181;\n}\n.car__box__content .flex {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.car__box__content .flex--line {\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n  margin-top: auto;\n}\n.car__box__content .flex a.black {\n  color: black;\n  text-decoration: none;\n}\n.car__box__content .flex h2 {\n  font-weight: 700;\n  font-size: 20px;\n  line-height: 26px;\n}\n.car__box__content .flex h3 {\n  font-weight: 700;\n  font-size: 27px;\n  line-height: 35px;\n  margin: 10px 0;\n}\n.car__box__content .flex a {\n  font-size: 16px;\n  line-height: 21px;\n  color: #243e97;\n  display: flex;\n  gap: 6px;\n  align-items: center;\n  text-decoration: none;\n}\n.car__box a.black {\n  color: black;\n  text-decoration: none;\n}\n.car__box .searched-data {\n  gap: 35px;\n}\n.car__box .searched-data-right {\n  margin-left: auto;\n  width: 100%;\n}\n@media (min-width: 576px) {\n.car__box .searched-data-right {\n    width: unset;\n}\n}\n.car__box .flex-searched {\n  display: flex;\n  flex-direction: column;\n}\n.car__box .flex-searched .badge {\n  width: fit-content;\n  margin-bottom: 20px;\n}\n.car__box .flex-searched h2 {\n  margin: 0;\n  margin-bottom: 6px;\n  font-size: 25px;\n}\n.car__box .flex-searched-right {\n  background: #ecf1f9;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 14px 12px;\n  gap: 4px;\n  flex-direction: column;\n  height: 100%;\n}\n.car__box .flex-searched-right .date {\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 21px;\n  margin-bottom: 24px;\n  color: #000000;\n}\n.car__box .flex-searched-right span {\n  font-size: 16px;\n  line-height: 21px;\n  text-align: center;\n  color: #818181;\n}\n.car__box .flex-searched-right .final-bid {\n  font-weight: 700;\n  font-size: 27px;\n  line-height: 35px;\n  color: #000000;\n}\n.car__box .flex-searched-right a {\n  background: #243e97;\n  border-radius: 5px;\n  font-size: 17px;\n  line-height: 44px;\n  margin-top: 16px;\n  /* identical to box height */\n  text-align: center;\n  letter-spacing: 0.1em;\n  color: #ffffff;\n  text-decoration: none;\n  width: 176px;\n  height: 44px;\n}\n.car__box .searched-data {\n  display: flex;\n  flex-direction: column;\n}\n@media (min-width: 576px) {\n.car__box .searched-data {\n    flex-direction: row;\n}\n}\n.car__box .flex-searched-bottom {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n  margin-top: 16px;\n  padding-top: 16px;\n  gap: 12px;\n}\n.car__box .flex-searched-bottom div {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n}\n.car__box .flex-searched-bottom div span {\n  color: #818181;\n}\n.car__box .flex-searched-bottom div span.bold {\n  color: black;\n}\n.car__box.searched {\n  display: flex;\n  max-width: unset;\n  flex-direction: column;\n}\n@media (min-width: 768px) {\n.car__box.searched {\n    flex-direction: row;\n}\n}\n.car__box.searched .vueperslides {\n  width: 320px;\n  height: 100%;\n  min-width: 320px;\n}\n.car__box.searched .car__box__content {\n  width: 90%;\n}", ""]);
+exports.push([module.i, ".badge {\n  background: #1882ff;\n  border-radius: 3px;\n  font-weight: 700;\n  font-size: 16px;\n  line-height: 21px;\n  padding: 4px;\n  color: white;\n  text-align: center;\n  height: fit-content;\n}\n.badge.red {\n  background: #e30202;\n}\n.badge--outline {\n  background: white;\n  color: #1882ff;\n  border: 1px solid #597bd5;\n}\n.badge--gray {\n  background: white;\n  color: #818181;\n  border: 1px solid #818181;\n}\n.car__box {\n  background: #ffffff;\n  box-shadow: 0px 9px 39px #ecf3f8;\n  gap: 24px;\n  max-width: 425px;\n  position: relative;\n}\n@media (min-width: 1200px) {\n.car__box {\n    min-width: 417px;\n}\n}\n.car__box.small {\n  width: 295px;\n  min-width: unset;\n  height: 100%;\n}\n.car__box .img-box-link {\n  display: block;\n  position: absolute;\n  width: 75%;\n  height: 44%;\n  top: 0;\n  left: 50%;\n  z-index: 2;\n  transform: translateX(-50%);\n}\n.car__box .vueperslides__arrow {\n  border: none !important;\n}\n.car__box .vueperslides__arrow--prev, .car__box .vueperslides__arrow--next {\n  width: 50px !important;\n  height: 100% !important;\n}\n.car__box .vueperslides__arrow--prev svg, .car__box .vueperslides__arrow--next svg {\n  width: 2.9rem !important;\n}\n.car__box .vueperslides__arrow--prev svg path, .car__box .vueperslides__arrow--next svg path {\n  stroke: white !important;\n}\n.car__box .vueperslides__arrow--prev {\n  background: linear-gradient(90.88deg, #000000 0.72%, rgba(0, 0, 0, 0) 99.21%);\n  left: 0rem !important;\n}\n.car__box .vueperslides__arrow--next {\n  right: 0rem !important;\n  background: linear-gradient(90.88deg, #000000 0.72%, rgba(0, 0, 0, 0) 99.21%);\n  transform: rotate(180deg) translateY(50%);\n}\n.car__box .vueperslides__arrow--next svg {\n  transform: rotate(-180deg);\n}\n.car__box__img {\n  width: 100%;\n}\n.car__box__content {\n  padding: 20px;\n  display: flex;\n  flex-direction: column;\n  height: calc(100% - 240px);\n}\n.car__box__content p {\n  font-size: 16px;\n  line-height: 21px;\n  text-align: left;\n  margin: 0;\n}\n.car__box__content p span {\n  color: #818181;\n}\n.car__box__content .flex {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.car__box__content .flex--line {\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n  margin-top: auto;\n}\n.car__box__content .flex a.black {\n  color: black;\n  text-decoration: none;\n}\n.car__box__content .flex h2 {\n  font-weight: 700;\n  font-size: 20px;\n  line-height: 26px;\n}\n.car__box__content .flex h3 {\n  font-weight: 700;\n  font-size: 27px;\n  line-height: 35px;\n  margin: 10px 0;\n}\n.car__box__content .flex a {\n  font-size: 16px;\n  line-height: 21px;\n  color: #243e97;\n  display: flex;\n  gap: 6px;\n  align-items: center;\n  text-decoration: none;\n}\n.car__box a.black {\n  color: black;\n  text-decoration: none;\n}\n.car__box .searched-data {\n  gap: 35px;\n}\n.car__box .searched-data-right {\n  margin-left: auto;\n  width: 100%;\n}\n@media (min-width: 576px) {\n.car__box .searched-data-right {\n    width: unset;\n}\n}\n.car__box .flex-searched {\n  display: flex;\n  flex-direction: column;\n}\n.car__box .flex-searched .badge {\n  width: fit-content;\n  margin-bottom: 20px;\n}\n.car__box .flex-searched h2 {\n  margin: 0;\n  margin-bottom: 6px;\n  font-size: 25px;\n}\n.car__box .flex-searched-right {\n  background: #ecf1f9;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 14px 12px;\n  gap: 4px;\n  flex-direction: column;\n  height: 100%;\n}\n.car__box .flex-searched-right .date {\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 21px;\n  margin-bottom: 24px;\n  color: #000000;\n}\n.car__box .flex-searched-right span {\n  font-size: 16px;\n  line-height: 21px;\n  text-align: center;\n  color: #818181;\n}\n.car__box .flex-searched-right .final-bid {\n  font-weight: 700;\n  font-size: 27px;\n  line-height: 35px;\n  color: #000000;\n}\n.car__box .flex-searched-right a {\n  background: #243e97;\n  border-radius: 5px;\n  font-size: 17px;\n  line-height: 44px;\n  margin-top: 16px;\n  /* identical to box height */\n  text-align: center;\n  letter-spacing: 0.1em;\n  color: #ffffff;\n  text-decoration: none;\n  width: 176px;\n  height: 44px;\n}\n.car__box .searched-data {\n  display: flex;\n  flex-direction: column;\n}\n@media (min-width: 576px) {\n.car__box .searched-data {\n    flex-direction: row;\n}\n}\n.car__box .flex-searched-bottom {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n  margin-top: 16px;\n  padding-top: 16px;\n  gap: 12px;\n}\n.car__box .flex-searched-bottom div {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start;\n}\n.car__box .flex-searched-bottom div span {\n  color: #818181;\n}\n.car__box .flex-searched-bottom div span.bold {\n  color: black;\n}\n.car__box.searched {\n  display: flex;\n  max-width: unset;\n  flex-direction: column;\n  height: fit-content;\n  padding-bottom: 25px;\n}\n@media (min-width: 768px) {\n.car__box.searched {\n    flex-direction: row;\n}\n}\n.car__box.searched .vueperslides {\n  width: 320px;\n  height: 100%;\n  min-width: 320px;\n}\n.car__box.searched .car__box__content {\n  width: 90%;\n}", ""]);
 
 // exports
 
@@ -364,11 +377,17 @@ var render = function() {
           class: { searched: _vm.searched, small: _vm.small }
         },
         [
+          _c("router-link", {
+            key: _vm.carData.id,
+            staticClass: "img-box-link",
+            attrs: { to: "/car/" + _vm.carData.id }
+          }),
+          _vm._v(" "),
           _c(
             "vueper-slides",
             {
               attrs: {
-                touchable: true,
+                touchable: false,
                 bullets: true,
                 fixedHeight: "217px",
                 "arrows-outside": true
@@ -393,6 +412,7 @@ var render = function() {
                         _c(
                           "router-link",
                           {
+                            key: _vm.carData.id,
                             staticClass: "black",
                             attrs: { to: "/car/" + _vm.carData.id }
                           },
@@ -442,6 +462,7 @@ var render = function() {
                         _c(
                           "router-link",
                           {
+                            key: _vm.carData.id,
                             staticClass: "black",
                             attrs: { to: "/car/" + _vm.carData.id }
                           },

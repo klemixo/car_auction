@@ -4,8 +4,14 @@
     :class="{ searched: searched, small: small }"
     v-if="carData"
   >
+    <router-link
+      :key="carData.id"
+      class="img-box-link"
+      :to="'/car/' + carData.id"
+    >
+    </router-link>
     <vueper-slides
-      :touchable="true"
+      :touchable="false"
       :bullets="true"
       :fixedHeight="'217px'"
       :arrows-outside="true"
@@ -16,7 +22,11 @@
     <div class="car__box__content">
       <template v-if="!searched">
         <div class="flex">
-          <router-link class="black" :to="'/car/' + carData.id">
+          <router-link
+            :key="carData.id"
+            class="black"
+            :to="'/car/' + carData.id"
+          >
             <h2>
               {{ carData.production_year }} {{ toCapital(carData.marka) }}
               {{ toCapital(carData.model) }}
@@ -30,7 +40,10 @@
         <p><span>Location:</span> no data</p>
         <div class="flex flex--line">
           <h3>${{ carData.final_bid }}</h3>
-          <router-link class="black" :to="'/car/' + carData.id"
+          <router-link
+            :key="carData.id"
+            class="black"
+            :to="'/car/' + carData.id"
             >More details <img src="img/arrow.svg" alt=""
           /></router-link>
         </div>
@@ -138,6 +151,7 @@ export default {
   box-shadow: 0px 9px 39px #ecf3f8;
   gap: 24px;
   max-width: 425px;
+  position: relative;
   @media (min-width: 1200px) {
     min-width: 417px;
   }
@@ -145,6 +159,16 @@ export default {
     width: 295px;
     min-width: unset;
     height: 100%;
+  }
+  .img-box-link {
+    display: block;
+    position: absolute;
+    width: 75%;
+    height: 44%;
+    top: 0;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
   }
   .vueperslides__arrow {
     &--prev,
@@ -347,6 +371,8 @@ export default {
     display: flex;
     max-width: unset;
     flex-direction: column;
+    height: fit-content;
+    padding-bottom: 25px;
     @media (min-width: 768px) {
       flex-direction: row;
     }

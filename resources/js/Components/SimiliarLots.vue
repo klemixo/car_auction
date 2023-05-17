@@ -52,5 +52,9 @@ div {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  justify-content: center;
+  @media (min-width: 576px) {
+    justify-content: unset;
+  }
 }
 </style>

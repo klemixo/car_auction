@@ -56,7 +56,7 @@
             <h2>VIN: {{ carData.vin }}</h2>
           </div>
           <div class="flex">
-            <h2><span>Lot number:</span> {{ carData.run_number }}</h2>
+            <h2><span>Lot number:</span> No data</h2>
             <h2><span>Location: </span> {{ carData.vin }}</h2>
             <h2><span>Mileage: </span> {{ carData.odometer }}</h2>
           </div>
