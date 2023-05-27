@@ -30,7 +30,7 @@
               {{ carData.model }}
             </h1>
             <div class="badge" :class="{ red: branch }">
-              {{ branch ? "IAAI" : "Coopart" }}
+              {{ branch ? "IAAI" : "Copart" }}
             </div>
           </div>
           <div class="flex">
@@ -69,7 +69,7 @@
             <div class="flex">
               <p>Auction:</p>
               <div class="badge" :class="{ red: branch }">
-                {{ branch ? "IAAI" : "Coopart" }}
+                {{ branch ? "IAAI" : "Copart" }}
               </div>
               <div class="badge badge--outline">Not Sold</div>
             </div>
@@ -166,8 +166,6 @@
     <div class="sales__history">
       <SalesHistory :cars="cars" />
     </div>
-    <router-link class="img-box-link" :to="'/car/3685'"> teette</router-link>
-
     <div class="similiar__lots">
       <SimiliarLots />
     </div>
@@ -381,7 +379,7 @@ export default {
             border-radius: 3px;
             width: fit-content;
             margin: 4px 0;
-            padding: 3px;
+            padding: 3px 25px;
           }
 
           .flex {

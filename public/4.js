@@ -37,6 +37,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -53,7 +56,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".footer[data-v-3c0d6e26] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  margin-top: 51px;\n}\n.footer__heading[data-v-3c0d6e26] {\n  font-weight: 400;\n  font-size: 17px;\n  line-height: 22px;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  letter-spacing: 0.1em;\n  color: rgba(0, 0, 0, 0.2);\n}\n.footer__content[data-v-3c0d6e26] {\n  background: linear-gradient(180deg, rgba(19, 47, 148, 0.84) 0%, #102672 100%);\n  padding: 10px 40px 5px 40px;\n  width: 100%;\n}\n.footer__content .container__bottom[data-v-3c0d6e26] {\n  padding: 29px 0;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 21px;\n  text-align: left;\n  color: white;\n  border-top: 1px solid white;\n}\n.footer__content .container__flex[data-v-3c0d6e26] {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n  gap: 16px;\n}\n@media (min-width: 992px) {\n.footer__content .container__flex[data-v-3c0d6e26] {\n    flex-direction: row;\n    padding: 30px 0;\n}\n}\n.footer__content .container__flex p[data-v-3c0d6e26], .footer__content .container__flex a[data-v-3c0d6e26] {\n  font-weight: 400;\n  font-size: 20px;\n  line-height: 33px;\n  color: #FFFFFF;\n  text-decoration: none;\n}\n.footer__content .container__flex p span[data-v-3c0d6e26], .footer__content .container__flex a span[data-v-3c0d6e26] {\n  font-weight: 700;\n}", ""]);
+exports.push([module.i, ".footer[data-v-3c0d6e26] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  margin-top: 51px;\n}\n.footer__heading[data-v-3c0d6e26] {\n  font-weight: 400;\n  font-size: 17px;\n  line-height: 22px;\n  display: flex;\n  align-items: center;\n  text-align: center;\n  letter-spacing: 0.1em;\n  color: rgba(0, 0, 0, 0.2);\n}\n.footer__content[data-v-3c0d6e26] {\n  background: linear-gradient(180deg, rgba(19, 47, 148, 0.84) 0%, #102672 100%);\n  padding: 10px 40px 5px 40px;\n  width: 100%;\n}\n.footer__content .container__bottom[data-v-3c0d6e26] {\n  padding: 29px 0;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 21px;\n  text-align: left;\n  color: white;\n  border-top: 1px solid rgba(255, 255, 255, 0.15);\n}\n.footer__content .container__flex[data-v-3c0d6e26] {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  gap: 16px;\n}\n@media (min-width: 992px) {\n.footer__content .container__flex[data-v-3c0d6e26] {\n    flex-direction: row;\n    padding: 30px 0;\n}\n}\n.footer__content .container__flex .p-top[data-v-3c0d6e26] {\n  padding-top: 20px;\n}\n.footer__content .container__flex p[data-v-3c0d6e26],\n.footer__content .container__flex a[data-v-3c0d6e26] {\n  font-weight: 400;\n  font-size: 20px;\n  line-height: 33px;\n  color: #ffffff;\n  text-decoration: none;\n  margin: 0;\n  text-align: left;\n}\n.footer__content .container__flex p span[data-v-3c0d6e26],\n.footer__content .container__flex a span[data-v-3c0d6e26] {\n  font-weight: 700;\n}\n.footer__content .container__flex p a[data-v-3c0d6e26],\n.footer__content .container__flex a a[data-v-3c0d6e26] {\n  font-weight: bold;\n  font-size: 25px;\n}", ""]);
 
 // exports
 
@@ -108,7 +111,7 @@ var render = function() {
   return _c("div", { staticClass: "footer" }, [
     _c("p", { staticClass: "footer__heading" }, [
       _vm._v(
-        "History of sales insurance cars - Prices and damage insurance cars at Copart and insurance auctions IAAI"
+        "\n    History of sales insurance cars - Prices and damage insurance cars at\n    Copart and insurance auctions IAAI\n  "
       )
     ]),
     _vm._v(" "),
@@ -122,7 +125,7 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "footer__section" },
+          { staticClass: "footer__section p-top" },
           [
             _c("router-link", { attrs: { to: { name: "Terms" } } }, [
               _vm._v("Terms&Conditions")
@@ -133,7 +136,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "container container__bottom" }, [
-        _vm._v("\n            Ⓒ 2021 VINFAX. All rights reserved\n        ")
+        _vm._v("\n      Ⓒ 2021 VINFAX. All rights reserved\n    ")
       ])
     ])
   ])
@@ -151,7 +154,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "footer__section" }, [
+    return _c("div", { staticClass: "footer__section p-top" }, [
       _c("p", [_c("span", [_vm._v("Got any questions?")])]),
       _vm._v(" "),
       _c("p", [_vm._v("Feel free to contact")]),
@@ -167,7 +170,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "footer__section" }, [
+    return _c("div", { staticClass: "footer__section p-top" }, [
       _c("p", [_c("span", [_vm._v("IAII Lots:")]), _vm._v(" 123 456 789")]),
       _vm._v(" "),
       _c("p", [_c("span", [_vm._v("Copart Lots:")]), _vm._v(" 123 456 789")])

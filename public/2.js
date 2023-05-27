@@ -284,6 +284,53 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -293,6 +340,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   data: function data() {
     return {
+      filtersYear: {
+        yearFrom: {
+          value: "",
+          label: "Year",
+          placeholder: "From"
+        },
+        yearTo: {
+          value: "",
+          label: "",
+          placeholder: "To"
+        }
+      },
       filters: {
         search: "",
         auctionHouses: {
@@ -304,7 +363,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         runMin: 0,
         runMax: 999999,
         runValueStart: 0,
-        runValueEnd: 250000
+        runValueEnd: 250000,
+        runValueStartTmp: 0,
+        runValueEndTmp: 250000
       }
     };
   },
@@ -317,8 +378,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     UpdateValues: function UpdateValues(e) {
       this.filters.runValueStart = e.minValue;
       this.filters.runValueEnd = e.maxValue;
+      this.filters.runValueStartTmp = e.minValue;
+      this.filters.runValueEndTmp = e.maxValue;
       this.$store.state.filters.runMin.value = e.minValue;
       this.$store.state.filters.runMax.value = e.maxValue;
+    },
+    updateRunValue: function updateRunValue() {
+      this.filters.runValueStart = this.filters.runValueStartTmp;
+      this.filters.runValueEnd = this.filters.runValueEndTmp;
+      this.$store.state.filters.runMin.value = this.filters.runValueStart;
+      this.$store.state.filters.runMax.value = this.filters.runValueEnd;
     },
     nameSearch: function nameSearch() {
       var filterObj = {
@@ -483,7 +552,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".filters__right {\n  background: #f8f8f8;\n  box-shadow: 0px 9px 39px #ecf3f8;\n  padding: 20px 10px;\n  width: 100%;\n  height: fit-content;\n}\n.filters__right .base-input {\n  padding: 10px;\n}\n.filters__right h4 {\n  margin: 10px 0;\n  text-align: left;\n  font-weight: 700;\n  font-size: 25px;\n  line-height: 32px;\n}\n@media (min-width: 992px) {\n.filters__right {\n    padding: 17px 15px;\n    flex-direction: row;\n    width: 310px;\n}\n}\n.filters__right__flex {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n  width: 100%;\n}\n.filters__right__filter {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  align-items: flex-start;\n  flex: 1;\n  justify-content: flex-end;\n}\n.filters__right__filter__flex {\n  display: flex;\n  width: 100%;\n}\n.filters__right__filter__flex .multiselect {\n  flex: 1;\n}\n.filters__right__filter .others-checkboxes {\n  margin-top: 55px;\n}\n.filters__right__filter .base-input {\n  width: fit-content;\n  background: white;\n}\n.filters__right__filter label {\n  font-weight: 700;\n  font-size: 18px;\n  line-height: 23px;\n  color: #000000;\n}\n.multi-range-slider {\n  width: 90%;\n  box-shadow: none;\n  border: none;\n}\n.multi-range-slider .thumb::before {\n  background: #243e97;\n  width: 15px;\n  height: 15px;\n  box-shadow: none;\n  border: none;\n}\n.bar {\n  height: 3px;\n  border: none;\n  box-shadow: none;\n}\n.bar-inner {\n  background: #243e97 !important;\n  border: none !important;\n  box-shadow: none !important;\n}\n.bar-left,\n.bar-right {\n  padding: 0 !important;\n  background-color: #93c5ff !important;\n}", ""]);
+exports.push([module.i, ".filters__right {\n  background: #f8f8f8;\n  box-shadow: 0px 9px 39px #ecf3f8;\n  padding: 20px 10px;\n  width: 100%;\n  height: fit-content;\n}\n.filters__right .base-input {\n  padding: 10px;\n}\n.filters__right h4 {\n  margin: 10px 0;\n  text-align: left;\n  font-weight: 700;\n  font-size: 25px;\n  line-height: 32px;\n}\n@media (min-width: 992px) {\n.filters__right {\n    padding: 17px 15px;\n    flex-direction: row;\n    width: 310px;\n}\n}\n.filters__right__flex {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n  width: 100%;\n}\n.filters__right .filters-flex {\n  display: flex;\n  gap: 12px;\n  align-items: center;\n}\n.filters__right__filter {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  align-items: flex-start;\n  flex: 1;\n  justify-content: flex-end;\n}\n.filters__right__filter__flex {\n  display: flex;\n  width: 100%;\n}\n.filters__right__filter__flex .multiselect {\n  flex: 1;\n}\n.filters__right__filter .others-checkboxes {\n  margin-top: 55px;\n}\n.filters__right__filter .base-input {\n  width: fit-content;\n  background: white;\n}\n.filters__right__filter label {\n  font-weight: 700;\n  font-size: 18px;\n  line-height: 23px;\n  color: #000000;\n}\n.multi-range-slider {\n  width: 90%;\n  box-shadow: none;\n  border: none;\n}\n.multi-range-slider .thumb::before {\n  background: #243e97;\n  width: 15px;\n  height: 15px;\n  box-shadow: none;\n  border: none;\n}\n.bar {\n  height: 3px;\n  border: none;\n  box-shadow: none;\n}\n.bar-inner {\n  background: #243e97 !important;\n  border: none !important;\n  box-shadow: none !important;\n}\n.bar-left,\n.bar-right {\n  padding: 0 !important;\n  background-color: #93c5ff !important;\n}", ""]);
 
 // exports
 
@@ -994,6 +1063,54 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
+        { staticClass: "filters-flex" },
+        _vm._l(_vm.filtersYear, function(filter, key) {
+          return _c(
+            "div",
+            { key: key, staticClass: "filters__right__filter" },
+            [
+              _c("label", { attrs: { for: "" } }, [
+                _vm._v(_vm._s(filter.label))
+              ]),
+              _vm._v(" "),
+              _c("multiselect", {
+                attrs: {
+                  id: key,
+                  options:
+                    key === "yearFrom" || key === "yearTo"
+                      ? _vm.filtersOptions["production_year"]
+                      : _vm.filtersOptions[key],
+                  "track-by":
+                    key === "yearFrom" || key === "yearTo"
+                      ? "production_year"
+                      : key,
+                  label:
+                    key === "yearFrom" || key === "yearTo"
+                      ? "production_year"
+                      : key,
+                  searchable: true,
+                  "close-on-select": true,
+                  "show-labels": false,
+                  placeholder: filter.placeholder
+                },
+                on: { select: _vm.setFilter, remove: _vm.removeFilter },
+                model: {
+                  value: filter.value,
+                  callback: function($$v) {
+                    _vm.$set(filter, "value", $$v)
+                  },
+                  expression: "filter.value"
+                }
+              })
+            ],
+            1
+          )
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
         { staticClass: "filters__right__filter" },
         [
           _c("label", { attrs: { for: "" } }, [_vm._v("Odometer(miles)")]),
@@ -1011,12 +1128,78 @@ var render = function() {
             on: { input: _vm.UpdateValues }
           }),
           _vm._v(" "),
-          _c("label", { attrs: { for: "" } }, [
-            _vm._v(
-              _vm._s(_vm.filters.runValueStart) +
-                " - " +
-                _vm._s(_vm.filters.runValueEnd)
-            )
+          _c("div", { staticClass: "filters-flex" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.number",
+                  value: _vm.filters.runValueStartTmp,
+                  expression: "filters.runValueStartTmp",
+                  modifiers: { number: true }
+                }
+              ],
+              staticClass: "base-input",
+              attrs: {
+                type: "number",
+                min: "0",
+                max: _vm.filters.runValueEndTmp
+              },
+              domProps: { value: _vm.filters.runValueStartTmp },
+              on: {
+                keyup: _vm.updateRunValue,
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.filters,
+                    "runValueStartTmp",
+                    _vm._n($event.target.value)
+                  )
+                },
+                blur: function($event) {
+                  return _vm.$forceUpdate()
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", [_vm._v("-")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.number",
+                  value: _vm.filters.runValueEndTmp,
+                  expression: "filters.runValueEndTmp",
+                  modifiers: { number: true }
+                }
+              ],
+              staticClass: "base-input",
+              attrs: {
+                type: "number",
+                min: _vm.filters.runValueStartTmp,
+                max: "9999999"
+              },
+              domProps: { value: _vm.filters.runValueEndTmp },
+              on: {
+                keyup: _vm.updateRunValue,
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.filters,
+                    "runValueEndTmp",
+                    _vm._n($event.target.value)
+                  )
+                },
+                blur: function($event) {
+                  return _vm.$forceUpdate()
+                }
+              }
+            })
           ])
         ],
         1

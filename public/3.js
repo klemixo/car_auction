@@ -399,8 +399,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 
@@ -490,7 +488,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "div h2[data-v-1c6f549a] {\n  text-align: left;\n}\n.sales-history[data-v-1c6f549a] {\n  margin-bottom: 65px;\n}\n.sales-history table[data-v-1c6f549a] {\n  width: 100%;\n  text-align: left;\n}\n.sales-history table th[data-v-1c6f549a],\n.sales-history table td[data-v-1c6f549a] {\n  padding: 7px;\n}\n.sales-history table tr[data-v-1c6f549a] {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n}\n.sales-history table td.bold[data-v-1c6f549a] {\n  font-weight: bold;\n}\n.sales-history table td.branch span[data-v-1c6f549a] {\n  background: #1882ff;\n  border-radius: 3px;\n  color: white;\n  padding: 5px;\n}\n.sales-history table td.branch span.red[data-v-1c6f549a] {\n  background: red;\n}\n.sales-history table td.status span[data-v-1c6f549a] {\n  width: 89px;\n  height: 25px;\n  border: 1px solid #597bd5;\n  color: #597bd5;\n  border-radius: 3px;\n  padding: 5px;\n}\n.sales-history table th[data-v-1c6f549a] {\n  background: #f8f8f8;\n}\n.sales-history table th td[data-v-1c6f549a] {\n  font-weight: bold;\n}", ""]);
+exports.push([module.i, "div h2[data-v-1c6f549a] {\n  text-align: left;\n}\n.sales-history[data-v-1c6f549a] {\n  margin-bottom: 65px;\n}\n.sales-history table[data-v-1c6f549a] {\n  width: 100%;\n  text-align: left;\n}\n.sales-history table th[data-v-1c6f549a],\n.sales-history table td[data-v-1c6f549a] {\n  padding: 11px 9px;\n  font-size: 16px;\n}\n.sales-history table tr[data-v-1c6f549a] {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n}\n.sales-history table td.bold[data-v-1c6f549a] {\n  font-weight: bold;\n}\n.sales-history table td.branch span[data-v-1c6f549a] {\n  background: #1882ff;\n  border-radius: 3px;\n  color: white;\n  padding: 5px;\n}\n.sales-history table td.branch span.red[data-v-1c6f549a] {\n  background: red;\n}\n.sales-history table td.status span[data-v-1c6f549a] {\n  width: 89px;\n  height: 25px;\n  border: 1px solid #597bd5;\n  color: #597bd5;\n  border-radius: 3px;\n  padding: 5px;\n}\n.sales-history table th[data-v-1c6f549a] {\n  background: #f8f8f8;\n}\n.sales-history table th td[data-v-1c6f549a] {\n  font-weight: bold;\n}", ""]);
 
 // exports
 
@@ -528,7 +526,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".breadcrumbs[data-v-5f190dbb] {\n  display: flex;\n  gap: 6px;\n  align-items: center;\n  margin-top: 83px;\n  flex-wrap: wrap;\n  width: 100%;\n}\n.breadcrumbs .breadcrumb[data-v-5f190dbb] {\n  font-family: \"PT Sans\";\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 21px;\n  display: flex;\n  gap: 4px;\n  color: #818181;\n}\n.breadcrumbs .breadcrumb--blue[data-v-5f190dbb] {\n  color: #243e97;\n}\n.breadcrumbs .breadcrumb--bold[data-v-5f190dbb] {\n  font-weight: bold;\n}\n.thumbnails[data-v-5f190dbb] {\n  margin: auto;\n  max-width: 100%;\n  margin-top: 12px;\n}\n.thumbnails .vueperslide[data-v-5f190dbb] {\n  box-sizing: border-box;\n  border: 1px solid #fff;\n  transition: 0.3s ease-in-out;\n  opacity: 0.7;\n  cursor: pointer;\n  width: 158px !important;\n  height: 108px !important;\n}\n.vueperslides__arrow--prev[data-v-5f190dbb] {\n  left: -3rem !important;\n}\n.vueperslides__arrow--next[data-v-5f190dbb] {\n  right: -3rem !important;\n}\n.thumbnails .vueperslide--active[data-v-5f190dbb] {\n  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);\n  opacity: 1;\n  border-color: #000;\n}\n.car__container__heading[data-v-5f190dbb] {\n  width: 100%;\n  margin: 20px 0;\n}\n.car__container__content[data-v-5f190dbb] {\n  display: flex;\n  flex-direction: column;\n  gap: 29px;\n}\n@media (min-width: 992px) {\n.car__container__content[data-v-5f190dbb] {\n    flex-direction: row;\n}\n}\n.car__container__content__images[data-v-5f190dbb] {\n  flex: 1;\n}\n.car__container__content__images .main img[data-v-5f190dbb] {\n  width: 100%;\n  max-width: 863px;\n}\n@media (min-width: 1200px) {\n.car__container__content__images .main img[data-v-5f190dbb] {\n    height: 579px;\n}\n}\n.car__container__content__images .thumbnails[data-v-5f190dbb] {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.car__container__content__images .thumbnails img[data-v-5f190dbb] {\n  width: 156px;\n  height: 106px;\n}\n@media (min-width: 992px) {\n.car__container__content__images[data-v-5f190dbb] {\n    flex: 3;\n}\n}\n.car__container__content__data[data-v-5f190dbb] {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 21px;\n}\n@media (min-width: 992px) {\n.car__container__content__data[data-v-5f190dbb] {\n    width: unset;\n    min-width: 410px;\n}\n}\n.car__container__content__data .data__box__heading[data-v-5f190dbb] {\n  background: #f8f8f8;\n  display: flex;\n  gap: 16px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__heading img[data-v-5f190dbb] {\n  width: 27px;\n  height: 27px;\n}\n.car__container__content__data .data__box__heading p[data-v-5f190dbb] {\n  font-weight: 700;\n  font-size: 25px;\n  margin: 0;\n}\n.car__container__content__data .data__box__content h3[data-v-5f190dbb] {\n  font-weight: 700;\n  font-size: 33px;\n  line-height: 43px;\n  text-align: left;\n  margin: 16px 0;\n}\n.car__container__content__data .data__box__content .highlight[data-v-5f190dbb] {\n  background: #ffebb7;\n  border-radius: 3px;\n  width: fit-content;\n  margin: 4px 0;\n  padding: 3px;\n}\n.car__container__content__data .data__box__content .flex[data-v-5f190dbb] {\n  display: flex;\n  gap: 11px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__content .flex-base[data-v-5f190dbb] {\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);\n}\n.car__container__content__data .data__box__content .flex-base p[data-v-5f190dbb] {\n  margin: 6px 0;\n}\n.car__container__content__data .data__box__content .flex-base .light[data-v-5f190dbb] {\n  color: #818181;\n}\n.car__container__content__data .data__box__content .flex-base .strong[data-v-5f190dbb] {\n  color: black;\n}\n.car__container .card[data-v-5f190dbb] {\n  background: #ffffff;\n  border: 1px solid #ecf1f9;\n  padding: 10px;\n  border-radius: 8px;\n}\n.car__container .card .flex-main[data-v-5f190dbb] {\n  justify-content: space-between;\n  flex-wrap: wrap;\n}\n.car__container .card .flex-main a[data-v-5f190dbb] {\n  background: #ffcd1e;\n  border-radius: 5px;\n  color: white;\n  width: fit-content;\n  height: fit-content;\n  border: none;\n  outline: none;\n  margin: auto 0;\n  padding: 5px;\n  text-decoration: none;\n}\n.car__container .card h1[data-v-5f190dbb] {\n  font-size: 25px;\n  line-height: 32px;\n  color: #000000;\n  margin-right: 24px;\n}\n.car__container .card h2[data-v-5f190dbb] {\n  font-size: 16px;\n  line-height: 21px;\n}\n.car__container .card h2[data-v-5f190dbb]:first-of-type {\n  margin-right: 65px;\n}\n.car__container .card h2 span[data-v-5f190dbb] {\n  color: #818181;\n}", ""]);
+exports.push([module.i, ".breadcrumbs[data-v-5f190dbb] {\n  display: flex;\n  gap: 6px;\n  align-items: center;\n  margin-top: 83px;\n  flex-wrap: wrap;\n  width: 100%;\n}\n.breadcrumbs .breadcrumb[data-v-5f190dbb] {\n  font-family: \"PT Sans\";\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 21px;\n  display: flex;\n  gap: 4px;\n  color: #818181;\n}\n.breadcrumbs .breadcrumb--blue[data-v-5f190dbb] {\n  color: #243e97;\n}\n.breadcrumbs .breadcrumb--bold[data-v-5f190dbb] {\n  font-weight: bold;\n}\n.thumbnails[data-v-5f190dbb] {\n  margin: auto;\n  max-width: 100%;\n  margin-top: 12px;\n}\n.thumbnails .vueperslide[data-v-5f190dbb] {\n  box-sizing: border-box;\n  border: 1px solid #fff;\n  transition: 0.3s ease-in-out;\n  opacity: 0.7;\n  cursor: pointer;\n  width: 158px !important;\n  height: 108px !important;\n}\n.vueperslides__arrow--prev[data-v-5f190dbb] {\n  left: -3rem !important;\n}\n.vueperslides__arrow--next[data-v-5f190dbb] {\n  right: -3rem !important;\n}\n.thumbnails .vueperslide--active[data-v-5f190dbb] {\n  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);\n  opacity: 1;\n  border-color: #000;\n}\n.car__container__heading[data-v-5f190dbb] {\n  width: 100%;\n  margin: 20px 0;\n}\n.car__container__content[data-v-5f190dbb] {\n  display: flex;\n  flex-direction: column;\n  gap: 29px;\n}\n@media (min-width: 992px) {\n.car__container__content[data-v-5f190dbb] {\n    flex-direction: row;\n}\n}\n.car__container__content__images[data-v-5f190dbb] {\n  flex: 1;\n}\n.car__container__content__images .main img[data-v-5f190dbb] {\n  width: 100%;\n  max-width: 863px;\n}\n@media (min-width: 1200px) {\n.car__container__content__images .main img[data-v-5f190dbb] {\n    height: 579px;\n}\n}\n.car__container__content__images .thumbnails[data-v-5f190dbb] {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.car__container__content__images .thumbnails img[data-v-5f190dbb] {\n  width: 156px;\n  height: 106px;\n}\n@media (min-width: 992px) {\n.car__container__content__images[data-v-5f190dbb] {\n    flex: 3;\n}\n}\n.car__container__content__data[data-v-5f190dbb] {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 21px;\n}\n@media (min-width: 992px) {\n.car__container__content__data[data-v-5f190dbb] {\n    width: unset;\n    min-width: 410px;\n}\n}\n.car__container__content__data .data__box__heading[data-v-5f190dbb] {\n  background: #f8f8f8;\n  display: flex;\n  gap: 16px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__heading img[data-v-5f190dbb] {\n  width: 27px;\n  height: 27px;\n}\n.car__container__content__data .data__box__heading p[data-v-5f190dbb] {\n  font-weight: 700;\n  font-size: 25px;\n  margin: 0;\n}\n.car__container__content__data .data__box__content h3[data-v-5f190dbb] {\n  font-weight: 700;\n  font-size: 33px;\n  line-height: 43px;\n  text-align: left;\n  margin: 16px 0;\n}\n.car__container__content__data .data__box__content .highlight[data-v-5f190dbb] {\n  background: #ffebb7;\n  border-radius: 3px;\n  width: fit-content;\n  margin: 4px 0;\n  padding: 3px 25px;\n}\n.car__container__content__data .data__box__content .flex[data-v-5f190dbb] {\n  display: flex;\n  gap: 11px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__content .flex-base[data-v-5f190dbb] {\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);\n}\n.car__container__content__data .data__box__content .flex-base p[data-v-5f190dbb] {\n  margin: 6px 0;\n}\n.car__container__content__data .data__box__content .flex-base .light[data-v-5f190dbb] {\n  color: #818181;\n}\n.car__container__content__data .data__box__content .flex-base .strong[data-v-5f190dbb] {\n  color: black;\n}\n.car__container .card[data-v-5f190dbb] {\n  background: #ffffff;\n  border: 1px solid #ecf1f9;\n  padding: 10px;\n  border-radius: 8px;\n}\n.car__container .card .flex-main[data-v-5f190dbb] {\n  justify-content: space-between;\n  flex-wrap: wrap;\n}\n.car__container .card .flex-main a[data-v-5f190dbb] {\n  background: #ffcd1e;\n  border-radius: 5px;\n  color: white;\n  width: fit-content;\n  height: fit-content;\n  border: none;\n  outline: none;\n  margin: auto 0;\n  padding: 5px;\n  text-decoration: none;\n}\n.car__container .card h1[data-v-5f190dbb] {\n  font-size: 25px;\n  line-height: 32px;\n  color: #000000;\n  margin-right: 24px;\n}\n.car__container .card h2[data-v-5f190dbb] {\n  font-size: 16px;\n  line-height: 21px;\n}\n.car__container .card h2[data-v-5f190dbb]:first-of-type {\n  margin-right: 65px;\n}\n.car__container .card h2 span[data-v-5f190dbb] {\n  color: #818181;\n}", ""]);
 
 // exports
 
@@ -800,7 +798,7 @@ var render = function() {
                             _vm._s(
                               _vm.branch(car.production_year)
                                 ? "IAAI"
-                                : "Coopart"
+                                : "Copart"
                             ) +
                             "\n              "
                         )
@@ -912,7 +910,11 @@ var render = function() {
             _c(
               "div",
               { staticClass: "lot" },
-              [_c("CarBox", { attrs: { carData: car, small: true } })],
+              [
+                _c("CarBox", {
+                  attrs: { carData: car, small: true, noBadge: true }
+                })
+              ],
               1
             )
           ]
@@ -1023,7 +1025,7 @@ var render = function() {
                       [
                         _vm._v(
                           "\n            " +
-                            _vm._s(_vm.branch ? "IAAI" : "Coopart") +
+                            _vm._s(_vm.branch ? "IAAI" : "Copart") +
                             "\n          "
                         )
                       ]
@@ -1100,7 +1102,7 @@ var render = function() {
                       [
                         _vm._v(
                           "\n              " +
-                            _vm._s(_vm.branch ? "IAAI" : "Coopart") +
+                            _vm._s(_vm.branch ? "IAAI" : "Copart") +
                             "\n            "
                         )
                       ]
@@ -1278,12 +1280,6 @@ var render = function() {
             { staticClass: "sales__history" },
             [_c("SalesHistory", { attrs: { cars: _vm.cars } })],
             1
-          ),
-          _vm._v(" "),
-          _c(
-            "router-link",
-            { staticClass: "img-box-link", attrs: { to: "/car/3685" } },
-            [_vm._v(" teette")]
           ),
           _vm._v(" "),
           _c("div", { staticClass: "similiar__lots" }, [_c("SimiliarLots")], 1)

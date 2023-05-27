@@ -47,7 +47,7 @@
         <div>
           <div class="flex-middle">
             <div class="badge" :class="{ red: branch }">
-              {{ branch ? "IAAI" : "Coopart" }}
+              {{ branch ? "IAAI" : "Copart" }}
             </div>
             <h1>
               {{ carData.production_year }} {{ carData.marka }}

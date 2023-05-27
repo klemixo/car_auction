@@ -301,7 +301,7 @@ var render = function() {
                         [
                           _vm._v(
                             "\n            " +
-                              _vm._s(_vm.branch ? "IAAI" : "Coopart") +
+                              _vm._s(_vm.branch ? "IAAI" : "Copart") +
                               "\n          "
                           )
                         ]

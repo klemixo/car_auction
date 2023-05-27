@@ -4,7 +4,7 @@
     <div class="similiar-lots">
       <template v-for="car in carData">
         <div class="lot">
-          <CarBox :carData="car" :small="true" />
+          <CarBox :carData="car" :small="true" :noBadge="true" />
         </div>
       </template>
     </div>

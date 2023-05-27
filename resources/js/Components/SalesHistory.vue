@@ -22,7 +22,7 @@
                   class="badge"
                   :class="{ red: branch(car.production_year) }"
                 >
-                  {{ branch(car.production_year) ? "IAAI" : "Coopart" }}
+                  {{ branch(car.production_year) ? "IAAI" : "Copart" }}
                 </span>
               </td>
               <td>
@@ -71,7 +71,8 @@ div {
     text-align: left;
     th,
     td {
-      padding: 7px;
+      padding: 11px 9px;
+      font-size: 16px;
     }
     tr {
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);

@@ -33,7 +33,7 @@
             </h2>
           </router-link>
           <div class="badge" :class="{ red: branch }">
-            {{ branch ? "IAAI" : "Coopart" }}
+            {{ branch ? "IAAI" : "Copart" }}
           </div>
         </div>
         <p><span>VIN:</span> {{ carData.vin }}</p>
@@ -52,8 +52,8 @@
         <div class="searched-data">
           <div class="searched-data-left">
             <div class="flex-searched">
-              <div class="badge" :class="{ red: branch }">
-                {{ branch ? "IAAI" : "Coopart" }}
+              <div v-if="!noBadge" class="badge" :class="{ red: branch }">
+                {{ branch ? "IAAI" : "Copart" }}
               </div>
               <router-link class="black" :to="'/car/' + carData.id">
                 <h2>
@@ -99,7 +99,7 @@ import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
 export default {
   components: { VueperSlides, VueperSlide },
-  props: ["carData", "searched", "small"],
+  props: ["carData", "searched", "small", "noBadge"],
   data() {
     return {
       images: ["img/base-img.png", "img/base-img-2.png", "img/base-img-3.png"],
@@ -246,6 +246,7 @@ export default {
         font-weight: 700;
         font-size: 20px;
         line-height: 26px;
+        text-align: left;
       }
 
       h3 {

@@ -11,6 +11,37 @@
           class="base-input"
         />
       </div>
+      <div class="filters-flex">
+        <div
+          class="filters__right__filter"
+          v-for="(filter, key) in filtersYear"
+          :key="key"
+        >
+          <label for="">{{ filter.label }}</label>
+          <multiselect
+            :id="key"
+            @select="setFilter"
+            @remove="removeFilter"
+            v-model="filter.value"
+            :options="
+              key === 'yearFrom' || key === 'yearTo'
+                ? filtersOptions['production_year']
+                : filtersOptions[key]
+            "
+            :track-by="
+              key === 'yearFrom' || key === 'yearTo' ? 'production_year' : key
+            "
+            :label="
+              key === 'yearFrom' || key === 'yearTo' ? 'production_year' : key
+            "
+            :searchable="true"
+            :close-on-select="true"
+            :show-labels="false"
+            :placeholder="filter.placeholder"
+          ></multiselect>
+        </div>
+      </div>
+
       <div class="filters__right__filter">
         <label for="">Odometer(miles)</label>
         <MultiRangeSlider
@@ -23,9 +54,25 @@
           :maxValue="filters.runValueEnd"
           @input="UpdateValues"
         />
-        <label for=""
-          >{{ filters.runValueStart }} - {{ filters.runValueEnd }}</label
-        >
+        <div class="filters-flex">
+          <input
+            type="number"
+            v-model.number="filters.runValueStartTmp"
+            min="0"
+            :max="filters.runValueEndTmp"
+            @keyup="updateRunValue"
+            class="base-input"
+          />
+          <span>-</span>
+          <input
+            type="number"
+            v-model.number="filters.runValueEndTmp"
+            :min="filters.runValueStartTmp"
+            max="9999999"
+            @keyup="updateRunValue"
+            class="base-input"
+          />
+        </div>
       </div>
       <div class="filters__right__filter">
         <label for="">Auction</label>
@@ -85,6 +132,18 @@ export default {
   },
   data() {
     return {
+      filtersYear: {
+        yearFrom: {
+          value: "",
+          label: "Year",
+          placeholder: "From",
+        },
+        yearTo: {
+          value: "",
+          label: "",
+          placeholder: "To",
+        },
+      },
       filters: {
         search: "",
         auctionHouses: {
@@ -97,6 +156,8 @@ export default {
         runMax: 999999,
         runValueStart: 0,
         runValueEnd: 250000,
+        runValueStartTmp: 0,
+        runValueEndTmp: 250000,
       },
     };
   },
@@ -109,8 +170,16 @@ export default {
     UpdateValues(e) {
       this.filters.runValueStart = e.minValue;
       this.filters.runValueEnd = e.maxValue;
+      this.filters.runValueStartTmp = e.minValue;
+      this.filters.runValueEndTmp = e.maxValue;
       this.$store.state.filters.runMin.value = e.minValue;
       this.$store.state.filters.runMax.value = e.maxValue;
+    },
+    updateRunValue() {
+      this.filters.runValueStart = this.filters.runValueStartTmp;
+      this.filters.runValueEnd = this.filters.runValueEndTmp;
+      this.$store.state.filters.runMin.value = this.filters.runValueStart;
+      this.$store.state.filters.runMax.value = this.filters.runValueEnd;
     },
     nameSearch() {
       const filterObj = { key: "search", value: this.search };
@@ -161,6 +230,11 @@ export default {
     flex-direction: column;
     gap: 24px;
     width: 100%;
+  }
+  .filters-flex {
+    display: flex;
+    gap: 12px;
+    align-items: center;
   }
   &__filter {
     display: flex;
