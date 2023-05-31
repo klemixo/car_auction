@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'PT Sans';
+    src: url(/fonts/PTSans-Italic.woff2?508e4e4ef99d77b73009910f62069b2f) format('woff2'), url(/fonts/PTSans-Italic.woff?7181956a5b23c0cafc821c5a60c09e5d) format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url(/fonts/PTSans-Regular.woff2?314a5d839fdba80962c6218f4d2aa787) format('woff2'), url(/fonts/PTSans-Regular.woff?45159c35718ec8ac37c9503a786e7dd9) format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url(/fonts/PTSans-BoldItalic.woff2?d1c72bba802586613129b95d00940eef) format('woff2'), url(/fonts/PTSans-BoldItalic.woff?16628608514d6f180deae0ed8097c40c) format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url(/fonts/PTSans-Bold.woff2?fc8fdb7e8d7b9572fcb1a8d90dc08ccc) format('woff2'), url(/fonts/PTSans-Bold.woff?cab83d22fee3ef0d82a5b56164d12fce) format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

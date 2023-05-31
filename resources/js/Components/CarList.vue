@@ -89,6 +89,8 @@ export default {
     font-size: 36px;
     line-height: 47px;
     text-align: left;
+    margin: 0px;
+    margin-bottom: 32px;
   }
   .grid {
     display: grid;

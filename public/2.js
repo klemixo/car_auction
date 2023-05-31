@@ -476,7 +476,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".breadcrumbs {\n  display: flex;\n  gap: 6px;\n  align-items: center;\n  width: 186px;\n  margin-top: 83px;\n}\n.breadcrumbs .breadcrumb {\n  font-family: \"PT Sans\";\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 21px;\n  color: #818181;\n}\n.breadcrumbs .breadcrumb--blue {\n  color: #243e97;\n}\n.breadcrumbs .breadcrumb--bold {\n  font-weight: bold;\n}", ""]);
+exports.push([module.i, ".breadcrumbs {\n  display: flex;\n  gap: 6px;\n  align-items: center;\n  width: 186px;\n  margin-top: 43px;\n}\n.breadcrumbs .breadcrumb {\n  font-family: \"PT Sans\";\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 21px;\n  color: #818181;\n}\n.breadcrumbs .breadcrumb--blue {\n  color: #243e97;\n}\n.breadcrumbs .breadcrumb--bold {\n  font-weight: bold;\n}", ""]);
 
 // exports
 
@@ -495,7 +495,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".cars__container {\n  max-width: 1300px !important;\n}\n.cars__container .more-results-btn {\n  margin-top: 32px;\n}\n.cars__container__filters {\n  display: flex;\n  gap: 20px;\n  flex-direction: column-reverse;\n}\n@media (min-width: 992px) {\n.cars__container__filters {\n    flex-direction: row;\n}\n}\n.cars__container h2 {\n  font-family: \"PT Sans\";\n  font-weight: 700;\n  font-size: 36px;\n  line-height: 47px;\n  text-align: left;\n}\n.cars__container .grid {\n  display: grid;\n  grid-template-columns: 1fr;\n  gap: 24px;\n}\n@media (min-width: 768px) {\n.cars__container .grid {\n    grid-template-columns: 1fr 1fr;\n}\n}\n@media (min-width: 1300px) {\n.cars__container .grid {\n    grid-template-columns: 1fr 1fr 1fr;\n}\n}\n.cars__container .grid.grid-small {\n  grid-template-columns: 1fr;\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".cars__container {\n  max-width: 1300px !important;\n}\n.cars__container .more-results-btn {\n  margin-top: 32px;\n}\n.cars__container__filters {\n  display: flex;\n  gap: 20px;\n  flex-direction: column-reverse;\n}\n@media (min-width: 992px) {\n.cars__container__filters {\n    flex-direction: row;\n}\n}\n.cars__container h2 {\n  font-family: \"PT Sans\";\n  font-weight: 700;\n  font-size: 36px;\n  line-height: 47px;\n  text-align: left;\n  margin: 0px;\n  margin-bottom: 32px;\n}\n.cars__container .grid {\n  display: grid;\n  grid-template-columns: 1fr;\n  gap: 24px;\n}\n@media (min-width: 768px) {\n.cars__container .grid {\n    grid-template-columns: 1fr 1fr;\n}\n}\n@media (min-width: 1300px) {\n.cars__container .grid {\n    grid-template-columns: 1fr 1fr 1fr;\n}\n}\n.cars__container .grid.grid-small {\n  grid-template-columns: 1fr;\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -552,7 +552,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".filters__right {\n  background: #f8f8f8;\n  box-shadow: 0px 9px 39px #ecf3f8;\n  padding: 20px 10px;\n  width: 100%;\n  height: fit-content;\n}\n.filters__right .base-input {\n  padding: 10px;\n}\n.filters__right h4 {\n  margin: 10px 0;\n  text-align: left;\n  font-weight: 700;\n  font-size: 25px;\n  line-height: 32px;\n}\n@media (min-width: 992px) {\n.filters__right {\n    padding: 17px 15px;\n    flex-direction: row;\n    width: 310px;\n}\n}\n.filters__right__flex {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n  width: 100%;\n}\n.filters__right .filters-flex {\n  display: flex;\n  gap: 12px;\n  align-items: center;\n}\n.filters__right__filter {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  align-items: flex-start;\n  flex: 1;\n  justify-content: flex-end;\n}\n.filters__right__filter__flex {\n  display: flex;\n  width: 100%;\n}\n.filters__right__filter__flex .multiselect {\n  flex: 1;\n}\n.filters__right__filter .others-checkboxes {\n  margin-top: 55px;\n}\n.filters__right__filter .base-input {\n  width: fit-content;\n  background: white;\n}\n.filters__right__filter label {\n  font-weight: 700;\n  font-size: 18px;\n  line-height: 23px;\n  color: #000000;\n}\n.multi-range-slider {\n  width: 90%;\n  box-shadow: none;\n  border: none;\n}\n.multi-range-slider .thumb::before {\n  background: #243e97;\n  width: 15px;\n  height: 15px;\n  box-shadow: none;\n  border: none;\n}\n.bar {\n  height: 3px;\n  border: none;\n  box-shadow: none;\n}\n.bar-inner {\n  background: #243e97 !important;\n  border: none !important;\n  box-shadow: none !important;\n}\n.bar-left,\n.bar-right {\n  padding: 0 !important;\n  background-color: #93c5ff !important;\n}", ""]);
+exports.push([module.i, ".year-label {\n  font-weight: 700;\n  font-size: 18px;\n  line-height: 23px;\n  color: #000000;\n  text-align: left;\n}\n.filters__right {\n  background: #f8f8f8;\n  box-shadow: 0px 9px 39px #ecf3f8;\n  padding: 20px 10px;\n  width: 100%;\n  height: fit-content;\n}\n.filters__right .base-input {\n  padding: 10px;\n}\n.filters__right h4 {\n  margin: 10px 0;\n  text-align: left;\n  font-weight: 700;\n  font-size: 25px;\n  line-height: 32px;\n}\n@media (min-width: 992px) {\n.filters__right {\n    padding: 17px 15px;\n    flex-direction: row;\n    width: 310px;\n}\n}\n.filters__right__flex {\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n  width: 100%;\n}\n.filters__right .filters-flex {\n  display: flex;\n  gap: 12px;\n  align-items: center;\n}\n.filters__right__filter {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  align-items: flex-start;\n  flex: 1;\n  justify-content: flex-end;\n}\n.filters__right__filter__flex {\n  display: flex;\n  width: 100%;\n}\n.filters__right__filter__flex .multiselect {\n  flex: 1;\n}\n.filters__right__filter .others-checkboxes {\n  margin-top: 55px;\n}\n.filters__right__filter .base-input {\n  width: fit-content;\n  background: white;\n}\n.filters__right__filter label {\n  font-weight: 700;\n  font-size: 18px;\n  line-height: 23px;\n  color: #000000;\n}\n.multi-range-slider {\n  width: 90%;\n  box-shadow: none;\n  border: none;\n}\n.multi-range-slider .thumb::before {\n  background: #243e97;\n  width: 15px;\n  height: 15px;\n  box-shadow: none;\n  border: none;\n}\n.bar {\n  height: 3px;\n  border: none;\n  box-shadow: none;\n}\n.bar-inner {\n  background: #243e97 !important;\n  border: none !important;\n  box-shadow: none !important;\n}\n.bar-left,\n.bar-right {\n  padding: 0 !important;\n  background-color: #93c5ff !important;\n}", ""]);
 
 // exports
 
@@ -1061,6 +1061,10 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
+      _c("label", { staticClass: "year-label", attrs: { for: "" } }, [
+        _vm._v("Year")
+      ]),
+      _vm._v(" "),
       _c(
         "div",
         { staticClass: "filters-flex" },
@@ -1069,10 +1073,6 @@ var render = function() {
             "div",
             { key: key, staticClass: "filters__right__filter" },
             [
-              _c("label", { attrs: { for: "" } }, [
-                _vm._v(_vm._s(filter.label))
-              ]),
-              _vm._v(" "),
               _c("multiselect", {
                 attrs: {
                   id: key,

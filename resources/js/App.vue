@@ -19,7 +19,6 @@ export default {
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 body {
   font-size: 17px;
   overflow-x: hidden;
@@ -31,7 +30,7 @@ body {
   display: flex;
 }
 * {
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", sans-serif !important;
 }
 .base-input {
   background: #f8f8f8;

@@ -243,7 +243,7 @@ export default {
   display: flex;
   gap: 6px;
   align-items: center;
-  margin-top: 83px;
+  margin-top: 43px;
   flex-wrap: wrap;
   width: 100%;
   .breadcrumb {
@@ -395,6 +395,7 @@ export default {
             border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
             p {
               margin: 6px 0;
+              font-size: 15px;
             }
 
             .light {
@@ -415,7 +416,7 @@ export default {
     border: 1px solid #ecf1f9;
     padding: 10px;
     border-radius: 8px;
-
+    width: calc(100% - 20px);
     .flex-main {
       justify-content: space-between;
       flex-wrap: wrap;

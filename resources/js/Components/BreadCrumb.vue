@@ -18,7 +18,7 @@ export default {};
   gap: 6px;
   align-items: center;
   width: 186px;
-  margin-top: 83px;
+  margin-top: 43px;
   .breadcrumb {
     font-family: "PT Sans";
     font-style: normal;

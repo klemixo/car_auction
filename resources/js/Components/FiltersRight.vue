@@ -11,13 +11,13 @@
           class="base-input"
         />
       </div>
+      <label class="year-label" for="">Year</label>
       <div class="filters-flex">
         <div
           class="filters__right__filter"
           v-for="(filter, key) in filtersYear"
           :key="key"
         >
-          <label for="">{{ filter.label }}</label>
           <multiselect
             :id="key"
             @select="setFilter"
@@ -204,6 +204,13 @@ export default {
 </script>
 
 <style lang="scss" >
+.year-label {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000000;
+  text-align: left;
+}
 .filters__right {
   .base-input {
     padding: 10px;
