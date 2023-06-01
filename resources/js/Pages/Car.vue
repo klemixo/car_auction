@@ -46,12 +46,12 @@
     <div class="car__container__content">
       <div class="car__container__content__images">
         <div class="main">
-          <img :src="'https://vinfax.info/' + slides[currentImage]" alt="" />
+          <img :src="slides[currentImage]" alt="" />
         </div>
         <div class="thumbnails">
           <img
             v-for="(image, idx) in slides"
-            :src="'https://vinfax.info/' + image"
+            :src="image"
             alt=""
             @click="changeSlide(idx)"
           />
@@ -64,7 +64,7 @@
             <p>Sale Details</p>
           </div>
           <div class="data__box__content">
-            <h3>Final bid: $13.456.00</h3>
+            <h3>Final bid: ${{ carData.final_bid }}</h3>
             <p class="highlight">Seller: <b>Non-Insurence Company</b></p>
             <div class="flex">
               <p>Auction:</p>
@@ -195,19 +195,10 @@ export default {
       carData: null,
       cars: null,
       currentImage: 0,
+      slides: [],
     };
   },
   computed: {
-    slides() {
-      return [
-        "img/base-img.png",
-        "img/base-img-2.png",
-        "img/base-img-3.png",
-        "img/base-img-3.png",
-        "img/base-img-3.png",
-        "img/base-img-3.png",
-      ];
-    },
     branch() {
       return +this.carData.production_year % 2 === 0;
     },
@@ -229,10 +220,57 @@ export default {
         .then((res) => {
           this.cars = res.data;
           this.carData = res.data[0];
+          this.prepareImages();
         })
         .catch((err) => {
           console.log(err);
         });
+    },
+    checkIfImageExists(url, callback) {
+      const img = new Image();
+      img.src = url;
+
+      if (img.complete) {
+        callback(true);
+      } else {
+        img.onload = () => {
+          callback(true);
+        };
+
+        img.onerror = () => {
+          callback(false);
+        };
+      }
+    },
+    async prepareImages() {
+      let count = 0;
+      let exists = true;
+      while (exists) {
+        exists = await new Promise((resolve) => {
+          this.checkIfImageExists(
+            `http://54.36.172.231/${this.carData.vin}-${count}.webp`,
+            (exists) => {
+              if (exists) {
+                this.slides.push(
+                  `http://54.36.172.231/${this.carData.vin}-${count}.webp`
+                );
+              } else {
+                if (this.slides.length === 0) {
+                  console.log(this.slides);
+                  this.slides = [
+                    "img/base-img.png",
+                    "img/base-img-2.png",
+                    "img/base-img-3.png",
+                  ];
+                  console.log(this.slides);
+                }
+              }
+              count++;
+              resolve(exists);
+            }
+          );
+        });
+      }
     },
   },
 };

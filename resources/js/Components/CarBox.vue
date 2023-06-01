@@ -102,7 +102,7 @@ export default {
   props: ["carData", "searched", "small", "noBadge"],
   data() {
     return {
-      images: ["img/base-img.png", "img/base-img-2.png", "img/base-img-3.png"],
+      images: [],
     };
   },
   computed: {
@@ -115,6 +115,55 @@ export default {
       let str2 = str.toLowerCase();
       return str2[0].toUpperCase() + str2.substring(1);
     },
+    checkIfImageExists(url, callback) {
+      const img = new Image();
+      img.src = url;
+
+      if (img.complete) {
+        callback(true);
+      } else {
+        img.onload = () => {
+          callback(true);
+        };
+
+        img.onerror = () => {
+          callback(false);
+        };
+      }
+    },
+    async prepareImages() {
+      let count = 0;
+      let exists = true;
+      while (exists) {
+        exists = await new Promise((resolve) => {
+          this.checkIfImageExists(
+            `http://54.36.172.231/${this.carData.vin}-${count}.webp`,
+            (exists) => {
+              if (exists) {
+                this.images.push(
+                  `http://54.36.172.231/${this.carData.vin}-${count}.webp`
+                );
+              } else {
+                if (this.images.length === 0) {
+                  console.log(this.images);
+                  this.images = [
+                    "img/base-img.png",
+                    "img/base-img-2.png",
+                    "img/base-img-3.png",
+                  ];
+                  console.log(this.images);
+                }
+              }
+              count++;
+              resolve(exists);
+            }
+          );
+        });
+      }
+    },
+  },
+  mounted() {
+    this.prepareImages();
   },
 };
 </script>

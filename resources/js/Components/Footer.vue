@@ -15,22 +15,37 @@
           <p><a href="mailto:info@vinfax.info">info@vinfax.info</a></p>
         </div>
         <div class="footer__section p-top">
-          <p><span>IAII Lots:</span> 123 456 789</p>
-          <p><span>Copart Lots:</span> 123 456 789</p>
+          <p><span>IAII Lots:</span> {{ fakeCars.iaai }}</p>
+          <p><span>Copart Lots:</span> {{ fakeCars.copart }}</p>
         </div>
         <div class="footer__section p-top">
           <router-link :to="{ name: 'Terms' }">Terms&Conditions</router-link>
         </div>
       </div>
       <div class="container container__bottom">
-        Ⓒ 2021 VINFAX. All rights reserved
+        Ⓒ 2021 VINFAX. All rights reserved {{ foundCars }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { mapState, mapGetters } from "vuex";
+import store from "../Store";
+export default {
+  computed: {
+    ...mapState({
+      count: (state) => state.count,
+      foundCars: (state) => state.foundCars,
+    }),
+    fakeCars() {
+      return {
+        iaai: (this.foundCars * 0.55).toFixed(),
+        copart: (this.foundCars * 0.45).toFixed(),
+      };
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

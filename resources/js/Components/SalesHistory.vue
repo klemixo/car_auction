@@ -31,7 +31,7 @@
               <td>
                 {{ car.run_number }}
               </td>
-              <td class="bold">No data</td>
+              <td class="bold">{{ carData.final_bid }}$</td>
               <td>
                 {{ car.odometer }}
               </td>

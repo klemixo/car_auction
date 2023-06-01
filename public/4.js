@@ -9,6 +9,14 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _Store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Store */ "./resources/js/Store/index.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -40,7 +48,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
+    count: function count(state) {
+      return state.count;
+    },
+    foundCars: function foundCars(state) {
+      return state.foundCars;
+    }
+  })), {}, {
+    fakeCars: function fakeCars() {
+      return {
+        iaai: (this.foundCars * 0.55).toFixed(),
+        copart: (this.foundCars * 0.45).toFixed()
+      };
+    }
+  })
+});
 
 /***/ }),
 
@@ -121,7 +147,17 @@ var render = function() {
         _vm._v(" "),
         _vm._m(1),
         _vm._v(" "),
-        _vm._m(2),
+        _c("div", { staticClass: "footer__section p-top" }, [
+          _c("p", [
+            _c("span", [_vm._v("IAII Lots:")]),
+            _vm._v(" " + _vm._s(_vm.fakeCars.iaai))
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _c("span", [_vm._v("Copart Lots:")]),
+            _vm._v(" " + _vm._s(_vm.fakeCars.copart))
+          ])
+        ]),
         _vm._v(" "),
         _c(
           "div",
@@ -136,7 +172,11 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "container container__bottom" }, [
-        _vm._v("\n      Ⓒ 2021 VINFAX. All rights reserved\n    ")
+        _vm._v(
+          "\n      Ⓒ 2021 VINFAX. All rights reserved " +
+            _vm._s(_vm.foundCars) +
+            "\n    "
+        )
       ])
     ])
   ])
@@ -164,16 +204,6 @@ var staticRenderFns = [
           _vm._v("info@vinfax.info")
         ])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "footer__section p-top" }, [
-      _c("p", [_c("span", [_vm._v("IAII Lots:")]), _vm._v(" 123 456 789")]),
-      _vm._v(" "),
-      _c("p", [_c("span", [_vm._v("Copart Lots:")]), _vm._v(" 123 456 789")])
     ])
   }
 ]

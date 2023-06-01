@@ -215,16 +215,24 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Components_CarSlider_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Components/CarSlider.vue */ "./resources/js/Components/CarSlider.vue");
-/* harmony import */ var _Components_SimiliarLots_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Components/SimiliarLots.vue */ "./resources/js/Components/SimiliarLots.vue");
-/* harmony import */ var _Components_SalesHistory_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Components/SalesHistory.vue */ "./resources/js/Components/SalesHistory.vue");
-/* harmony import */ var _Components_FiltersTop_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/FiltersTop.vue */ "./resources/js/Components/FiltersTop.vue");
-/* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vueperslides */ "./node_modules/vueperslides/dist/vueperslides.common.js");
-/* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(vueperslides__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var vueperslides_dist_vueperslides_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vueperslides/dist/vueperslides.css */ "./node_modules/vueperslides/dist/vueperslides.css");
-/* harmony import */ var vueperslides_dist_vueperslides_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vueperslides_dist_vueperslides_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Components_CarSlider_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Components/CarSlider.vue */ "./resources/js/Components/CarSlider.vue");
+/* harmony import */ var _Components_SimiliarLots_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Components/SimiliarLots.vue */ "./resources/js/Components/SimiliarLots.vue");
+/* harmony import */ var _Components_SalesHistory_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/SalesHistory.vue */ "./resources/js/Components/SalesHistory.vue");
+/* harmony import */ var _Components_FiltersTop_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Components/FiltersTop.vue */ "./resources/js/Components/FiltersTop.vue");
+/* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vueperslides */ "./node_modules/vueperslides/dist/vueperslides.common.js");
+/* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vueperslides__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var vueperslides_dist_vueperslides_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vueperslides/dist/vueperslides.css */ "./node_modules/vueperslides/dist/vueperslides.css");
+/* harmony import */ var vueperslides_dist_vueperslides_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vueperslides_dist_vueperslides_css__WEBPACK_IMPORTED_MODULE_7__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 //
 //
 //
@@ -409,24 +417,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["id"],
   components: {
-    CarSlider: _Components_CarSlider_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    VueperSlides: vueperslides__WEBPACK_IMPORTED_MODULE_5__["VueperSlides"],
-    VueperSlide: vueperslides__WEBPACK_IMPORTED_MODULE_5__["VueperSlide"],
-    FiltersTop: _Components_FiltersTop_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    SalesHistory: _Components_SalesHistory_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    SimiliarLots: _Components_SimiliarLots_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    CarSlider: _Components_CarSlider_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    VueperSlides: vueperslides__WEBPACK_IMPORTED_MODULE_6__["VueperSlides"],
+    VueperSlide: vueperslides__WEBPACK_IMPORTED_MODULE_6__["VueperSlide"],
+    FiltersTop: _Components_FiltersTop_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    SalesHistory: _Components_SalesHistory_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    SimiliarLots: _Components_SimiliarLots_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   data: function data() {
     return {
       carData: null,
       cars: null,
-      currentImage: 0
+      currentImage: 0,
+      slides: []
     };
   },
   computed: {
-    slides: function slides() {
-      return ["img/base-img.png", "img/base-img-2.png", "img/base-img-3.png", "img/base-img-3.png", "img/base-img-3.png", "img/base-img-3.png"];
-    },
     branch: function branch() {
       return +this.carData.production_year % 2 === 0;
     },
@@ -445,12 +451,79 @@ __webpack_require__.r(__webpack_exports__);
     getCarData: function getCarData() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("https://vinfax.info/api/cars/".concat(this.id)).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://vinfax.info/api/cars/".concat(this.id)).then(function (res) {
         _this.cars = res.data;
         _this.carData = res.data[0];
+
+        _this.prepareImages();
       })["catch"](function (err) {
         console.log(err);
       });
+    },
+    checkIfImageExists: function checkIfImageExists(url, callback) {
+      var img = new Image();
+      img.src = url;
+
+      if (img.complete) {
+        callback(true);
+      } else {
+        img.onload = function () {
+          callback(true);
+        };
+
+        img.onerror = function () {
+          callback(false);
+        };
+      }
+    },
+    prepareImages: function prepareImages() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var count, exists;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                count = 0;
+                exists = true;
+
+              case 2:
+                if (!exists) {
+                  _context.next = 8;
+                  break;
+                }
+
+                _context.next = 5;
+                return new Promise(function (resolve) {
+                  _this2.checkIfImageExists("http://54.36.172.231/".concat(_this2.carData.vin, "-").concat(count, ".webp"), function (exists) {
+                    if (exists) {
+                      _this2.slides.push("http://54.36.172.231/".concat(_this2.carData.vin, "-").concat(count, ".webp"));
+                    } else {
+                      if (_this2.slides.length === 0) {
+                        console.log(_this2.slides);
+                        _this2.slides = ["img/base-img.png", "img/base-img-2.png", "img/base-img-3.png"];
+                        console.log(_this2.slides);
+                      }
+                    }
+
+                    count++;
+                    resolve(exists);
+                  });
+                });
+
+              case 5:
+                exists = _context.sent;
+                _context.next = 2;
+                break;
+
+              case 8:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
     }
   }
 });
@@ -822,7 +895,9 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("td", { staticClass: "bold" }, [_vm._v("No data")]),
+                  _c("td", { staticClass: "bold" }, [
+                    _vm._v(_vm._s(_vm.carData.final_bid) + "$")
+                  ]),
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
@@ -1060,10 +1135,7 @@ var render = function() {
             _c("div", { staticClass: "car__container__content__images" }, [
               _c("div", { staticClass: "main" }, [
                 _c("img", {
-                  attrs: {
-                    src: "https://vinfax.info/" + _vm.slides[_vm.currentImage],
-                    alt: ""
-                  }
+                  attrs: { src: _vm.slides[_vm.currentImage], alt: "" }
                 })
               ]),
               _vm._v(" "),
@@ -1072,7 +1144,7 @@ var render = function() {
                 { staticClass: "thumbnails" },
                 _vm._l(_vm.slides, function(image, idx) {
                   return _c("img", {
-                    attrs: { src: "https://vinfax.info/" + image, alt: "" },
+                    attrs: { src: image, alt: "" },
                     on: {
                       click: function($event) {
                         return _vm.changeSlide(idx)
@@ -1089,7 +1161,9 @@ var render = function() {
                 _vm._m(1),
                 _vm._v(" "),
                 _c("div", { staticClass: "data__box__content" }, [
-                  _c("h3", [_vm._v("Final bid: $13.456.00")]),
+                  _c("h3", [
+                    _vm._v("Final bid: $" + _vm._s(_vm.carData.final_bid))
+                  ]),
                   _vm._v(" "),
                   _vm._m(2),
                   _vm._v(" "),
