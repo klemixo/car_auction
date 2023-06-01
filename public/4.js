@@ -51,12 +51,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      foundCars: 0
+    };
+  },
   computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
     count: function count(state) {
       return state.count;
-    },
-    foundCars: function foundCars(state) {
-      return state.foundCars;
     }
   })), {}, {
     fakeCars: function fakeCars() {
@@ -65,7 +67,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         copart: (this.foundCars * 0.45).toFixed()
       };
     }
-  })
+  }),
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get("https://vinfax.info/api/cars").then(function (res) {
+      _this.foundCars = res.data.count;
+    })["catch"](function (err) {
+      console.log(err);
+    });
+  }
 });
 
 /***/ }),
@@ -172,11 +183,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "container container__bottom" }, [
-        _vm._v(
-          "\n      Ⓒ 2021 VINFAX. All rights reserved " +
-            _vm._s(_vm.foundCars) +
-            "\n    "
-        )
+        _vm._v("\n      Ⓒ 2021 VINFAX. All rights reserved\n    ")
       ])
     ])
   ])

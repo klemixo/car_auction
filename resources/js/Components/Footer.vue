@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="container container__bottom">
-        Ⓒ 2021 VINFAX. All rights reserved {{ foundCars }}
+        Ⓒ 2021 VINFAX. All rights reserved
       </div>
     </div>
   </div>
@@ -33,10 +33,14 @@
 import { mapState, mapGetters } from "vuex";
 import store from "../Store";
 export default {
+  data() {
+    return {
+      foundCars: 0,
+    };
+  },
   computed: {
     ...mapState({
       count: (state) => state.count,
-      foundCars: (state) => state.foundCars,
     }),
     fakeCars() {
       return {
@@ -44,6 +48,16 @@ export default {
         copart: (this.foundCars * 0.45).toFixed(),
       };
     },
+  },
+  mounted() {
+    axios
+      .get(`https://vinfax.info/api/cars`)
+      .then((res) => {
+        this.foundCars = res.data.count;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
 };
 </script>

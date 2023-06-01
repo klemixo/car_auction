@@ -54083,6 +54083,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       }
 
       filtersString += "page=".concat(state.currentPage);
+      console.log('teraz');
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://vinfax.info/api/cars?".concat(filtersString)).then(function (res) {
         state.cars = res.data.data;
         state.foundCars = res.data.count;
