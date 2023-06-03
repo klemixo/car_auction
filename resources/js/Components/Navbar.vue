@@ -2,7 +2,7 @@
   <nav class="navBar" :class="{ small: searched }">
     <div class="navBar__content container">
       <ul class="navBar__link" :class="{ small: searched }">
-        <div class="img">
+        <div class="img" @click="removeAllFilters">
           <router-link :to="{ name: 'home' }">
             <img
               v-if="searched"
@@ -55,6 +55,9 @@ export default {
     search() {
       const filter = { key: "vin", value: this.vin };
       store.commit("SET_FILTER", filter);
+    },
+    removeAllFilters() {
+      store.commit("REMOVE_ALL_FILTERS");
     },
   },
   computed: {

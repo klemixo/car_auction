@@ -39,7 +39,7 @@ export default {
     border: none;
     outline: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     min-width: 82px;
     padding: 8px;
     width: unset !important;
@@ -52,6 +52,7 @@ export default {
       font-size: 13px;
       line-height: 17px;
       color: #000000;
+      text-transform: lowercase;
     }
     img {
       background: black;

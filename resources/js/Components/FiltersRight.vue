@@ -76,45 +76,36 @@
       </div>
       <div class="filters__right__filter">
         <label for="">Auction</label>
-        <multiselect
-          @select="setFilter"
-          @remove="removeFilter"
-          v-model="filters.auctionHouses.value"
-          :options="filtersOptions.selling_branch"
-          track-by="selling_branch"
-          label="selling_branch"
-          :searchable="true"
-          :close-on-select="true"
-          :show-labels="false"
-          placeholder="All"
-        ></multiselect>
-
         <div class="base-checkbox others-checkboxes">
           <input
-            v-model="filters.closedAuctions"
+            v-model="filters.auctionHouseIAAI"
             class="inp-cbx"
             id="closed-auctions"
             type="checkbox"
+            value="iaai"
+            @change="setCheckboxFilter('auctionHouseIAAI')"
           />
           <label class="cbx" for="closed-auctions"
             ><span>
               <svg width="12px" height="10px" viewbox="0 0 12 10">
                 <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
-            ><span>Ukryj zakończone aukcje</span>
+            ><span>IAAI</span>
           </label>
         </div>
         <div class="base-checkbox">
           <input
-            v-model="filters.fastPurchase"
+            v-model="filters.auctionHouseCopart"
             class="inp-cbx"
             id="fast-purchase"
             type="checkbox"
+            value="copart"
+            @change="setCheckboxFilter('auctionHouseCopart')"
           />
           <label class="cbx" for="fast-purchase"
             ><span>
               <svg width="12px" height="10px" viewbox="0 0 12 10">
                 <polyline points="1.5 6 4.5 9 10.5 1"></polyline></svg></span
-            ><span>Szybki zakup</span>
+            ><span>Copart</span>
           </label>
         </div>
       </div>
@@ -146,10 +137,8 @@ export default {
       },
       filters: {
         search: "",
-        auctionHouses: {
-          options: ["IAAI", "Copart", "Test"],
-          value: "",
-        },
+        auctionHouseIAAI: false,
+        auctionHouseCopart: false,
         closedAuctions: false,
         fastPurchase: false,
         runMin: 0,
@@ -184,6 +173,9 @@ export default {
     nameSearch() {
       const filterObj = { key: "search", value: this.search };
       store.commit("SET_FILTER", filterObj);
+    },
+    setCheckboxFilter(field) {
+      store.commit("SET_FILTER", { key: field, value: this.filters[field] });
     },
     setFilter(filter, id) {
       const filterObj = {
@@ -258,7 +250,7 @@ export default {
       }
     }
     .others-checkboxes {
-      margin-top: 55px;
+      margin-top: 10px;
     }
     .base-input {
       width: fit-content;

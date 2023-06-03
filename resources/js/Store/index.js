@@ -23,6 +23,8 @@ const store = new Vuex.Store({
             runMin: { field: 'runMin', operator: "=", value: null, label: 'Run min' },
             runMax: { field: 'runMax', operator: "=", value: null, label: 'Run Max' },
             search: { field: 'search', operator: "=", value: null, label: 'Search' },
+            auctionHouseIAAI: { field: 'none', operator: "=", value: null, label: 'IAAI' },
+            auctionHouseCopart: { field: 'none', operator: "=", value: null, label: 'Copart' },
         }
     },
     getters: {
@@ -38,6 +40,7 @@ const store = new Vuex.Store({
         getCarsList: state => {
             if (state.cars) {
                 let newCars = [];
+                console.log(state.filters)
                 state.cars.forEach(car => {
                     if (state.filters.runMax.value) {
                         const mileAge = parseInt(car['odometer'].replace(/\,/g, ''), 10);
@@ -47,7 +50,12 @@ const store = new Vuex.Store({
                     } else {
                         newCars.push(car)
                     }
-
+                    if (state.filters.auctionHouseCopart.value && !state.filters.auctionHouseIAAI.value) {
+                        newCars = newCars.filter(car => car.production_year % 2 !== 0)
+                    }
+                    if (state.filters.auctionHouseIAAI.value && !state.filters.auctionHouseCopart.value) {
+                        newCars = newCars.filter(car => car.production_year % 2 === 0)
+                    }
                 })
                 return newCars;
             }
@@ -63,6 +71,9 @@ const store = new Vuex.Store({
             let filtersString = "";
 
             for (const property in state.filters) {
+                if (state.filters[property].field === "none") {
+                    continue;
+                }
                 if (state.filters[property].value) {
                     filtersString += `${state.filters[property].field}${state.filters[property].operator}${state.filters[property].value}&`
                 }
@@ -73,7 +84,6 @@ const store = new Vuex.Store({
                 state.searched = false;
             }
             filtersString += `page=${state.currentPage}`
-            console.log('teraz')
             axios.get(`https://vinfax.info/api/cars?${filtersString}`).then(res => {
                 state.cars = res.data.data
                 state.foundCars = res.data.count
@@ -95,6 +105,12 @@ const store = new Vuex.Store({
         SET_FILTER(state, filter) {
             state.filters[filter.key].value = filter.value
             this.commit('GET_CARS')
+        },
+        REMOVE_ALL_FILTERS(state) {
+            for (const key in state.filters) {
+                state.filters[key].value = null;
+                state.searched = false;
+            }
         }
     },
     actions: {}

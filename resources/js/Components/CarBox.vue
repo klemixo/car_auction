@@ -13,7 +13,7 @@
     <vueper-slides
       :touchable="false"
       :bullets="true"
-      :fixedHeight="'217px'"
+      :fixedHeight="'237px'"
       :arrows-outside="true"
     >
       <vueper-slide v-for="(image, i) in images" :key="i" :image="image">
@@ -39,7 +39,7 @@
         <p><span>VIN:</span> {{ carData.vin }}</p>
         <p><span>Location:</span> no data</p>
         <div class="flex flex--line">
-          <h3>${{ carData.final_bid }}</h3>
+          <h3>$ {{ carData.final_bid }}</h3>
           <router-link
             :key="carData.id"
             class="black"
@@ -82,7 +82,7 @@
             <div class="flex-searched-right">
               <p class="date">{{ carData.createdate }}</p>
               <span>Final bid</span>
-              <p class="final-bid">{{ carData.final_bid }} $</p>
+              <p class="final-bid">$ {{ carData.final_bid }}</p>
               <router-link :to="'/car/' + carData.id"
                 >MORE DETAILS
               </router-link>
@@ -226,10 +226,11 @@ export default {
       height: 100% !important;
 
       svg {
-        width: 2.9rem !important;
+        width: 2.8rem !important;
 
         path {
           stroke: white !important;
+          stroke-width: 2px !important;
         }
       }
     }
@@ -422,7 +423,6 @@ export default {
     max-width: unset;
     flex-direction: column;
     height: fit-content;
-    padding-bottom: 25px;
     @media (min-width: 768px) {
       flex-direction: row;
     }

@@ -54029,6 +54029,18 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         operator: "=",
         value: null,
         label: 'Search'
+      },
+      auctionHouseIAAI: {
+        field: 'none',
+        operator: "=",
+        value: null,
+        label: 'IAAI'
+      },
+      auctionHouseCopart: {
+        field: 'none',
+        operator: "=",
+        value: null,
+        label: 'Copart'
       }
     }
   },
@@ -54047,6 +54059,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     getCarsList: function getCarsList(state) {
       if (state.cars) {
         var newCars = [];
+        console.log(state.filters);
         state.cars.forEach(function (car) {
           if (state.filters.runMax.value) {
             var mileAge = parseInt(car['odometer'].replace(/\,/g, ''), 10);
@@ -54056,6 +54069,18 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
             }
           } else {
             newCars.push(car);
+          }
+
+          if (state.filters.auctionHouseCopart.value && !state.filters.auctionHouseIAAI.value) {
+            newCars = newCars.filter(function (car) {
+              return car.production_year % 2 !== 0;
+            });
+          }
+
+          if (state.filters.auctionHouseIAAI.value && !state.filters.auctionHouseCopart.value) {
+            newCars = newCars.filter(function (car) {
+              return car.production_year % 2 === 0;
+            });
           }
         });
         return newCars;
@@ -54071,6 +54096,10 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       var filtersString = "";
 
       for (var property in state.filters) {
+        if (state.filters[property].field === "none") {
+          continue;
+        }
+
         if (state.filters[property].value) {
           filtersString += "".concat(state.filters[property].field).concat(state.filters[property].operator).concat(state.filters[property].value, "&");
         }
@@ -54083,7 +54112,6 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       }
 
       filtersString += "page=".concat(state.currentPage);
-      console.log('teraz');
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://vinfax.info/api/cars?".concat(filtersString)).then(function (res) {
         state.cars = res.data.data;
         state.foundCars = res.data.count;
@@ -54104,6 +54132,12 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     SET_FILTER: function SET_FILTER(state, filter) {
       state.filters[filter.key].value = filter.value;
       this.commit('GET_CARS');
+    },
+    REMOVE_ALL_FILTERS: function REMOVE_ALL_FILTERS(state) {
+      for (var key in state.filters) {
+        state.filters[key].value = null;
+        state.searched = false;
+      }
     }
   },
   actions: {}

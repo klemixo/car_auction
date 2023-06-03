@@ -76,6 +76,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         value: this.vin
       };
       _Store__WEBPACK_IMPORTED_MODULE_1__["default"].commit("SET_FILTER", filter);
+    },
+    removeAllFilters: function removeAllFilters() {
+      _Store__WEBPACK_IMPORTED_MODULE_1__["default"].commit("REMOVE_ALL_FILTERS");
     }
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
@@ -159,7 +162,7 @@ var render = function() {
         [
           _c(
             "div",
-            { staticClass: "img" },
+            { staticClass: "img", on: { click: _vm.removeAllFilters } },
             [
               _c("router-link", { attrs: { to: { name: "home" } } }, [
                 _vm.searched

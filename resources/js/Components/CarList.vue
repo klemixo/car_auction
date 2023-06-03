@@ -86,7 +86,7 @@ export default {
   h2 {
     font-family: "PT Sans";
     font-weight: 700;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 47px;
     text-align: left;
     margin: 0px;

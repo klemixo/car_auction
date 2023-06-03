@@ -81,7 +81,7 @@
               <p class="light">Date of sell</p>
               <p class="strong">{{ carData.sold_date }}</p>
             </div>
-            <div class="flex-base">
+            <div class="flex-base flex-base--no-border">
               <p class="light">Documents</p>
               <p class="strong">{{ carData.sold_date }}</p>
             </div>
@@ -105,7 +105,10 @@
             </div>
             <div class="flex-base">
               <p class="light">Mileage</p>
-              <p class="strong">{{ carData.odometer }}</p>
+              <div class="strong">
+                <div class="badge badge--outline">Actual</div>
+                {{ carData.odometer }}
+              </div>
             </div>
             <div class="flex-base">
               <p class="light">Engine</p>
@@ -131,7 +134,7 @@
               <p class="light">Fuel</p>
               <p class="strong">{{ carData.odometer }}</p>
             </div>
-            <div class="flex-base">
+            <div class="flex-base flex-base--no-border">
               <p class="light">Keys</p>
               <p class="strong">{{ carData.key }}</p>
             </div>
@@ -155,7 +158,7 @@
               <p class="light">Estimated Retail value</p>
               <p class="strong">{{ carData.odometer }}</p>
             </div>
-            <div class="flex-base">
+            <div class="flex-base flex-base--no-border">
               <p class="light">Estimated repair cost</p>
               <p class="strong">{{ carData.engine }}</p>
             </div>
@@ -207,7 +210,6 @@ export default {
     },
   },
   mounted() {
-    console.log("teraz");
     this.getCarData();
   },
   methods: {
@@ -398,7 +400,7 @@ export default {
 
           p {
             font-weight: 700;
-            font-size: 25px;
+            font-size: 24px;
             margin: 0;
           }
         }
@@ -431,6 +433,9 @@ export default {
             display: flex;
             justify-content: space-between;
             border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+            &--no-border {
+              border-bottom: unset;
+            }
             p {
               margin: 6px 0;
               font-size: 15px;
@@ -442,6 +447,14 @@ export default {
 
             .strong {
               color: black;
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              .badge {
+                color: gray;
+                border: 1px solid gray;
+                margin: 2px 0;
+              }
             }
           }
         }
