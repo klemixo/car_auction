@@ -1,71 +1,76 @@
 <template>
-  <div class="car__container container" v-if="carData">
-    <div class="card-top card-top--no-padding">
-      <div class="heading">
-        <h2>CLAIM LOT</h2>
-      </div>
-      <div v-if="!privacy">
-        <p>
-          We do respect privacy rights of every person. Therefore if you do not
-          want to show the lot you have purchased on our website, you can hide
-          it.
-        </p>
-        <h3>PLEASE BE AWARE THAT IT IS PROHIBITED TO:</h3>
-        <ul>
-          <li>Hide lot if you want to avoid the right tax calculation;</li>
-          <li>
-            Hide lot for hiding damage and odometer infromation from the future
-            buyers;
-          </li>
-          <li>
-            Hide lot for misinformation, misrepresentation, fraud or other
-            illegal activity;
-          </li>
-        </ul>
-        <div class="flex">
-          <input id="privacy" type="checkbox" v-model="privacy" />
-          <label for="privacy"
-            >I have read and accept the limitations stated above</label
-          >
+  <div v-if="carData" class="modal-wrapper">
+    <div class="modal-wrapper__content">
+      <div class="card-top card-top--no-padding">
+        <div class="heading">
+          <h2>CLAIM LOT</h2>
+          <button @click="$emit('close')">
+            <span>&#10006;</span>
+          </button>
         </div>
-      </div>
-    </div>
-    <div class="car__container__heading card" v-if="privacy">
-      <stripe-checkout
-        ref="checkoutRef"
-        mode="payment"
-        :pk="publishableKey"
-        :line-items="lineItems"
-        :success-url="successURL"
-        :cancel-url="cancelURL"
-        @loading="(v) => (loading = v)"
-      />
-      <div class="flex flex-main">
-        <div class="flex">
-          <img src="/img/base-img-3.png" alt="" />
-        </div>
-        <div>
-          <div class="flex-middle">
-            <div class="badge" :class="{ red: branch }">
-              {{ branch ? "IAAI" : "Copart" }}
-            </div>
-            <h1>
-              {{ carData.production_year }} {{ carData.marka }}
-              {{ carData.model }}
-            </h1>
-            <h2>VIN: {{ carData.vin }}</h2>
-          </div>
+        <div v-if="!privacy">
+          <p>
+            We do respect privacy rights of every person. Therefore if you do
+            not want to show the lot you have purchased on our website, you can
+            hide it.
+          </p>
+          <h3>PLEASE BE AWARE THAT IT IS PROHIBITED TO:</h3>
+          <ul>
+            <li>Hide lot if you want to avoid the right tax calculation;</li>
+            <li>
+              Hide lot for hiding damage and odometer infromation from the
+              future buyers;
+            </li>
+            <li>
+              Hide lot for misinformation, misrepresentation, fraud or other
+              illegal activity;
+            </li>
+          </ul>
           <div class="flex">
-            <h2><span>Lot number:</span> No data</h2>
-            <h2><span>Location: </span> {{ carData.vin }}</h2>
-            <h2><span>Mileage: </span> {{ carData.odometer }}</h2>
+            <input id="privacy" type="checkbox" v-model="privacy" />
+            <label for="privacy"
+              >I have read and accept the limitations stated above</label
+            >
           </div>
         </div>
-        <div class="flex-last">
-          {{ carData.createdate }}
-          <h3>Final bid</h3>
-          {{ carData.final_bid }}
-          <button :disabled="!privacy" @click="payNow">CLAIM LOT</button>
+      </div>
+      <div class="car__container__heading card" v-if="privacy">
+        <stripe-checkout
+          ref="checkoutRef"
+          mode="payment"
+          :pk="publishableKey"
+          :line-items="lineItems"
+          :success-url="successURL"
+          :cancel-url="cancelURL"
+          @loading="(v) => (loading = v)"
+        />
+        <div class="flex flex-main">
+          <div class="flex">
+            <img src="/img/base-img-3.png" alt="" />
+          </div>
+          <div>
+            <div class="flex-middle">
+              <div class="badge" :class="{ red: branch }">
+                {{ branch ? "IAAI" : "Copart" }}
+              </div>
+              <h1>
+                {{ carData.production_year }} {{ carData.marka }}
+                {{ carData.model }}
+              </h1>
+              <h2>VIN: {{ carData.vin }}</h2>
+            </div>
+            <div class="flex">
+              <h2><span>Lot number:</span> No data</h2>
+              <h2><span>Location: </span> {{ carData.vin }}</h2>
+              <h2><span>Mileage: </span> {{ carData.odometer }}</h2>
+            </div>
+          </div>
+          <div class="flex-last">
+            {{ carData.createdate }}
+            <h3>Final bid</h3>
+            {{ carData.final_bid }}
+            <button :disabled="!privacy" @click="payNow">CLAIM LOT</button>
+          </div>
         </div>
       </div>
     </div>
@@ -128,9 +133,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.modal-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: grid;
+  place-content: center;
+  backdrop-filter: blur(3px);
+  z-index: 200;
+  &__content {
+    background: white;
+    border-radius: 6px;
+    padding: 20px;
+  }
+}
 .car__container {
   &__heading {
-    width: 100%;
+    width: 99%;
     margin: 20px 0;
   }
 
@@ -348,6 +370,9 @@ export default {
   .heading {
     background: #f8f8f8;
     padding: 22px 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     h2 {
       font-family: "PT Sans";
       font-style: normal;
@@ -356,6 +381,18 @@ export default {
       line-height: 32px;
       text-align: left;
       color: #000000;
+    }
+    button {
+      background: linear-gradient(89.98deg, #102672 0.01%, #384e9b 99.98%);
+      color: white;
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-content: center;
+      border-radius: 50%;
+      border: none;
+      outline: none;
+      cursor: pointer;
     }
   }
 }

@@ -40,12 +40,11 @@
         <p><span>Location:</span> no data</p>
         <div class="flex flex--line">
           <h3>$ {{ carData.final_bid }}</h3>
-          <router-link
-            :key="carData.id"
-            class="black"
-            :to="'/car/' + carData.id"
-            >More details <img src="img/arrow.svg" alt=""
-          /></router-link>
+          <div class="overlay-link" @click="refreshPage">
+            <router-link class="black" :to="'/car/' + carData.id"
+              >More details <img src="img/arrow.svg" alt=""
+            /></router-link>
+          </div>
         </div>
       </template>
       <template v-else>
@@ -131,6 +130,9 @@ export default {
         };
       }
     },
+    refreshPage() {
+      window.location.reload();
+    },
     async prepareImages() {
       let count = 0;
       let exists = true;
@@ -163,6 +165,7 @@ export default {
     },
   },
   mounted() {
+    window.scrollTo({ top: 0 });
     this.prepareImages();
   },
 };
@@ -201,6 +204,7 @@ export default {
   gap: 24px;
   max-width: 425px;
   position: relative;
+  padding-bottom: 16px;
   @media (min-width: 1200px) {
     min-width: 417px;
   }

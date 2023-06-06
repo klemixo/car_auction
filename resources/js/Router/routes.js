@@ -30,13 +30,6 @@ const routes = [{
         props: true
     },
     {
-        path: '/claim/:id',
-        component: () =>
-            import ('../Pages/Claim.vue'),
-        name: 'Claim',
-        props: true
-    },
-    {
         path: '/error',
         component: () =>
             import ('../Pages/Error.vue'),

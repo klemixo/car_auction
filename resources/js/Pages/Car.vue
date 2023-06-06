@@ -1,6 +1,7 @@
 <template>
   <div class="car__container container" v-if="carData">
     <FiltersTop />
+    <Claim :id="carData.id" v-if="showModal" @close="showModal = !showModal" />
     <div class="breadcrumbs">
       <div class="breadcrumb">Search</div>
       <div class="breadcrumb breadcrumb--blue">></div>
@@ -38,9 +39,7 @@
             <h2><span>VIN: </span> {{ carData.vin }}</h2>
           </div>
         </div>
-        <router-link :to="{ name: 'Claim', props: { id: carData.id } }">
-          CLAIM LOT
-        </router-link>
+        <button @click="showModal = !showModal">CLAIM LOT</button>
       </div>
     </div>
     <div class="car__container__content">
@@ -181,6 +180,7 @@ import CarSlider from "../Components/CarSlider.vue";
 import SimiliarLots from "../Components/SimiliarLots.vue";
 import SalesHistory from "../Components/SalesHistory.vue";
 import FiltersTop from "../Components/FiltersTop.vue";
+import Claim from "../Components/Claim.vue";
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
 export default {
@@ -192,6 +192,7 @@ export default {
     FiltersTop,
     SalesHistory,
     SimiliarLots,
+    Claim,
   },
   data() {
     return {
@@ -199,6 +200,7 @@ export default {
       cars: null,
       currentImage: 0,
       slides: [],
+      showModal: false,
     };
   },
   computed: {
@@ -215,6 +217,9 @@ export default {
   methods: {
     changeSlide(idx) {
       this.currentImage = idx;
+    },
+    closeModal() {
+      console.log("OKK");
     },
     getCarData() {
       axios
@@ -472,7 +477,7 @@ export default {
       justify-content: space-between;
       flex-wrap: wrap;
 
-      a {
+      button {
         background: #ffcd1e;
         border-radius: 5px;
         color: white;
@@ -483,6 +488,7 @@ export default {
         margin: auto 0;
         padding: 5px;
         text-decoration: none;
+        cursor: pointer;
       }
     }
 
