@@ -136,15 +136,16 @@ export default {
     async prepareImages() {
       let count = 0;
       let exists = true;
-      while (exists) {
+      while (count < 5) {
         exists = await new Promise((resolve) => {
           this.checkIfImageExists(
             `http://54.36.172.231/${this.carData.vin}-${count}.webp`,
             (exists) => {
               if (exists) {
-                this.images.push(
-                  `http://54.36.172.231/${this.carData.vin}-${count}.webp`
-                );
+                const imgUrl =
+                  `http://54.36.172.231/${this.carData.vin.trim()}-${count}.webp`.trim();
+                console.log(imgUrl);
+                this.images.push(imgUrl);
               } else {
                 if (this.images.length === 0) {
                   console.log(this.images);
@@ -153,7 +154,6 @@ export default {
                     "img/base-img-2.png",
                     "img/base-img-3.png",
                   ];
-                  console.log(this.images);
                 }
               }
               count++;

@@ -171,7 +171,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 exists = true;
 
               case 2:
-                if (!exists) {
+                if (!(count < 5)) {
                   _context.next = 8;
                   break;
                 }
@@ -180,12 +180,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return new Promise(function (resolve) {
                   _this.checkIfImageExists("http://54.36.172.231/".concat(_this.carData.vin, "-").concat(count, ".webp"), function (exists) {
                     if (exists) {
-                      _this.images.push("http://54.36.172.231/".concat(_this.carData.vin, "-").concat(count, ".webp"));
+                      var imgUrl = "http://54.36.172.231/".concat(_this.carData.vin.trim(), "-").concat(count, ".webp").trim();
+                      console.log(imgUrl);
+
+                      _this.images.push(imgUrl);
                     } else {
                       if (_this.images.length === 0) {
                         console.log(_this.images);
                         _this.images = ["img/base-img.png", "img/base-img-2.png", "img/base-img-3.png"];
-                        console.log(_this.images);
                       }
                     }
 
