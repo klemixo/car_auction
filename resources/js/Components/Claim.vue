@@ -309,8 +309,10 @@ export default {
         border: none;
         outline: none;
         margin: auto 0;
+        cursor: pointer !important;
         &:disabled {
           opacity: 0.7;
+          cursor: auto !important;
         }
       }
     }

@@ -119,7 +119,7 @@
             </div>
             <div class="flex-base">
               <p class="light">Body color</p>
-              <p class="strong">{{ carData.odometer }}</p>
+              <p class="strong">No data</p>
             </div>
             <div class="flex-base">
               <p class="light">Drive</p>
@@ -127,7 +127,7 @@
             </div>
             <div class="flex-base flex-base--no-border">
               <p class="light">Fuel</p>
-              <p class="strong">{{ carData.odometer }}</p>
+              <p class="strong">No data</p>
             </div>
           </div>
         </div>
@@ -138,20 +138,20 @@
           </div>
           <div class="data__box__content">
             <div class="flex-base">
+              <p class="light">Estimated Retail value</p>
+              <p class="strong">No data</p>
+            </div>
+            <div class="flex-base flex-base--no-border">
+              <p class="light">Estimated repair cost</p>
+              <p class="strong">{{ carData.engine }}</p>
+            </div>
+            <div class="flex-base">
               <p class="light">Primary damage</p>
               <p class="strong">{{ carData.loss }}</p>
             </div>
             <div class="flex-base">
               <p class="light">Secondary damage</p>
               <p class="strong">{{ carData.primary_damage }}</p>
-            </div>
-            <div class="flex-base">
-              <p class="light">Estimated Retail value</p>
-              <p class="strong">{{ carData.odometer }}</p>
-            </div>
-            <div class="flex-base flex-base--no-border">
-              <p class="light">Estimated repair cost</p>
-              <p class="strong">{{ carData.engine }}</p>
             </div>
           </div>
         </div>
@@ -480,7 +480,7 @@ export default {
         margin: auto 0;
         padding: 5px;
         text-decoration: none;
-        cursor: pointer;
+        cursor: pointer !important;
       }
     }
 
