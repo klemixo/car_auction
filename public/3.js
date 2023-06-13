@@ -174,6 +174,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -199,7 +204,8 @@ __webpack_require__.r(__webpack_exports__);
       return +this.carData.production_year % 2 === 0;
     },
     successURL: function successURL() {
-      return "".concat(window.location.origin, "/#/success/").concat(this.carData.vin, "-").concat(this.carData.stock);
+      var url = "".concat(window.location.origin, "/#/success/").concat(this.carData.vin.trim(), "-").concat(this.carData.odometer.trim());
+      return url.replaceAll(" ", "");
     },
     cancelURL: function cancelURL() {
       return "".concat(window.location.origin, "/#/error");
@@ -546,14 +552,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -713,7 +711,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n.modal-wrapper[data-v-67ba51fe] {\n  position: fixed;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.6);\n  display: grid;\n  place-content: center;\n  backdrop-filter: blur(3px);\n  z-index: 200;\n}\n.modal-wrapper__content[data-v-67ba51fe] {\n  background: white;\n  border-radius: 6px;\n  padding: 20px;\n}\n.car__container__heading[data-v-67ba51fe] {\n  width: 99%;\n  margin: 20px 0;\n}\n.car__container__content[data-v-67ba51fe] {\n  display: flex;\n  flex-direction: column;\n  gap: 29px;\n}\n@media (min-width: 992px) {\n.car__container__content[data-v-67ba51fe] {\n    flex-direction: row;\n}\n}\n.car__container__content__images[data-v-67ba51fe] {\n  flex: 1;\n}\n@media (min-width: 992px) {\n.car__container__content__images[data-v-67ba51fe] {\n    flex: 3;\n}\n}\n.car__container__content__data[data-v-67ba51fe] {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 21px;\n}\n@media (min-width: 992px) {\n.car__container__content__data[data-v-67ba51fe] {\n    width: unset;\n    min-width: 410px;\n}\n}\n.car__container__content__data .data__box[data-v-67ba51fe] {\n  padding: 20px !important;\n}\n.car__container__content__data .data__box__heading[data-v-67ba51fe] {\n  background: #f8f8f8;\n  display: flex;\n  gap: 16px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__heading img[data-v-67ba51fe] {\n  width: 27px;\n  height: 27px;\n}\n.car__container__content__data .data__box__heading p[data-v-67ba51fe] {\n  font-weight: 700;\n  font-size: 25px;\n  margin: 0;\n}\n.car__container__content__data .data__box__content h3[data-v-67ba51fe] {\n  font-weight: 700;\n  font-size: 33px;\n  line-height: 43px;\n  text-align: left;\n}\n.car__container__content__data .data__box__content .highlight[data-v-67ba51fe] {\n  background: #ffebb7;\n  border-radius: 3px;\n  width: fit-content;\n}\n.car__container__content__data .data__box__content .flex[data-v-67ba51fe] {\n  display: flex;\n  gap: 11px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__content .flex-base[data-v-67ba51fe] {\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);\n}\n.car__container__content__data .data__box__content .flex-base .light[data-v-67ba51fe] {\n  color: #818181;\n}\n.car__container__content__data .data__box__content .flex-base .strong[data-v-67ba51fe] {\n  color: black;\n}\n.car__container .card[data-v-67ba51fe] {\n  background: #ffffff;\n  border: 1px solid #ecf1f9;\n  padding: 10px;\n  border-radius: 8px;\n}\n.car__container .card .badge[data-v-67ba51fe] {\n  width: fit-content;\n  background: #1882ff;\n  border-radius: 3px;\n  font-size: 16px;\n  line-height: 21px;\n  text-align: center;\n  color: #ffffff;\n  padding: 4px 5px;\n  margin-bottom: 20pxgfhngh;\n}\n.car__container .card .flex-middle[data-v-67ba51fe] {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: flex-start;\n}\n.car__container .card .flex-last[data-v-67ba51fe] {\n  padding: 30px;\n  background: #ecf1f9;\n  width: unset;\n}\n.car__container .card .flex-main[data-v-67ba51fe] {\n  justify-content: space-between;\n  gap: 8px;\n  flex-wrap: wrap;\n  align-items: center;\n}\n.car__container .card .flex-main h2[data-v-67ba51fe] {\n  margin: 4px 0;\n  margin-right: 0;\n}\n.car__container .card .flex-main img[data-v-67ba51fe] {\n  width: 320px;\n}\n.car__container .card .flex-main button[data-v-67ba51fe] {\n  background: #ffcd1e;\n  border-radius: 5px;\n  color: white;\n  width: fit-content;\n  height: fit-content;\n  border: none;\n  outline: none;\n  margin: auto 0;\n}\n.car__container .card .flex-main button[data-v-67ba51fe]:disabled {\n  opacity: 0.7;\n}\n.car__container .card h1[data-v-67ba51fe] {\n  font-size: 25px;\n  line-height: 32px;\n  color: #000000;\n  margin-right: 24px;\n}\n.car__container .card h2[data-v-67ba51fe] {\n  font-size: 16px;\n  line-height: 21px;\n}\n.car__container .card h2[data-v-67ba51fe]:first-of-type {\n  margin-right: 65px;\n}\n.car__container .card h2 span[data-v-67ba51fe] {\n  color: #818181;\n}\n.card-top--no-padding[data-v-67ba51fe] {\n  padding: 0;\n}\n.card-top ul[data-v-67ba51fe] {\n  list-style: none;\n  /* Remove default bullets */\n}\n.card-top p[data-v-67ba51fe],\n.card-top h2[data-v-67ba51fe],\n.card-top h3[data-v-67ba51fe],\n.card-top ul[data-v-67ba51fe] {\n  text-align: left;\n}\n@media (min-width: 992px) {\n.card-top p[data-v-67ba51fe],\n.card-top h2[data-v-67ba51fe],\n.card-top h3[data-v-67ba51fe],\n.card-top ul[data-v-67ba51fe] {\n    padding-left: 90px;\n}\n}\n.card-top .flex[data-v-67ba51fe] {\n  display: flex;\n  gap: 13px;\n}\n@media (min-width: 992px) {\n.card-top .flex[data-v-67ba51fe] {\n    padding-left: 90px;\n}\n}\n.card-top input[data-v-67ba51fe] {\n  background: #ffffff;\n  /* szary napisy */\n  border: 1px solid #818181;\n  border-radius: 2px;\n}\n.card-top ul li[data-v-67ba51fe]::before {\n  content: \"\\2022\";\n  /* Add content: \\2022 is the CSS Code/unicode for a bullet */\n  color: #243e97;\n  font-weight: bold;\n  /* If you want it to be bold */\n  display: inline-block;\n  /* Needed to add space between the bullet and the text */\n  width: 1em;\n  /* Also needed for space (tweak if needed) */\n  margin-left: -1em;\n  /* Also needed for space (tweak if needed) */\n}\n.card-top .heading[data-v-67ba51fe] {\n  background: #f8f8f8;\n  padding: 22px 90px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.card-top .heading h2[data-v-67ba51fe] {\n  font-family: \"PT Sans\";\n  font-style: normal;\n  font-weight: 700;\n  font-size: 25px;\n  line-height: 32px;\n  text-align: left;\n  color: #000000;\n}\n.card-top .heading button[data-v-67ba51fe] {\n  background: linear-gradient(89.98deg, #102672 0.01%, #384e9b 99.98%);\n  color: white;\n  width: 30px;\n  height: 30px;\n  display: grid;\n  place-content: center;\n  border-radius: 50%;\n  border: none;\n  outline: none;\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n.modal-wrapper[data-v-67ba51fe] {\n  position: fixed;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.6);\n  display: grid;\n  place-content: center;\n  backdrop-filter: blur(3px);\n  z-index: 200;\n}\n.modal-wrapper__content[data-v-67ba51fe] {\n  background: white;\n  border-radius: 6px;\n  padding: 20px;\n}\n.car__container__heading[data-v-67ba51fe] {\n  width: 99%;\n  margin: 20px 0;\n}\n.car__container__content[data-v-67ba51fe] {\n  display: flex;\n  flex-direction: column;\n  gap: 29px;\n}\n@media (min-width: 992px) {\n.car__container__content[data-v-67ba51fe] {\n    flex-direction: row;\n}\n}\n.car__container__content__images[data-v-67ba51fe] {\n  flex: 1;\n}\n@media (min-width: 992px) {\n.car__container__content__images[data-v-67ba51fe] {\n    flex: 3;\n}\n}\n.car__container__content__data[data-v-67ba51fe] {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 21px;\n}\n@media (min-width: 992px) {\n.car__container__content__data[data-v-67ba51fe] {\n    width: unset;\n    min-width: 410px;\n}\n}\n.car__container__content__data .data__box[data-v-67ba51fe] {\n  padding: 20px !important;\n}\n.car__container__content__data .data__box__heading[data-v-67ba51fe] {\n  background: #f8f8f8;\n  display: flex;\n  gap: 16px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__heading img[data-v-67ba51fe] {\n  width: 27px;\n  height: 27px;\n}\n.car__container__content__data .data__box__heading p[data-v-67ba51fe] {\n  font-weight: 700;\n  font-size: 25px;\n  margin: 0;\n}\n.car__container__content__data .data__box__content h3[data-v-67ba51fe] {\n  font-weight: 700;\n  font-size: 33px;\n  line-height: 43px;\n  text-align: left;\n}\n.car__container__content__data .data__box__content .highlight[data-v-67ba51fe] {\n  background: #ffebb7;\n  border-radius: 3px;\n  width: fit-content;\n}\n.car__container__content__data .data__box__content .flex[data-v-67ba51fe] {\n  display: flex;\n  gap: 11px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__content .flex-base[data-v-67ba51fe] {\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);\n}\n.car__container__content__data .data__box__content .flex-base .light[data-v-67ba51fe] {\n  color: #818181;\n}\n.car__container__content__data .data__box__content .flex-base .strong[data-v-67ba51fe] {\n  color: black;\n}\n.car__container .card[data-v-67ba51fe] {\n  background: #ffffff;\n  border: 1px solid #ecf1f9;\n  padding: 10px;\n  border-radius: 8px;\n}\n.car__container .card .badge[data-v-67ba51fe] {\n  width: fit-content;\n  background: #1882ff;\n  border-radius: 3px;\n  font-size: 16px;\n  line-height: 21px;\n  text-align: center;\n  color: #ffffff;\n  padding: 4px 5px;\n  margin-bottom: 20pxgfhngh;\n}\n.car__container .card .flex-middle[data-v-67ba51fe] {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: flex-start;\n}\n.car__container .card .flex-last[data-v-67ba51fe] {\n  padding: 30px;\n  background: #ecf1f9;\n  width: unset;\n}\n.car__container .card .flex-last h5[data-v-67ba51fe] {\n  font-size: 1.4rem;\n  margin: 6px 0;\n}\n.car__container .card .flex-main[data-v-67ba51fe] {\n  justify-content: space-between;\n  gap: 8px;\n  flex-wrap: wrap;\n  align-items: center;\n}\n.car__container .card .flex-main img[data-v-67ba51fe] {\n  width: 320px;\n}\n.car__container .card .flex-main button[data-v-67ba51fe] {\n  background: #ffcd1e;\n  border-radius: 5px;\n  color: white;\n  width: fit-content;\n  height: fit-content;\n  border: none;\n  outline: none;\n  margin: auto 0;\n}\n.car__container .card .flex-main button[data-v-67ba51fe]:disabled {\n  opacity: 0.7;\n}\n.car__container .card h1[data-v-67ba51fe] {\n  font-size: 25px;\n  line-height: 32px;\n  color: #000000;\n  margin-right: 24px;\n}\n.car__container .card h2[data-v-67ba51fe] {\n  margin: 0 30px;\n  font-size: 16px;\n  line-height: 21px;\n  margin-left: 0;\n}\n.car__container .card h2 span[data-v-67ba51fe] {\n  color: #818181;\n}\n.card-top--no-padding[data-v-67ba51fe] {\n  padding: 0;\n}\n.card-top ul[data-v-67ba51fe] {\n  list-style: none;\n  /* Remove default bullets */\n}\n.card-top p[data-v-67ba51fe],\n.card-top h2[data-v-67ba51fe],\n.card-top h3[data-v-67ba51fe],\n.card-top ul[data-v-67ba51fe] {\n  text-align: left;\n}\n@media (min-width: 992px) {\n.card-top p[data-v-67ba51fe],\n.card-top h2[data-v-67ba51fe],\n.card-top h3[data-v-67ba51fe],\n.card-top ul[data-v-67ba51fe] {\n    padding-left: 90px;\n}\n}\n.card-top .flex[data-v-67ba51fe] {\n  display: flex;\n  gap: 13px;\n}\n@media (min-width: 992px) {\n.card-top .flex[data-v-67ba51fe] {\n    padding-left: 90px;\n}\n}\n.card-top input[data-v-67ba51fe] {\n  background: #ffffff;\n  /* szary napisy */\n  border: 1px solid #818181;\n  border-radius: 2px;\n}\n.card-top ul li[data-v-67ba51fe]::before {\n  content: \"\\2022\";\n  /* Add content: \\2022 is the CSS Code/unicode for a bullet */\n  color: #243e97;\n  font-weight: bold;\n  /* If you want it to be bold */\n  display: inline-block;\n  /* Needed to add space between the bullet and the text */\n  width: 1em;\n  /* Also needed for space (tweak if needed) */\n  margin-left: -1em;\n  /* Also needed for space (tweak if needed) */\n}\n.card-top .heading[data-v-67ba51fe] {\n  background: #f8f8f8;\n  padding: 22px 90px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.card-top .heading h2[data-v-67ba51fe] {\n  font-family: \"PT Sans\";\n  font-style: normal;\n  font-weight: 700;\n  font-size: 25px;\n  line-height: 32px;\n  text-align: left;\n  color: #000000;\n}\n.card-top .heading button[data-v-67ba51fe] {\n  background: linear-gradient(89.98deg, #102672 0.01%, #384e9b 99.98%);\n  color: white;\n  width: 30px;\n  height: 30px;\n  display: grid;\n  place-content: center;\n  border-radius: 50%;\n  border: none;\n  outline: none;\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -1134,6 +1132,13 @@ var render = function() {
                 "div",
                 { staticClass: "car__container__heading card" },
                 [
+                  _vm._v(
+                    "\n      " +
+                      _vm._s(_vm.successURL) +
+                      "\n      " +
+                      _vm._s(_vm.cancelURL) +
+                      "\n      "
+                  ),
                   _c("stripe-checkout", {
                     ref: "checkoutRef",
                     attrs: {
@@ -1151,7 +1156,17 @@ var render = function() {
                   }),
                   _vm._v(" "),
                   _c("div", { staticClass: "flex flex-main" }, [
-                    _vm._m(1),
+                    _c("div", { staticClass: "flex" }, [
+                      _c("img", {
+                        attrs: {
+                          src:
+                            "https://phttt.vinfax.info/" +
+                            _vm.carData.vin +
+                            "-0.webp",
+                          alt: ""
+                        }
+                      })
+                    ]),
                     _vm._v(" "),
                     _c("div", [
                       _c("div", { staticClass: "flex-middle" }, [
@@ -1183,12 +1198,9 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "flex" }, [
-                        _vm._m(2),
+                        _vm._m(1),
                         _vm._v(" "),
-                        _c("h2", [
-                          _c("span", [_vm._v("Location: ")]),
-                          _vm._v(" " + _vm._s(_vm.carData.vin))
-                        ]),
+                        _vm._m(2),
                         _vm._v(" "),
                         _c("h2", [
                           _c("span", [_vm._v("Mileage: ")]),
@@ -1204,11 +1216,9 @@ var render = function() {
                           "\n          "
                       ),
                       _c("h3", [_vm._v("Final bid")]),
-                      _vm._v(
-                        "\n          " +
-                          _vm._s(_vm.carData.final_bid) +
-                          "\n          "
-                      ),
+                      _vm._v(" "),
+                      _c("h5", [_vm._v("$" + _vm._s(_vm.carData.final_bid))]),
+                      _vm._v(" "),
                       _c(
                         "button",
                         {
@@ -1254,15 +1264,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex" }, [
-      _c("img", { attrs: { src: "/img/base-img-3.png", alt: "" } })
-    ])
+    return _c("h2", [_c("span", [_vm._v("Lot number:")]), _vm._v(" No data")])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h2", [_c("span", [_vm._v("Lot number:")]), _vm._v(" No data")])
+    return _c("h2", [_c("span", [_vm._v("Location: ")]), _vm._v(" No data")])
   }
 ]
 render._withStripped = true
@@ -1714,16 +1722,6 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "flex-base" }, [
-                    _c("p", { staticClass: "light" }, [
-                      _vm._v("Run and drive")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "strong" }, [
-                      _vm._v(_vm._s(_vm.carData.drive_line_type))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "flex-base" }, [
                     _c("p", { staticClass: "light" }, [_vm._v("Body color")]),
                     _vm._v(" "),
                     _c("p", { staticClass: "strong" }, [
@@ -1739,19 +1737,11 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "flex-base" }, [
+                  _c("div", { staticClass: "flex-base flex-base--no-border" }, [
                     _c("p", { staticClass: "light" }, [_vm._v("Fuel")]),
                     _vm._v(" "),
                     _c("p", { staticClass: "strong" }, [
                       _vm._v(_vm._s(_vm.carData.odometer))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "flex-base flex-base--no-border" }, [
-                    _c("p", { staticClass: "light" }, [_vm._v("Keys")]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "strong" }, [
-                      _vm._v(_vm._s(_vm.carData.key))
                     ])
                   ])
                 ])

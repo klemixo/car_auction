@@ -35,6 +35,8 @@
         </div>
       </div>
       <div class="car__container__heading card" v-if="privacy">
+        {{ successURL }}
+        {{ cancelURL }}
         <stripe-checkout
           ref="checkoutRef"
           mode="payment"
@@ -46,7 +48,10 @@
         />
         <div class="flex flex-main">
           <div class="flex">
-            <img src="/img/base-img-3.png" alt="" />
+            <img
+              :src="`https://phttt.vinfax.info/${carData.vin}-0.webp`"
+              alt=""
+            />
           </div>
           <div>
             <div class="flex-middle">
@@ -61,14 +66,14 @@
             </div>
             <div class="flex">
               <h2><span>Lot number:</span> No data</h2>
-              <h2><span>Location: </span> {{ carData.vin }}</h2>
+              <h2><span>Location: </span> No data</h2>
               <h2><span>Mileage: </span> {{ carData.odometer }}</h2>
             </div>
           </div>
           <div class="flex-last">
             {{ carData.createdate }}
             <h3>Final bid</h3>
-            {{ carData.final_bid }}
+            <h5>${{ carData.final_bid }}</h5>
             <button :disabled="!privacy" @click="payNow">CLAIM LOT</button>
           </div>
         </div>
@@ -105,7 +110,10 @@ export default {
       return +this.carData.production_year % 2 === 0;
     },
     successURL() {
-      return `${window.location.origin}/#/success/${this.carData.vin}-${this.carData.stock}`;
+      let url = `${
+        window.location.origin
+      }/#/success/${this.carData.vin.trim()}-${this.carData.odometer.trim()}`;
+      return url.replaceAll(" ", "");
     },
     cancelURL() {
       return `${window.location.origin}/#/error`;
@@ -276,6 +284,10 @@ export default {
       padding: 30px;
       background: #ecf1f9;
       width: unset;
+      h5 {
+        font-size: 1.4rem;
+        margin: 6px 0;
+      }
     }
 
     .flex-main {
@@ -283,11 +295,6 @@ export default {
       gap: 8px;
       flex-wrap: wrap;
       align-items: center;
-
-      h2 {
-        margin: 4px 0;
-        margin-right: 0;
-      }
 
       img {
         width: 320px;
@@ -316,13 +323,10 @@ export default {
     }
 
     h2 {
-      &:first-of-type {
-        margin-right: 65px;
-      }
-
+      margin: 0 30px;
       font-size: 16px;
       line-height: 21px;
-
+      margin-left: 0;
       span {
         color: #818181;
       }

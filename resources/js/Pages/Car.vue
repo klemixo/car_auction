@@ -118,10 +118,6 @@
               <p class="strong">{{ carData.transmission }}</p>
             </div>
             <div class="flex-base">
-              <p class="light">Run and drive</p>
-              <p class="strong">{{ carData.drive_line_type }}</p>
-            </div>
-            <div class="flex-base">
               <p class="light">Body color</p>
               <p class="strong">{{ carData.odometer }}</p>
             </div>
@@ -129,13 +125,9 @@
               <p class="light">Drive</p>
               <p class="strong">{{ carData.drive_line_type }}</p>
             </div>
-            <div class="flex-base">
+            <div class="flex-base flex-base--no-border">
               <p class="light">Fuel</p>
               <p class="strong">{{ carData.odometer }}</p>
-            </div>
-            <div class="flex-base flex-base--no-border">
-              <p class="light">Keys</p>
-              <p class="strong">{{ carData.key }}</p>
             </div>
           </div>
         </div>

@@ -55,7 +55,7 @@ class getCars extends Controller
     {
         if ($req->vin && $req->stock) {
             $query = car::where('vin', "=", $req->vin)
-                ->where('stock', '=', $req->stock)->update([
+                ->where('odometer', '=', $req->odometer)->update([
                     'claimed' => true,
                 ]);
             return $query;
