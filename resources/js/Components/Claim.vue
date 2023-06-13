@@ -35,8 +35,6 @@
         </div>
       </div>
       <div class="car__container__heading card" v-if="privacy">
-        {{ successURL }}
-        {{ cancelURL }}
         <stripe-checkout
           ref="checkoutRef"
           mode="payment"

@@ -177,8 +177,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -711,7 +709,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n.modal-wrapper[data-v-67ba51fe] {\n  position: fixed;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.6);\n  display: grid;\n  place-content: center;\n  backdrop-filter: blur(3px);\n  z-index: 200;\n}\n.modal-wrapper__content[data-v-67ba51fe] {\n  background: white;\n  border-radius: 6px;\n  padding: 20px;\n}\n.car__container__heading[data-v-67ba51fe] {\n  width: 99%;\n  margin: 20px 0;\n}\n.car__container__content[data-v-67ba51fe] {\n  display: flex;\n  flex-direction: column;\n  gap: 29px;\n}\n@media (min-width: 992px) {\n.car__container__content[data-v-67ba51fe] {\n    flex-direction: row;\n}\n}\n.car__container__content__images[data-v-67ba51fe] {\n  flex: 1;\n}\n@media (min-width: 992px) {\n.car__container__content__images[data-v-67ba51fe] {\n    flex: 3;\n}\n}\n.car__container__content__data[data-v-67ba51fe] {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 21px;\n}\n@media (min-width: 992px) {\n.car__container__content__data[data-v-67ba51fe] {\n    width: unset;\n    min-width: 410px;\n}\n}\n.car__container__content__data .data__box[data-v-67ba51fe] {\n  padding: 20px !important;\n}\n.car__container__content__data .data__box__heading[data-v-67ba51fe] {\n  background: #f8f8f8;\n  display: flex;\n  gap: 16px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__heading img[data-v-67ba51fe] {\n  width: 27px;\n  height: 27px;\n}\n.car__container__content__data .data__box__heading p[data-v-67ba51fe] {\n  font-weight: 700;\n  font-size: 25px;\n  margin: 0;\n}\n.car__container__content__data .data__box__content h3[data-v-67ba51fe] {\n  font-weight: 700;\n  font-size: 33px;\n  line-height: 43px;\n  text-align: left;\n}\n.car__container__content__data .data__box__content .highlight[data-v-67ba51fe] {\n  background: #ffebb7;\n  border-radius: 3px;\n  width: fit-content;\n}\n.car__container__content__data .data__box__content .flex[data-v-67ba51fe] {\n  display: flex;\n  gap: 11px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__content .flex-base[data-v-67ba51fe] {\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);\n}\n.car__container__content__data .data__box__content .flex-base .light[data-v-67ba51fe] {\n  color: #818181;\n}\n.car__container__content__data .data__box__content .flex-base .strong[data-v-67ba51fe] {\n  color: black;\n}\n.car__container .card[data-v-67ba51fe] {\n  background: #ffffff;\n  border: 1px solid #ecf1f9;\n  padding: 10px;\n  border-radius: 8px;\n}\n.car__container .card .badge[data-v-67ba51fe] {\n  width: fit-content;\n  background: #1882ff;\n  border-radius: 3px;\n  font-size: 16px;\n  line-height: 21px;\n  text-align: center;\n  color: #ffffff;\n  padding: 4px 5px;\n  margin-bottom: 20pxgfhngh;\n}\n.car__container .card .flex-middle[data-v-67ba51fe] {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: flex-start;\n}\n.car__container .card .flex-last[data-v-67ba51fe] {\n  padding: 30px;\n  background: #ecf1f9;\n  width: unset;\n}\n.car__container .card .flex-last h5[data-v-67ba51fe] {\n  font-size: 1.4rem;\n  margin: 6px 0;\n}\n.car__container .card .flex-main[data-v-67ba51fe] {\n  justify-content: space-between;\n  gap: 8px;\n  flex-wrap: wrap;\n  align-items: center;\n}\n.car__container .card .flex-main img[data-v-67ba51fe] {\n  width: 320px;\n}\n.car__container .card .flex-main button[data-v-67ba51fe] {\n  background: #ffcd1e;\n  border-radius: 5px;\n  color: white;\n  width: fit-content;\n  height: fit-content;\n  border: none;\n  outline: none;\n  margin: auto 0;\n}\n.car__container .card .flex-main button[data-v-67ba51fe]:disabled {\n  opacity: 0.7;\n}\n.car__container .card h1[data-v-67ba51fe] {\n  font-size: 25px;\n  line-height: 32px;\n  color: #000000;\n  margin-right: 24px;\n}\n.car__container .card h2[data-v-67ba51fe] {\n  margin: 0 30px;\n  font-size: 16px;\n  line-height: 21px;\n  margin-left: 0;\n}\n.car__container .card h2 span[data-v-67ba51fe] {\n  color: #818181;\n}\n.card-top--no-padding[data-v-67ba51fe] {\n  padding: 0;\n}\n.card-top ul[data-v-67ba51fe] {\n  list-style: none;\n  /* Remove default bullets */\n}\n.card-top p[data-v-67ba51fe],\n.card-top h2[data-v-67ba51fe],\n.card-top h3[data-v-67ba51fe],\n.card-top ul[data-v-67ba51fe] {\n  text-align: left;\n}\n@media (min-width: 992px) {\n.card-top p[data-v-67ba51fe],\n.card-top h2[data-v-67ba51fe],\n.card-top h3[data-v-67ba51fe],\n.card-top ul[data-v-67ba51fe] {\n    padding-left: 90px;\n}\n}\n.card-top .flex[data-v-67ba51fe] {\n  display: flex;\n  gap: 13px;\n}\n@media (min-width: 992px) {\n.card-top .flex[data-v-67ba51fe] {\n    padding-left: 90px;\n}\n}\n.card-top input[data-v-67ba51fe] {\n  background: #ffffff;\n  /* szary napisy */\n  border: 1px solid #818181;\n  border-radius: 2px;\n}\n.card-top ul li[data-v-67ba51fe]::before {\n  content: \"\\2022\";\n  /* Add content: \\2022 is the CSS Code/unicode for a bullet */\n  color: #243e97;\n  font-weight: bold;\n  /* If you want it to be bold */\n  display: inline-block;\n  /* Needed to add space between the bullet and the text */\n  width: 1em;\n  /* Also needed for space (tweak if needed) */\n  margin-left: -1em;\n  /* Also needed for space (tweak if needed) */\n}\n.card-top .heading[data-v-67ba51fe] {\n  background: #f8f8f8;\n  padding: 22px 90px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.card-top .heading h2[data-v-67ba51fe] {\n  font-family: \"PT Sans\";\n  font-style: normal;\n  font-weight: 700;\n  font-size: 25px;\n  line-height: 32px;\n  text-align: left;\n  color: #000000;\n}\n.card-top .heading button[data-v-67ba51fe] {\n  background: linear-gradient(89.98deg, #102672 0.01%, #384e9b 99.98%);\n  color: white;\n  width: 30px;\n  height: 30px;\n  display: grid;\n  place-content: center;\n  border-radius: 50%;\n  border: none;\n  outline: none;\n  cursor: pointer;\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n.modal-wrapper[data-v-67ba51fe] {\n  position: fixed;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.6);\n  display: grid;\n  place-content: center;\n  backdrop-filter: blur(3px);\n  z-index: 200;\n}\n.modal-wrapper__content[data-v-67ba51fe] {\n  background: white;\n  border-radius: 6px;\n  padding: 20px;\n}\n.car__container__heading[data-v-67ba51fe] {\n  width: 99%;\n  margin: 20px 0;\n}\n.car__container__content[data-v-67ba51fe] {\n  display: flex;\n  flex-direction: column;\n  gap: 29px;\n}\n@media (min-width: 992px) {\n.car__container__content[data-v-67ba51fe] {\n    flex-direction: row;\n}\n}\n.car__container__content__images[data-v-67ba51fe] {\n  flex: 1;\n}\n@media (min-width: 992px) {\n.car__container__content__images[data-v-67ba51fe] {\n    flex: 3;\n}\n}\n.car__container__content__data[data-v-67ba51fe] {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 21px;\n}\n@media (min-width: 992px) {\n.car__container__content__data[data-v-67ba51fe] {\n    width: unset;\n    min-width: 410px;\n}\n}\n.car__container__content__data .data__box[data-v-67ba51fe] {\n  padding: 20px !important;\n}\n.car__container__content__data .data__box__heading[data-v-67ba51fe] {\n  background: #f8f8f8;\n  display: flex;\n  gap: 16px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__heading img[data-v-67ba51fe] {\n  width: 27px;\n  height: 27px;\n}\n.car__container__content__data .data__box__heading p[data-v-67ba51fe] {\n  font-weight: 700;\n  font-size: 25px;\n  margin: 0;\n}\n.car__container__content__data .data__box__content h3[data-v-67ba51fe] {\n  font-weight: 700;\n  font-size: 33px;\n  line-height: 43px;\n  text-align: left;\n}\n.car__container__content__data .data__box__content .highlight[data-v-67ba51fe] {\n  background: #ffebb7;\n  border-radius: 3px;\n  width: fit-content;\n}\n.car__container__content__data .data__box__content .flex[data-v-67ba51fe] {\n  display: flex;\n  gap: 11px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__content .flex-base[data-v-67ba51fe] {\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);\n}\n.car__container__content__data .data__box__content .flex-base .light[data-v-67ba51fe] {\n  color: #818181;\n}\n.car__container__content__data .data__box__content .flex-base .strong[data-v-67ba51fe] {\n  color: black;\n}\n.car__container .card[data-v-67ba51fe] {\n  background: #ffffff;\n  border: 1px solid #ecf1f9;\n  padding: 10px;\n  border-radius: 8px;\n}\n.car__container .card .badge[data-v-67ba51fe] {\n  width: fit-content;\n  background: #1882ff;\n  border-radius: 3px;\n  font-size: 16px;\n  line-height: 21px;\n  text-align: center;\n  color: #ffffff;\n  padding: 4px 5px;\n  margin-bottom: 20pxgfhngh;\n}\n.car__container .card .flex-middle[data-v-67ba51fe] {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: flex-start;\n}\n.car__container .card .flex-last[data-v-67ba51fe] {\n  padding: 30px;\n  background: #ecf1f9;\n  width: unset;\n}\n.car__container .card .flex-last h5[data-v-67ba51fe] {\n  font-size: 1.4rem;\n  margin: 6px 0;\n}\n.car__container .card .flex-main[data-v-67ba51fe] {\n  justify-content: space-between;\n  gap: 8px;\n  flex-wrap: wrap;\n  align-items: center;\n}\n.car__container .card .flex-main img[data-v-67ba51fe] {\n  width: 320px;\n}\n.car__container .card .flex-main button[data-v-67ba51fe] {\n  background: #ffcd1e;\n  border-radius: 5px;\n  color: white;\n  width: fit-content;\n  height: fit-content;\n  border: none;\n  outline: none;\n  margin: auto 0;\n  cursor: pointer !important;\n}\n.car__container .card .flex-main button[data-v-67ba51fe]:disabled {\n  opacity: 0.7;\n  cursor: auto !important;\n}\n.car__container .card h1[data-v-67ba51fe] {\n  font-size: 25px;\n  line-height: 32px;\n  color: #000000;\n  margin-right: 24px;\n}\n.car__container .card h2[data-v-67ba51fe] {\n  margin: 0 30px;\n  font-size: 16px;\n  line-height: 21px;\n  margin-left: 0;\n}\n.car__container .card h2 span[data-v-67ba51fe] {\n  color: #818181;\n}\n.card-top--no-padding[data-v-67ba51fe] {\n  padding: 0;\n}\n.card-top ul[data-v-67ba51fe] {\n  list-style: none;\n  /* Remove default bullets */\n}\n.card-top p[data-v-67ba51fe],\n.card-top h2[data-v-67ba51fe],\n.card-top h3[data-v-67ba51fe],\n.card-top ul[data-v-67ba51fe] {\n  text-align: left;\n}\n@media (min-width: 992px) {\n.card-top p[data-v-67ba51fe],\n.card-top h2[data-v-67ba51fe],\n.card-top h3[data-v-67ba51fe],\n.card-top ul[data-v-67ba51fe] {\n    padding-left: 90px;\n}\n}\n.card-top .flex[data-v-67ba51fe] {\n  display: flex;\n  gap: 13px;\n}\n@media (min-width: 992px) {\n.card-top .flex[data-v-67ba51fe] {\n    padding-left: 90px;\n}\n}\n.card-top input[data-v-67ba51fe] {\n  background: #ffffff;\n  /* szary napisy */\n  border: 1px solid #818181;\n  border-radius: 2px;\n}\n.card-top ul li[data-v-67ba51fe]::before {\n  content: \"\\2022\";\n  /* Add content: \\2022 is the CSS Code/unicode for a bullet */\n  color: #243e97;\n  font-weight: bold;\n  /* If you want it to be bold */\n  display: inline-block;\n  /* Needed to add space between the bullet and the text */\n  width: 1em;\n  /* Also needed for space (tweak if needed) */\n  margin-left: -1em;\n  /* Also needed for space (tweak if needed) */\n}\n.card-top .heading[data-v-67ba51fe] {\n  background: #f8f8f8;\n  padding: 22px 90px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.card-top .heading h2[data-v-67ba51fe] {\n  font-family: \"PT Sans\";\n  font-style: normal;\n  font-weight: 700;\n  font-size: 25px;\n  line-height: 32px;\n  text-align: left;\n  color: #000000;\n}\n.card-top .heading button[data-v-67ba51fe] {\n  background: linear-gradient(89.98deg, #102672 0.01%, #384e9b 99.98%);\n  color: white;\n  width: 30px;\n  height: 30px;\n  display: grid;\n  place-content: center;\n  border-radius: 50%;\n  border: none;\n  outline: none;\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -768,7 +766,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".breadcrumbs[data-v-5f190dbb] {\n  display: flex;\n  gap: 6px;\n  align-items: center;\n  margin-top: 43px;\n  flex-wrap: wrap;\n  width: 100%;\n}\n.breadcrumbs .breadcrumb[data-v-5f190dbb] {\n  font-family: \"PT Sans\";\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 21px;\n  display: flex;\n  gap: 4px;\n  color: #818181;\n}\n.breadcrumbs .breadcrumb--blue[data-v-5f190dbb] {\n  color: #243e97;\n}\n.breadcrumbs .breadcrumb--bold[data-v-5f190dbb] {\n  font-weight: bold;\n}\n.thumbnails[data-v-5f190dbb] {\n  margin: auto;\n  max-width: 100%;\n  margin-top: 12px;\n}\n.thumbnails .vueperslide[data-v-5f190dbb] {\n  box-sizing: border-box;\n  border: 1px solid #fff;\n  transition: 0.3s ease-in-out;\n  opacity: 0.7;\n  cursor: pointer;\n  width: 158px !important;\n  height: 108px !important;\n}\n.vueperslides__arrow--prev[data-v-5f190dbb] {\n  left: -3rem !important;\n}\n.vueperslides__arrow--next[data-v-5f190dbb] {\n  right: -3rem !important;\n}\n.thumbnails .vueperslide--active[data-v-5f190dbb] {\n  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);\n  opacity: 1;\n  border-color: #000;\n}\n.car__container__heading[data-v-5f190dbb] {\n  width: 100%;\n  margin: 20px 0;\n}\n.car__container__content[data-v-5f190dbb] {\n  display: flex;\n  flex-direction: column;\n  gap: 29px;\n}\n@media (min-width: 992px) {\n.car__container__content[data-v-5f190dbb] {\n    flex-direction: row;\n}\n}\n.car__container__content__images[data-v-5f190dbb] {\n  flex: 1;\n}\n.car__container__content__images .main img[data-v-5f190dbb] {\n  width: 100%;\n  max-width: 863px;\n}\n@media (min-width: 1200px) {\n.car__container__content__images .main img[data-v-5f190dbb] {\n    height: 579px;\n}\n}\n.car__container__content__images .thumbnails[data-v-5f190dbb] {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.car__container__content__images .thumbnails img[data-v-5f190dbb] {\n  width: 156px;\n  height: 106px;\n}\n@media (min-width: 992px) {\n.car__container__content__images[data-v-5f190dbb] {\n    flex: 3;\n}\n}\n.car__container__content__data[data-v-5f190dbb] {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 21px;\n}\n@media (min-width: 992px) {\n.car__container__content__data[data-v-5f190dbb] {\n    width: unset;\n    min-width: 410px;\n}\n}\n.car__container__content__data .data__box__heading[data-v-5f190dbb] {\n  background: #f8f8f8;\n  display: flex;\n  gap: 16px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__heading img[data-v-5f190dbb] {\n  width: 27px;\n  height: 27px;\n}\n.car__container__content__data .data__box__heading p[data-v-5f190dbb] {\n  font-weight: 700;\n  font-size: 24px;\n  margin: 0;\n}\n.car__container__content__data .data__box__content h3[data-v-5f190dbb] {\n  font-weight: 700;\n  font-size: 33px;\n  line-height: 43px;\n  text-align: left;\n  margin: 16px 0;\n}\n.car__container__content__data .data__box__content .highlight[data-v-5f190dbb] {\n  background: #ffebb7;\n  border-radius: 3px;\n  width: fit-content;\n  margin: 4px 0;\n  padding: 3px 25px;\n}\n.car__container__content__data .data__box__content .flex[data-v-5f190dbb] {\n  display: flex;\n  gap: 11px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__content .flex-base[data-v-5f190dbb] {\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);\n}\n.car__container__content__data .data__box__content .flex-base--no-border[data-v-5f190dbb] {\n  border-bottom: unset;\n}\n.car__container__content__data .data__box__content .flex-base p[data-v-5f190dbb] {\n  margin: 6px 0;\n  font-size: 15px;\n}\n.car__container__content__data .data__box__content .flex-base .light[data-v-5f190dbb] {\n  color: #818181;\n}\n.car__container__content__data .data__box__content .flex-base .strong[data-v-5f190dbb] {\n  color: black;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.car__container__content__data .data__box__content .flex-base .strong .badge[data-v-5f190dbb] {\n  color: gray;\n  border: 1px solid gray;\n  margin: 2px 0;\n}\n.car__container .card[data-v-5f190dbb] {\n  background: #ffffff;\n  border: 1px solid #ecf1f9;\n  padding: 10px;\n  border-radius: 8px;\n  width: calc(100% - 20px);\n}\n.car__container .card .flex-main[data-v-5f190dbb] {\n  justify-content: space-between;\n  flex-wrap: wrap;\n}\n.car__container .card .flex-main button[data-v-5f190dbb] {\n  background: #ffcd1e;\n  border-radius: 5px;\n  color: white;\n  width: fit-content;\n  height: fit-content;\n  border: none;\n  outline: none;\n  margin: auto 0;\n  padding: 5px;\n  text-decoration: none;\n  cursor: pointer;\n}\n.car__container .card h1[data-v-5f190dbb] {\n  font-size: 25px;\n  line-height: 32px;\n  color: #000000;\n  margin-right: 24px;\n}\n.car__container .card h2[data-v-5f190dbb] {\n  font-size: 16px;\n  line-height: 21px;\n}\n.car__container .card h2[data-v-5f190dbb]:first-of-type {\n  margin-right: 65px;\n}\n.car__container .card h2 span[data-v-5f190dbb] {\n  color: #818181;\n}", ""]);
+exports.push([module.i, ".breadcrumbs[data-v-5f190dbb] {\n  display: flex;\n  gap: 6px;\n  align-items: center;\n  margin-top: 43px;\n  flex-wrap: wrap;\n  width: 100%;\n}\n.breadcrumbs .breadcrumb[data-v-5f190dbb] {\n  font-family: \"PT Sans\";\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 21px;\n  display: flex;\n  gap: 4px;\n  color: #818181;\n}\n.breadcrumbs .breadcrumb--blue[data-v-5f190dbb] {\n  color: #243e97;\n}\n.breadcrumbs .breadcrumb--bold[data-v-5f190dbb] {\n  font-weight: bold;\n}\n.thumbnails[data-v-5f190dbb] {\n  margin: auto;\n  max-width: 100%;\n  margin-top: 12px;\n}\n.thumbnails .vueperslide[data-v-5f190dbb] {\n  box-sizing: border-box;\n  border: 1px solid #fff;\n  transition: 0.3s ease-in-out;\n  opacity: 0.7;\n  cursor: pointer;\n  width: 158px !important;\n  height: 108px !important;\n}\n.vueperslides__arrow--prev[data-v-5f190dbb] {\n  left: -3rem !important;\n}\n.vueperslides__arrow--next[data-v-5f190dbb] {\n  right: -3rem !important;\n}\n.thumbnails .vueperslide--active[data-v-5f190dbb] {\n  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);\n  opacity: 1;\n  border-color: #000;\n}\n.car__container__heading[data-v-5f190dbb] {\n  width: 100%;\n  margin: 20px 0;\n}\n.car__container__content[data-v-5f190dbb] {\n  display: flex;\n  flex-direction: column;\n  gap: 29px;\n}\n@media (min-width: 992px) {\n.car__container__content[data-v-5f190dbb] {\n    flex-direction: row;\n}\n}\n.car__container__content__images[data-v-5f190dbb] {\n  flex: 1;\n}\n.car__container__content__images .main img[data-v-5f190dbb] {\n  width: 100%;\n  max-width: 863px;\n}\n@media (min-width: 1200px) {\n.car__container__content__images .main img[data-v-5f190dbb] {\n    height: 579px;\n}\n}\n.car__container__content__images .thumbnails[data-v-5f190dbb] {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.car__container__content__images .thumbnails img[data-v-5f190dbb] {\n  width: 156px;\n  height: 106px;\n}\n@media (min-width: 992px) {\n.car__container__content__images[data-v-5f190dbb] {\n    flex: 3;\n}\n}\n.car__container__content__data[data-v-5f190dbb] {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 21px;\n}\n@media (min-width: 992px) {\n.car__container__content__data[data-v-5f190dbb] {\n    width: unset;\n    min-width: 410px;\n}\n}\n.car__container__content__data .data__box__heading[data-v-5f190dbb] {\n  background: #f8f8f8;\n  display: flex;\n  gap: 16px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__heading img[data-v-5f190dbb] {\n  width: 27px;\n  height: 27px;\n}\n.car__container__content__data .data__box__heading p[data-v-5f190dbb] {\n  font-weight: 700;\n  font-size: 24px;\n  margin: 0;\n}\n.car__container__content__data .data__box__content h3[data-v-5f190dbb] {\n  font-weight: 700;\n  font-size: 33px;\n  line-height: 43px;\n  text-align: left;\n  margin: 16px 0;\n}\n.car__container__content__data .data__box__content .highlight[data-v-5f190dbb] {\n  background: #ffebb7;\n  border-radius: 3px;\n  width: fit-content;\n  margin: 4px 0;\n  padding: 3px 25px;\n}\n.car__container__content__data .data__box__content .flex[data-v-5f190dbb] {\n  display: flex;\n  gap: 11px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__content .flex-base[data-v-5f190dbb] {\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);\n}\n.car__container__content__data .data__box__content .flex-base--no-border[data-v-5f190dbb] {\n  border-bottom: unset;\n}\n.car__container__content__data .data__box__content .flex-base p[data-v-5f190dbb] {\n  margin: 6px 0;\n  font-size: 15px;\n}\n.car__container__content__data .data__box__content .flex-base .light[data-v-5f190dbb] {\n  color: #818181;\n}\n.car__container__content__data .data__box__content .flex-base .strong[data-v-5f190dbb] {\n  color: black;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.car__container__content__data .data__box__content .flex-base .strong .badge[data-v-5f190dbb] {\n  color: gray;\n  border: 1px solid gray;\n  margin: 2px 0;\n}\n.car__container .card[data-v-5f190dbb] {\n  background: #ffffff;\n  border: 1px solid #ecf1f9;\n  padding: 10px;\n  border-radius: 8px;\n  width: calc(100% - 20px);\n}\n.car__container .card .flex-main[data-v-5f190dbb] {\n  justify-content: space-between;\n  flex-wrap: wrap;\n}\n.car__container .card .flex-main button[data-v-5f190dbb] {\n  background: #ffcd1e;\n  border-radius: 5px;\n  color: white;\n  width: fit-content;\n  height: fit-content;\n  border: none;\n  outline: none;\n  margin: auto 0;\n  padding: 5px;\n  text-decoration: none;\n  cursor: pointer !important;\n}\n.car__container .card h1[data-v-5f190dbb] {\n  font-size: 25px;\n  line-height: 32px;\n  color: #000000;\n  margin-right: 24px;\n}\n.car__container .card h2[data-v-5f190dbb] {\n  font-size: 16px;\n  line-height: 21px;\n}\n.car__container .card h2[data-v-5f190dbb]:first-of-type {\n  margin-right: 65px;\n}\n.car__container .card h2 span[data-v-5f190dbb] {\n  color: #818181;\n}", ""]);
 
 // exports
 
@@ -1132,13 +1130,6 @@ var render = function() {
                 "div",
                 { staticClass: "car__container__heading card" },
                 [
-                  _vm._v(
-                    "\n      " +
-                      _vm._s(_vm.successURL) +
-                      "\n      " +
-                      _vm._s(_vm.cancelURL) +
-                      "\n      "
-                  ),
                   _c("stripe-checkout", {
                     ref: "checkoutRef",
                     attrs: {
@@ -1721,13 +1712,7 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "flex-base" }, [
-                    _c("p", { staticClass: "light" }, [_vm._v("Body color")]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "strong" }, [
-                      _vm._v(_vm._s(_vm.carData.odometer))
-                    ])
-                  ]),
+                  _vm._m(5),
                   _vm._v(" "),
                   _c("div", { staticClass: "flex-base" }, [
                     _c("p", { staticClass: "light" }, [_vm._v("Drive")]),
@@ -1737,20 +1722,26 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "flex-base flex-base--no-border" }, [
-                    _c("p", { staticClass: "light" }, [_vm._v("Fuel")]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "strong" }, [
-                      _vm._v(_vm._s(_vm.carData.odometer))
-                    ])
-                  ])
+                  _vm._m(6)
                 ])
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "data__box card" }, [
-                _vm._m(5),
+                _vm._m(7),
                 _vm._v(" "),
                 _c("div", { staticClass: "data__box__content" }, [
+                  _vm._m(8),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex-base flex-base--no-border" }, [
+                    _c("p", { staticClass: "light" }, [
+                      _vm._v("Estimated repair cost")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "strong" }, [
+                      _vm._v(_vm._s(_vm.carData.engine))
+                    ])
+                  ]),
+                  _vm._v(" "),
                   _c("div", { staticClass: "flex-base" }, [
                     _c("p", { staticClass: "light" }, [
                       _vm._v("Primary damage")
@@ -1768,26 +1759,6 @@ var render = function() {
                     _vm._v(" "),
                     _c("p", { staticClass: "strong" }, [
                       _vm._v(_vm._s(_vm.carData.primary_damage))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "flex-base" }, [
-                    _c("p", { staticClass: "light" }, [
-                      _vm._v("Estimated Retail value")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "strong" }, [
-                      _vm._v(_vm._s(_vm.carData.odometer))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "flex-base flex-base--no-border" }, [
-                    _c("p", { staticClass: "light" }, [
-                      _vm._v("Estimated repair cost")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "strong" }, [
-                      _vm._v(_vm._s(_vm.carData.engine))
                     ])
                   ])
                 ])
@@ -1858,10 +1829,40 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex-base" }, [
+      _c("p", { staticClass: "light" }, [_vm._v("Body color")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "strong" }, [_vm._v("No data")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex-base flex-base--no-border" }, [
+      _c("p", { staticClass: "light" }, [_vm._v("Fuel")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "strong" }, [_vm._v("No data")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "data__box__heading" }, [
       _c("img", { attrs: { src: "/img/Condition-details.svg", alt: "" } }),
       _vm._v(" "),
       _c("p", [_vm._v("Condition Details")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex-base" }, [
+      _c("p", { staticClass: "light" }, [_vm._v("Estimated Retail value")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "strong" }, [_vm._v("No data")])
     ])
   }
 ]
