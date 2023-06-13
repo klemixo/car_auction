@@ -255,11 +255,11 @@ export default {
       while (exists) {
         exists = await new Promise((resolve) => {
           this.checkIfImageExists(
-            `http://54.36.172.231/${this.carData.vin}-${count}.webp`,
+            `https://phttt.vinfax.info/${this.carData.vin}-${count}.webp`,
             (exists) => {
               if (exists) {
                 this.slides.push(
-                  `http://54.36.172.231/${this.carData.vin}-${count}.webp`
+                  `https://phttt.vinfax.info/${this.carData.vin}-${count}.webp`
                 );
               } else {
                 if (this.slides.length === 0) {

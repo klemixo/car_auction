@@ -648,9 +648,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 _context.next = 5;
                 return new Promise(function (resolve) {
-                  _this2.checkIfImageExists("http://54.36.172.231/".concat(_this2.carData.vin, "-").concat(count, ".webp"), function (exists) {
+                  _this2.checkIfImageExists("https://phttt.vinfax.info/".concat(_this2.carData.vin, "-").concat(count, ".webp"), function (exists) {
                     if (exists) {
-                      _this2.slides.push("http://54.36.172.231/".concat(_this2.carData.vin, "-").concat(count, ".webp"));
+                      _this2.slides.push("https://phttt.vinfax.info/".concat(_this2.carData.vin, "-").concat(count, ".webp"));
                     } else {
                       if (_this2.slides.length === 0) {
                         console.log(_this2.slides);

@@ -156,11 +156,11 @@ body {
   background: #243e97 !important;
 }
 .multiselect__tags {
-  min-height: 65px !important;
-  padding: 18px 0px 0 22px !important;
+  min-height: 55px !important;
+  padding: 17px 0px 0 25px !important;
 }
 .multiselect__placeholder {
-  font-size: 18px !important;
+  font-size: 16px !important;
 }
 .multiselect__select {
   top: 50%;

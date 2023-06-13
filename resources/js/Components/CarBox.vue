@@ -139,11 +139,11 @@ export default {
       while (count < 5) {
         exists = await new Promise((resolve) => {
           this.checkIfImageExists(
-            `http://54.36.172.231/${this.carData.vin}-${count}.webp`,
+            `https://phttt.vinfax.info/${this.carData.vin}-${count}.webp`,
             (exists) => {
               if (exists) {
                 const imgUrl =
-                  `http://54.36.172.231/${this.carData.vin.trim()}-${count}.webp`.trim();
+                  `https://phttt.vinfax.info/${this.carData.vin.trim()}-${count}.webp`.trim();
                 console.log(imgUrl);
                 this.images.push(imgUrl);
               } else {
@@ -328,7 +328,7 @@ export default {
     }
   }
   .searched-data {
-    gap: 35px;
+    gap: 20px;
   }
   .searched-data-right {
     margin-left: auto;
