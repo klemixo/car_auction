@@ -43,7 +43,6 @@ class getCars extends Controller
             }
             $query->where($key, "=", $value);
         }
-        return dd($query);
         $allRes = $query->count();
         return [
             'data' => $query->limit($limit)->get(),
