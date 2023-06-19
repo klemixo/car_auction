@@ -75,6 +75,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -135,6 +139,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Store */ "./resources/js/Store/index.js");
+//
+//
 //
 //
 //
@@ -509,7 +515,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".current__filters[data-v-cbde0366] {\n  display: flex;\n  gap: 14px;\n  margin: 22px 0;\n  flex-wrap: wrap;\n}\n.current__filters button[data-v-cbde0366] {\n  border: none;\n  outline: none;\n  display: flex;\n  justify-content: center;\n  min-width: 82px;\n  padding: 8px;\n  width: unset !important;\n  align-items: center;\n  background: #d9d9d9;\n  border-radius: 50px;\n  gap: 16px;\n}\n.current__filters button span[data-v-cbde0366] {\n  font-weight: 400;\n  font-size: 13px;\n  line-height: 17px;\n  color: #000000;\n  text-transform: lowercase;\n}\n.current__filters button img[data-v-cbde0366] {\n  background: black;\n  border-radius: 50%;\n  transform: scale(1.5);\n}", ""]);
+exports.push([module.i, ".current__filters[data-v-cbde0366] {\n  display: flex;\n  gap: 14px;\n  margin: 22px 0;\n  flex-wrap: wrap;\n}\n.current__filters button[data-v-cbde0366] {\n  border: none;\n  outline: none;\n  display: flex;\n  justify-content: center;\n  min-width: 82px;\n  padding: 8px;\n  width: unset !important;\n  align-items: center;\n  background: #d9d9d9;\n  border-radius: 50px;\n  gap: 16px;\n}\n.current__filters button span[data-v-cbde0366] {\n  font-weight: 400;\n  font-size: 13px;\n  line-height: 17px;\n  color: #000000;\n  text-transform: lowercase;\n}\n.current__filters button span.upper[data-v-cbde0366] {\n  text-transform: uppercase;\n}\n.current__filters button img[data-v-cbde0366] {\n  background: black;\n  border-radius: 50%;\n  transform: scale(1.5);\n}", ""]);
 
 // exports
 
@@ -880,17 +886,19 @@ var render = function() {
         "div",
         { staticClass: "cars__container__filters" },
         [
-          _c(
-            "div",
-            { staticClass: "grid", class: { "grid-small": _vm.searched } },
-            _vm._l(_vm.cars, function(car) {
-              return _c("CarBox", {
-                key: car.id,
-                attrs: { carData: car, searched: _vm.searched }
-              })
-            }),
-            1
-          ),
+          _vm.cars.length > 0
+            ? _c(
+                "div",
+                { staticClass: "grid", class: { "grid-small": _vm.searched } },
+                _vm._l(_vm.cars, function(car) {
+                  return _c("CarBox", {
+                    key: car.id,
+                    attrs: { carData: car, searched: _vm.searched }
+                  })
+                }),
+                1
+              )
+            : _vm._e(),
           _vm._v(" "),
           _vm.dataLoading ? _c("Loader") : _vm._e(),
           _vm._v(" "),
@@ -955,7 +963,9 @@ var render = function() {
                     }
                   },
                   [
-                    _c("span", [_vm._v(_vm._s(filter.value) + " ")]),
+                    _c("span", { class: { upper: filter.field === "vin" } }, [
+                      _vm._v(_vm._s(filter.value) + "\n        ")
+                    ]),
                     _vm._v(" "),
                     _c("img", { attrs: { src: "img/icon_close.png", alt: "" } })
                   ]

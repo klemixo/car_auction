@@ -5,7 +5,11 @@
     <h2 v-if="cars && cars.length > 0 && !searched">Latest Lots</h2>
     <h2 v-if="cars && cars.length > 0 && searched">Search results</h2>
     <div class="cars__container__filters">
-      <div class="grid" :class="{ 'grid-small': searched }">
+      <div
+        class="grid"
+        :class="{ 'grid-small': searched }"
+        v-if="cars.length > 0"
+      >
         <CarBox
           v-for="car in cars"
           :key="car.id"

@@ -3,7 +3,9 @@
     <template v-for="filter in filledFilters">
       <template v-if="filter.value !== ''">
         <button @click="removeFilter(filter.field)">
-          <span>{{ filter.value }} </span>
+          <span :class="{ upper: filter.field === 'vin' }"
+            >{{ filter.value }}
+          </span>
           <img src="img/icon_close.png" alt="" />
         </button>
       </template>
@@ -53,6 +55,9 @@ export default {
       line-height: 17px;
       color: #000000;
       text-transform: lowercase;
+      &.upper {
+        text-transform: uppercase;
+      }
     }
     img {
       background: black;

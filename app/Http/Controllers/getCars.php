@@ -37,8 +37,13 @@ class getCars extends Controller
                 $limit = $value * 15;
                 continue;
             }
+            if ($key === 'vin') {
+                $query->where('vin', "LIKE", '%' . $value . '%');
+                continue;
+            }
             $query->where($key, "=", $value);
         }
+        return dd($query);
         $allRes = $query->count();
         return [
             'data' => $query->limit($limit)->get(),
