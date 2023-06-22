@@ -45,7 +45,21 @@
     <div class="car__container__content">
       <div class="car__container__content__images">
         <div class="main">
+          <button @click="currentImage--" :disabled="currentImage === 0">
+            <svg viewBox="0 0 9 18">
+              <path stroke-linecap="round" d="m1 1 l7 8 -7 8"></path>
+            </svg>
+          </button>
           <img :src="slides[currentImage]" alt="" />
+          <button
+            class="next"
+            @click="currentImage++"
+            :disabled="currentImage === slides.length - 1"
+          >
+            <svg viewBox="0 0 9 18">
+              <path stroke-linecap="round" d="m1 1 l7 8 -7 8"></path>
+            </svg>
+          </button>
         </div>
         <div class="thumbnails">
           <img
@@ -305,6 +319,9 @@ export default {
   margin: auto;
   max-width: 100%;
   margin-top: 12px;
+  img {
+    cursor: pointer;
+  }
 }
 
 .thumbnails .vueperslide {
@@ -347,6 +364,44 @@ export default {
     &__images {
       flex: 1;
       .main {
+        position: relative;
+        button {
+          height: 99%;
+          width: 50px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          display: grid;
+          place-content: center;
+          cursor: pointer;
+          svg {
+            width: 0.8rem;
+            fill: none;
+            stroke: white;
+            transform: rotate(-180deg);
+          }
+          border: none;
+          outline: none;
+          background: linear-gradient(
+            90.88deg,
+            #000000 0.72%,
+            rgba(0, 0, 0, 0) 99.21%
+          );
+          &:disabled {
+            cursor: not-allowed;
+            svg {
+              opacity: 0.8;
+            }
+          }
+          &.next {
+            right: 0;
+            left: unset;
+            transform: rotate(-180deg);
+            svg {
+              transform: rotate(-180deg);
+            }
+          }
+        }
         img {
           width: 100%;
           max-width: 863px;
