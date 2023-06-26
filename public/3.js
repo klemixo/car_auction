@@ -1203,9 +1203,12 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "flex" }, [
-                        _vm._m(1),
+                        _c("h2", [
+                          _c("span", [_vm._v("Lot number:")]),
+                          _vm._v(" " + _vm._s(_vm.carData.stock))
+                        ]),
                         _vm._v(" "),
-                        _vm._m(2),
+                        _vm._m(1),
                         _vm._v(" "),
                         _c("h2", [
                           _c("span", [_vm._v("Mileage: ")]),
@@ -1264,12 +1267,6 @@ var staticRenderFns = [
         )
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", [_c("span", [_vm._v("Lot number:")]), _vm._v(" No data")])
   },
   function() {
     var _vm = this
@@ -1570,7 +1567,10 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "flex" }, [
-                  _vm._m(0),
+                  _c("h2", [
+                    _c("span", [_vm._v("Lot number:")]),
+                    _vm._v(" " + _vm._s(_vm.carData.stock))
+                  ]),
                   _vm._v(" "),
                   _c("h2", [
                     _c("span", [_vm._v("VIN: ")]),
@@ -1667,14 +1667,14 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "car__container__content__data" }, [
               _c("div", { staticClass: "data__box card" }, [
-                _vm._m(1),
+                _vm._m(0),
                 _vm._v(" "),
                 _c("div", { staticClass: "data__box__content" }, [
                   _c("h3", [
                     _vm._v("Final bid: $" + _vm._s(_vm.carData.final_bid))
                   ]),
                   _vm._v(" "),
-                  _vm._m(2),
+                  _vm._m(1),
                   _vm._v(" "),
                   _c("div", { staticClass: "flex" }, [
                     _c("p", [_vm._v("Auction:")]),
@@ -1696,7 +1696,13 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _vm._m(3),
+                  _c("div", { staticClass: "flex-base" }, [
+                    _c("p", { staticClass: "light" }, [_vm._v("Lot number")]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "strong" }, [
+                      _vm._v(_vm._s(_vm.carData.stock))
+                    ])
+                  ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "flex-base" }, [
                     _c("p", { staticClass: "light" }, [_vm._v("Date of sell")]),
@@ -1717,7 +1723,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "data__box card" }, [
-                _vm._m(4),
+                _vm._m(2),
                 _vm._v(" "),
                 _c("div", { staticClass: "data__box__content" }, [
                   _c("div", { staticClass: "flex-base" }, [
@@ -1773,7 +1779,13 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _vm._m(5),
+                  _c("div", { staticClass: "flex-base" }, [
+                    _c("p", { staticClass: "light" }, [_vm._v("Body color")]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "strong" }, [
+                      _vm._v(_vm._s(_vm.carData.body))
+                    ])
+                  ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "flex-base" }, [
                     _c("p", { staticClass: "light" }, [_vm._v("Drive")]),
@@ -1783,15 +1795,29 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _vm._m(6)
+                  _c("div", { staticClass: "flex-base flex-base--no-border" }, [
+                    _c("p", { staticClass: "light" }, [_vm._v("Fuel")]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "strong" }, [
+                      _vm._v(_vm._s(_vm.carData.fuel))
+                    ])
+                  ])
                 ])
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "data__box card" }, [
-                _vm._m(7),
+                _vm._m(3),
                 _vm._v(" "),
                 _c("div", { staticClass: "data__box__content" }, [
-                  _vm._m(8),
+                  _c("div", { staticClass: "flex-base" }, [
+                    _c("p", { staticClass: "light" }, [
+                      _vm._v("Estimated Retail value")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "strong" }, [
+                      _vm._v(_vm._s(_vm.carData.estimated_retail_value))
+                    ])
+                  ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "flex-base flex-base--no-border" }, [
                     _c("p", { staticClass: "light" }, [
@@ -1799,7 +1825,7 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "strong" }, [
-                      _vm._v(_vm._s(_vm.carData.engine))
+                      _vm._v(_vm._s(_vm.carData.estimated_repair_cost))
                     ])
                   ]),
                   _vm._v(" "),
@@ -1809,7 +1835,7 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "strong" }, [
-                      _vm._v(_vm._s(_vm.carData.loss))
+                      _vm._v(_vm._s(_vm.carData.primary_damage))
                     ])
                   ]),
                   _vm._v(" "),
@@ -1819,7 +1845,7 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "strong" }, [
-                      _vm._v(_vm._s(_vm.carData.primary_damage))
+                      _vm._v(_vm._s(_vm.carData.secondary_damage))
                     ])
                   ])
                 ])
@@ -1845,12 +1871,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h2", [_c("span", [_vm._v("Lot number:")]), _vm._v(" No data")])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "data__box__heading" }, [
       _c("img", { attrs: { src: "/img/Sale-details.svg", alt: "" } }),
       _vm._v(" "),
@@ -1870,16 +1890,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex-base" }, [
-      _c("p", { staticClass: "light" }, [_vm._v("Lot number")]),
-      _vm._v(" "),
-      _c("p", { staticClass: "strong" }, [_vm._v("No data")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "data__box__heading" }, [
       _c("img", { attrs: { src: "/img/Vehicle-details.svg", alt: "" } }),
       _vm._v(" "),
@@ -1890,40 +1900,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex-base" }, [
-      _c("p", { staticClass: "light" }, [_vm._v("Body color")]),
-      _vm._v(" "),
-      _c("p", { staticClass: "strong" }, [_vm._v("No data")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex-base flex-base--no-border" }, [
-      _c("p", { staticClass: "light" }, [_vm._v("Fuel")]),
-      _vm._v(" "),
-      _c("p", { staticClass: "strong" }, [_vm._v("No data")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "data__box__heading" }, [
       _c("img", { attrs: { src: "/img/Condition-details.svg", alt: "" } }),
       _vm._v(" "),
       _c("p", [_vm._v("Condition Details")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex-base" }, [
-      _c("p", { staticClass: "light" }, [_vm._v("Estimated Retail value")]),
-      _vm._v(" "),
-      _c("p", { staticClass: "strong" }, [_vm._v("No data")])
     ])
   }
 ]

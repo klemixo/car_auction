@@ -618,9 +618,15 @@ var render = function() {
                         ),
                         _vm._v(" "),
                         _c("div", { staticClass: "flex-searched-bottom" }, [
-                          _vm._m(1),
+                          _c("div", [
+                            _c("span", [_vm._v("Lot number:")]),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "bold" }, [
+                              _vm._v(_vm._s(_vm.carData.stock))
+                            ])
+                          ]),
                           _vm._v(" "),
-                          _vm._m(2),
+                          _vm._m(1),
                           _vm._v(" "),
                           _c("div", [
                             _c("span", [_vm._v("Mileage:")]),
@@ -672,16 +678,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", [_c("span", [_vm._v("Location:")]), _vm._v(" no data")])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("span", [_vm._v("Lot number:")]),
-      _vm._v(" "),
-      _c("span", { staticClass: "bold" }, [_vm._v("No data")])
-    ])
   },
   function() {
     var _vm = this

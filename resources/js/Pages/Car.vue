@@ -35,7 +35,7 @@
             </div>
           </div>
           <div class="flex">
-            <h2><span>Lot number:</span> No data</h2>
+            <h2><span>Lot number:</span> {{ carData.stock }}</h2>
             <h2><span>VIN: </span> {{ carData.vin }}</h2>
           </div>
         </div>
@@ -88,7 +88,7 @@
             </div>
             <div class="flex-base">
               <p class="light">Lot number</p>
-              <p class="strong">No data</p>
+              <p class="strong">{{ carData.stock }}</p>
             </div>
             <div class="flex-base">
               <p class="light">Date of sell</p>
@@ -133,7 +133,7 @@
             </div>
             <div class="flex-base">
               <p class="light">Body color</p>
-              <p class="strong">No data</p>
+              <p class="strong">{{ carData.body }}</p>
             </div>
             <div class="flex-base">
               <p class="light">Drive</p>
@@ -141,7 +141,7 @@
             </div>
             <div class="flex-base flex-base--no-border">
               <p class="light">Fuel</p>
-              <p class="strong">No data</p>
+              <p class="strong">{{ carData.fuel }}</p>
             </div>
           </div>
         </div>
@@ -153,19 +153,19 @@
           <div class="data__box__content">
             <div class="flex-base">
               <p class="light">Estimated Retail value</p>
-              <p class="strong">No data</p>
+              <p class="strong">{{ carData.estimated_retail_value }}</p>
             </div>
             <div class="flex-base flex-base--no-border">
               <p class="light">Estimated repair cost</p>
-              <p class="strong">{{ carData.engine }}</p>
+              <p class="strong">{{ carData.estimated_repair_cost }}</p>
             </div>
             <div class="flex-base">
               <p class="light">Primary damage</p>
-              <p class="strong">{{ carData.loss }}</p>
+              <p class="strong">{{ carData.primary_damage }}</p>
             </div>
             <div class="flex-base">
               <p class="light">Secondary damage</p>
-              <p class="strong">{{ carData.primary_damage }}</p>
+              <p class="strong">{{ carData.secondary_damage }}</p>
             </div>
           </div>
         </div>

@@ -65,7 +65,7 @@
             <div class="flex-searched-bottom">
               <div>
                 <span>Lot number:</span>
-                <span class="bold">No data</span>
+                <span class="bold">{{ carData.stock }}</span>
               </div>
               <div>
                 <span>Location:</span>
