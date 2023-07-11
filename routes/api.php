@@ -25,3 +25,4 @@ Route::get('similiar-cars', [getCars::class, 'getRandomCars']);
 Route::get('cars/{id}', [getCars::class, 'getCar']);
 Route::get('filters', [FiltersController::class, 'getFilters']);
 Route::post('claim', [getCars::class, 'claimLot']);
+Route::get('cars-vin/{vin}', [getCars::class, 'getCarsByVin']);

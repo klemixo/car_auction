@@ -614,10 +614,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://vinfax.info/api/cars/".concat(this.id)).then(function (res) {
-        _this.cars = res.data;
         _this.carData = res.data[0];
 
         _this.prepareImages();
+
+        _this.getCarsData(res.data[0].vin);
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
+    getCarsData: function getCarsData(vin) {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://vinfax.info/api/cars-vin/".concat(vin)).then(function (res) {
+        _this2.cars = res.data;
       })["catch"](function (err) {
         console.log(err);
       });
@@ -639,7 +649,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
     },
     prepareImages: function prepareImages() {
-      var _this2 = this;
+      var _this3 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         var count, exists;
@@ -658,14 +668,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 _context.next = 5;
                 return new Promise(function (resolve) {
-                  _this2.checkIfImageExists("https://phttt.vinfax.info/".concat(_this2.carData.vin, "-").concat(count, ".webp"), function (exists) {
+                  _this3.checkIfImageExists("https://phttt.vinfax.info/".concat(_this3.carData.vin, "-").concat(count, ".webp"), function (exists) {
                     if (exists) {
-                      _this2.slides.push("https://phttt.vinfax.info/".concat(_this2.carData.vin, "-").concat(count, ".webp"));
+                      _this3.slides.push("https://phttt.vinfax.info/".concat(_this3.carData.vin, "-").concat(count, ".webp"));
                     } else {
-                      if (_this2.slides.length === 0) {
-                        console.log(_this2.slides);
-                        _this2.slides = ["img/base-img.png", "img/base-img-2.png", "img/base-img-3.png"];
-                        console.log(_this2.slides);
+                      if (_this3.slides.length === 0) {
+                        console.log(_this3.slides);
+                        _this3.slides = ["img/base-img.png", "img/base-img-2.png", "img/base-img-3.png"];
+                        console.log(_this3.slides);
                       }
                     }
 

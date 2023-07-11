@@ -231,9 +231,19 @@ export default {
       axios
         .get(`https://vinfax.info/api/cars/${this.id}`)
         .then((res) => {
-          this.cars = res.data;
           this.carData = res.data[0];
           this.prepareImages();
+          this.getCarsData(res.data[0].vin);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    getCarsData(vin) {
+      axios
+        .get(`https://vinfax.info/api/cars-vin/${vin}`)
+        .then((res) => {
+          this.cars = res.data;
         })
         .catch((err) => {
           console.log(err);

@@ -14,6 +14,13 @@ class getCars extends Controller
         return $query->get();
     }
 
+    public function getCarsByVin($vin)
+    {
+        $query = car::where('vin', $vin);
+        return $query->get();
+    }
+
+
     public function getCars(Request $req)
     {
         $query = car::orderBy('id', 'desc');
