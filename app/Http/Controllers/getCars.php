@@ -16,7 +16,7 @@ class getCars extends Controller
 
     public function getCarsByVin($vin)
     {
-        $query = car::where('vin', $vin);
+        $query = car::where('vin', "LIKE", '%' . $vin . '%');
         return $query->get();
     }
 
