@@ -1386,7 +1386,7 @@ var render = function() {
                         "router-link",
                         {
                           staticClass: "black",
-                          attrs: { to: "/car/" + _vm.carData.id }
+                          attrs: { to: "/car/" + car.id }
                         },
                         [
                           _vm._v("More details "),

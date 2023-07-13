@@ -41,7 +41,7 @@
               </td>
               <td>Non-Insurence Company</td>
               <td class="action">
-                <router-link class="black" :to="'/car/' + carData.id"
+                <router-link class="black" :to="'/car/' + car.id"
                   >More details <img src="img/arrow.svg" alt=""
                 /></router-link>
               </td>
