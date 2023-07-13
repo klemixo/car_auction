@@ -12,6 +12,7 @@
             <th>Odometer</th>
             <th>Status</th>
             <th>Seller</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -39,6 +40,11 @@
                 <span>Not sold</span>
               </td>
               <td>Non-Insurence Company</td>
+              <td class="action">
+                <router-link class="black" :to="'/car/' + carData.id"
+                  >More details <img src="img/arrow.svg" alt=""
+                /></router-link>
+              </td>
             </tr>
           </template>
         </tbody>
@@ -100,6 +106,17 @@ div {
           color: #597bd5;
           border-radius: 3px;
           padding: 5px;
+        }
+      }
+      &.action {
+        a {
+          font-size: 16px;
+          line-height: 21px;
+          color: black;
+          display: flex;
+          gap: 6px;
+          align-items: center;
+          text-decoration: none;
         }
       }
     }
