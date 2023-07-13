@@ -294,11 +294,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["cars"],
   methods: {
     branch: function branch(year) {
       return +year % 2 === 0;
+    },
+    refreshPage: function refreshPage() {
+      window.location.reload();
     }
   }
 });
@@ -1378,26 +1383,31 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [_vm._v("Non-Insurence Company")]),
                   _vm._v(" "),
-                  _c(
-                    "td",
-                    { staticClass: "action" },
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "black",
-                          attrs: { to: "/car/" + car.id }
-                        },
-                        [
-                          _vm._v("More details "),
-                          _c("img", {
-                            attrs: { src: "img/arrow.svg", alt: "" }
-                          })
-                        ]
-                      )
-                    ],
-                    1
-                  )
+                  _c("td", { staticClass: "action" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "overlay-link",
+                        on: { click: _vm.refreshPage }
+                      },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "black",
+                            attrs: { to: "/car/" + car.id }
+                          },
+                          [
+                            _vm._v("More details "),
+                            _c("img", {
+                              attrs: { src: "img/arrow.svg", alt: "" }
+                            })
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ])
                 ])
               ]
             })

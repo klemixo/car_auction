@@ -41,9 +41,11 @@
               </td>
               <td>Non-Insurence Company</td>
               <td class="action">
-                <router-link class="black" :to="'/car/' + car.id"
-                  >More details <img src="img/arrow.svg" alt=""
-                /></router-link>
+                <div class="overlay-link" @click="refreshPage">
+                  <router-link class="black" :to="'/car/' + car.id"
+                    >More details <img src="img/arrow.svg" alt=""
+                  /></router-link>
+                </div>
               </td>
             </tr>
           </template>
@@ -59,6 +61,9 @@ export default {
   methods: {
     branch(year) {
       return +year % 2 === 0;
+    },
+    refreshPage() {
+      window.location.reload();
     },
   },
 };
