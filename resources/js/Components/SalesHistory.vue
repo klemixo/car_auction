@@ -21,9 +21,9 @@
               <td class="branch">
                 <span
                   class="badge"
-                  :class="{ red: branch(car.production_year) }"
+                  :class="{ red: carData.site == 'iaai' (car.production_year) }"
                 >
-                  {{ branch(car.production_year) ? "IAAI" : "Copart" }}
+                  {{ car.site }}
                 </span>
               </td>
               <td>

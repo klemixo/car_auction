@@ -30,8 +30,8 @@
               {{ carData.marka }}
               {{ carData.model }}
             </h1>
-            <div class="badge" :class="{ red: branch }">
-              {{ branch ? "IAAI" : "Copart" }}
+            <div class="badge" :class="{ red: carData.site == 'iaai'  }">
+              {{ carData.site }}
             </div>
           </div>
           <div class="flex">
@@ -81,8 +81,8 @@
             <p class="highlight">Seller: <b>Non-Insurence Company</b></p>
             <div class="flex">
               <p>Auction:</p>
-              <div class="badge" :class="{ red: branch }">
-                {{ branch ? "IAAI" : "Copart" }}
+              <div class="badge" :class="{ red: carData.site == 'iaai' }">
+                {{ carData.site }}
               </div>
               <div class="badge badge--outline">Not Sold</div>
             </div>

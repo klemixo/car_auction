@@ -32,8 +32,8 @@
               {{ toCapital(carData.model) }}
             </h2>
           </router-link>
-          <div class="badge" :class="{ red: branch }">
-            {{ branch ? "IAAI" : "Copart" }}
+          <div class="badge" :class="{ red: carData.site == 'iaai' }">
+            {{ carData.site }}
           </div>
         </div>
         <p><span>VIN:</span> {{ carData.vin }}</p>
@@ -51,8 +51,8 @@
         <div class="searched-data">
           <div class="searched-data-left">
             <div class="flex-searched">
-              <div v-if="!noBadge" class="badge" :class="{ red: branch }">
-                {{ branch ? "IAAI" : "Copart" }}
+              <div v-if="!noBadge" class="badge" :class="{ red: carData.site == 'iaai'  }">
+                {{ carData.site }}
               </div>
               <router-link class="black" :to="'/car/' + carData.id">
                 <h2>
