@@ -516,11 +516,14 @@ var render = function() {
                         _vm._v(" "),
                         _c(
                           "div",
-                          { staticClass: "badge", class: { red: _vm.branch } },
+                          {
+                            staticClass: "badge",
+                            class: { red: _vm.carData.site == "iaai" }
+                          },
                           [
                             _vm._v(
                               "\n          " +
-                                _vm._s(_vm.branch ? "IAAI" : "Copart") +
+                                _vm._s(_vm.carData.site) +
                                 "\n        "
                             )
                           ]
@@ -576,12 +579,12 @@ var render = function() {
                                   "div",
                                   {
                                     staticClass: "badge",
-                                    class: { red: _vm.branch }
+                                    class: { red: _vm.carData.site == "iaai" }
                                   },
                                   [
                                     _vm._v(
                                       "\n              " +
-                                        _vm._s(_vm.branch ? "IAAI" : "Copart") +
+                                        _vm._s(_vm.carData.site) +
                                         "\n            "
                                     )
                                   ]
