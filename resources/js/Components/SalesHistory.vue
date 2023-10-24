@@ -21,7 +21,7 @@
               <td class="branch">
                 <span
                   class="badge"
-                  :class="{ red: carData.site == 'IAAI' (car.production_year) }"
+                  :class="{ red: carData.site == 'IAAI'(car.production_year) }"
                 >
                   {{ car.site }}
                 </span>
@@ -39,7 +39,7 @@
               <td class="status">
                 <span>Not sold</span>
               </td>
-              <td>Non-Insurence Company</td>
+              <td>{{ car.seller }}</td>
               <td class="action">
                 <div class="overlay-link" @click="refreshPage">
                   <router-link class="black" :to="'/car/' + car.id"

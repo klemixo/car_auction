@@ -30,7 +30,7 @@
               {{ carData.marka }}
               {{ carData.model }}
             </h1>
-            <div class="badge" :class="{ red: carData.site == 'IAAI'  }">
+            <div class="badge" :class="{ red: carData.site == 'IAAI' }">
               {{ carData.site }}
             </div>
           </div>
@@ -78,7 +78,9 @@
           </div>
           <div class="data__box__content">
             <h3>Final bid: ${{ carData.final_bid }}</h3>
-            <p class="highlight">Seller: <b>Non-Insurence Company</b></p>
+            <p class="highlight">
+              Seller: <b>{{ carData.seller }}</b>
+            </p>
             <div class="flex">
               <p>Auction:</p>
               <div class="badge" :class="{ red: carData.site == 'IAAI' }">
@@ -219,9 +221,9 @@ export default {
     odometer() {
       return {
         value: this.carData.odometer.split(" ")[0],
-        badge: this.carData.odometer.split("(")[1].replace(")","");,
-      }
-    }
+        badge: this.carData.odometer.split("(")[1].replace(")", ""),
+      };
+    },
   },
   mounted() {
     this.getCarData();
@@ -277,11 +279,15 @@ export default {
       while (exists) {
         exists = await new Promise((resolve) => {
           this.checkIfImageExists(
-            `https://phttt.vinfax.info/${this.carData.vin}-${count}.webp`,
+            `https://phttt.vinfax.info/${
+              this.carData.vin
+            }-${this.carData.stock.trim()}-${count}.webp`,
             (exists) => {
               if (exists) {
                 this.slides.push(
-                  `https://phttt.vinfax.info/${this.carData.vin}-${count}.webp`
+                  `https://phttt.vinfax.info/${
+                    this.carData.vin
+                  }-${this.carData.stock.trim()}-${count}.webp`
                 );
               } else {
                 if (this.slides.length === 0) {

@@ -51,7 +51,11 @@
         <div class="searched-data">
           <div class="searched-data-left">
             <div class="flex-searched">
-              <div v-if="!noBadge" class="badge" :class="{ red: carData.site == 'IAAI'  }">
+              <div
+                v-if="!noBadge"
+                class="badge"
+                :class="{ red: carData.site == 'IAAI' }"
+              >
                 {{ carData.site }}
               </div>
               <router-link class="black" :to="'/car/' + carData.id">
@@ -139,11 +143,13 @@ export default {
       while (count < 5) {
         exists = await new Promise((resolve) => {
           this.checkIfImageExists(
-            `https://phttt.vinfax.info/${this.carData.vin}-${count}.webp`,
+            `https://phttt.vinfax.info/${
+              this.carData.vin
+            }-${this.carData.stock.trim()}-${count}.webp`,
             (exists) => {
               if (exists) {
                 const imgUrl =
-                  `https://phttt.vinfax.info/${this.carData.vin.trim()}-${count}.webp`.trim();
+                  `https://phttt.vinfax.info/${this.carData.vin.trim()}-${this.carData.stock.trim()}-${count}.webp`.trim();
                 console.log(imgUrl);
                 this.images.push(imgUrl);
               } else {

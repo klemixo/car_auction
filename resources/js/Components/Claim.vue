@@ -47,13 +47,15 @@
         <div class="flex flex-main">
           <div class="flex">
             <img
-              :src="`https://phttt.vinfax.info/${carData.vin}-0.webp`"
+              :src="`https://phttt.vinfax.info/${
+                carData.vin
+              }-${this.carData.stock.trim()}-0.webp`"
               alt=""
             />
           </div>
           <div>
             <div class="flex-middle">
-              <div class="badge" :class="{ red: carData.site == 'IAAI'  }">
+              <div class="badge" :class="{ red: carData.site == 'IAAI' }">
                 {{ carData.site }}
               </div>
               <h1>
