@@ -21,7 +21,7 @@
               <td class="branch">
                 <span
                   class="badge"
-                  :class="{ red: carData.site == 'iaai' (car.production_year) }"
+                  :class="{ red: carData.site == 'IAAI' (car.production_year) }"
                 >
                   {{ car.site }}
                 </span>

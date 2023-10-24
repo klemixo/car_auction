@@ -53,7 +53,7 @@
           </div>
           <div>
             <div class="flex-middle">
-              <div class="badge" :class="{ red: carData.site == 'iaai'  }">
+              <div class="badge" :class="{ red: carData.site == 'IAAI'  }">
                 {{ carData.site }}
               </div>
               <h1>
@@ -64,7 +64,7 @@
             </div>
             <div class="flex">
               <h2><span>Lot number:</span> {{ carData.stock }}</h2>
-              <h2><span>Location: </span> No data</h2>
+              <h2><span>Location: </span> {{ carData.selling_branch }}</h2>
               <h2><span>Mileage: </span> {{ carData.odometer }}</h2>
             </div>
           </div>

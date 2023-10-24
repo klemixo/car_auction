@@ -30,7 +30,7 @@
               {{ carData.marka }}
               {{ carData.model }}
             </h1>
-            <div class="badge" :class="{ red: carData.site == 'iaai'  }">
+            <div class="badge" :class="{ red: carData.site == 'IAAI'  }">
               {{ carData.site }}
             </div>
           </div>
@@ -81,7 +81,7 @@
             <p class="highlight">Seller: <b>Non-Insurence Company</b></p>
             <div class="flex">
               <p>Auction:</p>
-              <div class="badge" :class="{ red: carData.site == 'iaai' }">
+              <div class="badge" :class="{ red: carData.site == 'IAAI' }">
                 {{ carData.site }}
               </div>
               <div class="badge badge--outline">Not Sold</div>
@@ -92,7 +92,7 @@
             </div>
             <div class="flex-base">
               <p class="light">Date of sell</p>
-              <p class="strong">{{ carData.sold_date }}</p>
+              <p class="strong">{{ carData.createdate }}</p>
             </div>
             <div class="flex-base flex-base--no-border">
               <p class="light">Documents</p>
@@ -216,6 +216,12 @@ export default {
     mobileView() {
       return window.innerWidth < 768 ? true : false;
     },
+    odometer() {
+      return {
+        value: this.carData.odometer.split(" ")[0],
+        badge: this.carData.odometer.split("(")[1].replace(")","");,
+      }
+    }
   },
   mounted() {
     this.getCarData();

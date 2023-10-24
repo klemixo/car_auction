@@ -32,12 +32,12 @@
               {{ toCapital(carData.model) }}
             </h2>
           </router-link>
-          <div class="badge" :class="{ red: carData.site == 'iaai' }">
+          <div class="badge" :class="{ red: carData.site == 'IAAI' }">
             {{ carData.site }}
           </div>
         </div>
         <p><span>VIN:</span> {{ carData.vin }}</p>
-        <p><span>Location:</span> no data</p>
+        <p><span>Location:</span> {{ carData.selling_branch }}</p>
         <div class="flex flex--line">
           <h3>$ {{ carData.final_bid }}</h3>
           <div class="overlay-link" @click="refreshPage">
@@ -51,7 +51,7 @@
         <div class="searched-data">
           <div class="searched-data-left">
             <div class="flex-searched">
-              <div v-if="!noBadge" class="badge" :class="{ red: carData.site == 'iaai'  }">
+              <div v-if="!noBadge" class="badge" :class="{ red: carData.site == 'IAAI'  }">
                 {{ carData.site }}
               </div>
               <router-link class="black" :to="'/car/' + carData.id">
@@ -69,7 +69,7 @@
               </div>
               <div>
                 <span>Location:</span>
-                <span class="bold">No data</span>
+                <span class="bold">{{ carData.selling_branch }}</span>
               </div>
               <div>
                 <span>Mileage:</span>
