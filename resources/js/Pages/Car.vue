@@ -121,8 +121,8 @@
             <div class="flex-base">
               <p class="light">Mileage</p>
               <div class="strong">
-                <div class="badge badge--outline">Actual</div>
-                {{ carData.odometer }}
+                <div class="badge badge--outline">{{ odometer.badge }}</div>
+                {{ odometer.value }}
               </div>
             </div>
             <div class="flex-base">
