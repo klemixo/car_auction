@@ -49,7 +49,7 @@
             <img
               :src="`https://phttt.vinfax.info/${
                 carData.vin
-              }-${this.carData.stock.trim()}-0.webp`"
+              }-${this.carData.stock}-0.webp`"
               alt=""
             />
           </div>

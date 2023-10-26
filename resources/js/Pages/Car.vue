@@ -281,13 +281,13 @@ export default {
           this.checkIfImageExists(
             `https://phttt.vinfax.info/${
               this.carData.vin
-            }-${this.carData.stock.trim()}-${count}.webp`,
+            }-${this.carData.stock}-${count}.webp`,
             (exists) => {
               if (exists) {
                 this.slides.push(
                   `https://phttt.vinfax.info/${
                     this.carData.vin
-                  }-${this.carData.stock.trim()}-${count}.webp`
+                  }-${this.carData.stock}-${count}.webp`
                 );
               } else {
                 if (this.slides.length === 0) {

@@ -145,11 +145,11 @@ export default {
           this.checkIfImageExists(
             `https://phttt.vinfax.info/${
               this.carData.vin
-            }-${this.carData.stock.trim()}-${count}.webp`,
+            }-${this.carData.stock}-${count}.webp`,
             (exists) => {
               if (exists) {
                 const imgUrl =
-                  `https://phttt.vinfax.info/${this.carData.vin.trim()}-${this.carData.stock.trim()}-${count}.webp`.trim();
+                  `https://phttt.vinfax.info/${this.carData.vin.trim()}-${this.carData.stock}-${count}.webp`.trim();
                 console.log(imgUrl);
                 this.images.push(imgUrl);
               } else {
