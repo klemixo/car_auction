@@ -32,12 +32,12 @@
               <td>
                 {{ car.run_number }}
               </td>
-              <td class="bold">{{ car.final_bid }}$</td>
+              <td class="bold">{{ car.final_bid | formatNumber }}$</td>
               <td>
                 {{ car.odometer }}
               </td>
               <td class="status">
-                <span>Not sold</span>
+                <span>{{ car.sold ? 'Sold' : 'Not sold' }}</span>
               </td>
               <td>{{ car.seller }}</td>
               <td class="action">
@@ -65,6 +65,11 @@ export default {
     refreshPage() {
       window.location.reload();
     },
+  },
+      filters: {
+    formatNumber(value) {
+      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
   },
 };
 </script>

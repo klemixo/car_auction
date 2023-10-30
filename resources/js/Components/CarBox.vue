@@ -4,12 +4,12 @@
     :class="{ searched: searched, small: small }"
     v-if="carData"
   >
-    <router-link
+    <a
       :key="carData.id"
       class="img-box-link"
-      :to="'/car/' + carData.id"
+      :href="'/car/' + carData.id"
     >
-    </router-link>
+</a>
     <vueper-slides
       :touchable="false"
       :bullets="true"
@@ -85,7 +85,7 @@
             <div class="flex-searched-right">
               <p class="date">{{ carData.createdate }}</p>
               <span>Final bid</span>
-              <p class="final-bid">$ {{ carData.final_bid }}</p>
+              <p class="final-bid">$ {{ carData.final_bid | formatNumber}}</p>
               <router-link :to="'/car/' + carData.id"
                 >MORE DETAILS
               </router-link>
@@ -107,6 +107,11 @@ export default {
     return {
       images: [],
     };
+  },
+  filters: {
+    formatNumber(value) {
+      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
   },
   computed: {
     branch() {

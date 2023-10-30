@@ -77,7 +77,7 @@
             <p>Sale Details</p>
           </div>
           <div class="data__box__content">
-            <h3>Final bid: ${{ carData.final_bid }}</h3>
+            <h3>Final bid: ${{ carData.final_bid | formatNumber }}</h3>
             <p class="highlight">
               Seller: <b>{{ carData.seller }}</b>
             </p>
@@ -86,7 +86,9 @@
               <div class="badge" :class="{ red: carData.site == 'IAAI' }">
                 {{ carData.site }}
               </div>
-              <div class="badge badge--outline">Not Sold</div>
+              <div class="badge badge--outline">
+                {{ carData.sold ? 'Sold' : 'Not sold' }}
+              </div>
             </div>
             <div class="flex-base">
               <p class="light">Lot number</p>
@@ -98,7 +100,7 @@
             </div>
             <div class="flex-base flex-base--no-border">
               <p class="light">Documents</p>
-              <p class="strong">{{ carData.sold_date }}</p>
+              <p class="strong">{{ carData.documents }}</p>
             </div>
           </div>
         </div>
@@ -145,6 +147,10 @@
               <p class="light">Fuel</p>
               <p class="strong">{{ carData.fuel }}</p>
             </div>
+            <div class="flex-base flex-base--no-border">
+              <p class="light">Airbags</p>
+              <p class="strong">{{ carData.airbags }}</p>
+            </div>
           </div>
         </div>
         <div class="data__box card">
@@ -157,7 +163,7 @@
               <p class="light">Estimated Retail value</p>
               <p class="strong">{{ carData.estimated_retail_value }}</p>
             </div>
-            <div class="flex-base flex-base--no-border">
+            <div class="flex-base">
               <p class="light">Estimated repair cost</p>
               <p class="strong">{{ carData.estimated_repair_cost }}</p>
             </div>
@@ -211,6 +217,10 @@ export default {
       showModal: false,
     };
   },
+        filters: {
+    formatNumber(value) {
+      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    },
   computed: {
     branch() {
       return +this.carData.production_year % 2 === 0;
@@ -239,9 +249,9 @@ export default {
       axios
         .get(`https://vinfax.info/api/cars/${this.id}`)
         .then((res) => {
+          this.getCarsData(res.data[0].vin);
           this.carData = res.data[0];
           this.prepareImages();
-          this.getCarsData(res.data[0].vin);
         })
         .catch((err) => {
           console.log(err);

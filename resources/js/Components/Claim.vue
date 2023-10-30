@@ -73,7 +73,7 @@
           <div class="flex-last">
             {{ carData.createdate }}
             <h3>Final bid</h3>
-            <h5>${{ carData.final_bid }}</h5>
+            <h5>${{ carData.final_bid | formatNumber }}</h5>
             <button :disabled="!privacy" @click="payNow">CLAIM LOT</button>
           </div>
         </div>
@@ -104,6 +104,11 @@ export default {
         },
       ],
     };
+  },
+    filters: {
+    formatNumber(value) {
+      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
   },
   computed: {
     branch() {
