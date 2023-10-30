@@ -626,118 +626,118 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   filters: {
     formatNumber: function formatNumber(value) {
       return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+  },
+  computed: {
+    branch: function branch() {
+      return +this.carData.production_year % 2 === 0;
     },
-    computed: {
-      branch: function branch() {
-        return +this.carData.production_year % 2 === 0;
-      },
-      mobileView: function mobileView() {
-        return window.innerWidth < 768 ? true : false;
-      },
-      odometer: function odometer() {
-        return {
-          value: this.carData.odometer.split(" ")[0],
-          badge: this.carData.odometer.split("(")[1].replace(")", "")
+    mobileView: function mobileView() {
+      return window.innerWidth < 768 ? true : false;
+    },
+    odometer: function odometer() {
+      return {
+        value: this.carData.odometer.split(" ")[0],
+        badge: this.carData.odometer.split("(")[1].replace(")", "")
+      };
+    }
+  },
+  mounted: function mounted() {
+    this.getCarData();
+  },
+  methods: {
+    changeSlide: function changeSlide(idx) {
+      this.currentImage = idx;
+    },
+    closeModal: function closeModal() {
+      console.log("OKK");
+    },
+    getCarData: function getCarData() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://vinfax.info/api/cars/".concat(this.id)).then(function (res) {
+        _this.getCarsData(res.data[0].vin);
+
+        _this.carData = res.data[0];
+
+        _this.prepareImages();
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
+    getCarsData: function getCarsData(vin) {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://vinfax.info/api/cars-vin/".concat(vin)).then(function (res) {
+        _this2.cars = res.data;
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
+    checkIfImageExists: function checkIfImageExists(url, callback) {
+      var img = new Image();
+      img.src = url;
+
+      if (img.complete) {
+        callback(true);
+      } else {
+        img.onload = function () {
+          callback(true);
+        };
+
+        img.onerror = function () {
+          callback(false);
         };
       }
     },
-    mounted: function mounted() {
-      this.getCarData();
-    },
-    methods: {
-      changeSlide: function changeSlide(idx) {
-        this.currentImage = idx;
-      },
-      closeModal: function closeModal() {
-        console.log("OKK");
-      },
-      getCarData: function getCarData() {
-        var _this = this;
+    prepareImages: function prepareImages() {
+      var _this3 = this;
 
-        axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://vinfax.info/api/cars/".concat(this.id)).then(function (res) {
-          _this.getCarsData(res.data[0].vin);
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var count, exists;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                count = 0;
+                exists = true;
 
-          _this.carData = res.data[0];
-
-          _this.prepareImages();
-        })["catch"](function (err) {
-          console.log(err);
-        });
-      },
-      getCarsData: function getCarsData(vin) {
-        var _this2 = this;
-
-        axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://vinfax.info/api/cars-vin/".concat(vin)).then(function (res) {
-          _this2.cars = res.data;
-        })["catch"](function (err) {
-          console.log(err);
-        });
-      },
-      checkIfImageExists: function checkIfImageExists(url, callback) {
-        var img = new Image();
-        img.src = url;
-
-        if (img.complete) {
-          callback(true);
-        } else {
-          img.onload = function () {
-            callback(true);
-          };
-
-          img.onerror = function () {
-            callback(false);
-          };
-        }
-      },
-      prepareImages: function prepareImages() {
-        var _this3 = this;
-
-        return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-          var count, exists;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-            while (1) {
-              switch (_context.prev = _context.next) {
-                case 0:
-                  count = 0;
-                  exists = true;
-
-                case 2:
-                  if (!exists) {
-                    _context.next = 8;
-                    break;
-                  }
-
-                  _context.next = 5;
-                  return new Promise(function (resolve) {
-                    _this3.checkIfImageExists("https://phttt.vinfax.info/".concat(_this3.carData.vin, "-").concat(_this3.carData.stock, "-").concat(count, ".webp"), function (exists) {
-                      if (exists) {
-                        _this3.slides.push("https://phttt.vinfax.info/".concat(_this3.carData.vin, "-").concat(_this3.carData.stock, "-").concat(count, ".webp"));
-                      } else {
-                        if (_this3.slides.length === 0) {
-                          console.log(_this3.slides);
-                          _this3.slides = ["img/base-img.png", "img/base-img-2.png", "img/base-img-3.png"];
-                          console.log(_this3.slides);
-                        }
-                      }
-
-                      count++;
-                      resolve(exists);
-                    });
-                  });
-
-                case 5:
-                  exists = _context.sent;
-                  _context.next = 2;
+              case 2:
+                if (!exists) {
+                  _context.next = 8;
                   break;
+                }
 
-                case 8:
-                case "end":
-                  return _context.stop();
-              }
+                _context.next = 5;
+                return new Promise(function (resolve) {
+                  _this3.checkIfImageExists("https://phttt.vinfax.info/".concat(_this3.carData.vin, "-").concat(_this3.carData.stock, "-").concat(count, ".webp"), function (exists) {
+                    if (exists) {
+                      _this3.slides.push("https://phttt.vinfax.info/".concat(_this3.carData.vin, "-").concat(_this3.carData.stock, "-").concat(count, ".webp"));
+                    } else {
+                      if (_this3.slides.length === 0) {
+                        console.log(_this3.slides);
+                        _this3.slides = ["img/base-img.png", "img/base-img-2.png", "img/base-img-3.png"];
+                        console.log(_this3.slides);
+                      }
+                    }
+
+                    count++;
+                    resolve(exists);
+                  });
+                });
+
+              case 5:
+                exists = _context.sent;
+                _context.next = 2;
+                break;
+
+              case 8:
+              case "end":
+                return _context.stop();
             }
-          }, _callee);
-        }))();
-      }
+          }
+        }, _callee);
+      }))();
     }
   }
 });
