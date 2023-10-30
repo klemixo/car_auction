@@ -87,7 +87,7 @@
                 {{ carData.site }}
               </div>
               <div class="badge badge--outline">
-                {{ carData.sold ? 'Sold' : 'Not sold' }}
+                {{ carData.sold ? "Sold" : "Not sold" }}
               </div>
             </div>
             <div class="flex-base">
@@ -217,105 +217,102 @@ export default {
       showModal: false,
     };
   },
-        filters: {
+  filters: {
     formatNumber(value) {
       return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
-  computed: {
-    branch() {
-      return +this.carData.production_year % 2 === 0;
+    computed: {
+      branch() {
+        return +this.carData.production_year % 2 === 0;
+      },
+      mobileView() {
+        return window.innerWidth < 768 ? true : false;
+      },
+      odometer() {
+        return {
+          value: this.carData.odometer.split(" ")[0],
+          badge: this.carData.odometer.split("(")[1].replace(")", ""),
+        };
+      },
     },
-    mobileView() {
-      return window.innerWidth < 768 ? true : false;
+    mounted() {
+      this.getCarData();
     },
-    odometer() {
-      return {
-        value: this.carData.odometer.split(" ")[0],
-        badge: this.carData.odometer.split("(")[1].replace(")", ""),
-      };
-    },
-  },
-  mounted() {
-    this.getCarData();
-  },
-  methods: {
-    changeSlide(idx) {
-      this.currentImage = idx;
-    },
-    closeModal() {
-      console.log("OKK");
-    },
-    getCarData() {
-      axios
-        .get(`https://vinfax.info/api/cars/${this.id}`)
-        .then((res) => {
-          this.getCarsData(res.data[0].vin);
-          this.carData = res.data[0];
-          this.prepareImages();
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    getCarsData(vin) {
-      axios
-        .get(`https://vinfax.info/api/cars-vin/${vin}`)
-        .then((res) => {
-          this.cars = res.data;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    checkIfImageExists(url, callback) {
-      const img = new Image();
-      img.src = url;
+    methods: {
+      changeSlide(idx) {
+        this.currentImage = idx;
+      },
+      closeModal() {
+        console.log("OKK");
+      },
+      getCarData() {
+        axios
+          .get(`https://vinfax.info/api/cars/${this.id}`)
+          .then((res) => {
+            this.getCarsData(res.data[0].vin);
+            this.carData = res.data[0];
+            this.prepareImages();
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      },
+      getCarsData(vin) {
+        axios
+          .get(`https://vinfax.info/api/cars-vin/${vin}`)
+          .then((res) => {
+            this.cars = res.data;
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      },
+      checkIfImageExists(url, callback) {
+        const img = new Image();
+        img.src = url;
 
-      if (img.complete) {
-        callback(true);
-      } else {
-        img.onload = () => {
+        if (img.complete) {
           callback(true);
-        };
+        } else {
+          img.onload = () => {
+            callback(true);
+          };
 
-        img.onerror = () => {
-          callback(false);
-        };
-      }
-    },
-    async prepareImages() {
-      let count = 0;
-      let exists = true;
-      while (exists) {
-        exists = await new Promise((resolve) => {
-          this.checkIfImageExists(
-            `https://phttt.vinfax.info/${
-              this.carData.vin
-            }-${this.carData.stock}-${count}.webp`,
-            (exists) => {
-              if (exists) {
-                this.slides.push(
-                  `https://phttt.vinfax.info/${
-                    this.carData.vin
-                  }-${this.carData.stock}-${count}.webp`
-                );
-              } else {
-                if (this.slides.length === 0) {
-                  console.log(this.slides);
-                  this.slides = [
-                    "img/base-img.png",
-                    "img/base-img-2.png",
-                    "img/base-img-3.png",
-                  ];
-                  console.log(this.slides);
+          img.onerror = () => {
+            callback(false);
+          };
+        }
+      },
+      async prepareImages() {
+        let count = 0;
+        let exists = true;
+        while (exists) {
+          exists = await new Promise((resolve) => {
+            this.checkIfImageExists(
+              `https://phttt.vinfax.info/${this.carData.vin}-${this.carData.stock}-${count}.webp`,
+              (exists) => {
+                if (exists) {
+                  this.slides.push(
+                    `https://phttt.vinfax.info/${this.carData.vin}-${this.carData.stock}-${count}.webp`
+                  );
+                } else {
+                  if (this.slides.length === 0) {
+                    console.log(this.slides);
+                    this.slides = [
+                      "img/base-img.png",
+                      "img/base-img-2.png",
+                      "img/base-img-3.png",
+                    ];
+                    console.log(this.slides);
+                  }
                 }
+                count++;
+                resolve(exists);
               }
-              count++;
-              resolve(exists);
-            }
-          );
-        });
-      }
+            );
+          });
+        }
+      },
     },
   },
 };

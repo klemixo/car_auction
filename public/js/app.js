@@ -18949,10 +18949,10 @@ __webpack_require__.r(__webpack_exports__);
   name: "app",
   components: {
     Navbar: function Navbar() {
-      return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ./Components/Navbar.vue */ "./resources/js/Components/Navbar.vue"));
+      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ./Components/Navbar.vue */ "./resources/js/Components/Navbar.vue"));
     },
     Footer: function Footer() {
-      return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ./Components/Footer.vue */ "./resources/js/Components/Footer.vue"));
+      return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ./Components/Footer.vue */ "./resources/js/Components/Footer.vue"));
     }
   }
 });
@@ -53894,45 +53894,45 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [{
   path: '',
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(8), __webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ../Pages/Home.vue */ "./resources/js/Pages/Home.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(0), __webpack_require__.e(10), __webpack_require__.e(11)]).then(__webpack_require__.bind(null, /*! ../Pages/Home.vue */ "./resources/js/Pages/Home.vue"));
   },
   name: 'home'
 }, {
   path: 'about',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ../Pages/About.vue */ "./resources/js/Pages/About.vue"));
+    return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ../Pages/About.vue */ "./resources/js/Pages/About.vue"));
   },
   name: 'About'
 }, {
   path: 'terms',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ../Pages/Terms.vue */ "./resources/js/Pages/Terms.vue"));
+    return __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ../Pages/Terms.vue */ "./resources/js/Pages/Terms.vue"));
   },
   name: 'Terms'
 }, {
   path: 'contact',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ../Pages/Contact.vue */ "./resources/js/Pages/Contact.vue"));
+    return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ../Pages/Contact.vue */ "./resources/js/Pages/Contact.vue"));
   },
   name: 'Contact'
 }, {
   path: '/car/:id',
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(0), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, /*! ../Pages/Car.vue */ "./resources/js/Pages/Car.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(10), __webpack_require__.e(12)]).then(__webpack_require__.bind(null, /*! ../Pages/Car.vue */ "./resources/js/Pages/Car.vue"));
   },
   name: 'Car',
   props: true
 }, {
   path: '/error',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ../Pages/Error.vue */ "./resources/js/Pages/Error.vue"));
+    return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ../Pages/Error.vue */ "./resources/js/Pages/Error.vue"));
   },
   name: 'Error',
   props: true
 }, {
   path: '/success/:id',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ../Pages/Success.vue */ "./resources/js/Pages/Success.vue"));
+    return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ../Pages/Success.vue */ "./resources/js/Pages/Success.vue"));
   },
   name: 'Success',
   props: true

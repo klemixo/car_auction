@@ -199,6 +199,11 @@ __webpack_require__.r(__webpack_exports__);
       }]
     };
   },
+  filters: {
+    formatNumber: function formatNumber(value) {
+      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+  },
   computed: {
     branch: function branch() {
       return +this.carData.production_year % 2 === 0;
@@ -306,6 +311,11 @@ __webpack_require__.r(__webpack_exports__);
     },
     refreshPage: function refreshPage() {
       window.location.reload();
+    }
+  },
+  filters: {
+    formatNumber: function formatNumber(value) {
+      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
   }
 });
@@ -579,6 +589,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -607,116 +623,121 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       showModal: false
     };
   },
-  computed: {
-    branch: function branch() {
-      return +this.carData.production_year % 2 === 0;
+  filters: {
+    formatNumber: function formatNumber(value) {
+      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
-    mobileView: function mobileView() {
-      return window.innerWidth < 768 ? true : false;
-    },
-    odometer: function odometer() {
-      return {
-        value: this.carData.odometer.split(" ")[0],
-        badge: this.carData.odometer.split("(")[1].replace(")", "")
-      };
-    }
-  },
-  mounted: function mounted() {
-    this.getCarData();
-  },
-  methods: {
-    changeSlide: function changeSlide(idx) {
-      this.currentImage = idx;
-    },
-    closeModal: function closeModal() {
-      console.log("OKK");
-    },
-    getCarData: function getCarData() {
-      var _this = this;
-
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://vinfax.info/api/cars/".concat(this.id)).then(function (res) {
-        _this.carData = res.data[0];
-
-        _this.prepareImages();
-
-        _this.getCarsData(res.data[0].vin);
-      })["catch"](function (err) {
-        console.log(err);
-      });
-    },
-    getCarsData: function getCarsData(vin) {
-      var _this2 = this;
-
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://vinfax.info/api/cars-vin/".concat(vin)).then(function (res) {
-        _this2.cars = res.data;
-      })["catch"](function (err) {
-        console.log(err);
-      });
-    },
-    checkIfImageExists: function checkIfImageExists(url, callback) {
-      var img = new Image();
-      img.src = url;
-
-      if (img.complete) {
-        callback(true);
-      } else {
-        img.onload = function () {
-          callback(true);
-        };
-
-        img.onerror = function () {
-          callback(false);
+    computed: {
+      branch: function branch() {
+        return +this.carData.production_year % 2 === 0;
+      },
+      mobileView: function mobileView() {
+        return window.innerWidth < 768 ? true : false;
+      },
+      odometer: function odometer() {
+        return {
+          value: this.carData.odometer.split(" ")[0],
+          badge: this.carData.odometer.split("(")[1].replace(")", "")
         };
       }
     },
-    prepareImages: function prepareImages() {
-      var _this3 = this;
+    mounted: function mounted() {
+      this.getCarData();
+    },
+    methods: {
+      changeSlide: function changeSlide(idx) {
+        this.currentImage = idx;
+      },
+      closeModal: function closeModal() {
+        console.log("OKK");
+      },
+      getCarData: function getCarData() {
+        var _this = this;
 
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var count, exists;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                count = 0;
-                exists = true;
+        axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://vinfax.info/api/cars/".concat(this.id)).then(function (res) {
+          _this.getCarsData(res.data[0].vin);
 
-              case 2:
-                if (!exists) {
-                  _context.next = 8;
-                  break;
-                }
+          _this.carData = res.data[0];
 
-                _context.next = 5;
-                return new Promise(function (resolve) {
-                  _this3.checkIfImageExists("https://phttt.vinfax.info/".concat(_this3.carData.vin, "-").concat(_this3.carData.stock.trim(), "-").concat(count, ".webp"), function (exists) {
-                    if (exists) {
-                      _this3.slides.push("https://phttt.vinfax.info/".concat(_this3.carData.vin, "-").concat(_this3.carData.stock.trim(), "-").concat(count, ".webp"));
-                    } else {
-                      if (_this3.slides.length === 0) {
-                        console.log(_this3.slides);
-                        _this3.slides = ["img/base-img.png", "img/base-img-2.png", "img/base-img-3.png"];
-                        console.log(_this3.slides);
+          _this.prepareImages();
+        })["catch"](function (err) {
+          console.log(err);
+        });
+      },
+      getCarsData: function getCarsData(vin) {
+        var _this2 = this;
+
+        axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://vinfax.info/api/cars-vin/".concat(vin)).then(function (res) {
+          _this2.cars = res.data;
+        })["catch"](function (err) {
+          console.log(err);
+        });
+      },
+      checkIfImageExists: function checkIfImageExists(url, callback) {
+        var img = new Image();
+        img.src = url;
+
+        if (img.complete) {
+          callback(true);
+        } else {
+          img.onload = function () {
+            callback(true);
+          };
+
+          img.onerror = function () {
+            callback(false);
+          };
+        }
+      },
+      prepareImages: function prepareImages() {
+        var _this3 = this;
+
+        return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+          var count, exists;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  count = 0;
+                  exists = true;
+
+                case 2:
+                  if (!exists) {
+                    _context.next = 8;
+                    break;
+                  }
+
+                  _context.next = 5;
+                  return new Promise(function (resolve) {
+                    _this3.checkIfImageExists("https://phttt.vinfax.info/".concat(_this3.carData.vin, "-").concat(_this3.carData.stock, "-").concat(count, ".webp"), function (exists) {
+                      if (exists) {
+                        _this3.slides.push("https://phttt.vinfax.info/".concat(_this3.carData.vin, "-").concat(_this3.carData.stock, "-").concat(count, ".webp"));
+                      } else {
+                        if (_this3.slides.length === 0) {
+                          console.log(_this3.slides);
+                          _this3.slides = ["img/base-img.png", "img/base-img-2.png", "img/base-img-3.png"];
+                          console.log(_this3.slides);
+                        }
                       }
-                    }
 
-                    count++;
-                    resolve(exists);
+                      count++;
+                      resolve(exists);
+                    });
                   });
-                });
 
-              case 5:
-                exists = _context.sent;
-                _context.next = 2;
-                break;
+                case 5:
+                  exists = _context.sent;
+                  _context.next = 2;
+                  break;
 
-              case 8:
-              case "end":
-                return _context.stop();
+                case 8:
+                case "end":
+                  return _context.stop();
+              }
             }
-          }
-        }, _callee);
-      }))();
+          }, _callee);
+        }))();
+      }
     }
   }
 });
@@ -1199,7 +1220,7 @@ var render = function() {
                             "https://phttt.vinfax.info/" +
                             _vm.carData.vin +
                             "-" +
-                            this.carData.stock.trim() +
+                            this.carData.stock +
                             "-0.webp",
                           alt: ""
                         }
@@ -1264,7 +1285,14 @@ var render = function() {
                       ),
                       _c("h3", [_vm._v("Final bid")]),
                       _vm._v(" "),
-                      _c("h5", [_vm._v("$" + _vm._s(_vm.carData.final_bid))]),
+                      _c("h5", [
+                        _vm._v(
+                          "$" +
+                            _vm._s(
+                              _vm._f("formatNumber")(_vm.carData.final_bid)
+                            )
+                        )
+                      ]),
                       _vm._v(" "),
                       _c(
                         "button",
@@ -1378,7 +1406,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("td", { staticClass: "bold" }, [
-                    _vm._v(_vm._s(car.final_bid) + "$")
+                    _vm._v(_vm._s(_vm._f("formatNumber")(car.final_bid)) + "$")
                   ]),
                   _vm._v(" "),
                   _c("td", [
@@ -1389,7 +1417,9 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _vm._m(1, true),
+                  _c("td", { staticClass: "status" }, [
+                    _c("span", [_vm._v(_vm._s(car.sold ? "Sold" : "Not sold"))])
+                  ]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(car.seller))]),
                   _vm._v(" "),
@@ -1451,14 +1481,6 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Action")])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", { staticClass: "status" }, [
-      _c("span", [_vm._v("Not sold")])
     ])
   }
 ]
@@ -1733,7 +1755,10 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "data__box__content" }, [
                   _c("h3", [
-                    _vm._v("Final bid: $" + _vm._s(_vm.carData.final_bid))
+                    _vm._v(
+                      "Final bid: $" +
+                        _vm._s(_vm._f("formatNumber")(_vm.carData.final_bid))
+                    )
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "highlight" }, [
@@ -1760,7 +1785,11 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("div", { staticClass: "badge badge--outline" }, [
-                      _vm._v("Not Sold")
+                      _vm._v(
+                        "\n              " +
+                          _vm._s(_vm.carData.sold ? "Sold" : "Not sold") +
+                          "\n            "
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -1784,7 +1813,7 @@ var render = function() {
                     _c("p", { staticClass: "light" }, [_vm._v("Documents")]),
                     _vm._v(" "),
                     _c("p", { staticClass: "strong" }, [
-                      _vm._v(_vm._s(_vm.carData.sold_date))
+                      _vm._v(_vm._s(_vm.carData.documents))
                     ])
                   ])
                 ])
@@ -1821,11 +1850,11 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "strong" }, [
                       _c("div", { staticClass: "badge badge--outline" }, [
-                        _vm._v("Actual")
+                        _vm._v(_vm._s(_vm.odometer.badge))
                       ]),
                       _vm._v(
                         "\n              " +
-                          _vm._s(_vm.carData.odometer) +
+                          _vm._s(_vm.odometer.value) +
                           "\n            "
                       )
                     ])
@@ -1869,6 +1898,14 @@ var render = function() {
                     _c("p", { staticClass: "strong" }, [
                       _vm._v(_vm._s(_vm.carData.fuel))
                     ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex-base flex-base--no-border" }, [
+                    _c("p", { staticClass: "light" }, [_vm._v("Airbags")]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "strong" }, [
+                      _vm._v(_vm._s(_vm.carData.airbags))
+                    ])
                   ])
                 ])
               ]),
@@ -1887,7 +1924,7 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "flex-base flex-base--no-border" }, [
+                  _c("div", { staticClass: "flex-base" }, [
                     _c("p", { staticClass: "light" }, [
                       _vm._v("Estimated repair cost")
                     ]),
