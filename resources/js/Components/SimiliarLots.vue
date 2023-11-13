@@ -30,7 +30,7 @@ export default {
   methods: {
     getCarData() {
       axios
-        .get(`/api/similiar-cars?make=${make}&model=${model}`)
+        .get(`/api/similiar-cars?make=${props.make}&model=${props.model}`)
         .then((res) => {
           this.carData = res.data;
         })

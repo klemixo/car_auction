@@ -19,10 +19,7 @@
           <template v-for="car in cars">
             <tr>
               <td class="branch">
-                <span
-                  class="badge"
-                  :class="{ red: car.site == 'IAAI'(car.production_year) }"
-                >
+                <span class="badge" :class="{ red: car.site == 'IAAI' }">
                   {{ car.site }}
                 </span>
               </td>

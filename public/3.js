@@ -300,9 +300,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["cars"],
   methods: {
@@ -366,7 +363,7 @@ __webpack_require__.r(__webpack_exports__);
     getCarData: function getCarData() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/similiar-cars?make=".concat(make, "&model=").concat(model)).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/similiar-cars?make=".concat(props.make, "&model=").concat(props.model)).then(function (res) {
         _this.carData = res.data;
       })["catch"](function (err) {
         console.log(err);
@@ -1375,7 +1372,7 @@ var render = function() {
                       "span",
                       {
                         staticClass: "badge",
-                        class: { red: car.site == "IAAI"(car.production_year) }
+                        class: { red: car.site == "IAAI" }
                       },
                       [
                         _vm._v(
