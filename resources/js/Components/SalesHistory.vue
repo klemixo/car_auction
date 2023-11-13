@@ -21,7 +21,7 @@
               <td class="branch">
                 <span
                   class="badge"
-                  :class="{ red: carData.site == 'IAAI'(car.production_year) }"
+                  :class="{ red: car.site == 'IAAI'(car.production_year) }"
                 >
                   {{ car.site }}
                 </span>
@@ -37,7 +37,7 @@
                 {{ car.odometer }}
               </td>
               <td class="status">
-                <span>{{ car.sold ? 'Sold' : 'Not sold' }}</span>
+                <span>{{ car.sold ? "Sold" : "Not sold" }}</span>
               </td>
               <td>{{ car.seller }}</td>
               <td class="action">
@@ -66,10 +66,10 @@ export default {
       window.location.reload();
     },
   },
-      filters: {
+  filters: {
     formatNumber(value) {
       return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
+    },
   },
 };
 </script>

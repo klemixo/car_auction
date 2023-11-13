@@ -15,7 +15,7 @@
 import axios from "axios";
 import CarBox from "../Components/CarBox.vue";
 export default {
-  props: ["id"],
+  props: ["id", "make", "model"],
   components: {
     CarBox,
   },
@@ -30,7 +30,7 @@ export default {
   methods: {
     getCarData() {
       axios
-        .get(`/api/similiar-cars`)
+        .get(`/api/similiar-cars?make=${make}&model=${model}`)
         .then((res) => {
           this.carData = res.data;
         })

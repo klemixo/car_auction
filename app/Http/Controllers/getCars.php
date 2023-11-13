@@ -57,9 +57,16 @@ class getCars extends Controller
         ];
     }
 
-    public function getRandomCars()
+    public function getRandomCars(Request $req)
     {
-        return car::inRandomOrder()->limit(6)->where('claimed', "=", 0)->get();
+        $query = car::orderBy('id', 'desc');
+        $query->where('claimed', "=", 0);
+        $data = $req->all();
+        $make = $data['marka'];
+        $model = $data['model'];
+        $query->where('marka', "LIKE", '%' . $make . '%')->orWhere('model', "LIKE", '%' . $model . '%');
+
+        return $query->limit(8)->get();
     }
 
     public function claimLot(Request $req)

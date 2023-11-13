@@ -143,7 +143,7 @@
               <p class="light">Drive</p>
               <p class="strong">{{ carData.drive_line_type }}</p>
             </div>
-            <div class="flex-base flex-base--no-border">
+            <div class="flex-base">
               <p class="light">Fuel</p>
               <p class="strong">{{ carData.fuel }}</p>
             </div>
@@ -183,7 +183,7 @@
       <SalesHistory :cars="cars" />
     </div>
     <div class="similiar__lots">
-      <SimiliarLots />
+      <SimiliarLots :make="carData.marka" :model="carData.model" />
     </div>
   </div>
 </template>

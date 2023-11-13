@@ -350,7 +350,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["id"],
+  props: ["id", "make", "model"],
   components: {
     CarBox: _Components_CarBox_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
@@ -366,7 +366,7 @@ __webpack_require__.r(__webpack_exports__);
     getCarData: function getCarData() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/similiar-cars").then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/similiar-cars?make=".concat(make, "&model=").concat(model)).then(function (res) {
         _this.carData = res.data;
       })["catch"](function (err) {
         console.log(err);
@@ -1375,9 +1375,7 @@ var render = function() {
                       "span",
                       {
                         staticClass: "badge",
-                        class: {
-                          red: _vm.carData.site == "IAAI"(car.production_year)
-                        }
+                        class: { red: car.site == "IAAI"(car.production_year) }
                       },
                       [
                         _vm._v(
@@ -1892,7 +1890,7 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "flex-base flex-base--no-border" }, [
+                  _c("div", { staticClass: "flex-base" }, [
                     _c("p", { staticClass: "light" }, [_vm._v("Fuel")]),
                     _vm._v(" "),
                     _c("p", { staticClass: "strong" }, [
@@ -1965,7 +1963,16 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "similiar__lots" }, [_c("SimiliarLots")], 1)
+          _c(
+            "div",
+            { staticClass: "similiar__lots" },
+            [
+              _c("SimiliarLots", {
+                attrs: { make: _vm.carData.marka, model: _vm.carData.model }
+              })
+            ],
+            1
+          )
         ],
         1
       )
