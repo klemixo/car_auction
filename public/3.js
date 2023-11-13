@@ -363,7 +363,7 @@ __webpack_require__.r(__webpack_exports__);
     getCarData: function getCarData() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/similiar-cars?make=".concat(props.make, "&model=").concat(props.model)).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/similiar-cars?make=".concat(this.make, "&model=").concat(this.model)).then(function (res) {
         _this.carData = res.data;
       })["catch"](function (err) {
         console.log(err);
