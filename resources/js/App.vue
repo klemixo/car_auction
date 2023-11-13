@@ -8,11 +8,12 @@
 
 <script>
 import "./Styles/app.scss";
+import Navbar from "./Components/Navbar.vue";
 
 export default {
   name: "app",
   components: {
-    Navbar: () => import("./Components/Navbar.vue"),
+    Navbar,
     Footer: () => import("./Components/Footer.vue"),
   },
 };
