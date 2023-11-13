@@ -62,7 +62,7 @@ class getCars extends Controller
         $query = car::orderBy('id', 'desc');
         $query->where('claimed', "=", 0);
         $data = $req->all();
-        $make = $data['marka'];
+        $make = $data['make'];
         $model = $data['model'];
         $query->where('marka', "LIKE", '%' . $make . '%')->orWhere('model', "LIKE", '%' . $model . '%');
 
