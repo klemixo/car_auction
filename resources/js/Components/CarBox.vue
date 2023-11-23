@@ -7,7 +7,7 @@
     <a
       :key="carData.id"
       class="img-box-link"
-      :href="`/#/car/${carData.marka}/${betterMake}/${carData.id}/${carData.vin}`"
+      @click="goToPage(`/#/car/${carData.marka}/${betterMake}/${carData.id}/${carData.vin}`)"
     >
 </a>
     <vueper-slides
@@ -25,7 +25,7 @@
           <a
             :key="carData.id"
             class="black"
-            :href="`/#/car/${carData.marka}/${betterMake}/${carData.id}/${carData.vin}`"
+            @click="goToPage(`/#/car/${carData.marka}/${betterMake}/${carData.id}/${carData.vin}`)"
           >
             <h2>
               {{ carData.production_year }} {{ toCapital(carData.marka) }}
@@ -41,7 +41,7 @@
         <div class="flex flex--line">
           <h3>$ {{ carData.final_bid }}</h3>
           <div class="overlay-link" @click="refreshPage">
-            <a class="black" :href="`/#/car/${carData.marka}/${betterMake}/${carData.id}/${carData.vin}`"
+            <a class="black" @click="goToPage(`/#/car/${carData.marka}/${betterMake}/${carData.id}/${carData.vin}`)"
               >More details <img src="img/arrow.svg" alt=""
             /></a>
           </div>
@@ -58,7 +58,7 @@
               >
                 {{ carData.site }}
               </div>
-              <a class="black" :href="`/#/car/${carData.marka}/${betterMake}/${carData.id}/${carData.vin}`">
+              <a class="black" @click="goToPage(`/#/car/${carData.marka}/${betterMake}/${carData.id}/${carData.vin}`)">
                 <h2>
                   {{ carData.production_year }} {{ toCapital(carData.marka) }}
                   {{ toCapital(carData.model) }}
@@ -86,7 +86,7 @@
               <p class="date">{{ carData.createdate }}</p>
               <span>Final bid</span>
               <p class="final-bid">$ {{ carData.final_bid | formatNumber}}</p>
-              <a :href="`/#/car/${carData.marka}/${betterMake}/${carData.id}/${carData.vin}`"
+              <a @click="goToPage(`/#/car/${carData.marka}/${betterMake}/${carData.id}/${carData.vin}`)"
                 >MORE DETAILS
               </a>
             </div>
@@ -125,6 +125,9 @@ export default {
     toCapital(str) {
       let str2 = str.toLowerCase();
       return str2[0].toUpperCase() + str2.substring(1);
+    },
+    goToPage(carUrl){
+      window.location.replace(carUrl);
     },
     checkIfImageExists(url, callback) {
       const img = new Image();

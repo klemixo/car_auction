@@ -39,7 +39,7 @@
               <td>{{ car.seller }}</td>
               <td class="action">
                 <div class="overlay-link" @click="refreshPage">
-                  <a class="black" :href="`/#/car/${betterMake(car.marka)}/${car.model}/${car.id}/${car.vin}`"
+                  <a class="black" @click="goToPage(`/#/car/${betterMake(car.marka)}/${car.model}/${car.id}/${car.vin}`)"
                     >More details <img src="img/arrow.svg" alt=""
                   /></a>
                 </div>
@@ -64,7 +64,10 @@ export default {
     },
     betterMake(make){
       return make.replaceAll("/","");
-    }
+    },
+    goToPage(carUrl){
+      window.location.replace(carUrl);
+    },
   },
 
   filters: {
