@@ -39,9 +39,9 @@
               <td>{{ car.seller }}</td>
               <td class="action">
                 <div class="overlay-link" @click="refreshPage">
-                  <router-link class="black" "`/#/car/${car.marka}/${car.model}/${car.id}/${car.vin}`"
+                  <a class="black" :href="`/#/car/${betterMake(car.marka)}/${car.model}/${car.id}/${car.vin}`"
                     >More details <img src="img/arrow.svg" alt=""
-                  /></router-link>
+                  /></a>
                 </div>
               </td>
             </tr>
@@ -62,7 +62,11 @@ export default {
     refreshPage() {
       window.location.reload();
     },
+    betterMake(make){
+      return make.replaceAll("/","");
+    }
   },
+
   filters: {
     formatNumber(value) {
       return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
