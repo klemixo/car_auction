@@ -27,14 +27,14 @@
                 {{ car.createdate }}
               </td>
               <td>
-                {{ car.run_number }}
+                {{ car.stock }}
               </td>
               <td class="bold">{{ car.final_bid | formatNumber }}$</td>
               <td>
                 {{ car.odometer }}
               </td>
               <td class="status">
-                <span>{{ car.sold ? "Sold" : "Not sold" }}</span>
+                <span>{{ car.sold }}</span>
               </td>
               <td>{{ car.seller }}</td>
               <td class="action">

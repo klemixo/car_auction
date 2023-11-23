@@ -87,8 +87,12 @@
                 {{ carData.site }}
               </div>
               <div class="badge badge--outline">
-                {{ carData.sold ? "Sold" : "Not sold" }}
+                {{ carData.sold  }}
               </div>
+            </div>
+             <div class="flex-base">
+              <p class="light">Location</p>
+              <p class="strong">{{ carData.selling_branch }}</p>
             </div>
             <div class="flex-base">
               <p class="light">Lot number</p>
@@ -124,7 +128,7 @@
               <p class="light">Mileage</p>
               <div class="strong">
                 <div class="badge badge--outline">{{ odometer.badge }}</div>
-                {{ odometer.value }}
+                {{ odometer.value }}mi
               </div>
             </div>
             <div class="flex-base">
@@ -396,7 +400,7 @@ export default {
         position: relative;
         button {
           height: 99%;
-          width: 50px;
+          width: 70px;
           position: absolute;
           left: 0;
           top: 0;
@@ -411,11 +415,7 @@ export default {
           }
           border: none;
           outline: none;
-          background: linear-gradient(
-            90.88deg,
-            #000000 0.72%,
-            rgba(0, 0, 0, 0) 99.21%
-          );
+          background: linear-gradient(90.88deg, rgba(0,0,0,.5) 20%, rgba(0, 0, 0, 0) 99.21%);
           &:disabled {
             cursor: not-allowed;
             svg {
@@ -444,7 +444,7 @@ export default {
         gap: 12px;
         flex-wrap: wrap;
         img {
-          width: 156px;
+          width: 162px;
           height: 106px;
         }
       }

@@ -7,7 +7,7 @@
     <a
       :key="carData.id"
       class="img-box-link"
-      :href="'/car/' + carData.id"
+      :href="'/#/car/' + carData.id"
     >
 </a>
     <vueper-slides
@@ -237,7 +237,7 @@ export default {
   .vueperslides__arrow {
     &--prev,
     &--next {
-      width: 50px !important;
+      width: 70px !important;
       height: 100% !important;
 
       svg {
@@ -251,21 +251,13 @@ export default {
     }
     border: none !important;
     &--prev {
-      background: linear-gradient(
-        90.88deg,
-        #000000 0.72%,
-        rgba(0, 0, 0, 0) 99.21%
-      );
+      background: linear-gradient(90.88deg, rgba(0,0,0,.5) 20%, rgba(0, 0, 0, 0) 99.21%);
       left: 0rem !important;
     }
 
     &--next {
       right: 0rem !important;
-      background: linear-gradient(
-        90.88deg,
-        #000000 0.72%,
-        rgba(0, 0, 0, 0) 99.21%
-      );
+      background: linear-gradient(90.88deg, rgba(0,0,0,.5) 20%, rgba(0, 0, 0, 0) 99.21%);
       transform: rotate(180deg) translateY(50%);
       svg {
         transform: rotate(-180deg);
