@@ -39,7 +39,7 @@
               <td>{{ car.seller }}</td>
               <td class="action">
                 <div class="overlay-link" @click="refreshPage">
-                  <router-link class="black" :to="'/car/' + car.id"
+                  <router-link class="black" "`/#/car/${car.marka}/${car.model}/${car.id}/${car.vin}`"
                     >More details <img src="img/arrow.svg" alt=""
                   /></router-link>
                 </div>

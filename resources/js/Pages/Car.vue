@@ -152,6 +152,10 @@
               <p class="strong">{{ carData.fuel }}</p>
             </div>
             <div class="flex-base flex-base--no-border">
+              <p class="light">Run and drive</p>
+              <p class="strong">{{ carData.run_and_drive }}</p>
+            </div>
+            <div class="flex-base flex-base--no-border">
               <p class="light">Airbags</p>
               <p class="strong">{{ carData.airbags }}</p>
             </div>

@@ -23,7 +23,7 @@ const routes = [{
         name: 'Contact'
     },
     {
-        path: '/car/:id',
+        path: '/car/:make/:model/:id/:vin',
         component: () =>
             import ('../Pages/Car.vue'),
         name: 'Car',

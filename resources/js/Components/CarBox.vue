@@ -7,7 +7,7 @@
     <a
       :key="carData.id"
       class="img-box-link"
-      :href="'/#/car/' + carData.id"
+      :href="`/#/car/${carData.marka}/${carData.model}/${carData.id}/${carData.vin}`"
     >
 </a>
     <vueper-slides
@@ -25,7 +25,7 @@
           <router-link
             :key="carData.id"
             class="black"
-            :to="'/car/' + carData.id"
+            :to="`/#/car/${carData.marka}/${carData.model}/${carData.id}/${carData.vin}`"
           >
             <h2>
               {{ carData.production_year }} {{ toCapital(carData.marka) }}
@@ -41,7 +41,7 @@
         <div class="flex flex--line">
           <h3>$ {{ carData.final_bid }}</h3>
           <div class="overlay-link" @click="refreshPage">
-            <router-link class="black" :to="'/car/' + carData.id"
+            <router-link class="black" :to="`/#/car/${carData.marka}/${carData.model}/${carData.id}/${carData.vin}`"
               >More details <img src="img/arrow.svg" alt=""
             /></router-link>
           </div>
@@ -58,7 +58,7 @@
               >
                 {{ carData.site }}
               </div>
-              <router-link class="black" :to="'/car/' + carData.id">
+              <router-link class="black" :to="`/#/car/${carData.marka}/${carData.model}/${carData.id}/${carData.vin}`">
                 <h2>
                   {{ carData.production_year }} {{ toCapital(carData.marka) }}
                   {{ toCapital(carData.model) }}
@@ -86,7 +86,7 @@
               <p class="date">{{ carData.createdate }}</p>
               <span>Final bid</span>
               <p class="final-bid">$ {{ carData.final_bid | formatNumber}}</p>
-              <router-link :to="'/car/' + carData.id"
+              <router-link :to="`/#/car/${carData.marka}/${carData.model}/${carData.id}/${carData.vin}`"
                 >MORE DETAILS
               </router-link>
             </div>
