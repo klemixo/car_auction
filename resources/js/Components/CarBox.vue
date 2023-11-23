@@ -7,7 +7,7 @@
     <a
       :key="carData.id"
       class="img-box-link"
-      @click="goToPage(`/#/car/${carData.marka}/${betterMake}/${carData.id}/${carData.vin}`)"
+      :href="`/#/car/${carData.marka}/${betterMake}/${carData.id}/${carData.vin}`"
     >
 </a>
     <vueper-slides
@@ -300,6 +300,7 @@ export default {
         margin-top: auto;
       }
       a {
+        cursor:pointer;
         &.black {
           color: black;
           text-decoration: none;
@@ -320,6 +321,7 @@ export default {
       }
 
       a {
+        cursor:pointer;
         font-size: 16px;
         line-height: 21px;
         color: #243e97;
@@ -331,6 +333,7 @@ export default {
     }
   }
   a {
+        cursor:pointer;
     &.black {
       color: black;
       text-decoration: none;
@@ -388,6 +391,7 @@ export default {
       color: #000000;
     }
     a {
+        cursor:pointer;
       background: #243e97;
       border-radius: 5px;
       font-size: 17px;
