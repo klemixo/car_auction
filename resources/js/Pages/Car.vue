@@ -151,8 +151,8 @@
               <p class="light">Fuel</p>
               <p class="strong">{{ carData.fuel }}</p>
             </div>
-            <div class="flex-base flex-base--no-border">
-              <p class="light">Run and drive</p>
+            <div class="flex-base">
+              <p class="light">Start code</p>
               <p class="strong">{{ carData.run_and_drive }}</p>
             </div>
             <div class="flex-base flex-base--no-border">

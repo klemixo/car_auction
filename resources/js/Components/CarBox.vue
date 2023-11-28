@@ -7,7 +7,7 @@
     <a
       :key="carData.id"
       class="img-box-link"
-      :href="`/#/car/${carData.marka}/${betterMake}/${carData.id}/${carData.vin}`"
+      @click="goToPage(`/#/car/${carData.marka}/${betterMake}/${carData.id}/${carData.vin}`)"
     >
 </a>
     <vueper-slides
@@ -128,6 +128,7 @@ export default {
     },
     goToPage(carUrl){
       window.location.replace(carUrl);
+      window.location.reload();
     },
     checkIfImageExists(url, callback) {
       const img = new Image();
