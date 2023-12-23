@@ -153,7 +153,7 @@
             </div>
             <div class="flex-base">
               <p class="light">Start code</p>
-              <p class="strong">{{ carData.run_and_drive }}</p>
+              <p class="strong">{{ carData.start_code }}</p>
             </div>
             <div class="flex-base flex-base--no-border">
               <p class="light">Airbags</p>
