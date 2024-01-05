@@ -23,8 +23,8 @@ const store = new Vuex.Store({
             runMin: { field: 'runMin', operator: "=", value: null, label: 'Run min' },
             runMax: { field: 'runMax', operator: "=", value: null, label: 'Run Max' },
             search: { field: 'search', operator: "=", value: null, label: 'Search' },
-            auctionHouseIAAI: { field: 'none', operator: "=", value: null, label: 'IAAI' },
-            auctionHouseCopart: { field: 'none', operator: "=", value: null, label: 'Copart' },
+            auctionHouseIAAI: { field: 'site', operator: "=", value: null, label: 'IAAI' },
+            auctionHouseCopart: { field: 'site', operator: "=", value: null, label: 'Copart' },
         }
     },
     getters: {
@@ -69,9 +69,9 @@ const store = new Vuex.Store({
         GET_CARS(state) {
             state.dataLoading = true;
             let filtersString = "";
-
+            console.log(state.filters)
             for (const property in state.filters) {
-                if (state.filters[property].field === "none") {
+                if (state.filters[property].field === "site" && state.filters[property].value === false) {
                     continue;
                 }
                 if (state.filters[property].value) {

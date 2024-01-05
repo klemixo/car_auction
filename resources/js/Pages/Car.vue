@@ -419,7 +419,8 @@ export default {
           }
           border: none;
           outline: none;
-          background: linear-gradient(90.88deg, rgba(0,0,0,.5) 20%, rgba(0, 0, 0, 0) 99.21%);
+          background: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+
           &:disabled {
             cursor: not-allowed;
             svg {

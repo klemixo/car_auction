@@ -39,7 +39,7 @@
         <p><span>VIN:</span> {{ carData.vin }}</p>
         <p><span>Location:</span> {{ carData.selling_branch }}</p>
         <div class="flex flex--line">
-          <h3>$ {{ carData.final_bid }}</h3>
+          <h3>$ {{ carData.final_bid | formatNumber}}</h3>
           <div class="overlay-link" @click="refreshPage">
             <a class="black" @click="goToPage(`/#/car/${carData.marka}/${betterMake}/${carData.id}/${carData.vin}`)"
               >More details <img src="img/arrow.svg" alt=""
@@ -127,8 +127,7 @@ export default {
       return str2[0].toUpperCase() + str2.substring(1);
     },
     goToPage(carUrl){
-      window.location.replace(carUrl);
-      window.location.reload();
+      window.location.href = carUrl;
     },
     checkIfImageExists(url, callback) {
       const img = new Image();

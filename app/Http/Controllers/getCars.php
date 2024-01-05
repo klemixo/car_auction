@@ -64,7 +64,7 @@ class getCars extends Controller
         $data = $req->all();
         $make = $data['make'];
         $model = $data['model'];
-        $query->where('marka', "LIKE", '%' . $make . '%')->orWhere('model', "LIKE", '%' . $model . '%');
+        $query->where('marka', "LIKE", '%' . $make . '%')->where('model', "LIKE", '%' . $model . '%');
 
         return $query->limit(8)->get();
     }

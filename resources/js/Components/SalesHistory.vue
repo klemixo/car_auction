@@ -66,7 +66,7 @@ export default {
       return make.replaceAll("/","");
     },
     goToPage(carUrl){
-      window.location.replace(carUrl);
+            window.location.href = carUrl;
     },
   },
 
@@ -131,6 +131,7 @@ div {
           gap: 6px;
           align-items: center;
           text-decoration: none;
+          cursor: pointer;
         }
       }
     }
