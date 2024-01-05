@@ -4,6 +4,7 @@
     <CurrentFilters />
     <h2 v-if="cars && cars.length > 0 && !searched">Latest Lots</h2>
     <h2 v-if="cars && cars.length > 0 && searched">Search results</h2>
+    {{cars.length}} {{count}}
     <div class="cars__container__filters">
       <div
         class="grid"

@@ -90,6 +90,7 @@ const store = new Vuex.Store({
             filtersString += `page=${state.currentPage}`
             axios.get(`https://vinfax.info/api/cars?${filtersString}`).then(res => {
                 state.cars = res.data.data
+                console.log(state.cars,'TUTAJ');
                 state.foundCars = res.data.count
                 state.dataLoading = false;
 
