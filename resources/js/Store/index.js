@@ -74,6 +74,10 @@ const store = new Vuex.Store({
                 if (state.filters[property].field === "site" && state.filters[property].value === false) {
                     continue;
                 }
+                if (state.filters[property].field === "site" && state.filters[property].value === true) {
+                    filtersString += `${state.filters[property].field}${state.filters[property].operator}${state.filters[property].label}&`
+                    continue;
+                }
                 if (state.filters[property].value) {
                     filtersString += `${state.filters[property].field}${state.filters[property].operator}${state.filters[property].value}&`
                 }
