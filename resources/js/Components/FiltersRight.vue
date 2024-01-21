@@ -176,7 +176,6 @@ export default {
     },
     setCheckboxFilter(field) {
       store.commit("SET_FILTER", { key: field, value: this.filters[field] });
-      console.log(field, this.filters);
     },
     setFilter(filter, id) {
       const filterObj = {

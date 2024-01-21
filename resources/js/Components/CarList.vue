@@ -1,34 +1,34 @@
 <template>
-  <div class="cars__container container">
-    <BreadCrumb />
-    <CurrentFilters />
-    <h2 v-if="cars && cars.length > 0 && !searched">Latest Lots</h2>
-    <h2 v-if="cars && cars.length > 0 && searched">Search results</h2>
-    <div class="cars__container__filters">
-      <div
-        class="grid"
-        :class="{ 'grid-small': searched }"
-        v-if="cars.length > 0"
-      >
-        <CarBox
-          v-for="car in cars"
-          :key="car.id"
-          :carData="car"
-          :searched="searched"
-        />
-      </div>
-      <Loader v-if="dataLoading" />
-      <Error v-if="cars && cars.length === 0" />
-      <FiltersRight v-if="searched" />
+    <div class="cars__container container">
+        <BreadCrumb />
+        <CurrentFilters />
+        <h2 v-if="cars && cars.length > 0 && !searched">Latest Lots</h2>
+        <h2 v-if="cars && cars.length > 0 && searched">Search results</h2>
+        <div class="cars__container__filters">
+            <div
+                class="grid"
+                :class="{ 'grid-small': searched }"
+                v-if="cars.length > 0"
+            >
+                <CarBox
+                    v-for="car in cars"
+                    :key="car.id"
+                    :carData="car"
+                    :searched="searched"
+                />
+            </div>
+            <Loader v-if="dataLoading" />
+            <Error v-if="cars && cars.length === 0" />
+            <FiltersRight v-if="searched" />
+        </div>
+        <button
+            @click="showMore"
+            v-if="cars && cars.length > 0 && foundCars > currentPage * 15"
+            class="base-btn more-results-btn"
+        >
+            More results
+        </button>
     </div>
-    <button
-      @click="showMore"
-      v-if="cars && cars.length > 0 && foundCars > currentPage * 15"
-      class="base-btn more-results-btn"
-    >
-      More results
-    </button>
-  </div>
 </template>
 
 <script>
@@ -41,75 +41,88 @@ import FiltersRight from "./FiltersRight.vue";
 import BreadCrumb from "./BreadCrumb.vue";
 import CurrentFilters from "./CurrentFilters.vue";
 export default {
-  name: "home",
-  components: {
-    CarBox,
-    Error,
-    Loader,
-    FiltersRight,
-    BreadCrumb,
-    CurrentFilters,
-  },
-  mounted() {
-    store.commit("GET_CARS");
-  },
-  methods: {
-    showMore() {
-      ++this.$store.state.currentPage;
-      store.commit("GET_CARS");
+    name: "home",
+    components: {
+        CarBox,
+        Error,
+        Loader,
+        FiltersRight,
+        BreadCrumb,
+        CurrentFilters
     },
-  },
-  computed: {
-    ...mapState({
-      count: (state) => state.count,
-      foundCars: (state) => state.foundCars,
-      currentPage: (state) => state.currentPage,
-      dataLoading: (state) => state.dataLoading,
-      searched: (state) => state.searched,
-    }),
-    ...mapGetters({
-      cars: "getCarsList",
-    }),
-  },
+    mounted() {
+        store.commit("GET_CARS");
+        setTimeout(() => {
+            this.setAutoplay();
+        }, 2000);
+    },
+    methods: {
+        showMore() {
+            ++this.$store.state.currentPage;
+            store.commit("GET_CARS");
+        },
+        setAutoplay() {
+            const arrows = document.querySelectorAll(
+                ".vueperslides__arrow--next"
+            );
+            setInterval(() => {
+                arrows.forEach(arrow => {
+                    arrow.click();
+                });
+            }, 5000);
+        }
+    },
+    computed: {
+        ...mapState({
+            count: state => state.count,
+            foundCars: state => state.foundCars,
+            currentPage: state => state.currentPage,
+            dataLoading: state => state.dataLoading,
+            searched: state => state.searched
+        }),
+        ...mapGetters({
+            cars: "getCarsList"
+        })
+    }
 };
 </script>
 <style lang="scss">
 .cars__container {
-  max-width: 1300px !important;
-  .more-results-btn {
-    margin-top: 32px;
-  }
-  &__filters {
-    display: flex;
-    gap: 20px;
-    flex-direction: column-reverse;
-    @media (min-width: 992px) {
-      flex-direction: row;
+    max-width: 1300px !important;
+    .more-results-btn {
+        margin-top: 32px;
     }
-  }
-  h2 {
-    font-family: "PT Sans";
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 47px;
-    text-align: left;
-    margin: 0px;
-    margin-bottom: 32px;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    @media (min-width: 768px) {
-      grid-template-columns: 1fr 1fr;
+    &__filters {
+        display: flex;
+        gap: 20px;
+        flex-direction: column-reverse;
+        @media (min-width: 992px) {
+            flex-direction: row;
+        }
     }
-    @media (min-width: 1300px) {
-      grid-template-columns: 1fr 1fr 1fr;
+    h2 {
+        font-family: "PT Sans";
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 47px;
+        text-align: left;
+        margin: 0px;
+        margin-bottom: 32px;
     }
-    &.grid-small {
-      grid-template-columns: 1fr;
-      width: 100%;
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        @media (min-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (min-width: 1300px) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        &.grid-small {
+            grid-template-columns: 1fr;
+            width: 100%;
+        }
     }
-  }
 }
 </style>

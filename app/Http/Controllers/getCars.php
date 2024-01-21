@@ -27,24 +27,30 @@ class getCars extends Controller
         $data = $req->all();
         $limit = 0;
         $query->where('claimed', "=", 0);
-        foreach ($data as $key => $value) {
-            if ($key === 'yearFrom') {
+        foreach ($data as $key => $value)
+        {
+            if ($key === 'yearFrom')
+            {
                 $query->where('production_year', ">=", $value);
                 continue;
             }
-            if ($key === 'yearTo') {
+            if ($key === 'yearTo')
+            {
                 $query->where('production_year', "<=", $value);
                 continue;
             }
-            if ($key === 'search') {
+            if ($key === 'search')
+            {
                 $query->where('marka', "LIKE", '%' . $value . '%')->orWhere('model', "LIKE", '%' . $value . '%');
                 continue;
             }
-            if ($key === 'page') {
+            if ($key === 'page')
+            {
                 $limit = $value * 15;
                 continue;
             }
-            if ($key === 'vin') {
+            if ($key === 'vin')
+            {
                 $query->where('vin', "LIKE", '%' . $value . '%');
                 continue;
             }
@@ -71,14 +77,33 @@ class getCars extends Controller
 
     public function claimLot(Request $req)
     {
-        if ($req->vin && $req->stock) {
+        if ($req->vin && $req->stock)
+        {
             $query = car::where('vin', "=", $req->vin)
                 ->where('odometer', '=', $req->odometer)->update([
                     'claimed' => true,
                 ]);
             return $query;
-        } else {
+        }
+        else
+        {
             return "Error";
         }
+    }
+
+    public function getCarsBySite(Request $req)
+    {
+        $query = car::groupBy('site')
+            ->selectRaw('site, COUNT(*) as count')
+            ->get();
+
+        $result = [];
+
+        foreach ($query as $item)
+        {
+            $result[$item->site] = $item->count;
+        }
+
+        return $result;
     }
 }

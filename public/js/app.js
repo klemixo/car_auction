@@ -54248,6 +54248,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   routes: _routes__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 router.beforeEach(function (to, from, next) {
+  document.title = to.meta.title;
+
   if (to.name !== 'home') {
     _Store__WEBPACK_IMPORTED_MODULE_2__["default"].commit("SET_FILTER", {
       key: 'vin',
@@ -54276,50 +54278,71 @@ router.beforeEach(function (to, from, next) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var routes = [{
-  path: '',
+  path: "",
   component: function component() {
     return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(7), __webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ../Pages/Home.vue */ "./resources/js/Pages/Home.vue"));
   },
-  name: 'home'
+  name: "home",
+  meta: {
+    title: "VINFAX - Free Sales and Damage history"
+  }
 }, {
-  path: 'about',
+  path: "about",
   component: function component() {
     return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ../Pages/About.vue */ "./resources/js/Pages/About.vue"));
   },
-  name: 'About'
+  name: "About",
+  meta: {
+    title: "VINFAX - Free Sales and Damage history"
+  }
 }, {
-  path: 'terms',
+  path: "terms",
   component: function component() {
     return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ../Pages/Terms.vue */ "./resources/js/Pages/Terms.vue"));
   },
-  name: 'Terms'
+  name: "Terms",
+  meta: {
+    title: "VINFAX - Free Sales and Damage history"
+  }
 }, {
-  path: 'contact',
+  path: "contact",
   component: function component() {
     return __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ../Pages/Contact.vue */ "./resources/js/Pages/Contact.vue"));
   },
-  name: 'Contact'
+  name: "Contact",
+  meta: {
+    title: "VINFAX - Free Sales and Damage history"
+  }
 }, {
-  path: '/car/:id',
+  path: "/car/:make/:model/:id/:vin",
   component: function component() {
     return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(0), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, /*! ../Pages/Car.vue */ "./resources/js/Pages/Car.vue"));
   },
-  name: 'Car',
-  props: true
+  name: "Car",
+  props: true,
+  meta: {
+    title: "VINFAX - Free Sales and Damage history"
+  }
 }, {
-  path: '/error',
+  path: "/error",
   component: function component() {
     return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ../Pages/Error.vue */ "./resources/js/Pages/Error.vue"));
   },
-  name: 'Error',
-  props: true
+  name: "Error",
+  props: true,
+  meta: {
+    title: "VINFAX - Free Sales and Damage history"
+  }
 }, {
-  path: '/success/:id',
+  path: "/success/:id",
   component: function component() {
     return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ../Pages/Success.vue */ "./resources/js/Pages/Success.vue"));
   },
-  name: 'Success',
-  props: true
+  name: "Success",
+  props: true,
+  meta: {
+    title: "VINFAX - Free Sales and Damage history"
+  }
 }];
 /* harmony default export */ __webpack_exports__["default"] = (routes);
 
@@ -54354,70 +54377,70 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     dataLoading: false,
     filters: {
       vin: {
-        field: 'vin',
+        field: "vin",
         operator: "=",
         value: null,
-        label: 'VIN'
+        label: "VIN"
       },
       marka: {
-        field: 'marka',
+        field: "marka",
         operator: "=",
         value: null,
-        label: 'Make'
+        label: "Make"
       },
       model: {
-        field: 'model',
+        field: "model",
         operator: "=",
         value: null,
-        label: 'Model'
+        label: "Model"
       },
       yearFrom: {
-        field: 'yearFrom',
+        field: "yearFrom",
         operator: "=",
         value: null,
-        label: 'Year from'
+        label: "Year from"
       },
       yearTo: {
-        field: 'yearTo',
+        field: "yearTo",
         operator: "=",
         value: null,
-        label: 'Year to'
+        label: "Year to"
       },
       selling_branch: {
-        field: 'selling_branch',
+        field: "selling_branch",
         operator: "=",
         value: null,
-        label: 'Selling branch'
+        label: "Selling branch"
       },
       runMin: {
-        field: 'runMin',
+        field: "runMin",
         operator: "=",
         value: null,
-        label: 'Run min'
+        label: "Run min"
       },
       runMax: {
-        field: 'runMax',
+        field: "runMax",
         operator: "=",
         value: null,
-        label: 'Run Max'
+        label: "Run Max"
       },
       search: {
-        field: 'search',
+        field: "search",
         operator: "=",
         value: null,
-        label: 'Search'
+        label: "Search"
       },
       auctionHouseIAAI: {
-        field: 'none',
+        field: "site",
         operator: "=",
         value: null,
-        label: 'IAAI'
+        label: "IAAI"
       },
       auctionHouseCopart: {
-        field: 'none',
+        field: "site",
         operator: "=",
         value: null,
-        label: 'Copart'
+        label: "Copart"
       }
     }
   },
@@ -54436,10 +54459,9 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     getCarsList: function getCarsList(state) {
       if (state.cars) {
         var newCars = [];
-        console.log(state.filters);
         state.cars.forEach(function (car) {
           if (state.filters.runMax.value) {
-            var mileAge = parseInt(car['odometer'].replace(/\,/g, ''), 10);
+            var mileAge = parseInt(car["odometer"].replace(/\,/g, ""), 10);
 
             if (mileAge > state.filters.runMin.value && mileAge < state.filters.runMax.value) {
               newCars.push(car);
@@ -54471,9 +54493,16 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     GET_CARS: function GET_CARS(state) {
       state.dataLoading = true;
       var filtersString = "";
+      var carsList = document.querySelectorAll(".grid .car__box");
+      var lastCar = carsList[carsList.length - 1];
 
       for (var property in state.filters) {
-        if (state.filters[property].field === "none") {
+        if (state.filters[property].field === "site" && state.filters[property].value === false) {
+          continue;
+        }
+
+        if (state.filters[property].field === "site" && state.filters[property].value === true) {
+          filtersString += "".concat(state.filters[property].field).concat(state.filters[property].operator).concat(state.filters[property].label, "&");
           continue;
         }
 
@@ -54492,6 +54521,10 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://vinfax.info/api/cars?".concat(filtersString)).then(function (res) {
         state.cars = res.data.data;
         state.foundCars = res.data.count;
+        lastCar.scrollIntoView();
+        setTimeout(function () {
+          lastCar.scrollIntoView();
+        });
         state.dataLoading = false;
       })["catch"](function (err) {
         state.dataLoading = false;
@@ -54508,7 +54541,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
     },
     SET_FILTER: function SET_FILTER(state, filter) {
       state.filters[filter.key].value = filter.value;
-      this.commit('GET_CARS');
+      this.commit("GET_CARS");
     },
     REMOVE_ALL_FILTERS: function REMOVE_ALL_FILTERS(state) {
       for (var key in state.filters) {
@@ -54654,8 +54687,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\x\htdocs\zlecenia\autka2\laravel-vue-minimal\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\x\htdocs\zlecenia\autka2\laravel-vue-minimal\resources\css\app.css */"./resources/css/app.css");
+__webpack_require__(/*! /home/smartbees/Desktop/stare pliki/smartbees/Documents/projects/private/cars/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/smartbees/Desktop/stare pliki/smartbees/Documents/projects/private/cars/resources/css/app.css */"./resources/css/app.css");
 
 
 /***/ })

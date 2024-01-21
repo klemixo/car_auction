@@ -71,6 +71,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   mounted: function mounted() {
     var _this = this;
 
+    axios.get("https://vinfax.info/api/cars-site").then(function (res) {
+      console.log(res);
+    })["catch"](function (err) {
+      console.log(err);
+    });
     axios.get("https://vinfax.info/api/cars").then(function (res) {
       _this.foundCars = res.data.count;
     })["catch"](function (err) {
@@ -154,13 +159,22 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "footer__content" }, [
       _c("div", { staticClass: "container container__flex" }, [
-        _vm._m(0),
+        _c(
+          "div",
+          { staticClass: "footer__section" },
+          [
+            _c("router-link", { attrs: { to: { name: "home" } } }, [
+              _c("img", { attrs: { src: "img/hero.png", alt: "" } })
+            ])
+          ],
+          1
+        ),
         _vm._v(" "),
-        _vm._m(1),
+        _vm._m(0),
         _vm._v(" "),
         _c("div", { staticClass: "footer__section p-top" }, [
           _c("p", [
-            _c("span", [_vm._v("IAII Lots:")]),
+            _c("span", [_vm._v("IAAI Lots:")]),
             _vm._v(" " + _vm._s(_vm.fakeCars.iaai))
           ]),
           _vm._v(" "),
@@ -189,14 +203,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "footer__section" }, [
-      _c("img", { attrs: { src: "img/hero.png", alt: "" } })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

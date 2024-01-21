@@ -7,7 +7,7 @@
     <div class="footer__content">
       <div class="container container__flex">
         <div class="footer__section">
-          <img src="img/hero.png" alt="" />
+          <router-link :to="{ name: 'home' }"><img src="img/hero.png" alt="" /></router-link>
         </div>
         <div class="footer__section p-top">
           <p><span>Got any questions?</span></p>
@@ -15,7 +15,7 @@
           <p><a href="mailto:info@vinfax.info">info@vinfax.info</a></p>
         </div>
         <div class="footer__section p-top">
-          <p><span>IAII Lots:</span> {{ fakeCars.iaai }}</p>
+          <p><span>IAAI Lots:</span> {{ fakeCars.iaai }}</p>
           <p><span>Copart Lots:</span> {{ fakeCars.copart }}</p>
         </div>
         <div class="footer__section p-top">
@@ -50,6 +50,15 @@ export default {
     },
   },
   mounted() {
+    axios
+      .get(`https://vinfax.info/api/cars-site`)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
     axios
       .get(`https://vinfax.info/api/cars`)
       .then((res) => {

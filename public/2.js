@@ -98,12 +98,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     CurrentFilters: _CurrentFilters_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
   },
   mounted: function mounted() {
+    var _this = this;
+
     _Store__WEBPACK_IMPORTED_MODULE_1__["default"].commit("GET_CARS");
+    setTimeout(function () {
+      _this.setAutoplay();
+    }, 2000);
   },
   methods: {
     showMore: function showMore() {
       ++this.$store.state.currentPage;
       _Store__WEBPACK_IMPORTED_MODULE_1__["default"].commit("GET_CARS");
+    },
+    setAutoplay: function setAutoplay() {
+      var arrows = document.querySelectorAll(".vueperslides__arrow--next");
+      setInterval(function () {
+        arrows.forEach(function (arrow) {
+          arrow.click();
+        });
+      }, 5000);
     }
   },
   computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
@@ -591,7 +604,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.car-box {\r\n  margin: 20px;\n}\r\n", ""]);
+exports.push([module.i, "\n.car-box {\n  margin: 20px;\n}\n", ""]);
 
 // exports
 
@@ -916,7 +929,7 @@ var render = function() {
               staticClass: "base-btn more-results-btn",
               on: { click: _vm.showMore }
             },
-            [_vm._v("\n    More results\n  ")]
+            [_vm._v("\n        More results\n    ")]
           )
         : _vm._e()
     ],

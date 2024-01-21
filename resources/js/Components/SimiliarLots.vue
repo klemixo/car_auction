@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Similiar lots</h2>
+    <h2>Similar lots</h2>
     <div class="similiar-lots">
       <template v-for="car in carData">
         <div class="lot">

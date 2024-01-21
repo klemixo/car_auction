@@ -6,6 +6,7 @@ const router = new VueRouter({
     routes
 })
 router.beforeEach((to, from, next) => {
+    document.title = to.meta.title
     if (to.name !== 'home') {
         store.commit("SET_FILTER", { key: 'vin', value: "x" });
     } else {

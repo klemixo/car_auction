@@ -308,6 +308,12 @@ __webpack_require__.r(__webpack_exports__);
     },
     refreshPage: function refreshPage() {
       window.location.reload();
+    },
+    betterMake: function betterMake(make) {
+      return make.replaceAll("/", "");
+    },
+    goToPage: function goToPage(carUrl) {
+      window.location.href = carUrl;
     }
   },
   filters: {
@@ -387,15 +393,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Components_CarSlider_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Components/CarSlider.vue */ "./resources/js/Components/CarSlider.vue");
-/* harmony import */ var _Components_SimiliarLots_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Components/SimiliarLots.vue */ "./resources/js/Components/SimiliarLots.vue");
-/* harmony import */ var _Components_SalesHistory_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/SalesHistory.vue */ "./resources/js/Components/SalesHistory.vue");
-/* harmony import */ var _Components_FiltersTop_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Components/FiltersTop.vue */ "./resources/js/Components/FiltersTop.vue");
-/* harmony import */ var _Components_Claim_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Components/Claim.vue */ "./resources/js/Components/Claim.vue");
-/* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vueperslides */ "./node_modules/vueperslides/dist/vueperslides.common.js");
-/* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vueperslides__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var vueperslides_dist_vueperslides_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vueperslides/dist/vueperslides.css */ "./node_modules/vueperslides/dist/vueperslides.css");
-/* harmony import */ var vueperslides_dist_vueperslides_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(vueperslides_dist_vueperslides_css__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _Store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Store */ "./resources/js/Store/index.js");
+/* harmony import */ var _Router_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Router/index */ "./resources/js/Router/index.js");
+/* harmony import */ var _Components_CarSlider_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Components/CarSlider.vue */ "./resources/js/Components/CarSlider.vue");
+/* harmony import */ var _Components_SimiliarLots_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Components/SimiliarLots.vue */ "./resources/js/Components/SimiliarLots.vue");
+/* harmony import */ var _Components_SalesHistory_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Components/SalesHistory.vue */ "./resources/js/Components/SalesHistory.vue");
+/* harmony import */ var _Components_FiltersTop_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Components/FiltersTop.vue */ "./resources/js/Components/FiltersTop.vue");
+/* harmony import */ var _Components_Claim_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Components/Claim.vue */ "./resources/js/Components/Claim.vue");
+/* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vueperslides */ "./node_modules/vueperslides/dist/vueperslides.common.js");
+/* harmony import */ var vueperslides__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(vueperslides__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var vueperslides_dist_vueperslides_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! vueperslides/dist/vueperslides.css */ "./node_modules/vueperslides/dist/vueperslides.css");
+/* harmony import */ var vueperslides_dist_vueperslides_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(vueperslides_dist_vueperslides_css__WEBPACK_IMPORTED_MODULE_10__);
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -592,6 +600,38 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 
 
@@ -601,15 +641,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["id"],
+  props: ["id", "make", "model", "vin"],
   components: {
-    CarSlider: _Components_CarSlider_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    VueperSlides: vueperslides__WEBPACK_IMPORTED_MODULE_7__["VueperSlides"],
-    VueperSlide: vueperslides__WEBPACK_IMPORTED_MODULE_7__["VueperSlide"],
-    FiltersTop: _Components_FiltersTop_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-    SalesHistory: _Components_SalesHistory_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    SimiliarLots: _Components_SimiliarLots_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    Claim: _Components_Claim_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+    CarSlider: _Components_CarSlider_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    VueperSlides: vueperslides__WEBPACK_IMPORTED_MODULE_9__["VueperSlides"],
+    VueperSlide: vueperslides__WEBPACK_IMPORTED_MODULE_9__["VueperSlide"],
+    FiltersTop: _Components_FiltersTop_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
+    SalesHistory: _Components_SalesHistory_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+    SimiliarLots: _Components_SimiliarLots_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    Claim: _Components_Claim_vue__WEBPACK_IMPORTED_MODULE_8__["default"]
   },
   data: function data() {
     return {
@@ -640,33 +680,60 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   mounted: function mounted() {
+    document.title = "".concat(this.make, " | ").concat(this.model, " | ").concat(this.vin);
     this.getCarData();
+    this.setAutoplay();
   },
   methods: {
-    changeSlide: function changeSlide(idx) {
-      this.currentImage = idx;
+    searchByMake: function searchByMake(marka) {
+      _Store__WEBPACK_IMPORTED_MODULE_2__["default"].commit("SET_FILTER", {
+        key: "marka",
+        value: marka
+      });
+      _Router_index__WEBPACK_IMPORTED_MODULE_3__["default"].push("/");
     },
-    closeModal: function closeModal() {
-      console.log("OKK");
+    searchByModel: function searchByModel(model) {
+      _Store__WEBPACK_IMPORTED_MODULE_2__["default"].commit("SET_FILTER", {
+        key: "model",
+        value: model
+      });
+      _Router_index__WEBPACK_IMPORTED_MODULE_3__["default"].push("/");
     },
-    getCarData: function getCarData() {
+    setAutoplay: function setAutoplay() {
       var _this = this;
 
+      setInterval(function () {
+        _this.changeSlide(++_this.currentImage);
+      }, 5000);
+    },
+    changeSlide: function changeSlide(idx) {
+      if (idx === -1) {
+        this.currentImage = this.slides.length - 1;
+      } else if (this.currentImage === this.slides.length) {
+        this.currentImage = 0;
+      } else {
+        this.currentImage = idx;
+      }
+    },
+    closeModal: function closeModal() {},
+    getCarData: function getCarData() {
+      var _this2 = this;
+
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://vinfax.info/api/cars/".concat(this.id)).then(function (res) {
-        _this.getCarsData(res.data[0].vin);
+        _this2.getCarsData(res.data[0].vin);
 
-        _this.carData = res.data[0];
+        _this2.carData = res.data[0];
 
-        _this.prepareImages();
+        _this2.prepareImages();
       })["catch"](function (err) {
         console.log(err);
       });
     },
     getCarsData: function getCarsData(vin) {
-      var _this2 = this;
+      var _this3 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://vinfax.info/api/cars-vin/".concat(vin)).then(function (res) {
-        _this2.cars = res.data;
+        _this3.cars = res.data;
       })["catch"](function (err) {
         console.log(err);
       });
@@ -688,7 +755,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
     },
     prepareImages: function prepareImages() {
-      var _this3 = this;
+      var _this4 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         var count, exists;
@@ -707,14 +774,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 _context.next = 5;
                 return new Promise(function (resolve) {
-                  _this3.checkIfImageExists("https://phttt.vinfax.info/".concat(_this3.carData.vin, "-").concat(_this3.carData.stock, "-").concat(count, ".webp"), function (exists) {
+                  _this4.checkIfImageExists("https://phttt.vinfax.info/".concat(_this4.carData.vin, "-").concat(_this4.carData.stock, "-").concat(count, ".webp"), function (exists) {
                     if (exists) {
-                      _this3.slides.push("https://phttt.vinfax.info/".concat(_this3.carData.vin, "-").concat(_this3.carData.stock, "-").concat(count, ".webp"));
+                      _this4.slides.push("https://phttt.vinfax.info/".concat(_this4.carData.vin, "-").concat(_this4.carData.stock, "-").concat(count, ".webp"));
                     } else {
-                      if (_this3.slides.length === 0) {
-                        console.log(_this3.slides);
-                        _this3.slides = ["img/base-img.png", "img/base-img-2.png", "img/base-img-3.png"];
-                        console.log(_this3.slides);
+                      if (_this4.slides.length === 0) {
+                        _this4.slides = ["img/base-img.png", "img/base-img-2.png", "img/base-img-3.png"];
                       }
                     }
 
@@ -791,7 +856,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "div h2[data-v-1c6f549a] {\n  text-align: left;\n}\n.sales-history[data-v-1c6f549a] {\n  margin-bottom: 65px;\n}\n.sales-history table[data-v-1c6f549a] {\n  width: 100%;\n  text-align: left;\n}\n.sales-history table th[data-v-1c6f549a],\n.sales-history table td[data-v-1c6f549a] {\n  padding: 11px 9px;\n  font-size: 16px;\n}\n.sales-history table tr[data-v-1c6f549a] {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n}\n.sales-history table td.bold[data-v-1c6f549a] {\n  font-weight: bold;\n}\n.sales-history table td.branch span[data-v-1c6f549a] {\n  background: #1882ff;\n  border-radius: 3px;\n  color: white;\n  padding: 5px;\n}\n.sales-history table td.branch span.red[data-v-1c6f549a] {\n  background: red;\n}\n.sales-history table td.status span[data-v-1c6f549a] {\n  width: 89px;\n  height: 25px;\n  border: 1px solid #597bd5;\n  color: #597bd5;\n  border-radius: 3px;\n  padding: 5px;\n}\n.sales-history table td.action a[data-v-1c6f549a] {\n  font-size: 16px;\n  line-height: 21px;\n  color: black;\n  display: flex;\n  gap: 6px;\n  align-items: center;\n  text-decoration: none;\n}\n.sales-history table th[data-v-1c6f549a] {\n  background: #f8f8f8;\n}\n.sales-history table th td[data-v-1c6f549a] {\n  font-weight: bold;\n}", ""]);
+exports.push([module.i, "div h2[data-v-1c6f549a] {\n  text-align: left;\n}\n.sales-history[data-v-1c6f549a] {\n  margin-bottom: 65px;\n}\n.sales-history table[data-v-1c6f549a] {\n  width: 100%;\n  text-align: left;\n}\n.sales-history table th[data-v-1c6f549a],\n.sales-history table td[data-v-1c6f549a] {\n  padding: 11px 9px;\n  font-size: 16px;\n}\n.sales-history table tr[data-v-1c6f549a] {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n}\n.sales-history table td.bold[data-v-1c6f549a] {\n  font-weight: bold;\n}\n.sales-history table td.branch span[data-v-1c6f549a] {\n  background: #1882ff;\n  border-radius: 3px;\n  color: white;\n  padding: 5px;\n}\n.sales-history table td.branch span.red[data-v-1c6f549a] {\n  background: red;\n}\n.sales-history table td.status span[data-v-1c6f549a] {\n  width: 89px;\n  height: 25px;\n  border: 1px solid #597bd5;\n  color: #597bd5;\n  border-radius: 3px;\n  padding: 5px;\n}\n.sales-history table td.action a[data-v-1c6f549a] {\n  font-size: 16px;\n  line-height: 21px;\n  color: black;\n  display: flex;\n  gap: 6px;\n  align-items: center;\n  text-decoration: none;\n  cursor: pointer;\n}\n.sales-history table th[data-v-1c6f549a] {\n  background: #f8f8f8;\n}\n.sales-history table th td[data-v-1c6f549a] {\n  font-weight: bold;\n}", ""]);
 
 // exports
 
@@ -829,7 +894,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".breadcrumbs[data-v-5f190dbb] {\n  display: flex;\n  gap: 6px;\n  align-items: center;\n  margin-top: 43px;\n  flex-wrap: wrap;\n  width: 100%;\n}\n.breadcrumbs .breadcrumb[data-v-5f190dbb] {\n  font-family: \"PT Sans\";\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 21px;\n  display: flex;\n  gap: 4px;\n  color: #818181;\n}\n.breadcrumbs .breadcrumb--blue[data-v-5f190dbb] {\n  color: #243e97;\n}\n.breadcrumbs .breadcrumb--bold[data-v-5f190dbb] {\n  font-weight: bold;\n}\n.thumbnails[data-v-5f190dbb] {\n  margin: auto;\n  max-width: 100%;\n  margin-top: 12px;\n}\n.thumbnails img[data-v-5f190dbb] {\n  cursor: pointer;\n}\n.thumbnails .vueperslide[data-v-5f190dbb] {\n  box-sizing: border-box;\n  border: 1px solid #fff;\n  transition: 0.3s ease-in-out;\n  opacity: 0.7;\n  cursor: pointer;\n  width: 158px !important;\n  height: 108px !important;\n}\n.vueperslides__arrow--prev[data-v-5f190dbb] {\n  left: -3rem !important;\n}\n.vueperslides__arrow--next[data-v-5f190dbb] {\n  right: -3rem !important;\n}\n.thumbnails .vueperslide--active[data-v-5f190dbb] {\n  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);\n  opacity: 1;\n  border-color: #000;\n}\n.car__container__heading[data-v-5f190dbb] {\n  width: 100%;\n  margin: 20px 0;\n}\n.car__container__content[data-v-5f190dbb] {\n  display: flex;\n  flex-direction: column;\n  gap: 29px;\n}\n@media (min-width: 992px) {\n.car__container__content[data-v-5f190dbb] {\n    flex-direction: row;\n}\n}\n.car__container__content__images[data-v-5f190dbb] {\n  flex: 1;\n}\n.car__container__content__images .main[data-v-5f190dbb] {\n  position: relative;\n}\n.car__container__content__images .main button[data-v-5f190dbb] {\n  height: 99%;\n  width: 50px;\n  position: absolute;\n  left: 0;\n  top: 0;\n  display: grid;\n  place-content: center;\n  cursor: pointer;\n  border: none;\n  outline: none;\n  background: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));\n}\n.car__container__content__images .main button svg[data-v-5f190dbb] {\n  width: 0.8rem;\n  fill: none;\n  stroke: white;\n  transform: rotate(-180deg);\n}\n.car__container__content__images .main button[data-v-5f190dbb]:disabled {\n  cursor: not-allowed;\n}\n.car__container__content__images .main button:disabled svg[data-v-5f190dbb] {\n  opacity: 0.8;\n}\n.car__container__content__images .main button.next[data-v-5f190dbb] {\n  right: 0;\n  left: unset;\n  transform: rotate(-180deg);\n}\n.car__container__content__images .main button.next svg[data-v-5f190dbb] {\n  transform: rotate(-180deg);\n}\n.car__container__content__images .main img[data-v-5f190dbb] {\n  width: 100%;\n  max-width: 863px;\n}\n@media (min-width: 1200px) {\n.car__container__content__images .main img[data-v-5f190dbb] {\n    height: 579px;\n}\n}\n.car__container__content__images .thumbnails[data-v-5f190dbb] {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.car__container__content__images .thumbnails img[data-v-5f190dbb] {\n  width: 156px;\n  height: 106px;\n}\n@media (min-width: 992px) {\n.car__container__content__images[data-v-5f190dbb] {\n    flex: 3;\n}\n}\n.car__container__content__data[data-v-5f190dbb] {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 21px;\n}\n@media (min-width: 992px) {\n.car__container__content__data[data-v-5f190dbb] {\n    width: unset;\n    min-width: 410px;\n}\n}\n.car__container__content__data .data__box__heading[data-v-5f190dbb] {\n  background: #f8f8f8;\n  display: flex;\n  gap: 16px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__heading img[data-v-5f190dbb] {\n  width: 27px;\n  height: 27px;\n}\n.car__container__content__data .data__box__heading p[data-v-5f190dbb] {\n  font-weight: 700;\n  font-size: 24px;\n  margin: 0;\n}\n.car__container__content__data .data__box__content h3[data-v-5f190dbb] {\n  font-weight: 700;\n  font-size: 33px;\n  line-height: 43px;\n  text-align: left;\n  margin: 16px 0;\n}\n.car__container__content__data .data__box__content .highlight[data-v-5f190dbb] {\n  background: #ffebb7;\n  border-radius: 3px;\n  width: fit-content;\n  margin: 4px 0;\n  padding: 3px 25px;\n}\n.car__container__content__data .data__box__content .flex[data-v-5f190dbb] {\n  display: flex;\n  gap: 11px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__content .flex-base[data-v-5f190dbb] {\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);\n}\n.car__container__content__data .data__box__content .flex-base--no-border[data-v-5f190dbb] {\n  border-bottom: unset;\n}\n.car__container__content__data .data__box__content .flex-base p[data-v-5f190dbb] {\n  margin: 6px 0;\n  font-size: 15px;\n}\n.car__container__content__data .data__box__content .flex-base .light[data-v-5f190dbb] {\n  color: #818181;\n}\n.car__container__content__data .data__box__content .flex-base .strong[data-v-5f190dbb] {\n  color: black;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.car__container__content__data .data__box__content .flex-base .strong .badge[data-v-5f190dbb] {\n  color: gray;\n  border: 1px solid gray;\n  margin: 2px 0;\n}\n.car__container .card[data-v-5f190dbb] {\n  background: #ffffff;\n  border: 1px solid #ecf1f9;\n  padding: 10px;\n  border-radius: 8px;\n  width: calc(100% - 20px);\n}\n.car__container .card .flex-main[data-v-5f190dbb] {\n  justify-content: space-between;\n  flex-wrap: wrap;\n}\n.car__container .card .flex-main button[data-v-5f190dbb] {\n  background: #ffcd1e;\n  border-radius: 5px;\n  color: white;\n  width: fit-content;\n  height: fit-content;\n  border: none;\n  outline: none;\n  margin: auto 0;\n  padding: 5px;\n  text-decoration: none;\n  cursor: pointer !important;\n}\n.car__container .card h1[data-v-5f190dbb] {\n  font-size: 25px;\n  line-height: 32px;\n  color: #000000;\n  margin-right: 24px;\n}\n.car__container .card h2[data-v-5f190dbb] {\n  font-size: 16px;\n  line-height: 21px;\n}\n.car__container .card h2[data-v-5f190dbb]:first-of-type {\n  margin-right: 65px;\n}\n.car__container .card h2 span[data-v-5f190dbb] {\n  color: #818181;\n}", ""]);
+exports.push([module.i, ".breadcrumbs[data-v-5f190dbb] {\n  display: flex;\n  gap: 6px;\n  align-items: center;\n  margin-top: 43px;\n  flex-wrap: wrap;\n  width: 100%;\n}\n.breadcrumbs .breadcrumb[data-v-5f190dbb] {\n  font-family: \"PT Sans\";\n  font-style: normal;\n  font-weight: 400;\n  font-size: 16px;\n  line-height: 21px;\n  display: flex;\n  cursor: pointer;\n  gap: 4px;\n  text-decoration: none;\n  color: #818181;\n}\n.breadcrumbs .breadcrumb--blue[data-v-5f190dbb] {\n  color: #243e97;\n}\n.breadcrumbs .breadcrumb--bold[data-v-5f190dbb] {\n  font-weight: bold;\n}\n.breadcrumbs .breadcrumb.no-pointer[data-v-5f190dbb] {\n  cursor: default;\n}\n.thumbnails[data-v-5f190dbb] {\n  margin: auto;\n  max-width: 100%;\n  margin-top: 12px;\n}\n.thumbnails img[data-v-5f190dbb] {\n  cursor: pointer;\n}\n.thumbnails .vueperslide[data-v-5f190dbb] {\n  box-sizing: border-box;\n  border: 1px solid #fff;\n  transition: 0.3s ease-in-out;\n  opacity: 0.7;\n  cursor: pointer;\n  width: 158px !important;\n  height: 108px !important;\n}\n.vueperslides__arrow--prev[data-v-5f190dbb] {\n  left: -3rem !important;\n}\n.vueperslides__arrow--next[data-v-5f190dbb] {\n  right: -3rem !important;\n}\n.thumbnails .vueperslide--active[data-v-5f190dbb] {\n  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);\n  opacity: 1;\n  border-color: #000;\n}\n.car__container__heading[data-v-5f190dbb] {\n  width: 100%;\n  margin: 20px 0;\n}\n.car__container__content[data-v-5f190dbb] {\n  display: flex;\n  flex-direction: column;\n  gap: 29px;\n}\n@media (min-width: 992px) {\n.car__container__content[data-v-5f190dbb] {\n    flex-direction: row;\n}\n}\n.car__container__content__images[data-v-5f190dbb] {\n  flex: 1;\n}\n.car__container__content__images .main[data-v-5f190dbb] {\n  position: relative;\n}\n.car__container__content__images .main button[data-v-5f190dbb] {\n  height: 99%;\n  width: 70px;\n  position: absolute;\n  left: 0;\n  top: 0;\n  display: grid;\n  place-content: center;\n  cursor: pointer;\n  border: none;\n  outline: none;\n  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));\n}\n.car__container__content__images .main button svg[data-v-5f190dbb] {\n  width: 0.8rem;\n  fill: none;\n  stroke: white;\n  transform: rotate(-180deg);\n}\n.car__container__content__images .main button[data-v-5f190dbb]:disabled {\n  cursor: not-allowed;\n}\n.car__container__content__images .main button:disabled svg[data-v-5f190dbb] {\n  opacity: 0.8;\n}\n.car__container__content__images .main button.next[data-v-5f190dbb] {\n  right: 0;\n  left: unset;\n  transform: rotate(-180deg);\n}\n.car__container__content__images .main button.next svg[data-v-5f190dbb] {\n  transform: rotate(-180deg);\n}\n.car__container__content__images .main img[data-v-5f190dbb] {\n  width: 100%;\n  max-width: 863px;\n  object-fit: cover;\n}\n@media (min-width: 1200px) {\n.car__container__content__images .main img[data-v-5f190dbb] {\n    height: 579px;\n}\n}\n.car__container__content__images .thumbnails[data-v-5f190dbb] {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n}\n.car__container__content__images .thumbnails img[data-v-5f190dbb] {\n  width: 162px;\n  height: 106px;\n}\n@media (min-width: 992px) {\n.car__container__content__images[data-v-5f190dbb] {\n    flex: 3;\n}\n}\n.car__container__content__data[data-v-5f190dbb] {\n  flex: 1;\n  width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 21px;\n}\n@media (min-width: 992px) {\n.car__container__content__data[data-v-5f190dbb] {\n    width: unset;\n    min-width: 410px;\n}\n}\n.car__container__content__data .data__box__heading[data-v-5f190dbb] {\n  background: #f8f8f8;\n  display: flex;\n  gap: 16px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__heading img[data-v-5f190dbb] {\n  width: 27px;\n  height: 27px;\n}\n.car__container__content__data .data__box__heading p[data-v-5f190dbb] {\n  font-weight: 700;\n  font-size: 24px;\n  margin: 0;\n}\n.car__container__content__data .data__box__content h3[data-v-5f190dbb] {\n  font-weight: 700;\n  font-size: 33px;\n  line-height: 43px;\n  text-align: left;\n  margin: 16px 0;\n}\n.car__container__content__data .data__box__content .highlight[data-v-5f190dbb] {\n  background: #ffebb7;\n  border-radius: 3px;\n  width: fit-content;\n  margin: 4px 0;\n  padding: 3px 25px;\n}\n.car__container__content__data .data__box__content .flex[data-v-5f190dbb] {\n  display: flex;\n  gap: 11px;\n  justify-content: flex-start;\n  align-items: center;\n}\n.car__container__content__data .data__box__content .flex-base[data-v-5f190dbb] {\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);\n}\n.car__container__content__data .data__box__content .flex-base--no-border[data-v-5f190dbb] {\n  border-bottom: unset;\n}\n.car__container__content__data .data__box__content .flex-base p[data-v-5f190dbb] {\n  margin: 6px 0;\n  font-size: 15px;\n}\n.car__container__content__data .data__box__content .flex-base .light[data-v-5f190dbb] {\n  color: #818181;\n}\n.car__container__content__data .data__box__content .flex-base .strong[data-v-5f190dbb] {\n  color: black;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.car__container__content__data .data__box__content .flex-base .strong .badge[data-v-5f190dbb] {\n  color: gray;\n  border: 1px solid gray;\n  margin: 2px 0;\n}\n.car__container .card[data-v-5f190dbb] {\n  background: #ffffff;\n  border: 1px solid #ecf1f9;\n  padding: 10px;\n  border-radius: 8px;\n  width: calc(100% - 20px);\n}\n.car__container .card .flex-main[data-v-5f190dbb] {\n  justify-content: space-between;\n  flex-wrap: wrap;\n}\n.car__container .card .flex-main button[data-v-5f190dbb] {\n  background: red;\n  border-radius: 5px;\n  color: white;\n  width: fit-content;\n  height: fit-content;\n  border: none;\n  outline: none;\n  margin: auto 0;\n  padding: 20px;\n  text-decoration: none;\n  font-size: 17px;\n  font-weight: bold;\n  cursor: pointer !important;\n}\n.car__container .card h1[data-v-5f190dbb] {\n  font-size: 25px;\n  line-height: 32px;\n  color: #000000;\n  margin-right: 24px;\n}\n.car__container .card h2[data-v-5f190dbb] {\n  font-size: 16px;\n  line-height: 21px;\n}\n.car__container .card h2[data-v-5f190dbb]:first-of-type {\n  margin-right: 65px;\n}\n.car__container .card h2 span[data-v-5f190dbb] {\n  color: #818181;\n}", ""]);
 
 // exports
 
@@ -1394,9 +1459,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
-                      "\n              " +
-                        _vm._s(car.run_number) +
-                        "\n            "
+                      "\n              " + _vm._s(car.stock) + "\n            "
                     )
                   ]),
                   _vm._v(" "),
@@ -1413,7 +1476,7 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("td", { staticClass: "status" }, [
-                    _c("span", [_vm._v(_vm._s(car.sold ? "Sold" : "Not sold"))])
+                    _c("span", [_vm._v(_vm._s(car.sold))])
                   ]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(car.seller))]),
@@ -1427,10 +1490,23 @@ var render = function() {
                       },
                       [
                         _c(
-                          "router-link",
+                          "a",
                           {
                             staticClass: "black",
-                            attrs: { to: "/car/" + car.id }
+                            on: {
+                              click: function($event) {
+                                _vm.goToPage(
+                                  "/#/car/" +
+                                    _vm.betterMake(car.marka) +
+                                    "/" +
+                                    car.model +
+                                    "/" +
+                                    car.id +
+                                    "/" +
+                                    car.vin
+                                )
+                              }
+                            }
                           },
                           [
                             _vm._v("More details "),
@@ -1439,8 +1515,7 @@ var render = function() {
                             })
                           ]
                         )
-                      ],
-                      1
+                      ]
                     )
                   ])
                 ])
@@ -1501,7 +1576,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h2", [_vm._v("Similiar lots")]),
+    _c("h2", [_vm._v("Similar lots")]),
     _vm._v(" "),
     _c(
       "div",
@@ -1567,47 +1642,69 @@ var render = function() {
             : _vm._e(),
           _vm._v(" "),
           _c("div", { staticClass: "breadcrumbs" }, [
-            _c("div", { staticClass: "breadcrumb" }, [_vm._v("Search")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "breadcrumb breadcrumb--blue" }, [
-              _vm._v(">")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "breadcrumb" }, [_vm._v("Cars")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "breadcrumb breadcrumb--blue" }, [
-              _vm._v(">")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "breadcrumb" }, [
-              _vm._v(_vm._s(_vm.carData.marka))
+            _c("a", { staticClass: "breadcrumb", attrs: { href: "/" } }, [
+              _vm._v("Search")
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "breadcrumb breadcrumb--blue" }, [
               _vm._v(">")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "breadcrumb" }, [
-              _vm._v(_vm._s(_vm.carData.model))
+            _c("a", { staticClass: "breadcrumb", attrs: { href: "/" } }, [
+              _vm._v("Cars")
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "breadcrumb breadcrumb--blue" }, [
               _vm._v(">")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "breadcrumb" }, [
-              _vm._v(_vm._s(_vm.carData.model))
-            ]),
+            _c(
+              "a",
+              {
+                staticClass: "breadcrumb",
+                on: {
+                  click: function($event) {
+                    return _vm.searchByMake(_vm.carData.marka)
+                  }
+                }
+              },
+              [
+                _vm._v(
+                  "\n            " + _vm._s(_vm.carData.marka) + "\n        "
+                )
+              ]
+            ),
             _vm._v(" "),
             _c("div", { staticClass: "breadcrumb breadcrumb--blue" }, [
               _vm._v(">")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "breadcrumb breadcrumb--bold" }, [
-              _c("span", [_vm._v(_vm._s(_vm.carData.production_year))]),
-              _c("span", [_vm._v(_vm._s(_vm.carData.marka))]),
-              _c("span", [_vm._v(_vm._s(_vm.carData.model))])
-            ])
+            _c(
+              "a",
+              {
+                staticClass: "breadcrumb",
+                on: {
+                  click: function($event) {
+                    return _vm.searchByModel(_vm.carData.model)
+                  }
+                }
+              },
+              [_vm._v(_vm._s(_vm.carData.model))]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "breadcrumb breadcrumb--blue" }, [
+              _vm._v(">")
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "breadcrumb breadcrumb--bold no-pointer" },
+              [
+                _c("span", [_vm._v(_vm._s(_vm.carData.production_year))]),
+                _c("span", [_vm._v(_vm._s(_vm.carData.marka))]),
+                _c("span", [_vm._v(_vm._s(_vm.carData.model))])
+              ]
+            )
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "car__container__heading card" }, [
@@ -1621,11 +1718,11 @@ var render = function() {
                         ])
                       : _vm._e(),
                     _vm._v(
-                      "\n            " +
+                      "\n                        " +
                         _vm._s(_vm.carData.marka) +
-                        "\n            " +
+                        "\n                        " +
                         _vm._s(_vm.carData.model) +
-                        "\n          "
+                        "\n                    "
                     )
                   ]),
                   _vm._v(" "),
@@ -1637,9 +1734,9 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n            " +
+                        "\n                        " +
                           _vm._s(_vm.carData.site) +
-                          "\n          "
+                          "\n                    "
                       )
                     ]
                   )
@@ -1678,10 +1775,9 @@ var render = function() {
                 _c(
                   "button",
                   {
-                    attrs: { disabled: _vm.currentImage === 0 },
                     on: {
                       click: function($event) {
-                        _vm.currentImage--
+                        return _vm.changeSlide(--_vm.currentImage)
                       }
                     }
                   },
@@ -1705,12 +1801,9 @@ var render = function() {
                   "button",
                   {
                     staticClass: "next",
-                    attrs: {
-                      disabled: _vm.currentImage === _vm.slides.length - 1
-                    },
                     on: {
                       click: function($event) {
-                        _vm.currentImage++
+                        return _vm.changeSlide(++_vm.currentImage)
                       }
                     }
                   },
@@ -1751,13 +1844,14 @@ var render = function() {
                 _c("div", { staticClass: "data__box__content" }, [
                   _c("h3", [
                     _vm._v(
-                      "Final bid: $" +
-                        _vm._s(_vm._f("formatNumber")(_vm.carData.final_bid))
+                      "\n                        Final bid: $" +
+                        _vm._s(_vm._f("formatNumber")(_vm.carData.final_bid)) +
+                        "\n                    "
                     )
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "highlight" }, [
-                    _vm._v("\n            Seller: "),
+                    _vm._v("\n                        Seller: "),
                     _c("b", [_vm._v(_vm._s(_vm.carData.seller))])
                   ]),
                   _vm._v(" "),
@@ -1772,19 +1866,27 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n              " +
+                          "\n                            " +
                             _vm._s(_vm.carData.site) +
-                            "\n            "
+                            "\n                        "
                         )
                       ]
                     ),
                     _vm._v(" "),
                     _c("div", { staticClass: "badge badge--outline" }, [
                       _vm._v(
-                        "\n              " +
-                          _vm._s(_vm.carData.sold ? "Sold" : "Not sold") +
-                          "\n            "
+                        "\n                            " +
+                          _vm._s(_vm.carData.sold) +
+                          "\n                        "
                       )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex-base" }, [
+                    _c("p", { staticClass: "light" }, [_vm._v("Location")]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "strong" }, [
+                      _vm._v(_vm._s(_vm.carData.selling_branch))
                     ])
                   ]),
                   _vm._v(" "),
@@ -1832,9 +1934,9 @@ var render = function() {
                     _vm.carData.production_year
                       ? _c("p", { staticClass: "strong" }, [
                           _vm._v(
-                            "\n              " +
+                            "\n                            " +
                               _vm._s(_vm.carData.production_year) +
-                              "\n            "
+                              "\n                        "
                           )
                         ])
                       : _vm._e()
@@ -1845,12 +1947,16 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "strong" }, [
                       _c("div", { staticClass: "badge badge--outline" }, [
-                        _vm._v(_vm._s(_vm.odometer.badge))
+                        _vm._v(
+                          "\n                                " +
+                            _vm._s(_vm.odometer.badge) +
+                            "\n                            "
+                        )
                       ]),
                       _vm._v(
-                        "\n              " +
+                        "\n                            " +
                           _vm._s(_vm.odometer.value) +
-                          "\n            "
+                          "mi\n                        "
                       )
                     ])
                   ]),
@@ -1895,6 +2001,14 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
+                  _c("div", { staticClass: "flex-base" }, [
+                    _c("p", { staticClass: "light" }, [_vm._v("Start code")]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "strong" }, [
+                      _vm._v(_vm._s(_vm.carData.start_code))
+                    ])
+                  ]),
+                  _vm._v(" "),
                   _c("div", { staticClass: "flex-base flex-base--no-border" }, [
                     _c("p", { staticClass: "light" }, [_vm._v("Airbags")]),
                     _vm._v(" "),
@@ -1915,7 +2029,11 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "strong" }, [
-                      _vm._v(_vm._s(_vm.carData.estimated_retail_value))
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(_vm.carData.estimated_retail_value) +
+                          "\n                        "
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -1925,7 +2043,11 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "strong" }, [
-                      _vm._v(_vm._s(_vm.carData.estimated_repair_cost))
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(_vm.carData.estimated_repair_cost) +
+                          "\n                        "
+                      )
                     ])
                   ]),
                   _vm._v(" "),
@@ -2042,7 +2164,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   "49c6dccc",
   null
-
+  
 )
 
 /* hot reload */
@@ -2062,7 +2184,7 @@ component.options.__file = "resources/js/Components/CarSlider.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarSlider_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./CarSlider.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/CarSlider.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarSlider_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarSlider_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -2129,7 +2251,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   "67ba51fe",
   null
-
+  
 )
 
 /* hot reload */
@@ -2149,7 +2271,7 @@ component.options.__file = "resources/js/Components/Claim.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Claim_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Claim.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/Claim.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Claim_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Claim_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -2216,7 +2338,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   "1c6f549a",
   null
-
+  
 )
 
 /* hot reload */
@@ -2236,7 +2358,7 @@ component.options.__file = "resources/js/Components/SalesHistory.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SalesHistory_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./SalesHistory.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/SalesHistory.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SalesHistory_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SalesHistory_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -2303,7 +2425,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   "2cf98be6",
   null
-
+  
 )
 
 /* hot reload */
@@ -2323,7 +2445,7 @@ component.options.__file = "resources/js/Components/SimiliarLots.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SimiliarLots_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./SimiliarLots.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Components/SimiliarLots.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SimiliarLots_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SimiliarLots_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -2390,7 +2512,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   "5f190dbb",
   null
-
+  
 )
 
 /* hot reload */
@@ -2410,7 +2532,7 @@ component.options.__file = "resources/js/Pages/Car.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Car_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Car.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Pages/Car.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Car_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Car_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
