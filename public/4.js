@@ -9,14 +9,6 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _Store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Store */ "./resources/js/Store/index.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //
 //
 //
@@ -47,37 +39,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      foundCars: 0
+      siteCars: null
     };
   },
-  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
-    count: function count(state) {
-      return state.count;
-    }
-  })), {}, {
-    fakeCars: function fakeCars() {
-      return {
-        iaai: (this.foundCars * 0.55).toFixed(),
-        copart: (this.foundCars * 0.45).toFixed()
-      };
-    }
-  }),
   mounted: function mounted() {
     var _this = this;
 
     axios.get("https://vinfax.info/api/cars-site").then(function (res) {
-      console.log(res);
-    })["catch"](function (err) {
-      console.log(err);
-    });
-    axios.get("https://vinfax.info/api/cars").then(function (res) {
-      _this.foundCars = res.data.count;
+      _this.siteCars = res.data;
     })["catch"](function (err) {
       console.log(err);
     });
@@ -172,17 +144,17 @@ var render = function() {
         _vm._v(" "),
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "footer__section p-top" }, [
-          _c("p", [
-            _c("span", [_vm._v("IAAI Lots:")]),
-            _vm._v(" " + _vm._s(_vm.fakeCars.iaai))
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _c("span", [_vm._v("Copart Lots:")]),
-            _vm._v(" " + _vm._s(_vm.fakeCars.copart))
-          ])
-        ]),
+        _c(
+          "div",
+          { staticClass: "footer__section p-top" },
+          _vm._l(_vm.siteCars, function(key, value) {
+            return _c("p", [
+              _c("span", [_vm._v(_vm._s(value) + " Lots:")]),
+              _vm._v(" " + _vm._s(key))
+            ])
+          }),
+          0
+        ),
         _vm._v(" "),
         _c(
           "div",

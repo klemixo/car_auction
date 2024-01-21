@@ -15,8 +15,7 @@
           <p><a href="mailto:info@vinfax.info">info@vinfax.info</a></p>
         </div>
         <div class="footer__section p-top">
-          <p><span>IAAI Lots:</span> {{ fakeCars.iaai }}</p>
-          <p><span>Copart Lots:</span> {{ fakeCars.copart }}</p>
+          <p v-for="(key,value) in siteCars"><span>{{ value }} Lots:</span> {{ key }}</p>
         </div>
         <div class="footer__section p-top">
           <router-link :to="{ name: 'Terms' }">Terms&Conditions</router-link>
@@ -30,39 +29,17 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
-import store from "../Store";
 export default {
   data() {
     return {
-      foundCars: 0,
+      siteCars: null,
     };
-  },
-  computed: {
-    ...mapState({
-      count: (state) => state.count,
-    }),
-    fakeCars() {
-      return {
-        iaai: (this.foundCars * 0.55).toFixed(),
-        copart: (this.foundCars * 0.45).toFixed(),
-      };
-    },
   },
   mounted() {
     axios
       .get(`https://vinfax.info/api/cars-site`)
       .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-
-    axios
-      .get(`https://vinfax.info/api/cars`)
-      .then((res) => {
-        this.foundCars = res.data.count;
+        this.siteCars = res.data;
       })
       .catch((err) => {
         console.log(err);
