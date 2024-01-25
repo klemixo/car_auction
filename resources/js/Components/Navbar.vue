@@ -84,7 +84,11 @@ export default {
     padding: 5px 0;
     display: flex;
     justify-content: space-between;
-
+    position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+z-index: 999;
     img {
       margin-right: auto;
     }
@@ -128,11 +132,15 @@ export default {
       flex-direction: row;
     }
     h1 {
+      display:none;
       font-weight: 700;
       font-size: 47px;
       line-height: 61px;
       text-align: center;
       color: #ffffff;
+      @media (min-width: 768px) {
+      flex-direction: block;
+    }
       span {
         color: rgba(255, 205, 30, 1);
       }

@@ -353,14 +353,12 @@ export default {
   ul {
     text-align: left;
     @media (min-width: 992px) {
-      padding-left: 90px;
     }
   }
   .flex {
     display: flex;
     gap: 13px;
     @media (min-width: 992px) {
-      padding-left: 90px;
     }
   }
   input {
@@ -380,16 +378,16 @@ export default {
   }
   .heading {
     background: #f8f8f8;
-    padding: 22px 90px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-left:4px;
     h2 {
       font-family: "PT Sans";
       font-style: normal;
       font-weight: 700;
-      font-size: 25px;
-      line-height: 32px;
+      font-size: 22px;
+      line-height: 25px;
       text-align: left;
       color: #000000;
     }

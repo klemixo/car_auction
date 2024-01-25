@@ -41,7 +41,7 @@
                 <p><span>Location:</span> {{ carData.selling_branch }}</p>
                 <div class="flex flex--line">
                     <h3>$ {{ carData.final_bid | formatNumber }}</h3>
-                    <div class="overlay-link" @click="refreshPage">
+                    <div class="overlay-link">
                         <a
                             class="black"
                             :href="`/#/car/${carData.marka}/${betterMake}/${carData.id}/${carData.vin}`"

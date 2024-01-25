@@ -69,7 +69,7 @@ export default {
                 arrows.forEach(arrow => {
                     arrow.click();
                 });
-            }, 5000);
+            }, 3000);
         }
     },
     computed: {

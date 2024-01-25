@@ -48,7 +48,7 @@
                         <h2><span>VIN: </span> {{ carData.vin }}</h2>
                     </div>
                 </div>
-                <button @click="showModal = !showModal">CLAIM LOT</button>
+                <button @click="showModal = !showModal">CLAIM THIS LOT</button>
             </div>
         </div>
         <div class="car__container__content">
@@ -285,7 +285,7 @@ export default {
         setAutoplay() {
             setInterval(() => {
                 this.changeSlide(++this.currentImage);
-            }, 5000);
+            }, 3000);
         },
         changeSlide(idx) {
             if (idx === -1) {
@@ -368,6 +368,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.sales__history, .similiar__lots{
+    display:none;
+    @media(min-width:768px){
+        display:block;
+    }
+}
 .breadcrumbs {
     display: flex;
     gap: 6px;
@@ -611,15 +617,15 @@ export default {
             flex-wrap: wrap;
 
             button {
-                background: red;
+                background: #ffebb7;
                 border-radius: 5px;
-                color: white;
+                color: black;
                 width: fit-content;
                 height: fit-content;
                 border: none;
                 outline: none;
                 margin: auto 0;
-                padding: 20px;
+                padding: 5px 15px;
                 text-decoration: none;
                 font-size: 17px;
                 font-weight: bold;

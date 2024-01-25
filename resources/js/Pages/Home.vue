@@ -17,6 +17,12 @@ export default {
 };
 </script>
 <style>
+.home{
+  padding-top:80px;
+  @media(min-width:768px){
+    padding-top:50px;
+  }
+}
 .car-box {
   margin: 20px;
 }
