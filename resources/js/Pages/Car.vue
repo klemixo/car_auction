@@ -368,10 +368,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.sales__history, .similiar__lots{
-    display:none;
-    @media(min-width:768px){
-        display:block;
+.sales__history,
+.similiar__lots {
+    display: none;
+    @media (min-width: 768px) {
+        display: block;
     }
 }
 .breadcrumbs {
@@ -617,6 +618,7 @@ export default {
             flex-wrap: wrap;
 
             button {
+                position: relative;
                 background: #ffebb7;
                 border-radius: 5px;
                 color: black;
@@ -629,7 +631,37 @@ export default {
                 text-decoration: none;
                 font-size: 17px;
                 font-weight: bold;
+                padding-right: 50px;
                 cursor: pointer !important;
+                animation: pulse 5s infinite;
+                &::after {
+                    content: "\203A";
+                    width: 40px;
+                    height: 100%;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    background: #ffd66f;
+                    font-size: 26px;
+                    line-height: 30px;
+                }
+            }
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1);
+                }
+                70% {
+                    transform: scale(.9) rotate(2deg);
+                }
+                80%{
+                    transform: scale(1.2) rotate(-2deg);
+                }
+                90% {
+                    transform: scale(1.1) rotate(0);
+                }
             }
         }
 

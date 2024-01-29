@@ -298,6 +298,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -395,7 +399,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".filters__top[data-v-81aea236] {\n  margin-top: 32px;\n  background: #ffffff;\n  box-shadow: 0px 9px 39px #ecf3f8;\n  border-bottom: 4px solid #243e97;\n  padding: 20px 10px;\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n@media (min-width: 768px) {\n.filters__top[data-v-81aea236] {\n    margin-top: 68px;\n    padding: 40px 34px;\n    flex-direction: row;\n}\n}\n.filters__top button[data-v-81aea236] {\n  padding: 10px;\n  margin-top: auto;\n  height: 65px;\n}\n.filters__top__filter[data-v-81aea236] {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  align-items: flex-start;\n  flex: 1;\n  justify-content: flex-end;\n}\n.filters__top__filter label[data-v-81aea236] {\n  font-weight: 700;\n  font-size: 18px;\n  line-height: 23px;\n  color: #000000;\n}", ""]);
+exports.push([module.i, ".filters__top[data-v-81aea236] {\n  margin-top: 32px;\n  background: #ffffff;\n  box-shadow: 0px 9px 39px #ecf3f8;\n  border-bottom: 4px solid #243e97;\n  padding: 20px 10px;\n  display: flex;\n  flex-direction: column;\n  gap: 24px;\n}\n@media (min-width: 768px) {\n.filters__top[data-v-81aea236] {\n    margin-top: 80px;\n    padding: 40px 34px;\n    flex-direction: row;\n    width: 100% !important;\n    max-width: 1222px !important;\n}\n}\n.filters__top button[data-v-81aea236] {\n  padding: 10px;\n  margin-top: auto;\n  height: 65px;\n}\n.filters__top__filter[data-v-81aea236] {\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n  align-items: flex-start;\n  flex: 1;\n  justify-content: flex-end;\n}\n.filters__top__filter label[data-v-81aea236] {\n  font-weight: 700;\n  font-size: 18px;\n  line-height: 23px;\n  color: #000000;\n}", ""]);
 
 // exports
 
@@ -592,38 +596,31 @@ var render = function() {
                         )
                       ]),
                       _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "overlay-link",
-                          on: { click: _vm.refreshPage }
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "black",
-                              attrs: {
-                                href:
-                                  "/#/car/" +
-                                  _vm.carData.marka +
-                                  "/" +
-                                  _vm.betterMake +
-                                  "/" +
-                                  _vm.carData.id +
-                                  "/" +
-                                  _vm.carData.vin
-                              }
-                            },
-                            [
-                              _vm._v("More details "),
-                              _c("img", {
-                                attrs: { src: "img/arrow.svg", alt: "" }
-                              })
-                            ]
-                          )
-                        ]
-                      )
+                      _c("div", { staticClass: "overlay-link" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "black",
+                            attrs: {
+                              href:
+                                "/#/car/" +
+                                _vm.carData.marka +
+                                "/" +
+                                _vm.betterMake +
+                                "/" +
+                                _vm.carData.id +
+                                "/" +
+                                _vm.carData.vin
+                            }
+                          },
+                          [
+                            _vm._v("More details "),
+                            _c("img", {
+                              attrs: { src: "img/arrow.svg", alt: "" }
+                            })
+                          ]
+                        )
+                      ])
                     ])
                   ]
                 : [

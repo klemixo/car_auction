@@ -116,7 +116,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         arrows.forEach(function (arrow) {
           arrow.click();
         });
-      }, 5000);
+      }, 3000);
     }
   },
   computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
@@ -604,7 +604,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.car-box {\n  margin: 20px;\n}\n", ""]);
+exports.push([module.i, "\n.home{\n  padding-top:80px;\n@media(min-width:768px){\n    padding-top:50px;\n}\n}\n.car-box {\n  margin: 20px;\n}\n", ""]);
 
 // exports
 

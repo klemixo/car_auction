@@ -139,7 +139,7 @@ z-index: 999;
       text-align: center;
       color: #ffffff;
       @media (min-width: 768px) {
-      flex-direction: block;
+        display: block;
     }
       span {
         color: rgba(255, 205, 30, 1);
