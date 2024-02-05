@@ -165,12 +165,11 @@ const store = new Vuex.Store({
                     state.foundCars = res.data.count;
                     setTimeout(() => {
                         const lastCar = carsList[carsList.length - 1];
-                        console.log(lastCar, "TTTTAAAAK");
                         lastCar.scrollIntoView({
                             behavior: "smooth",
                             block: "end"
                         });
-                    }, 200);
+                    }, 300);
                     state.dataLoading = false;
                 })
                 .catch(err => {

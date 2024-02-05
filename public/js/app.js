@@ -54556,12 +54556,11 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
         state.foundCars = res.data.count;
         setTimeout(function () {
           var lastCar = carsList[carsList.length - 1];
-          console.log(lastCar, "TTTTAAAAK");
           lastCar.scrollIntoView({
             behavior: "smooth",
             block: "end"
           });
-        }, 200);
+        }, 300);
         state.dataLoading = false;
       })["catch"](function (err) {
         state.dataLoading = false;
