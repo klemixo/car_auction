@@ -197,7 +197,7 @@ export default {
 
 <style lang="scss" >
 .year-label {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 18px;
   line-height: 23px;
   color: #000000;
@@ -210,7 +210,7 @@ export default {
   h4 {
     margin: 10px 0;
     text-align: left;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 25px;
     line-height: 32px;
   }
@@ -257,7 +257,7 @@ export default {
       background: white;
     }
     label {
-      font-weight: 700;
+      font-weight: 500;
       font-size: 18px;
       line-height: 23px;
       color: #000000;

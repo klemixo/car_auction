@@ -215,7 +215,7 @@ export default {
           }
 
           p {
-            font-weight: 700;
+            font-weight: 500;
             font-size: 25px;
             margin: 0;
           }
@@ -223,7 +223,7 @@ export default {
 
         &__content {
           h3 {
-            font-weight: 700;
+            font-weight: 500;
             font-size: 33px;
             line-height: 43px;
             text-align: left;
@@ -385,7 +385,7 @@ export default {
     h2 {
       font-family: "PT Sans";
       font-style: normal;
-      font-weight: 700;
+      font-weight: 500;
       font-size: 22px;
       line-height: 25px;
       text-align: left;

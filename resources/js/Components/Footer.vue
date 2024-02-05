@@ -105,10 +105,10 @@ export default {
         margin: 0;
         text-align: left;
         span {
-          font-weight: 700;
+          font-weight: 500;
         }
         a {
-          font-weight: bold;
+          font-weight: 500;
           font-size: 25px;
         }
       }

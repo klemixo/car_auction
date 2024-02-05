@@ -23,7 +23,7 @@
         width:100%;
     }
     h2{
-        font-weight: 700;
+        font-weight: 500;
         font-size: 45px;
         line-height: 30px;
         display: flex;

@@ -139,7 +139,7 @@ export default {
         flex: 1;
         justify-content: flex-end;
         label {
-            font-weight: 700;
+            font-weight: 500;
             font-size: 18px;
             line-height: 23px;
             color: #000000;

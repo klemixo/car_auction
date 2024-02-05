@@ -49,7 +49,7 @@ body {
   border-radius: 5px;
   padding: 20px;
   font-family: "PT Sans";
-  font-weight: 700;
+  font-weight: 500;
   font-size: 17px;
   line-height: 22px;
   letter-spacing: 0.1em;

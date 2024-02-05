@@ -102,7 +102,7 @@ export default {
     }
     h2 {
         font-family: "PT Sans";
-        font-weight: 700;
+        font-weight: 500;
         font-size: 30px;
         line-height: 47px;
         text-align: left;

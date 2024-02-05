@@ -134,7 +134,6 @@ const store = new Vuex.Store({
             state.dataLoading = true;
             let filtersString = "";
             const carsList = document.querySelectorAll(".grid .car__box");
-            const lastCar = carsList[carsList.length - 1];
             for (const property in state.filters) {
                 if (
                     state.filters[property].field === "site" &&
@@ -164,10 +163,14 @@ const store = new Vuex.Store({
                 .then(res => {
                     state.cars = res.data.data;
                     state.foundCars = res.data.count;
-                    lastCar.scrollIntoView();
                     setTimeout(() => {
-                        lastCar.scrollIntoView();
-                    });
+                        const lastCar = carsList[carsList.length - 1];
+                        console.log(lastCar, "TTTTAAAAK");
+                        lastCar.scrollIntoView({
+                            behavior: "smooth",
+                            block: "end"
+                        });
+                    }, 200);
                     state.dataLoading = false;
                 })
                 .catch(err => {

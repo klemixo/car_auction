@@ -54,7 +54,7 @@
         <div class="car__container__content">
             <div class="car__container__content__images">
                 <div class="main">
-                    <button @click="changeSlide(--currentImage)">
+                    <button @click="changeSlide(--currentImage, true)">
                         <svg viewBox="0 0 9 18">
                             <path
                                 stroke-linecap="round"
@@ -63,7 +63,7 @@
                         </svg>
                     </button>
                     <img :src="slides[currentImage]" alt="" />
-                    <button class="next" @click="changeSlide(++currentImage)">
+                    <button class="next" @click="changeSlide(++currentImage, true)">
                         <svg viewBox="0 0 9 18">
                             <path
                                 stroke-linecap="round"
@@ -77,7 +77,7 @@
                         v-for="(image, idx) in slides"
                         :src="image"
                         alt=""
-                        @click="changeSlide(idx)"
+                        @click="changeSlide(idx, true)"
                     />
                 </div>
             </div>
@@ -287,7 +287,13 @@ export default {
                 this.changeSlide(++this.currentImage);
             }, 3000);
         },
-        changeSlide(idx) {
+        changeSlide(idx, scrollToTop = false) {
+            if (scrollToTop) {
+                document
+                    .querySelector(".main")
+                    .scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+
             if (idx === -1) {
                 this.currentImage = this.slides.length - 1;
             } else if (this.currentImage === this.slides.length) {
@@ -398,7 +404,7 @@ export default {
             color: #243e97;
         }
         &--bold {
-            font-weight: bold;
+            font-weight: 500;
         }
         &.no-pointer {
             cursor: default;
@@ -630,7 +636,7 @@ export default {
                 padding: 5px 15px;
                 text-decoration: none;
                 font-size: 17px;
-                font-weight: bold;
+                font-weight: 500;
                 padding-right: 50px;
                 cursor: pointer !important;
                 animation: pulse 5s infinite;
@@ -654,9 +660,9 @@ export default {
                     transform: scale(1);
                 }
                 70% {
-                    transform: scale(.9) rotate(2deg);
+                    transform: scale(0.9) rotate(2deg);
                 }
-                80%{
+                80% {
                     transform: scale(1.2) rotate(-2deg);
                 }
                 90% {

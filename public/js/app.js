@@ -19019,13 +19019,34 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "navbar",
   data: function data() {
     return {
-      vin: null
+      vin: null,
+      top: true
     };
   },
   methods: {
@@ -19038,7 +19059,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     removeAllFilters: function removeAllFilters() {
       _Store__WEBPACK_IMPORTED_MODULE_1__["default"].commit("REMOVE_ALL_FILTERS");
+    },
+    watchScroll: function watchScroll() {
+      var _this = this;
+
+      window.addEventListener("scroll", function () {
+        _this.top = !window.scrollY > 0;
+      });
     }
+  },
+  mounted: function mounted() {
+    this.watchScroll();
   },
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
     searched: function searched(state) {
@@ -19080,7 +19111,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "body {\n  font-size: 17px;\n  overflow-x: hidden;\n}\n#app {\n  overflow-x: hidden;\n}\n.flex {\n  display: flex;\n}\n* {\n  font-family: \"PT Sans\", sans-serif !important;\n}\n.base-input {\n  background: #f8f8f8;\n  border-radius: 5px;\n  border: none;\n  outline: none;\n  padding: 20px;\n  font-family: \"PT Sans\";\n  font-size: 18px;\n  line-height: 23px;\n  color: #818181;\n}\n.base-btn {\n  background: #243e97;\n  border-radius: 5px;\n  padding: 20px;\n  font-family: \"PT Sans\";\n  font-weight: 700;\n  font-size: 17px;\n  line-height: 22px;\n  letter-spacing: 0.1em;\n  border: none;\n  outline: none;\n  transition: 0.2s;\n  color: #ffffff;\n}\n.base-btn--filters {\n  margin-top: 32px;\n  text-decoration: none;\n  height: fit-content;\n}\n.base-btn:hover {\n  background: #0c1f5e;\n}\n.container {\n  width: 95%;\n  margin: 0 auto;\n  max-width: 1300px !important;\n}\n@media (min-width: 768px) {\n.container {\n    width: 90%;\n}\n}\n.base-checkbox input[type=checkbox] {\n  display: none;\n  visibility: hidden;\n}\n.base-checkbox .cbx {\n  margin: auto;\n  -webkit-user-select: none;\n  user-select: none;\n  cursor: pointer;\n  font-weight: 400 !important;\n}\n.base-checkbox .cbx span {\n  display: inline-block;\n  vertical-align: middle;\n  transform: translate3d(0, 0, 0);\n}\n.base-checkbox .cbx span:first-child {\n  position: relative;\n  width: 18px;\n  height: 18px;\n  border-radius: 3px;\n  transform: scale(1);\n  vertical-align: middle;\n  border: 1px solid #9098a9;\n  transition: all 0.2s ease;\n}\n.base-checkbox .cbx span:first-child svg {\n  position: absolute;\n  top: 3px;\n  left: 2px;\n  fill: none;\n  stroke: #ffffff;\n  stroke-width: 2;\n  stroke-linecap: round;\n  stroke-linejoin: round;\n  stroke-dasharray: 16px;\n  stroke-dashoffset: 16px;\n  transition: all 0.3s ease;\n  transition-delay: 0.1s;\n  transform: translate3d(0, 0, 0);\n}\n.base-checkbox .cbx span:first-child:before {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  background: #506eec;\n  display: block;\n  transform: scale(0);\n  opacity: 1;\n  border-radius: 50%;\n}\n.base-checkbox .cbx span:last-child {\n  padding-left: 8px;\n}\n.base-checkbox .cbx:hover span:first-child {\n  border-color: #506eec;\n}\n.base-checkbox .inp-cbx:checked + .cbx span:first-child {\n  background: #506eec;\n  border-color: #506eec;\n  animation: wave-46 0.4s ease;\n}\n.base-checkbox .inp-cbx:checked + .cbx span:first-child svg {\n  stroke-dashoffset: 0;\n}\n.base-checkbox .inp-cbx:checked + .cbx span:first-child:before {\n  transform: scale(3.5);\n  opacity: 0;\n  transition: all 0.6s ease;\n}\n@keyframes wave-46 {\n50% {\n    transform: scale(0.9);\n}\n}\n.multiselect__option--highlight {\n  background: #243e97 !important;\n}\n.multiselect__tags {\n  min-height: 55px !important;\n  padding: 17px 0px 0 25px !important;\n}\n.multiselect__placeholder {\n  font-size: 16px !important;\n}\n.multiselect__select {\n  top: 50%;\n  transform: translate(0, -50%);\n}", ""]);
+exports.push([module.i, "body {\n  font-size: 17px;\n  overflow-x: hidden;\n}\n#app {\n  overflow-x: hidden;\n}\n.flex {\n  display: flex;\n}\n* {\n  font-family: \"PT Sans\", sans-serif !important;\n}\n.base-input {\n  background: #f8f8f8;\n  border-radius: 5px;\n  border: none;\n  outline: none;\n  padding: 20px;\n  font-family: \"PT Sans\";\n  font-size: 18px;\n  line-height: 23px;\n  color: #818181;\n}\n.base-btn {\n  background: #243e97;\n  border-radius: 5px;\n  padding: 20px;\n  font-family: \"PT Sans\";\n  font-weight: 500;\n  font-size: 17px;\n  line-height: 22px;\n  letter-spacing: 0.1em;\n  border: none;\n  outline: none;\n  transition: 0.2s;\n  color: #ffffff;\n}\n.base-btn--filters {\n  margin-top: 32px;\n  text-decoration: none;\n  height: fit-content;\n}\n.base-btn:hover {\n  background: #0c1f5e;\n}\n.container {\n  width: 95%;\n  margin: 0 auto;\n  max-width: 1300px !important;\n}\n@media (min-width: 768px) {\n.container {\n    width: 90%;\n}\n}\n.base-checkbox input[type=checkbox] {\n  display: none;\n  visibility: hidden;\n}\n.base-checkbox .cbx {\n  margin: auto;\n  -webkit-user-select: none;\n  user-select: none;\n  cursor: pointer;\n  font-weight: 400 !important;\n}\n.base-checkbox .cbx span {\n  display: inline-block;\n  vertical-align: middle;\n  transform: translate3d(0, 0, 0);\n}\n.base-checkbox .cbx span:first-child {\n  position: relative;\n  width: 18px;\n  height: 18px;\n  border-radius: 3px;\n  transform: scale(1);\n  vertical-align: middle;\n  border: 1px solid #9098a9;\n  transition: all 0.2s ease;\n}\n.base-checkbox .cbx span:first-child svg {\n  position: absolute;\n  top: 3px;\n  left: 2px;\n  fill: none;\n  stroke: #ffffff;\n  stroke-width: 2;\n  stroke-linecap: round;\n  stroke-linejoin: round;\n  stroke-dasharray: 16px;\n  stroke-dashoffset: 16px;\n  transition: all 0.3s ease;\n  transition-delay: 0.1s;\n  transform: translate3d(0, 0, 0);\n}\n.base-checkbox .cbx span:first-child:before {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  background: #506eec;\n  display: block;\n  transform: scale(0);\n  opacity: 1;\n  border-radius: 50%;\n}\n.base-checkbox .cbx span:last-child {\n  padding-left: 8px;\n}\n.base-checkbox .cbx:hover span:first-child {\n  border-color: #506eec;\n}\n.base-checkbox .inp-cbx:checked + .cbx span:first-child {\n  background: #506eec;\n  border-color: #506eec;\n  animation: wave-46 0.4s ease;\n}\n.base-checkbox .inp-cbx:checked + .cbx span:first-child svg {\n  stroke-dashoffset: 0;\n}\n.base-checkbox .inp-cbx:checked + .cbx span:first-child:before {\n  transform: scale(3.5);\n  opacity: 0;\n  transition: all 0.6s ease;\n}\n@keyframes wave-46 {\n50% {\n    transform: scale(0.9);\n}\n}\n.multiselect__option--highlight {\n  background: #243e97 !important;\n}\n.multiselect__tags {\n  min-height: 55px !important;\n  padding: 17px 0px 0 25px !important;\n}\n.multiselect__placeholder {\n  font-size: 16px !important;\n}\n.multiselect__select {\n  top: 50%;\n  transform: translate(0, -50%);\n}", ""]);
 
 // exports
 
@@ -19099,7 +19130,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".navBar {\n  background: linear-gradient(180deg, rgba(0, 40, 179, 0.9) 0%, rgba(0, 57, 255, 0.28) 225.36%), url(/img/navbar-bg.png);\n  background-blend-mode: multiply;\n  padding: 61px 0 71px 0;\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n.navBar.small {\n  background: linear-gradient(89.98deg, #102672 0.01%, #384e9b 99.98%);\n  padding: 5px 0;\n  display: flex;\n  justify-content: space-between;\n  position: fixed;\n  left: 0;\n  top: 0;\n  width: 100%;\n  z-index: 999;\n}\n.navBar.small img {\n  margin-right: auto;\n}\n.navBar__link {\n  justify-content: flex-end;\n  margin-bottom: 40px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n@media (min-width: 576px) {\n.navBar__link {\n    flex-direction: row;\n}\n}\n.navBar__link .links {\n  display: flex;\n}\n@media (min-width: 768px) {\n.navBar__link .links {\n    gap: 62px;\n}\n}\n@media (min-width: 768px) {\n.navBar__link {\n    gap: 62px;\n}\n}\n.navBar__link.small {\n  margin: 0;\n  align-items: center;\n}\n.navBar__link li a {\n  color: white;\n}\n.navBar__hero {\n  display: flex;\n  gap: 36px;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 40px;\n  flex-direction: column;\n}\n@media (min-width: 768px) {\n.navBar__hero {\n    flex-direction: row;\n}\n}\n.navBar__hero h1 {\n  display: none;\n  font-weight: 700;\n  font-size: 47px;\n  line-height: 61px;\n  text-align: center;\n  color: #ffffff;\n}\n@media (min-width: 768px) {\n.navBar__hero h1 {\n    display: block;\n}\n}\n.navBar__hero h1 span {\n  color: #ffcd1e;\n}\n.navBar__search {\n  display: flex;\n  gap: 24px;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n@media (min-width: 576px) {\n.navBar__search {\n    flex-direction: row;\n}\n}\n@media (min-width: 1200px) {\n.navBar__search {\n    width: 77%;\n    margin: 0 auto;\n}\n}\n.navBar__search .base-input {\n  flex: 1;\n  width: 90%;\n}", ""]);
+exports.push([module.i, ".navBar {\n  background: linear-gradient(180deg, rgba(0, 40, 179, 0.9) 0%, rgba(0, 57, 255, 0.28) 225.36%), url(/img/navbar-bg.png);\n  background-blend-mode: multiply;\n  padding: 61px 0 71px 0;\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n.navBar.small {\n  background: linear-gradient(89.98deg, #102672 0.01%, #384e9b 99.98%);\n  padding: 5px 0;\n  display: flex;\n  justify-content: space-between;\n  position: fixed;\n  left: 0;\n  top: 0;\n  width: 100%;\n  z-index: 999;\n}\n.navBar.small img {\n  margin-right: auto;\n}\n.navBar__link {\n  margin-bottom: 40px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n}\n.navBar__link.scrolled {\n  left: 0;\n  top: 0;\n  position: fixed;\n  background: linear-gradient(89.98deg, #102672 0.01%, #384e9b 99.98%);\n  padding: 5px 0;\n  display: flex;\n  justify-content: space-between;\n  width: 100%;\n  z-index: 999;\n}\n@media (min-width: 576px) {\n.navBar__link {\n    flex-direction: row;\n}\n}\n.navBar__link .links {\n  display: flex;\n}\n@media (min-width: 768px) {\n.navBar__link .links {\n    gap: 62px;\n}\n}\n@media (min-width: 768px) {\n.navBar__link {\n    gap: 62px;\n}\n}\n.navBar__link.small {\n  margin: 0;\n  align-items: center;\n}\n.navBar__link li a {\n  color: white;\n}\n.navBar__hero {\n  display: flex;\n  gap: 36px;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 40px;\n  flex-direction: column;\n  padding-top: 50px;\n}\n@media (min-width: 768px) {\n.navBar__hero {\n    flex-direction: row;\n}\n}\n.navBar__hero h1 {\n  display: none;\n  font-weight: 500;\n  font-size: 47px;\n  line-height: 61px;\n  text-align: center;\n  color: #ffffff;\n}\n@media (min-width: 768px) {\n.navBar__hero h1 {\n    display: block;\n}\n}\n.navBar__hero h1 span {\n  color: #ffcd1e;\n}\n.navBar__search {\n  display: flex;\n  gap: 24px;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\n@media (min-width: 576px) {\n.navBar__search {\n    flex-direction: row;\n}\n}\n@media (min-width: 1200px) {\n.navBar__search {\n    width: 77%;\n    margin: 0 auto;\n}\n}\n.navBar__search .base-input {\n  flex: 1;\n  width: 90%;\n}", ""]);
 
 // exports
 
@@ -37530,7 +37561,10 @@ var render = function() {
     _c("div", { staticClass: "navBar__content container" }, [
       _c(
         "ul",
-        { staticClass: "navBar__link", class: { small: _vm.searched } },
+        {
+          staticClass: "navBar__link",
+          class: { small: _vm.searched, scrolled: !_vm.top }
+        },
         [
           _c(
             "div",
@@ -37658,7 +37692,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("h1", [
-      _vm._v("Check car sales and damage history. "),
+      _vm._v("\n                Check car sales and damage history. "),
       _c("span", [_vm._v("It’s free!")])
     ])
   }
@@ -54494,7 +54528,6 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       state.dataLoading = true;
       var filtersString = "";
       var carsList = document.querySelectorAll(".grid .car__box");
-      var lastCar = carsList[carsList.length - 1];
 
       for (var property in state.filters) {
         if (state.filters[property].field === "site" && state.filters[property].value === false) {
@@ -54521,10 +54554,14 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://vinfax.info/api/cars?".concat(filtersString)).then(function (res) {
         state.cars = res.data.data;
         state.foundCars = res.data.count;
-        lastCar.scrollIntoView();
         setTimeout(function () {
-          lastCar.scrollIntoView();
-        });
+          var lastCar = carsList[carsList.length - 1];
+          console.log(lastCar, "TTTTAAAAK");
+          lastCar.scrollIntoView({
+            behavior: "smooth",
+            block: "end"
+          });
+        }, 200);
         state.dataLoading = false;
       })["catch"](function (err) {
         state.dataLoading = false;

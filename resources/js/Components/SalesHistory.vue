@@ -99,7 +99,7 @@ div {
     }
     td {
       &.bold {
-        font-weight: bold;
+        font-weight: 500;
       }
       &.branch {
         span {
@@ -138,7 +138,7 @@ div {
     th {
       background: #f8f8f8;
       td {
-        font-weight: bold;
+        font-weight: 500;
       }
     }
   }

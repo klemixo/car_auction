@@ -193,7 +193,6 @@ export default {
     mounted() {
         window.scrollTo({ top: 0 });
         this.prepareImages();
-
     }
 };
 </script>
@@ -202,7 +201,7 @@ export default {
 .badge {
     background: #1882ff;
     border-radius: 3px;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 16px;
     line-height: 21px;
     padding: 4px;
@@ -325,14 +324,14 @@ export default {
                 }
             }
             h2 {
-                font-weight: 700;
+                font-weight: 500;
                 font-size: 20px;
                 line-height: 26px;
                 text-align: left;
             }
 
             h3 {
-                font-weight: 700;
+                font-weight: 500;
                 font-size: 27px;
                 line-height: 35px;
                 margin: 10px 0;
@@ -403,7 +402,7 @@ export default {
             color: #818181;
         }
         .final-bid {
-            font-weight: 700;
+            font-weight: 500;
             font-size: 27px;
             line-height: 35px;
             color: #000000;
