@@ -11,7 +11,7 @@
           class="base-input"
         />
       </div>
-      <label class="year-label" for="">Yearssss</label>
+      <label class="year-label" for="">Year</label>
       <div class="filters-flex">
         <div
           class="filters__right__filter"
